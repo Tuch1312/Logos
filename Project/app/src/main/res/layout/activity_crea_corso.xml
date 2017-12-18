@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         >
 
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:ems="10"
-        android:hint="Titolo"
+        android:hint="@string/titolo"
         android:inputType="textPersonName" />
 
     <LinearLayout
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:hint="N° Lezioni"
+            android:hint="@string/n_lezioni"
             android:inputType="number" />
 
         <EditText
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:hint="Ore Lezione"
+            android:hint="@string/ore_lezione"
             android:inputType="number"
             />
     </LinearLayout>
@@ -67,7 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:ems="10"
-        android:hint="N° Lezioni x Giorno"
+        android:hint="@string/n_lezioni_x_giorno"
         android:inputType="number" />
 
     <EditText
@@ -77,7 +77,7 @@
         android:layout_height="150dp"
         android:layout_gravity="center"
         android:ems="10"
-        android:hint="Descrizione"
+        android:hint="@string/descrizione"
         android:gravity="top"
         android:inputType="textMultiLine"
         android:lines="5"
@@ -95,7 +95,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:ems="10"
-        android:hint="Numero max studenti"
+        android:hint="@string/numero_max_studenti"
         android:inputType="text" />
 
     <EditText
@@ -105,7 +105,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:ems="10"
-        android:hint="Sede"
+        android:hint="@string/sede"
         android:inputType="textPersonName" />
 
     <EditText
@@ -115,18 +115,15 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:ems="10"
-        android:hint="Requisiti minimi studenti"
+        android:hint="@string/requisiti_minimi_studenti"
         android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/button"
-            android:layout_width="260dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginTop="35dp"
             android:layout_marginBottom="35dp"
-            android:background="@color/pulsanti"
-            android:text="Button" />
+            android:text="@string/crea"
+            style="@style/pulsante_schermo_intero"/>
 
 
 

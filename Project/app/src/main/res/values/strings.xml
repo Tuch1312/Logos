@@ -1,4 +1,26 @@
 <resources>
     <string name="app_name">Logos</string>
+
     <string name="crea_corso">Crea Nuovo Corso</string>
+    <string name="titolo">Titolo</string>
+    <string name="n_lezioni">N° Lezioni</string>
+    <string name="ore_lezione">Ore Lezione</string>
+    <string name="n_lezioni_x_giorno">N° Lezioni x Giorno</string>
+    <string name="descrizione">Descrizione</string>
+    <string name="numero_max_studenti">Numero max studenti</string>
+    <string name="sede">Sede</string>
+    <string name="requisiti_minimi_studenti">Requisiti minimi studenti</string>
+    <string name="crea">Crea</string>
+    <string name="login">Login</string>
+    <string name="inserisci_e_mail">Inserisci e-mail</string>
+    <string name="password">Password</string>
+    <string name="accedi">Accedi</string>
+    <string name="registarti">Registarti</string>
+    <string name="registrazione">Registrazione</string>
+    <string name="nome">Nome</string>
+    <string name="cognome">Cognome</string>
+    <string name="sono_un_professore">Sono un professore</string>
+    <string name="sono_uno_stduente">Sono uno stduente</string>
+    <string name="corsi_di_oggi">Corsi di oggi</string>
+
 </resources>

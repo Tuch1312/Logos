@@ -13,9 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="55dp"
-        android:autoText="false"
-        android:text="Login"
-        android:textAllCaps="false"
+        android:text="@string/login"
         android:textSize="36sp" />
 
     <EditText
@@ -26,10 +24,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="57dp"
         android:ems="10"
-        android:hint="Inserisci e-mail"
-        android:inputType="textEmailAddress"
-        android:textColorHighlight="@android:color/holo_green_light"
-        android:textColorLink="@android:color/holo_green_dark" />
+        android:hint="@string/inserisci_e_mail"
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/editText2"
@@ -39,22 +35,16 @@
         android:layout_below="@+id/editText"
         android:layout_marginTop="54dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:textColorHighlight="@android:color/holo_green_light"
         android:textColorLink="@android:color/holo_green_dark" />
 
     <Button
         android:id="@+id/Button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/editText2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginHorizontal="15dp"
         android:layout_marginTop="81dp"
-        android:background="@color/pulsanti"
-        android:elevation="1dp"
-        android:text="Accedi"
-        android:textColor="@android:color/background_light"
-        android:textSize="22sp" />
+        android:text="@string/accedi"
+        style="@style/pulsante_schermo_intero"
+        />
 </RelativeLayout>

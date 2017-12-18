@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.dettofatto.logos.Registration"
     android:orientation="vertical">
 
@@ -10,10 +11,8 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:text="Registrazione"
+        android:text="@string/registrazione"
         android:textSize="36sp"
         android:layout_gravity="center"/>
 
@@ -21,11 +20,9 @@
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView"
-        android:layout_below="@+id/textView"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:ems="10"
-        android:hint="Nome"
+        android:hint="@string/nome"
         android:inputType="textPersonName"
         android:layout_gravity="center"/>
 
@@ -33,23 +30,19 @@
         android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/editText"
-        android:layout_below="@+id/editText"
+        android:layout_gravity="center"
         android:layout_marginTop="14dp"
         android:ems="10"
-        android:hint="Cognome"
-        android:inputType="textPersonName"
-        android:layout_gravity="center"/>
+        android:hint="@string/cognome"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/editText3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/editText2"
-        android:layout_below="@+id/editText2"
         android:layout_marginTop="14dp"
         android:ems="10"
-        android:hint="Inserisci e-mail"
+        android:hint="@string/inserisci_e_mail"
         android:inputType="textEmailAddress"
         android:layout_gravity="center"/>
 
@@ -57,48 +50,40 @@
         android:id="@+id/editText4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/editText3"
-        android:layout_below="@+id/editText3"
         android:layout_marginTop="14dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:layout_gravity="center"/>
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
         <RadioGroup
             android:id="@+id/radioGroup"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_width="220dp"
             android:layout_marginBottom="22dp"
-            android:layout_marginTop="14dp">
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center">
+
 
             <RadioButton
                 android:id="@+id/radioButton4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="RadioButton" />
+                android:text="@string/sono_uno_stduente" />
 
             <RadioButton
                 android:id="@+id/radioButton3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="RadioButton" />
+                android:text="@string/sono_un_professore" />
 
         </RadioGroup>
-    </LinearLayout>
 
     <Button
+        style="@style/pulsante_schermo_intero"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="15dp"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:text="Registarti" />
+        android:text="@string/registarti"
+        android:layout_marginTop="20dp"/>
 </LinearLayout>
