@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".Registration"></activity>
+=======
+        <activity android:name=".Registration" />
+>>>>>>> b4c7e2f474f10b9728ff9712155d356af0e05ecc
         <activity android:name=".Login">
 
         </activity>
@@ -20,6 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".DashBoardD" />
+        <activity android:name=".DashBoardLezioni"></activity>
     </application>
 
 </manifest>
