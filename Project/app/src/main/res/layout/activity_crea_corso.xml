@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dettofatto.logos.CreaCorso">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="234dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/crea_corso"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:textSize="26sp" />
+
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="260dp"
+        android:layout_marginTop="35dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:hint="Titolo"
+        android:inputType="textPersonName" />
+
+    <LinearLayout
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editText7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="N° Lezioni"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/editText8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Ore Lezione"
+            android:inputType="number"
+            />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editText9"
+        android:layout_width="260dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:hint="N° Lezioni x Giorno"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/editText10"
+        android:layout_width="260dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:hint="Descrizione"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:lines="5"
+        android:maxLines="10"
+        android:minLines="1"
+        android:scrollbars="vertical"
+
+
+        />
+
+    <EditText
+        android:id="@+id/editText11"
+        android:layout_width="260dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:hint="Numero max studenti"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editText12"
+        android:layout_width="260dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:hint="Sede"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editText13"
+        android:layout_width="260dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:hint="Requisiti minimi studenti"
+        android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="35dp"
+            android:background="@color/pulsanti"
+            android:text="Button" />
+
+
+
+    </LinearLayout>
+</ScrollView>

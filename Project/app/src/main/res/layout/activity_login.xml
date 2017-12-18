@@ -52,7 +52,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginHorizontal="15dp"
         android:layout_marginTop="81dp"
-        android:background="@android:color/holo_green_light"
+        android:background="@color/pulsanti"
         android:elevation="1dp"
         android:text="Accedi"
         android:textColor="@android:color/background_light"
