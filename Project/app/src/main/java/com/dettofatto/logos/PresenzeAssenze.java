@@ -18,7 +18,7 @@ public class PresenzeAssenze extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_presenze_assenze);
 
-        listaListView = (ListView)findViewById(R.id.listView);
+        listaListView = findViewById(R.id.listView);
 
         final String[] listaString = new String[]  {"nome stud 1", "nome stud 2"};
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listaString );
