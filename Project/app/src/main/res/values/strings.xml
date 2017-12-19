@@ -21,6 +21,6 @@
     <string name="cognome">Cognome</string>
     <string name="sono_un_professore">Sono un professore</string>
     <string name="sono_uno_stduente">Sono uno stduente</string>
-    <string name="corsi_di_oggi">Corsi di oggi</string>
+    <string name="corsi_di_oggi">Lezioni</string>
 
 </resources>

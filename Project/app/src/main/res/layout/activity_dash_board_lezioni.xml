@@ -6,31 +6,60 @@
     android:layout_height="match_parent"
     tools:context="com.dettofatto.logos.DashBoardLezioni">
 
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Corso"
+        android:textSize="36sp"
+        android:id="@+id/titolo"
+        android:layout_centerHorizontal="true"/>
+
     <ProgressBar
-        android:id="@+id/progressBar2"
-        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
+        android:layout_margin="15dp"
+        android:padding="8dp"
+        android:id="@+id/progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="128dp" />
+        android:layout_below="@id/titolo"
+        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"/>
 
     <TextView
-        android:id="@+id/textView6"
+        android:layout_margin="8dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="TitoloCorso" />
+        android:layout_toRightOf="@id/progress"
+        android:layout_below="@id/titolo"
+        android:text="Ultima Lezione"
+        android:textSize="18dp"
+        android:id="@+id/text1"/>
 
     <TextView
-        android:id="@+id/textView7"
+        android:layout_margin="8dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/progressBar2"
-        android:layout_alignStart="@+id/textView6"
-        android:layout_marginBottom="27dp"
-        android:text="Lezione numero bakabka" />
+        android:layout_toRightOf="@id/progress"
+        android:layout_alignBottom="@id/progress"
+        android:text="Prossima Lezione"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progress"
+        android:text="ciao questa è la descrizione degli argomenti trattati fin ora in lista
+                        tutto cio a scopo puramente illustrativo"
+        android:paddingRight="50dp"
+        android:paddingLeft="50dp"
+        android:lineSpacingExtra="2dp"
+        android:textStyle="italic"/>
+
+
+
+
+
 </RelativeLayout>
+
+
