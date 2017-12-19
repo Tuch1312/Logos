@@ -1,0 +1,22 @@
+diff a/Project/app/src/main/AndroidManifest.xml b/Project/app/src/main/AndroidManifest.xml	(rejected hunks)
+@@ -18,14 +18,14 @@
+ 
+         </activity>
+         <activity android:name=".CreaCorso">
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+ 
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+         </activity>
+         <activity android:name=".DashBoardD" />
+-        <activity android:name=".DashBoardLezioni"></activity>
++        <activity android:name=".DashBoardLezioni">    <intent-filter>
++            <action android:name="android.intent.action.MAIN" />
++
++            <category android:name="android.intent.category.LAUNCHER" />
++        </intent-filter></activity>
+     </application>
+ 
+ </manifest>
+\ No newline at end of file
