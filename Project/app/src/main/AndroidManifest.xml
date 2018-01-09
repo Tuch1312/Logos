@@ -9,41 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< .merge_file_a06048
 
         <activity android:name=".Registration"></activity>
-
-        <activity android:name=".Registration" />
-
-        <activity android:name=".Login">
-
-        </activity>
-        <activity android:name=".CreaCorso">
-
-=======
-        <activity android:name=".Registration">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
->>>>>>> .merge_file_a03404
-        </activity>
-
-        <activity android:name=".Login" />
-        <activity android:name=".CreaCorso" />
+        <activity android:name=".Login"></activity>
+        <activity android:name=".CreaCorso"></activity>
         <activity android:name=".DashBoardD" />
-<<<<<<< .merge_file_a06048
-        <activity android:name=".DashBoardLezioni">    <intent-filter>
+        <activity android:name=".DashBoardLezioni">
+            <intent-filter>
             <action android:name="android.intent.action.MAIN" />
-
             <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
-=======
-        <activity android:name=".DashBoardLezioni" />
+        </intent-filter>
+        </activity>
         <activity android:name=".PresenzeAssenze"></activity>
->>>>>>> .merge_file_a03404
     </application>
 
 </manifest>

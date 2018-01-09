@@ -20,16 +20,13 @@
     <string name="nome">Nome</string>
     <string name="cognome">Cognome</string>
     <string name="sono_un_professore">Sono un professore</string>
-    <string name="sono_uno_stduente">Sono uno stduente</string>
-<<<<<<< HEAD
+    <string name="sono_uno_stduente">Sono uno studente</string>
     <string name="corsi_di_oggi">Lezioni</string>
-=======
-    <string name="corsi_di_oggi">Corsi di oggi</string>
     <string name="iscriviti_ad_un_corso">Iscriviti ad un corso</string>
     <string name="iscriviti_al_corso_testo">Chiedi il codice del corso all\'insegnante</string>
     <string name="iscriviti">Iscriviti</string>
     <string name="per_maggiorni_informazioni">Mmaggiorni informazioni</string>
     <string name="inserisci_qui_il_codice">Inserisci qui il codice</string>
->>>>>>> 7357739fedf33b90e36f210c528fba99ffd610e4
+
 
 </resources>
