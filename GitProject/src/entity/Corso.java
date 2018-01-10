@@ -19,15 +19,22 @@ public class Corso {
 	private float oreTotali;
 	@Column(name = "num_giorni")
 	private int numGiorni;
+	@Column(name = "ore_per_giorno")
 	private float orePerGiorno;
+	@Column(name = "num_max_studenti")
 	private int numMaxStudenti;
+	@Column(name = "requisiti_minimi")
 	private String requisitiMinimi;
 	private Docente docente;
 	private String descrizione;
+	@Column(name = "num_lezioni_per_giorno")
 	private int numLezioniPerGiorno;
 	private String sede;
+	@Column(name = "ore_trascorse")
 	private float oreTrascorse;
+	@Column(name = "immagine_corso")
 	private File immagineCorso;
+	@Column(name = "lezione_corrente")
 	private Lezione lezioneCorrente;
 	
 	

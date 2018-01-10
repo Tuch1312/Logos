@@ -1,10 +1,24 @@
 package entity;
+import javax.persistence.*;
 
+@Entity
 public class Assenza {
+	@Id
+	@GeneratedValue(strategy =GenerationType.IDENTITY)
+	private int id;
 	private Studente studente;
 	private Corso corso;
+	@Column(name = "ore_assenza")
 	private int oreAssenza;
+	@Column(name = "percent_assenza")
 	private int percentAssenza;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public Studente getStudente() {
 		return studente;
 	}
