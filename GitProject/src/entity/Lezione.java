@@ -1,21 +1,33 @@
 package entity;
 import java.util.Date;
+import javax.persistence.*;
 
+@Entity
 public class Lezione {
 
-	public Lezione() {
-	}
-	
-		
+		@Id
+		@Column(name="id_lezione")
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private int idLezione;
+		@Column(name="lezione_id_corso")
+		private int lezioneIdCorso;
+		@Temporal(TemporalType.DATE)
 		private Date data;
 		private int durata;
 		private String[] argomenti;
+		@Column(name="tenuta_da")
 		private Docente tenutada;
+		@Column(name="ora_inizio")
+		@Temporal(TemporalType.TIME)
 		private Date orainizio;
 		private String aula;
 		private Studente[] assenti;
+		@Column(name="num_assenti")
 		private int numAssenti;
-		private int percentAssenti;
+		@Column(name="percent_assenti")
+		private float percentAssenti;
+		
+		//Getter and Setter
 		public Date getData() {
 			return data;
 		}
