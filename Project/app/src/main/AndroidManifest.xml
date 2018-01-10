@@ -11,16 +11,21 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".Registration"></activity>
-        <activity android:name=".Login"></activity>
-        <activity android:name=".CreaCorso"></activity>
-        <activity android:name=".DashBoardD" />
-        <activity android:name=".DashBoardLezioni">
-            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+
+        <activity android:name=".Registration" />
+
+        <activity android:name=".Login">
+
         </activity>
-        <activity android:name=".PresenzeAssenze"></activity>
+        <activity android:name=".CreaCorso">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".DashBoardD" />
+        <activity android:name=".DashBoardLezioni"></activity>
     </application>
 
 </manifest>
