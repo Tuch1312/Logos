@@ -1,13 +1,23 @@
+package entity;
 import java.io.File;
 import java.util.Date;
-
+import javax.persistence.*;
+@Entity
 public class Corso {
-	private String idCorso;
+	@Id
+	@Column(name ="id_corso")
+	@GeneratedValue(strategy =GenerationType.IDENTITY)
+	private int idCorso;
 	private String titolo;
 	private Lezione[] lezioni;
+	@Temporal(TemporalType.DATE)
+	@Column(name = "data_inizio")
 	private Date dataInizio;
+	@Column(name = "num_lezioni")
 	private int numLezioni;
+	@Column(name = "ore_totali")
 	private float oreTotali;
+	@Column(name = "num_giorni")
 	private int numGiorni;
 	private float orePerGiorno;
 	private int numMaxStudenti;
@@ -21,10 +31,10 @@ public class Corso {
 	private Lezione lezioneCorrente;
 	
 	
-	public String getIdCorso() {
+	public int getIdCorso() {
 		return idCorso;
 	}
-	public void setIdCorso(String idCorso) {
+	public void setIdCorso(int idCorso) {
 		this.idCorso = idCorso;
 	}
 	public String getTitolo() {

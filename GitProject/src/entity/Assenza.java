@@ -1,3 +1,4 @@
+package entity;
 
 public class Assenza {
 	private Studente studente;
