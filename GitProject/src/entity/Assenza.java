@@ -11,7 +11,7 @@ public class Assenza {
 	@Column(name = "ore_assenza")
 	private int oreAssenza;
 	@Column(name = "percent_assenza")
-	private int percentAssenza;
+	private float percentAssenza;
 	
 	public int getId() {
 		return id;
@@ -37,10 +37,10 @@ public class Assenza {
 	public void setOreAssenza(int oreAssenza) {
 		this.oreAssenza = oreAssenza;
 	}
-	public int getPercentAssenza() {
+	public float getPercentAssenza() {
 		return percentAssenza;
 	}
-	public void setPercentAssenza(int percentAssenza) {
+	public void setPercentAssenza(float percentAssenza) {
 		this.percentAssenza = percentAssenza;
 	}
 	
