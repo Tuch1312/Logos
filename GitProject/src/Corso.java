@@ -16,10 +16,10 @@ public class Corso {
 	private String descrizione;
 	private int numLezioniPerGiorno;
 	private String sede;
-	private float oreTrascorso;
+	private float oreTrascorse;
 	private File immagineCorso;
-	private Lezione[] lezioniEffettuate;
-	private Lezione[] lezioniProssime;
+	private Lezione lezioneCorrente;
+	
 	
 	public String getIdCorso() {
 		return idCorso;
@@ -105,11 +105,11 @@ public class Corso {
 	public void setSede(String sede) {
 		this.sede = sede;
 	}
-	public float getOreTrascorso() {
-		return oreTrascorso;
+	public float getOreTrascorse() {
+		return oreTrascorse;
 	}
-	public void setOreTrascorso(float oreTrascorso) {
-		this.oreTrascorso = oreTrascorso;
+	public void setOreTrascorse(float oreTrascorso) {
+		this.oreTrascorse = oreTrascorso;
 	}
 	public File getImmagineCorso() {
 		return immagineCorso;
@@ -117,17 +117,11 @@ public class Corso {
 	public void setImmagineCorso(File immagineCorso) {
 		this.immagineCorso = immagineCorso;
 	}
-	public Lezione[] getLezioniEffettuate() {
-		return lezioniEffettuate;
+	public Lezione getLezioneCorrente() {
+		return lezioneCorrente;
 	}
-	public void setLezioniEffettuate(Lezione[] lezioniEffettuate) {
-		this.lezioniEffettuate = lezioniEffettuate;
-	}
-	public Lezione[] getLezioniProssime() {
-		return lezioniProssime;
-	}
-	public void setLezioniProssime(Lezione[] lezioniProssime) {
-		this.lezioniProssime = lezioniProssime;
+	public void setLezioneCorrente(Lezione lezioneCorrente) {
+		this.lezioneCorrente = lezioneCorrente;
 	}
 	
 	
