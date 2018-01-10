@@ -5,7 +5,7 @@ public class Corso {
 	private String idCorso;
 	private String titolo;
 	private Lezione[] lezioni;
-	private static Date dataInizio = new Date();
+	private Date dataInizio;
 	private int numLezioni;
 	private float oreTotali;
 	private int numGiorni;
@@ -131,8 +131,5 @@ public class Corso {
 	}
 	
 	
-	public static void main(String[] args) {
-		System.out.println(dataInizio);
-	}
 	
 }
