@@ -15,8 +15,8 @@ public class Studente implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="mail_studnete")
-	private String mailStudnete;
+	@Column(name="mail_studente")
+	private String mailstudente;
 
 	//bi-directional many-to-one association to Assenza
 	@OneToMany(mappedBy="studente")
@@ -24,18 +24,18 @@ public class Studente implements Serializable {
 
 	//bi-directional one-to-one association to Persona
 	@OneToOne
-	@JoinColumn(name="mail_studnete")
+	@JoinColumn(name="mail_studente")
 	private Persona persona;
 
 	public Studente() {
 	}
 
-	public String getMailStudnete() {
-		return this.mailStudnete;
+	public String getMailstudente() {
+		return this.mailstudente;
 	}
 
-	public void setMailStudnete(String mailStudnete) {
-		this.mailStudnete = mailStudnete;
+	public void setMailstudente(String mailstudente) {
+		this.mailstudente = mailstudente;
 	}
 
 	public List<Assenza> getAssenzas() {
