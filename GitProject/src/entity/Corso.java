@@ -1,146 +1,245 @@
 package entity;
-import java.io.File;
-import java.util.Date;
+
+import java.io.Serializable;
 import javax.persistence.*;
+import java.util.Date;
+import java.util.List;
+
+
+/**
+ * The persistent class for the corso database table.
+ * 
+ */
 @Entity
-public class Corso {
+@NamedQuery(name="Corso.findAll", query="SELECT c FROM Corso c")
+public class Corso implements Serializable {
+	private static final long serialVersionUID = 1L;
+
 	@Id
-	@Column(name ="id_corso")
-	@GeneratedValue(strategy =GenerationType.IDENTITY)
-	private int idCorso;
-	private String titolo;
-	private Lezione[] lezioni;
+	private String idCorso;
+
+	private String coordinatore;
+
 	@Temporal(TemporalType.DATE)
-	@Column(name = "data_inizio")
 	private Date dataInizio;
-	@Column(name = "num_lezioni")
-	private int numLezioni;
-	@Column(name = "ore_totali")
-	private float oreTotali;
-	@Column(name = "num_giorni")
-	private int numGiorni;
-	@Column(name = "ore_per_giorno")
-	private float orePerGiorno;
-	@Column(name = "num_max_studenti")
-	private int numMaxStudenti;
-	@Column(name = "requisiti_minimi")
-	private String requisitiMinimi;
-	private Docente docente;
+
 	private String descrizione;
-	@Column(name = "num_lezioni_per_giorno")
-	private int numLezioniPerGiorno;
+
+	private String immagine;
+
+	private String lezioneCorrente;
+
+	private String lezioneEffettuate;
+
+	private int numeroGiorni;
+
+	private int numeroLezioni;
+
+	private int numeroStudentiIscritti;
+
+	private int numMaxStudenti;
+
+	private int orePerGiorno;
+
+	private int oreTotali;
+
+	private int oreTrascorse;
+
+	private String requisitiMin;
+
 	private String sede;
-	@Column(name = "ore_trascorse")
-	private float oreTrascorse;
-	@Column(name = "immagine_corso")
-	private File immagineCorso;
-	@Column(name = "lezione_corrente")
-	private Lezione lezioneCorrente;
-	
-	
-	public int getIdCorso() {
-		return idCorso;
+
+	private String titolo;
+
+	//bi-directional many-to-one association to CorsoDocente
+	@OneToMany(mappedBy="corso")
+	private List<CorsoDocente> corsoDocentes;
+
+	//bi-directional many-to-one association to Lezione
+	@OneToMany(mappedBy="corso")
+	private List<Lezione> leziones;
+
+	public Corso() {
 	}
-	public void setIdCorso(int idCorso) {
+
+	public String getIdCorso() {
+		return this.idCorso;
+	}
+
+	public void setIdCorso(String idCorso) {
 		this.idCorso = idCorso;
 	}
-	public String getTitolo() {
-		return titolo;
+
+	public String getCoordinatore() {
+		return this.coordinatore;
 	}
-	public void setTitolo(String titolo) {
-		this.titolo = titolo;
+
+	public void setCoordinatore(String coordinatore) {
+		this.coordinatore = coordinatore;
 	}
-	public Lezione[] getLezioni() {
-		return lezioni;
-	}
-	public void setLezioni(Lezione[] lezioni) {
-		this.lezioni = lezioni;
-	}
+
 	public Date getDataInizio() {
-		return dataInizio;
+		return this.dataInizio;
 	}
+
 	public void setDataInizio(Date dataInizio) {
 		this.dataInizio = dataInizio;
 	}
-	public int getNumLezioni() {
-		return numLezioni;
-	}
-	public void setNumLezioni(int numLezioni) {
-		this.numLezioni = numLezioni;
-	}
-	public float getOreTotali() {
-		return oreTotali;
-	}
-	public void setOreTotali(float oreTotali) {
-		this.oreTotali = oreTotali;
-	}
-	public int getNumGiorni() {
-		return numGiorni;
-	}
-	public void setNumGiorni(int numGiorni) {
-		this.numGiorni = numGiorni;
-	}
-	public float getOrePerGiorno() {
-		return orePerGiorno;
-	}
-	public void setOrePerGiorno(float orePerGiorno) {
-		this.orePerGiorno = orePerGiorno;
-	}
-	public int getNumMaxStudenti() {
-		return numMaxStudenti;
-	}
-	public void setNumMaxStudenti(int numMaxStudenti) {
-		this.numMaxStudenti = numMaxStudenti;
-	}
-	public String getRequisitiMinimi() {
-		return requisitiMinimi;
-	}
-	public void setRequisitiMinimi(String requisitiMinimi) {
-		this.requisitiMinimi = requisitiMinimi;
-	}
-	public Docente getDocente() {
-		return docente;
-	}
-	public void setDocente(Docente docente) {
-		this.docente = docente;
-	}
+
 	public String getDescrizione() {
-		return descrizione;
+		return this.descrizione;
 	}
+
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
-	public int getNumLezioniPerGiorno() {
-		return numLezioniPerGiorno;
+
+	public String getImmagine() {
+		return this.immagine;
 	}
-	public void setNumLezioniPerGiorno(int numLezioniPerGiorno) {
-		this.numLezioniPerGiorno = numLezioniPerGiorno;
+
+	public void setImmagine(String immagine) {
+		this.immagine = immagine;
 	}
+
+	public String getLezioneCorrente() {
+		return this.lezioneCorrente;
+	}
+
+	public void setLezioneCorrente(String lezioneCorrente) {
+		this.lezioneCorrente = lezioneCorrente;
+	}
+
+	public String getLezioneEffettuate() {
+		return this.lezioneEffettuate;
+	}
+
+	public void setLezioneEffettuate(String lezioneEffettuate) {
+		this.lezioneEffettuate = lezioneEffettuate;
+	}
+
+	public int getNumeroGiorni() {
+		return this.numeroGiorni;
+	}
+
+	public void setNumeroGiorni(int numeroGiorni) {
+		this.numeroGiorni = numeroGiorni;
+	}
+
+	public int getNumeroLezioni() {
+		return this.numeroLezioni;
+	}
+
+	public void setNumeroLezioni(int numeroLezioni) {
+		this.numeroLezioni = numeroLezioni;
+	}
+
+	public int getNumeroStudentiIscritti() {
+		return this.numeroStudentiIscritti;
+	}
+
+	public void setNumeroStudentiIscritti(int numeroStudentiIscritti) {
+		this.numeroStudentiIscritti = numeroStudentiIscritti;
+	}
+
+	public int getNumMaxStudenti() {
+		return this.numMaxStudenti;
+	}
+
+	public void setNumMaxStudenti(int numMaxStudenti) {
+		this.numMaxStudenti = numMaxStudenti;
+	}
+
+	public int getOrePerGiorno() {
+		return this.orePerGiorno;
+	}
+
+	public void setOrePerGiorno(int orePerGiorno) {
+		this.orePerGiorno = orePerGiorno;
+	}
+
+	public int getOreTotali() {
+		return this.oreTotali;
+	}
+
+	public void setOreTotali(int oreTotali) {
+		this.oreTotali = oreTotali;
+	}
+
+	public int getOreTrascorse() {
+		return this.oreTrascorse;
+	}
+
+	public void setOreTrascorse(int oreTrascorse) {
+		this.oreTrascorse = oreTrascorse;
+	}
+
+	public String getRequisitiMin() {
+		return this.requisitiMin;
+	}
+
+	public void setRequisitiMin(String requisitiMin) {
+		this.requisitiMin = requisitiMin;
+	}
+
 	public String getSede() {
-		return sede;
+		return this.sede;
 	}
+
 	public void setSede(String sede) {
 		this.sede = sede;
 	}
-	public float getOreTrascorse() {
-		return oreTrascorse;
+
+	public String getTitolo() {
+		return this.titolo;
 	}
-	public void setOreTrascorse(float oreTrascorso) {
-		this.oreTrascorse = oreTrascorso;
+
+	public void setTitolo(String titolo) {
+		this.titolo = titolo;
 	}
-	public File getImmagineCorso() {
-		return immagineCorso;
+
+	public List<CorsoDocente> getCorsoDocentes() {
+		return this.corsoDocentes;
 	}
-	public void setImmagineCorso(File immagineCorso) {
-		this.immagineCorso = immagineCorso;
+
+	public void setCorsoDocentes(List<CorsoDocente> corsoDocentes) {
+		this.corsoDocentes = corsoDocentes;
 	}
-	public Lezione getLezioneCorrente() {
-		return lezioneCorrente;
+
+	public CorsoDocente addCorsoDocente(CorsoDocente corsoDocente) {
+		getCorsoDocentes().add(corsoDocente);
+		corsoDocente.setCorso(this);
+
+		return corsoDocente;
 	}
-	public void setLezioneCorrente(Lezione lezioneCorrente) {
-		this.lezioneCorrente = lezioneCorrente;
+
+	public CorsoDocente removeCorsoDocente(CorsoDocente corsoDocente) {
+		getCorsoDocentes().remove(corsoDocente);
+		corsoDocente.setCorso(null);
+
+		return corsoDocente;
 	}
-	
-	
-	
+
+	public List<Lezione> getLeziones() {
+		return this.leziones;
+	}
+
+	public void setLeziones(List<Lezione> leziones) {
+		this.leziones = leziones;
+	}
+
+	public Lezione addLezione(Lezione lezione) {
+		getLeziones().add(lezione);
+		lezione.setCorso(this);
+
+		return lezione;
+	}
+
+	public Lezione removeLezione(Lezione lezione) {
+		getLeziones().remove(lezione);
+		lezione.setCorso(null);
+
+		return lezione;
+	}
+
 }

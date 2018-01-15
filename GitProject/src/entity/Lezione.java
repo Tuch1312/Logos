@@ -1,90 +1,162 @@
 package entity;
-import java.util.Date;
+
+import java.io.Serializable;
 import javax.persistence.*;
+import java.util.Date;
+import java.util.List;
 
+
+/**
+ * The persistent class for the lezione database table.
+ * 
+ */
 @Entity
-public class Lezione {
+@NamedQuery(name="Lezione.findAll", query="SELECT l FROM Lezione l")
+public class Lezione implements Serializable {
+	private static final long serialVersionUID = 1L;
 
-		@Id
-		@Column(name="id_lezione")
-		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		private int idLezione;
-		@Column(name="lezione_id_corso")
-		private int lezioneIdCorso;
-		@Temporal(TemporalType.DATE)
-		private Date data;
-		private int durata;
-		private String[] argomenti;
-		@Column(name="tenuta_da")
-		private Docente tenutada;
-		@Column(name="ora_inizio")
-		@Temporal(TemporalType.TIME)
-		private Date orainizio;
-		private String aula;
-		private Studente[] assenti;
-		@Column(name="num_assenti")
-		private int numAssenti;
-		@Column(name="percent_assenti")
-		private float percentAssenti;
-		
-		//Getter and Setter
-		public Date getData() {
-			return data;
-		}
-		public void setData(Date data) {
-			this.data = data;
-		}
-		public int getDurata() {
-			return durata;
-		}
-		public void setDurata(int durata) {
-			this.durata = durata;
-		}
-		public String[] getArgomenti() {
-			return argomenti;
-		}
-		public void setArgomenti(String[] argomenti) {
-			this.argomenti = argomenti;
-		}
-		public Docente getTenutada() {
-			return tenutada;
-		}
-		public void setTenutada(Docente tenutada) {
-			this.tenutada = tenutada;
-		}
-		public Date getOrainizio() {
-			return orainizio;
-		}
-		public void setOrainizio(Date orainizio) {
-			this.orainizio = orainizio;
-		}
-		public String getAula() {
-			return aula;
-		}
-		public void setAula(String aula) {
-			this.aula = aula;
-		}
-		public Studente[] getAssenti() {
-			return assenti;
-		}
-		public void setAssenti(Studente[] assenti) {
-			this.assenti = assenti;
-		}
-		public int getNumAssenti() {
-			return numAssenti;
-		}
-		public void setNumAssenti(int numAssenti) {
-			this.numAssenti = numAssenti;
-		}
-		public int getPercentAssenti() {
-			return percentAssenti;
-		}
-		public void setPercentAssenti(int percentAssenti) {
-			this.percentAssenti = percentAssenti;
-		}
-		
-		
-		
-	
+	@Id
+	private int idLezione;
+
+	private String argomenti;
+
+	private String assenti;
+
+	private String aula;
+
+	@Temporal(TemporalType.DATE)
+	private Date data;
+
+	private int durata;
+
+	private int numAssenti;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date oraInizio;
+
+	private float percentAssenti;
+
+	private String studente_mailStudente;
+
+	//bi-directional many-to-one association to Assenza
+	@OneToMany(mappedBy="lezione")
+	private List<Assenza> assenzas;
+
+	//bi-directional many-to-one association to Corso
+	@ManyToOne
+	private Corso corso;
+
+	public Lezione() {
+	}
+
+	public int getIdLezione() {
+		return this.idLezione;
+	}
+
+	public void setIdLezione(int idLezione) {
+		this.idLezione = idLezione;
+	}
+
+	public String getArgomenti() {
+		return this.argomenti;
+	}
+
+	public void setArgomenti(String argomenti) {
+		this.argomenti = argomenti;
+	}
+
+	public String getAssenti() {
+		return this.assenti;
+	}
+
+	public void setAssenti(String assenti) {
+		this.assenti = assenti;
+	}
+
+	public String getAula() {
+		return this.aula;
+	}
+
+	public void setAula(String aula) {
+		this.aula = aula;
+	}
+
+	public Date getData() {
+		return this.data;
+	}
+
+	public void setData(Date data) {
+		this.data = data;
+	}
+
+	public int getDurata() {
+		return this.durata;
+	}
+
+	public void setDurata(int durata) {
+		this.durata = durata;
+	}
+
+	public int getNumAssenti() {
+		return this.numAssenti;
+	}
+
+	public void setNumAssenti(int numAssenti) {
+		this.numAssenti = numAssenti;
+	}
+
+	public Date getOraInizio() {
+		return this.oraInizio;
+	}
+
+	public void setOraInizio(Date oraInizio) {
+		this.oraInizio = oraInizio;
+	}
+
+	public float getPercentAssenti() {
+		return this.percentAssenti;
+	}
+
+	public void setPercentAssenti(float percentAssenti) {
+		this.percentAssenti = percentAssenti;
+	}
+
+	public String getStudente_mailStudente() {
+		return this.studente_mailStudente;
+	}
+
+	public void setStudente_mailStudente(String studente_mailStudente) {
+		this.studente_mailStudente = studente_mailStudente;
+	}
+
+	public List<Assenza> getAssenzas() {
+		return this.assenzas;
+	}
+
+	public void setAssenzas(List<Assenza> assenzas) {
+		this.assenzas = assenzas;
+	}
+
+	public Assenza addAssenza(Assenza assenza) {
+		getAssenzas().add(assenza);
+		assenza.setLezione(this);
+
+		return assenza;
+	}
+
+	public Assenza removeAssenza(Assenza assenza) {
+		getAssenzas().remove(assenza);
+		assenza.setLezione(null);
+
+		return assenza;
+	}
+
+	public Corso getCorso() {
+		return this.corso;
+	}
+
+	public void setCorso(Corso corso) {
+		this.corso = corso;
+	}
 
 }
