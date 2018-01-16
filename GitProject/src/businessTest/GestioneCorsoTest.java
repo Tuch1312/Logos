@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Date;
 
+import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
 import org.junit.*;
@@ -36,6 +37,9 @@ public class GestioneCorsoTest {
 		Docente d = new Docente();
 		d.setNome("ciao");
 		d.setCognome("ciao");
+		//ho impostato una mail che non esiste nel database
+		//in questo modo il metodo non effettua modifiche sul db
+		//ma è funzionante
 		d.setMail("cia");
 		d.setPassword("ciao");
 		Corso c = new Corso();
@@ -45,4 +49,24 @@ public class GestioneCorsoTest {
 		
 		
 	}
+	
+//	@Test
+//	public void modificaCorsoTest() {
+//		EntityManager em = JPAUtility.emf.createEntityManager();
+//		GestioneCorso gc = new GestioneCorso();
+//		Docente d = new Docente();
+//		d.setNome("ciao");
+//		d.setCognome("ciao");
+//		d.setMail("ciaone");
+//		d.setPassword("ciao");
+//		Corso c = new Corso();
+//		c.setIdCorso(6);
+//		c = em.find(Corso.class, c.getIdCorso());
+//		Corso nc = em.find(Corso.class, c.getIdCorso());
+//		nc.setTitolo("buttana"); 
+//		boolean esito = gc.modificaCorso(d, c, nc);
+//		assertTrue("funziona", esito == true);
+//		
+//		
+//	}
 }

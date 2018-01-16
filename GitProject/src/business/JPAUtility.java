@@ -5,6 +5,6 @@ import javax.persistence.Persistence;
 
 public class JPAUtility {
 
-		static EntityManagerFactory emf = Persistence.createEntityManagerFactory("GitProject");
+		public static EntityManagerFactory emf = Persistence.createEntityManagerFactory("GitProject");
 
 }

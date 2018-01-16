@@ -63,11 +63,30 @@ public class GestioneCorso {
 		
 		return false;
 	}
-	
-	public boolean modificaCorso(Docente d, Corso c, Corso nc) {
-		//TODO
-		return true;
-	}
+//	
+//	public boolean modificaCorso(Docente d, Corso c, Corso nc) {
+//		Corso nuovoCorso = nc;
+//		EntityManager em = JPAUtility.emf.createEntityManager();
+//		Docente docente = null;
+//		try {
+//		docente = em.find(Docente.class, d.getMail());
+//		} catch(Exception e) {
+//			e.printStackTrace();
+//		}
+//		if (docente!=null) {
+//			if (docente.getMail().equals((em.find(Corso.class, c.getIdCorso()).getDocente().getMail()))) {
+//				Corso corso = em.find(Corso.class, c.getIdCorso());
+//				nuovoCorso.setIdCorso(corso.getIdCorso());
+//				em.getTransaction().begin();
+//				corso = nuovoCorso;
+//				em.getTransaction().commit();
+//				return true;
+//				
+//			}
+//		
+//		}
+//		return false;
+//	}
 	
 	public boolean iscriviStudente(Docente d, Studente s, Corso c) {
 		//TODO
