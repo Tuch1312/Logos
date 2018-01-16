@@ -31,7 +31,7 @@ public class Assenza implements Serializable {
 
 	//bi-directional many-to-one association to Studente
 	@ManyToOne
-	@JoinColumn(name="mail_studente")
+	@JoinColumn(name="mail")
 	private Studente studente;
 
 	public Assenza() {

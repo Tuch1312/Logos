@@ -2,7 +2,9 @@ package business;
 
 import javax.persistence.*;
 
+import entity.Docente;
 import entity.Persona;
+import entity.Studente;
 
 public class GestionePersona {
 	
@@ -31,14 +33,22 @@ public class GestionePersona {
 		if(persona!=null) {
 			return false;
 		}
+		
 		else {
-			Persona p = new Persona();
+			Persona p = null;
+			if (isDocente == true) {
+				p = new Docente();
+			
+			} else {
+				p = new Studente();
+			}
 			p.setNome(nome);
 			p.setCognome(cognome);
 			p.setMail(mail);
 			p.setPassword(password);
 			p.setImmagine(immagine);
 			p.setIndirizzo(indirizzo);
+			
 			
 			em.getTransaction().begin();
 			em.persist(p);

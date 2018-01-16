@@ -14,5 +14,13 @@ public class GestionePersonaTest {
 		boolean esito = gp.login("ciaone", "0000");
 		assertTrue("non funziona", esito == false);
 	}
+	
+	
+	@Test
+	public void testRegistrazione() {
+		GestionePersona gp = new GestionePersona();
+		boolean esito = gp.registrazione("ciaone", "ciaone", "ccccc", "ciao", "ciaone", "ciaone", false);
+		assertTrue("funziona", esito == true);
+	}
 
 }

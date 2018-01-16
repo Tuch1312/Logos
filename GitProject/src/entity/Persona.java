@@ -9,6 +9,9 @@ import javax.persistence.*;
  * 
  */
 @Entity
+@Inheritance(strategy=InheritanceType.JOINED)
+@DiscriminatorColumn(name="Tipo")
+@Table(name="persona")
 @NamedQuery(name="Persona.findAll", query="SELECT p FROM Persona p")
 public class Persona implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -25,14 +28,6 @@ public class Persona implements Serializable {
 	private String nome;
 
 	private String password;
-
-	//bi-directional one-to-one association to Docente
-	@OneToOne(mappedBy="persona")
-	private Docente docente;
-
-	//bi-directional one-to-one association to Studente
-	@OneToOne(mappedBy="persona")
-	private Studente studente;
 
 	public Persona() {
 	}
@@ -83,22 +78,6 @@ public class Persona implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public Docente getDocente() {
-		return this.docente;
-	}
-
-	public void setDocente(Docente docente) {
-		this.docente = docente;
-	}
-
-	public Studente getStudente() {
-		return this.studente;
-	}
-
-	public void setStudente(Studente studente) {
-		this.studente = studente;
 	}
 
 }

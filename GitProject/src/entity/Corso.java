@@ -50,10 +50,10 @@ public class Corso implements Serializable {
 	private String sede;
 
 	private String titolo;
-
-	//bi-directional many-to-one association to CorsoDocente
-	@OneToMany(mappedBy="corso")
-	private List<CorsoDocente> corsoDocentes;
+	
+	@ManyToOne
+	@JoinColumn(name="mail_docente")
+	private Docente docente;
 
 	//bi-directional many-to-one association to Lezione
 	@OneToMany(mappedBy="corso")
@@ -196,28 +196,6 @@ public class Corso implements Serializable {
 
 	public void setTitolo(String titolo) {
 		this.titolo = titolo;
-	}
-
-	public List<CorsoDocente> getCorsoDocentes() {
-		return this.corsoDocentes;
-	}
-
-	public void setCorsoDocentes(List<CorsoDocente> corsoDocentes) {
-		this.corsoDocentes = corsoDocentes;
-	}
-
-	public CorsoDocente addCorsoDocente(CorsoDocente corsoDocente) {
-		getCorsoDocentes().add(corsoDocente);
-		corsoDocente.setCorso(this);
-
-		return corsoDocente;
-	}
-
-	public CorsoDocente removeCorsoDocente(CorsoDocente corsoDocente) {
-		getCorsoDocentes().remove(corsoDocente);
-		corsoDocente.setCorso(null);
-
-		return corsoDocente;
 	}
 
 	public List<Lezione> getLeziones() {

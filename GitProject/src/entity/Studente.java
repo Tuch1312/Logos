@@ -1,6 +1,5 @@
 package entity;
 
-import java.io.Serializable;
 import javax.persistence.*;
 import java.util.List;
 
@@ -10,32 +9,16 @@ import java.util.List;
  * 
  */
 @Entity
+@DiscriminatorValue("S")
+@Table(name="studente")
 @NamedQuery(name="Studente.findAll", query="SELECT s FROM Studente s")
-public class Studente implements Serializable {
+public class Studente extends Persona {
 	private static final long serialVersionUID = 1L;
-
-	@Id
-	@Column(name="mail_studente")
-	private String mailstudente;
-
-	//bi-directional many-to-one association to Assenza
+	
 	@OneToMany(mappedBy="studente")
 	private List<Assenza> assenzas;
 
-	//bi-directional one-to-one association to Persona
-	@OneToOne
-	@JoinColumn(name="mail_studente")
-	private Persona persona;
-
 	public Studente() {
-	}
-
-	public String getMailstudente() {
-		return this.mailstudente;
-	}
-
-	public void setMailstudente(String mailstudente) {
-		this.mailstudente = mailstudente;
 	}
 
 	public List<Assenza> getAssenzas() {
@@ -58,14 +41,6 @@ public class Studente implements Serializable {
 		assenza.setStudente(null);
 
 		return assenza;
-	}
-
-	public Persona getPersona() {
-		return this.persona;
-	}
-
-	public void setPersona(Persona persona) {
-		this.persona = persona;
 	}
 
 }
