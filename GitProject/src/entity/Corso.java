@@ -51,6 +51,9 @@ public class Corso implements Serializable {
 
 	private String titolo;
 	
+	@Column(nullable=false)
+	private Integer lezionePerGiorno;
+
 	@ManyToOne
 	@JoinColumn(name="mail_docente")
 	private Docente docente;
@@ -211,5 +214,15 @@ public class Corso implements Serializable {
 
 		return lezione;
 	}
+	
+	
+	public Integer getLezionePerGiorno() {
+		return lezionePerGiorno;
+	}
+
+	public void setLezionePerGiorno(Integer lezionePerGiorno) {
+		this.lezionePerGiorno = lezionePerGiorno;
+	}
+
 
 }
