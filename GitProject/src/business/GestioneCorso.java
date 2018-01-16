@@ -89,7 +89,18 @@ public class GestioneCorso {
 //	}
 	
 	public boolean iscriviStudente(Docente d, Studente s, Corso c) {
-		//TODOddddd
+		EntityManager em = JPAUtility.emf.createEntityManager();
+		Docente docente = null;
+		Studente studente = null;
+		try {
+		docente = em.find(Docente.class, d.getMail());
+		studente = em.find(Studente.class, s.getMail());
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		if(docente!=null && studente!=null) {
+			
+		}
 		return true;
 	}
 	
