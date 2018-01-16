@@ -58,8 +58,8 @@ public class Corso implements Serializable {
 	@JoinColumn(name="mail_docente")
 	private Docente docente;
 
-	//bi-directional many-to-one association to Lezione
-	@OneToMany(mappedBy="corso")
+	@OneToMany(cascade = CascadeType.ALL, 
+	        mappedBy = "corso", orphanRemoval = true)
 	private List<Lezione> leziones;
 
 	public Corso() {

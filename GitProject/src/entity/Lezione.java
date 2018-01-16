@@ -38,8 +38,8 @@ public class Lezione implements Serializable {
 	private float percentAssenti;
 	
 
-	//bi-directional many-to-one association to Presenza
-	@OneToMany(mappedBy="lezione")
+	@OneToMany(cascade = CascadeType.ALL, 
+	        mappedBy = "lezione", orphanRemoval = true)
 	private List<Presenza> presenza;
 
 	//bi-directional many-to-one association to Corso
