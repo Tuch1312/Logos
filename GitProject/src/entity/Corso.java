@@ -59,7 +59,7 @@ public class Corso implements Serializable {
 	private Docente docente;
 
 	@OneToMany(cascade = CascadeType.ALL, 
-	        mappedBy = "corso", orphanRemoval = true)
+	        mappedBy = "corso")
 	private List<Lezione> leziones;
 
 	public Corso() {

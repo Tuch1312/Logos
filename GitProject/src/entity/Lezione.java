@@ -39,7 +39,7 @@ public class Lezione implements Serializable {
 	
 
 	@OneToMany(cascade = CascadeType.ALL, 
-	        mappedBy = "lezione", orphanRemoval = true)
+	        mappedBy = "lezione")
 	private List<Presenza> presenza;
 
 	//bi-directional many-to-one association to Corso

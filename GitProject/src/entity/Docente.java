@@ -16,7 +16,7 @@ public class Docente extends Persona {
 	private int oreTenute;
 	
 	@OneToMany(cascade = CascadeType.ALL, 
-	        mappedBy = "docente", orphanRemoval = true)
+	        mappedBy = "docente")
 	 private List<Corso> corsi;
 
 	public Docente() {
