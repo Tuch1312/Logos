@@ -223,6 +223,13 @@ public class Corso implements Serializable {
 	public void setLezionePerGiorno(Integer lezionePerGiorno) {
 		this.lezionePerGiorno = lezionePerGiorno;
 	}
+	public Docente getDocente() {
+		return docente;
+	}
+
+	public void setDocente(Docente docente) {
+		this.docente = docente;
+	}
 
 
 }

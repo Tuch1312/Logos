@@ -15,7 +15,7 @@ public class GestioneCorso {
 		EntityManager em = JPAUtility.emf.createEntityManager();
 		Docente docente = null;
 		try {
-		docente = em.find(Docente.class, "mail");
+		docente = em.find(Docente.class, d.getMail());
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -31,6 +31,7 @@ public class GestioneCorso {
 			corso.setRequisitiMin(requistiMinimi);
 			corso.setSede(sede);
 			corso.setImmagine(immagine);
+			corso.setDocente(d);
 			
 			em.getTransaction().begin();
 			em.persist(corso);
@@ -42,8 +43,25 @@ public class GestioneCorso {
 	}
 	
 	public boolean eliminaCorso(Docente d, Corso c) {
-		//TODO
-		return true;
+		EntityManager em = JPAUtility.emf.createEntityManager();
+		Docente docente = null;
+		try {
+		docente = em.find(Docente.class, d.getMail());
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		if(docente!=null) {
+			if (docente.getMail().equals((em.find(Corso.class, c.getIdCorso()).getDocente().getMail()))) {
+			Corso corso = em.find(Corso.class, c.getIdCorso());
+			em.getTransaction().begin();
+			em.remove(corso);
+			em.getTransaction().commit();
+			return true;
+			}
+		
+		}
+		
+		return false;
 	}
 	
 	public boolean modificaCorso(Docente d, Corso c, Corso nc) {
@@ -71,5 +89,5 @@ public class GestioneCorso {
 		String code = Integer.toHexString(k);
 		return code;
 	}
-
+	
 }
