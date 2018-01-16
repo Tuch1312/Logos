@@ -14,26 +14,29 @@ public class Lezione implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idLezione;
-
+	
+	@Column(nullable = true)
 	private String argomenti;
-
+	
+	@Column(nullable = true)
 	private String assenti;
 
+	
 	private String aula;
 
 	@Temporal(TemporalType.DATE)
 	private Date data;
-
+	
+	
 	private int durata;
-
+	
 	private int numAssenti;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date oraInizio;
-
+	
 	private float percentAssenti;
-
-	private String studente_mailStudente;
+	
 
 	//bi-directional many-to-one association to Presenza
 	@OneToMany(mappedBy="lezione")
@@ -116,14 +119,6 @@ public class Lezione implements Serializable {
 
 	public void setPercentAssenti(float percentAssenti) {
 		this.percentAssenti = percentAssenti;
-	}
-
-	public String getStudente_mailStudente() {
-		return this.studente_mailStudente;
-	}
-
-	public void setStudente_mailStudente(String studente_mailStudente) {
-		this.studente_mailStudente = studente_mailStudente;
 	}
 
 	public List<Presenza> getAssenzas() {

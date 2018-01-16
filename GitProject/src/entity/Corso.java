@@ -15,19 +15,22 @@ public class Corso implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idCorso;
 
-	private String coordinatore;
-
 	@Temporal(TemporalType.DATE)
 	private Date dataInizio;
-
+	
+	@Column(nullable = true)
 	private String descrizione;
-
+	
+	@Column(nullable = true)
 	private String immagine;
-
+	
+	@Column(nullable = true)
 	private String lezioneCorrente;
-
+	
+	@Column(nullable = true)
 	private String lezioneEffettuate;
-
+	
+	
 	private int numeroGiorni;
 
 	private int numeroLezioni;
@@ -65,14 +68,6 @@ public class Corso implements Serializable {
 
 	public void setIdCorso(int idCorso) {
 		this.idCorso = idCorso;
-	}
-
-	public String getCoordinatore() {
-		return this.coordinatore;
-	}
-
-	public void setCoordinatore(String coordinatore) {
-		this.coordinatore = coordinatore;
 	}
 
 	public Date getDataInizio() {

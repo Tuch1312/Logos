@@ -16,9 +16,11 @@ public class Persona implements Serializable {
 	private String mail;
 
 	private String cognome;
-
+	
+	@Column(nullable = true)
 	private String immagine;
-
+	
+	@Column(nullable = true)
 	private String indirizzo;
 
 	private String nome;

@@ -11,8 +11,6 @@ import java.util.List;
 public class Docente extends Persona {
 	private static final long serialVersionUID = 1L;
 
-	private int corsoTenuto;
-
 	private int oreDaTenere;
 
 	private int oreTenute;
@@ -21,17 +19,9 @@ public class Docente extends Persona {
 	 private List<Corso> corsi;
 
 	public Docente() {
+		
 	}
-
-
-	public int getCorsoTenuto() {
-		return this.corsoTenuto;
-	}
-
-	public void setCorsoTenuto(int corsoTenuto) {
-		this.corsoTenuto = corsoTenuto;
-	}
-
+	
 	public int getOreDaTenere() {
 		return this.oreDaTenere;
 	}
