@@ -16,10 +16,10 @@ public class Presenza implements Serializable {
 	//assumiamo il fatto che uno studente con ora_arrivo e ora_uscita
 	//entrambi null sia assente
 	@Column(name="ora_arrivo", nullable = true)
-	private Float oraArrivo;
+	private Long oraArrivo;
 
 	@Column(name="ora_uscita", nullable = true)
-	private Float oraUscita;
+	private Long oraUscita;
 
 	//bi-directional many-to-one association to Lezione
 	@ManyToOne
@@ -42,19 +42,19 @@ public class Presenza implements Serializable {
 		this.id = id;
 	}
 
-	public Float getOraArrivo() {
+	public Long getOraArrivo() {
 		return this.oraArrivo;
 	}
 
-	public void setOraArrivo(Float oraArrivo) {
+	public void setOraArrivo(Long oraArrivo) {
 		this.oraArrivo = oraArrivo;
 	}
 
-	public Float getOraUscita() {
+	public Long getOraUscita() {
 		return this.oraUscita;
 	}
 
-	public void setOraUscita(Float oraUscita) {
+	public void setOraUscita(Long oraUscita) {
 		this.oraUscita = oraUscita;
 	}
 
