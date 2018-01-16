@@ -15,7 +15,7 @@ public class GestioneCorso {
 		EntityManager em = JPAUtility.emf.createEntityManager();
 		Docente docente = null;
 		try {
-		docente = em.find(Docente.class, "mail");
+		docente = em.find(Docente.class, d.getMail());
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -31,6 +31,7 @@ public class GestioneCorso {
 			corso.setRequisitiMin(requistiMinimi);
 			corso.setSede(sede);
 			corso.setImmagine(immagine);
+			corso.setDocente(d);
 			
 			em.getTransaction().begin();
 			em.persist(corso);

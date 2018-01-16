@@ -19,7 +19,7 @@ public class GestionePersonaTest {
 	@Test
 	public void testRegistrazione() {
 		GestionePersona gp = new GestionePersona();
-		boolean esito = gp.registrazione("ciaone", "ciaone", "ccccc", "ciao", "ciaone", "ciaone", false);
+		boolean esito = gp.registrazione("ciaone", "ciaone", "ciaone", "ciao", "ciaone", "ciaone", true);
 		assertTrue("funziona", esito == true);
 	}
 
