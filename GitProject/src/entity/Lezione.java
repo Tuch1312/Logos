@@ -6,16 +6,13 @@ import java.util.Date;
 import java.util.List;
 
 
-/**
- * The persistent class for the lezione database table.
- * 
- */
 @Entity
 @NamedQuery(name="Lezione.findAll", query="SELECT l FROM Lezione l")
 public class Lezione implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idLezione;
 
 	private String argomenti;
@@ -38,9 +35,9 @@ public class Lezione implements Serializable {
 
 	private String studente_mailStudente;
 
-	//bi-directional many-to-one association to Assenza
+	//bi-directional many-to-one association to Presenza
 	@OneToMany(mappedBy="lezione")
-	private List<Assenza> assenzas;
+	private List<Presenza> presenza;
 
 	//bi-directional many-to-one association to Corso
 	@ManyToOne
@@ -129,22 +126,22 @@ public class Lezione implements Serializable {
 		this.studente_mailStudente = studente_mailStudente;
 	}
 
-	public List<Assenza> getAssenzas() {
-		return this.assenzas;
+	public List<Presenza> getAssenzas() {
+		return this.presenza;
 	}
 
-	public void setAssenzas(List<Assenza> assenzas) {
-		this.assenzas = assenzas;
+	public void setAssenzas(List<Presenza> assenzas) {
+		this.presenza = assenzas;
 	}
 
-	public Assenza addAssenza(Assenza assenza) {
+	public Presenza addAssenza(Presenza assenza) {
 		getAssenzas().add(assenza);
 		assenza.setLezione(this);
 
 		return assenza;
 	}
 
-	public Assenza removeAssenza(Assenza assenza) {
+	public Presenza removeAssenza(Presenza assenza) {
 		getAssenzas().remove(assenza);
 		assenza.setLezione(null);
 

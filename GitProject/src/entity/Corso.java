@@ -6,17 +6,14 @@ import java.util.Date;
 import java.util.List;
 
 
-/**
- * The persistent class for the corso database table.
- * 
- */
 @Entity
 @NamedQuery(name="Corso.findAll", query="SELECT c FROM Corso c")
 public class Corso implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private String idCorso;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int idCorso;
 
 	private String coordinatore;
 
@@ -62,11 +59,11 @@ public class Corso implements Serializable {
 	public Corso() {
 	}
 
-	public String getIdCorso() {
+	public int getIdCorso() {
 		return this.idCorso;
 	}
 
-	public void setIdCorso(String idCorso) {
+	public void setIdCorso(int idCorso) {
 		this.idCorso = idCorso;
 	}
 

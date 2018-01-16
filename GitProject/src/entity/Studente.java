@@ -4,10 +4,6 @@ import javax.persistence.*;
 import java.util.List;
 
 
-/**
- * The persistent class for the studente database table.
- * 
- */
 @Entity
 @DiscriminatorValue("S")
 @Table(name="studente")
@@ -16,31 +12,31 @@ public class Studente extends Persona {
 	private static final long serialVersionUID = 1L;
 	
 	@OneToMany(mappedBy="studente")
-	private List<Assenza> assenzas;
+	private List<Presenza> presenza;
 
 	public Studente() {
 	}
 
-	public List<Assenza> getAssenzas() {
-		return this.assenzas;
+	public List<Presenza> getPresenza() {
+		return this.presenza;
 	}
 
-	public void setAssenzas(List<Assenza> assenzas) {
-		this.assenzas = assenzas;
+	public void setPresenza(List<Presenza> presenza) {
+		this.presenza = presenza;
 	}
 
-	public Assenza addAssenza(Assenza assenza) {
-		getAssenzas().add(assenza);
-		assenza.setStudente(this);
+	public Presenza addPresenza(Presenza presenza) {
+		getPresenza().add(presenza);
+		presenza.setStudente(this);
 
-		return assenza;
+		return presenza;
 	}
 
-	public Assenza removeAssenza(Assenza assenza) {
-		getAssenzas().remove(assenza);
-		assenza.setStudente(null);
+	public Presenza removePresenza(Presenza presenza) {
+		getPresenza().remove(presenza);
+		presenza.setStudente(null);
 
-		return assenza;
+		return presenza;
 	}
 
 }

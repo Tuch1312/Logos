@@ -4,24 +4,21 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 
-/**
- * The persistent class for the assenza database table.
- * 
- */
-
-
 @Entity
-@NamedQuery(name="Assenza.findAll", query="SELECT a FROM Assenza a")
-public class Assenza implements Serializable {
+@NamedQuery(name="Presenza.findAll", query="SELECT a FROM Presenza a")
+public class Presenza implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
-
-	@Column(name="ora_arrivo")
+	
+	//assumiamo il fatto che uno studente con ora_arrivo e ora_uscita
+	//entrambi null sia assente
+	@Column(name="ora_arrivo", nullable = true)
 	private float oraArrivo;
 
-	@Column(name="ora_uscita")
+	@Column(name="ora_uscita", nullable = true)
 	private float oraUscita;
 
 	//bi-directional many-to-one association to Lezione
@@ -34,7 +31,7 @@ public class Assenza implements Serializable {
 	@JoinColumn(name="mail")
 	private Studente studente;
 
-	public Assenza() {
+	public Presenza() {
 	}
 
 	public int getId() {
