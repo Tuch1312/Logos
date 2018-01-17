@@ -7,6 +7,8 @@
 		<class>entity.Lezione</class>
 		<class>entity.Persona</class>
 		<class>entity.Studente</class>
+		<class>entity.Iscrizione</class>
+		<class>entity.IscrizionePk</class>
 	<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://18.196.84.13:3306/main_table"/>
 			<property name="javax.persistence.jdbc.user" value="dbmaster"/>
