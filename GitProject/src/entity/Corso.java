@@ -65,6 +65,9 @@ public class Corso implements Serializable {
 	private Integer lezionePerGiorno;
 	
 	private int contatoreGiorniInterno;
+	
+	@Column(nullable=false)
+	private String patternLezioni;
 
 	@ManyToOne
 	@JoinColumn(name="mail_docente")
@@ -81,6 +84,18 @@ public class Corso implements Serializable {
 
 	
 	
+	public String getPatternLezioni() {
+		return patternLezioni;
+	}
+
+
+
+	public void setPatternLezioni(String patternLezioni) {
+		this.patternLezioni = patternLezioni;
+	}
+
+
+
 	public int getContatoreGiorniInterno() {
 		return contatoreGiorniInterno;
 	}

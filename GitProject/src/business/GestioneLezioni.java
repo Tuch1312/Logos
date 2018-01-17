@@ -40,26 +40,44 @@ public class GestioneLezioni {
 				cal.add(Calendar.HOUR_OF_DAY, c.getDurataLezione());
 				xOra = cal.getTime();
 			}
-			addGiornoScolastico(xData);
+			addGiorno(xData, c);
 		}
 		return listaLezione;
 	}
+
 	
-	private Date addGiornoScolastico(Date d) {
+public static Date addGiorno(Date d, Corso c) {
+		
+		String[] giorni = c.getPatternLezioni().split(",");
+		if(c.getContatoreGiorniInterno() == giorni.length) {
+			c.setContatoreGiorniInterno(0);
+		}
+		int prossimogiorno = Integer.parseInt(giorni[c.getContatoreGiorniInterno()]);
+		c.setContatoreGiorniInterno(c.getContatoreGiorniInterno() +1);;
+		switch(prossimogiorno) {
+		case 1: prossimogiorno = 2;
+			break;
+		case 2: prossimogiorno = 3;
+			break;
+		case 3: prossimogiorno = 4;
+			break;
+		case 4: prossimogiorno = 5;
+			break;
+		case 5: prossimogiorno = 6;
+			break;
+		case 6: prossimogiorno = 7;
+			break;
+		case 7: prossimogiorno = 1;
+			break;
+		}
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(d);
+		
+	while(cal.get(Calendar.DAY_OF_WEEK) != prossimogiorno) {
 		cal.add(Calendar.DATE, 1);
-		if (cal.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY) {
-			cal.add(Calendar.DATE, 2);
-		}
-		if (cal.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
-			cal.add(Calendar.DATE, 1);
-		}
-		return cal.getTime();
 	}
-	
-	private Date addGiornoSettimanale() {
-		return new Date();
+	return cal.getTime();
+
 	}
 
 }

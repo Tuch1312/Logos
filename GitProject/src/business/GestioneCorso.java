@@ -26,7 +26,6 @@ public class GestioneCorso {
 			corso.setNumeroLezioni(numLezioni);
 			corso.setDataInizio(dataInizio);
 			corso.setLezionePerGiorno(numLezioniXgiorno);
-			corso.setOrePerGiorno(orePerGiorno);
 			corso.setNumMaxStudenti(numMaxStudenti);
 			corso.setRequisitiMin(requistiMinimi);
 			corso.setSede(sede);
