@@ -25,11 +25,10 @@ public class Corso implements Serializable {
 	private String immagine;
 	
 	@Column(nullable = true)
-	private String lezioneCorrente;
+	private int lezioneCorrente;
 	
 	@Column(nullable = true)
-	private String lezioneEffettuate;
-	
+	private int lezioneEffettuate;
 	
 	private int numeroGiorni;
 
@@ -97,19 +96,19 @@ public class Corso implements Serializable {
 		this.immagine = immagine;
 	}
 
-	public String getLezioneCorrente() {
+	public int getLezioneCorrente() {
 		return this.lezioneCorrente;
 	}
 
-	public void setLezioneCorrente(String lezioneCorrente) {
+	public void setLezioneCorrente(int lezioneCorrente) {
 		this.lezioneCorrente = lezioneCorrente;
 	}
 
-	public String getLezioneEffettuate() {
+	public int getLezioneEffettuate() {
 		return this.lezioneEffettuate;
 	}
 
-	public void setLezioneEffettuate(String lezioneEffettuate) {
+	public void setLezioneEffettuate(int lezioneEffettuate) {
 		this.lezioneEffettuate = lezioneEffettuate;
 	}
 

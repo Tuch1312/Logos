@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @NamedQuery(name="Presenza.findAll", query="SELECT a FROM Presenza a")
+
 public class Presenza implements Serializable {
 	private static final long serialVersionUID = 1L;
 
