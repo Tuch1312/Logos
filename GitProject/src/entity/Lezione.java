@@ -31,6 +31,8 @@ public class Lezione implements Serializable {
 	private int durata;
 	
 	private int numAssenti;
+	
+	private int numeroLezione;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date oraInizio;
@@ -46,7 +48,18 @@ public class Lezione implements Serializable {
 	@ManyToOne
 	private Corso corso;
 
+	
+	//metodi
+	
 	public Lezione() {
+	}
+
+	public int getNumeroLezione() {
+		return numeroLezione;
+	}
+
+	public void setNumeroLezione(int numeroLezione) {
+		this.numeroLezione = numeroLezione;
 	}
 
 	public int getIdLezione() {

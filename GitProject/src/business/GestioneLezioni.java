@@ -1,5 +1,6 @@
 package business;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -15,10 +16,11 @@ public class GestioneLezioni {
 		for(int i = 0;i<calcNumLezioni(c);i++) {
 			Lezione lez = new Lezione();
 			lez.setCorso(c);
-			c.getLeziones().add(lez);
+			lez.setNumeroLezione(i);
+			c.addLezione(lez);
 		}
 		em.getTransaction().begin();
-		em.persist(c);
+		em.persist(dataLezioni(c));
 		em.getTransaction().commit();
 		Corso check = em.find(Corso.class, c.getIdCorso());
 		if (check.getLeziones().size() == calcNumLezioni(c)) {
@@ -40,13 +42,15 @@ public class GestioneLezioni {
 		return c.getNumeroGiorni() * c.getLezionePerGiorno();
 	}
 	
-	public List<Lezione> dataLezioni(Corso c, List<Lezione> listaLezione) {
+	public Corso dataLezioni(Corso c) {
 		Calendar cal = Calendar.getInstance();
 		Date xOra = c.getOraInizioLezioni();
 		Date xData = c.getDataInizio();
+		List<Lezione> listaLezione = c.getLeziones();
 		int x = 0;
 		for(int i = 0; i < calcNumLezioni(c); i++) {
 			for(int y = 0; y < c.getLezionePerGiorno(); y++) {
+				if(x<calcNumLezioni(c)) {
 				Lezione lez = listaLezione.get(x);
 				lez.setData(xData);
 				lez.setOraInizio(xOra);
@@ -54,10 +58,14 @@ public class GestioneLezioni {
 				cal.setTime(xOra);
 				cal.add(Calendar.HOUR_OF_DAY, c.getDurataLezione());
 				xOra = cal.getTime();
+				}
+				
 			}
-			addGiorno(xData, c);
+			xData = addGiorno(xData, c);
+			xOra = c.getOraInizioLezioni();
 		}
-		return listaLezione;
+		c.setLeziones(listaLezione);
+		return c;
 	}
 
 	

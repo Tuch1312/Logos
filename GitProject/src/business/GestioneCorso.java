@@ -9,7 +9,7 @@ import entity.*;
 public class GestioneCorso {
 	
 	public boolean nuovoCorso(Docente d, String titolo, String descrizione
-			, int numLezioni, Date dataInizio,int orePerGiorno, int numLezioniXgiorno
+			, int numeroGiorni, Date dataInizio,int durataLezione, int numLezioniXgiorno
 			, int numMaxStudenti, String requistiMinimi, String sede
 			, String immagine, Date oraInizioLezioni, String patternLezioni) {
 		EntityManager em = JPAUtility.emf.createEntityManager();
@@ -23,7 +23,7 @@ public class GestioneCorso {
 			Corso corso = new Corso();
 			corso.setTitolo(titolo);
 			corso.setDescrizione(descrizione);
-			corso.setNumeroLezioni(numLezioni);
+			corso.setNumeroGiorni(numeroGiorni);
 			corso.setDataInizio(dataInizio);
 			corso.setLezionePerGiorno(numLezioniXgiorno);
 			corso.setNumMaxStudenti(numMaxStudenti);
@@ -33,6 +33,7 @@ public class GestioneCorso {
 			corso.setDocente(d);
 			corso.setOraInizioLezioni(oraInizioLezioni);
 			corso.setPatternLezioni(patternLezioni);
+			corso.setDurataLezione(durataLezione);
 			
 			
 			em.getTransaction().begin();
