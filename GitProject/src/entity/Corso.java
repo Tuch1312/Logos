@@ -14,6 +14,9 @@ public class Corso implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idCorso;
+	
+	@OneToMany(mappedBy="corso")
+	private List<Iscrizione> iscrizioni;
 
 	@Column(nullable=false)
 	@Temporal(TemporalType.DATE)
