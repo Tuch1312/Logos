@@ -4,13 +4,28 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+
 import entity.*;
 
 public class GestioneLezioni {
 	
 	public boolean creaLezioni(Corso c) {
-		//TODO
-		return true;
+		EntityManager em = JPAUtility.emf.createEntityManager();
+		for(int i = 0;i<calcNumLezioni(c);i++) {
+			Lezione lez = new Lezione();
+			lez.setCorso(c);
+			c.getLeziones().add(lez);
+		}
+		em.getTransaction().begin();
+		em.persist(c);
+		em.getTransaction().commit();
+		Corso check = em.find(Corso.class, c.getIdCorso());
+		if (check.getLeziones().size() == calcNumLezioni(c)) {
+			return true;
+		} else return false;
+		
+		
 	}
 	
 	public int calcOrePerGiorno(Corso c) {
@@ -46,7 +61,7 @@ public class GestioneLezioni {
 	}
 
 	
-public static Date addGiorno(Date d, Corso c) {
+	public static Date addGiorno(Date d, Corso c) {
 		
 		String[] giorni = c.getPatternLezioni().split(",");
 		if(c.getContatoreGiorniInterno() == giorni.length) {
