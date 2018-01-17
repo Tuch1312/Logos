@@ -66,6 +66,7 @@ public class Corso implements Serializable {
 	
 	private int contatoreGiorniInterno;
 	
+	//Utilizzata per definire in quali gionri della settimana si svolge il corso, nella forma (1,2,3,4,5,6,7) dove 1 = lunedi e 7 = domenica..
 	@Column(nullable=false)
 	private String patternLezioni;
 
