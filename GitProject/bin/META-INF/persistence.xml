@@ -2,13 +2,13 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="GitProject">
 		<class>entity.Presenza</class>
-		<class>entity.Corso</class>
 		<class>entity.Docente</class>
 		<class>entity.Lezione</class>
 		<class>entity.Persona</class>
 		<class>entity.Studente</class>
 		<class>entity.Iscrizione</class>
 		<class>entity.IscrizionePk</class>
+		<class>entity.Corso</class>
 	<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://18.196.84.13:3306/main_table"/>
 			<property name="javax.persistence.jdbc.user" value="dbmaster"/>

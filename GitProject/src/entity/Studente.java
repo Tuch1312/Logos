@@ -11,6 +11,11 @@ import java.util.List;
 public class Studente extends Persona {
 	private static final long serialVersionUID = 1L;
 	
+	
+	 @OneToMany(mappedBy="studenteIscritto")
+	 private List<Iscrizione> iscrizioni;
+	
+	
 	@OneToMany(cascade = CascadeType.ALL, 
 	        mappedBy = "studente")
 	private List<Presenza> presenza;
