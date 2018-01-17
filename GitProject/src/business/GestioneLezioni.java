@@ -13,12 +13,12 @@ public class GestioneLezioni {
 		return true;
 	}
 	
-	public int calcOreXLezione(Corso c) {
-		return c.getOrePerGiorno() / c.getLezionePerGiorno();
+	public int calcOrePerGiorno(Corso c) {
+		return c.getDurataLezione() * c.getLezionePerGiorno();
 	}
 	
 	public int calcOreTotali(Corso c) {
-		return c.getNumeroLezioni() * calcOreXLezione(c);
+		return c.getNumeroLezioni() * c.getDurataLezione();
 	}
 	
 	public int calcNumLezioni(Corso c) {

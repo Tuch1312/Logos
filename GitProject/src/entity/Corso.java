@@ -63,6 +63,8 @@ public class Corso implements Serializable {
 	
 	@Column(nullable=false)
 	private Integer lezionePerGiorno;
+	
+	private int contatoreGiorniInterno;
 
 	@ManyToOne
 	@JoinColumn(name="mail_docente")
@@ -78,6 +80,17 @@ public class Corso implements Serializable {
 	}
 
 	
+	
+	public int getContatoreGiorniInterno() {
+		return contatoreGiorniInterno;
+	}
+
+
+	public void setContatoreGiorniInterno(int contatoreGiorniInterno) {
+		this.contatoreGiorniInterno = contatoreGiorniInterno;
+	}
+
+
 	public Date getOraInizioLezioni() {
 		return oraInizioLezioni;
 	}
@@ -186,14 +199,6 @@ public class Corso implements Serializable {
 
 	public void setNumMaxStudenti(int numMaxStudenti) {
 		this.numMaxStudenti = numMaxStudenti;
-	}
-
-	public int getOrePerGiorno() {
-		return this.orePerGiorno;
-	}
-
-	public void setOrePerGiorno(int orePerGiorno) {
-		this.orePerGiorno = orePerGiorno;
 	}
 
 	public int getOreTotali() {
