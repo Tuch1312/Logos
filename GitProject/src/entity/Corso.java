@@ -15,8 +15,13 @@ public class Corso implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idCorso;
 
+	@Column(nullable=false)
 	@Temporal(TemporalType.DATE)
 	private Date dataInizio;
+	
+	@Column(nullable=false)
+	@Temporal(TemporalType.TIME)
+	private Date oraInizioLezioni;
 	
 	@Column(nullable = true)
 	private String descrizione;
@@ -30,6 +35,7 @@ public class Corso implements Serializable {
 	@Column(nullable = true)
 	private int lezioneEffettuate;
 	
+	@Column(nullable=false)
 	private int numeroGiorni;
 
 	private int numeroLezioni;
@@ -37,8 +43,9 @@ public class Corso implements Serializable {
 	private int numeroStudentiIscritti;
 
 	private int numMaxStudenti;
-
-	private int orePerGiorno;
+	
+	@Column(nullable=false)
+	private int durataLezione;
 
 	private int oreTotali;
 
@@ -48,7 +55,11 @@ public class Corso implements Serializable {
 
 	private String sede;
 
+	@Column(nullable=false)
 	private String titolo;
+	
+	@Column(nullable=false)
+	private String tipo;
 	
 	@Column(nullable=false)
 	private Integer lezionePerGiorno;
@@ -61,8 +72,41 @@ public class Corso implements Serializable {
 	        mappedBy = "corso")
 	private List<Lezione> leziones;
 
+	//Metodi
+	
 	public Corso() {
 	}
+
+	
+	public Date getOraInizioLezioni() {
+		return oraInizioLezioni;
+	}
+
+
+	public void setOraInizioLezioni(Date oraInizioLezioni) {
+		this.oraInizioLezioni = oraInizioLezioni;
+	}
+
+
+	public int getDurataLezione() {
+		return durataLezione;
+	}
+
+
+	public void setDurataLezione(int durataLezione) {
+		this.durataLezione = durataLezione;
+	}
+
+
+	public String getTipo() {
+		return tipo;
+	}
+
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
 
 	public int getIdCorso() {
 		return this.idCorso;

@@ -62,9 +62,10 @@ public class GestionePresenze {
 			e.printStackTrace();
 	}
 		if (p!=null) {
-			if (new Date(p.getOraArrivo()).getDate())
+			//if (new Date(p.getOraArrivo()).getDate())
 				//se il giorno riportato dalla data della presenza equivale ad oggi allora è presente
-		} else return false;
+		} //else
+		return false;
 		
 	}
 
