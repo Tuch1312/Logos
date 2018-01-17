@@ -62,9 +62,6 @@ public class Corso implements Serializable {
 	private String titolo;
 	
 	@Column(nullable=false)
-	private String tipo;
-	
-	@Column(nullable=false)
 	private Integer lezionePerGiorno;
 	
 	private int contatoreGiorniInterno;
@@ -128,17 +125,7 @@ public class Corso implements Serializable {
 		this.durataLezione = durataLezione;
 	}
 
-
-	public String getTipo() {
-		return tipo;
-	}
-
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-
-
+	
 	public int getIdCorso() {
 		return this.idCorso;
 	}

@@ -16,8 +16,7 @@ public class Studente extends Persona {
 	 private List<Iscrizione> iscrizioni;
 	
 	
-	@OneToMany(cascade = CascadeType.ALL, 
-	        mappedBy = "studente")
+	@OneToMany(mappedBy = "studente")
 	private List<Presenza> presenza;
 	
 	private int presenzaOggi;

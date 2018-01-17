@@ -13,6 +13,7 @@ import business.GestioneCorso;
 import business.JPAUtility;
 import entity.Corso;
 import entity.Docente;
+import entity.Studente;
 
 public class GestioneCorsoTest {
 	@Test
@@ -21,11 +22,11 @@ public class GestioneCorsoTest {
 		Docente d = new Docente();
 		d.setNome("ciao");
 		d.setCognome("ciao");
-		d.setMail("ciaone");
+		d.setMail("sonoUnoDocente");
 		d.setPassword("ciao");
-		String s = "ciaone";
+		String s = "1,2";
 		Date aaa= new Date();
-		boolean esito = gc.nuovoCorso(d, s, s, 2, aaa, 2, 2, 2, s, s, s);
+		boolean esito = gc.nuovoCorso(d, s, s, 2, aaa, 2, 2, 2, s, s, s, aaa, s);
 		assertTrue("funziona", esito == true);
 		
 		
@@ -69,4 +70,22 @@ public class GestioneCorsoTest {
 //		
 //		
 //	}
+	
+	@Test
+	public void iscriviStudenteTest() {
+		GestioneCorso gc = new GestioneCorso();
+		Docente d = new Docente();
+		d.setNome("ciao");
+		d.setCognome("ciao");
+		d.setMail("sonoUnoDocente");
+		d.setPassword("ciao");
+		Corso c = new Corso();
+		c.setIdCorso(1);
+		Studente s = new Studente();
+		s.setMail("sonoUnoStudente");
+		boolean esito = gc.iscriviStudente(d, s, c);
+		assertTrue("funziona", esito == true);
+		
+		
+	}
 }

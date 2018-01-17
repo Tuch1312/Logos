@@ -11,7 +11,7 @@ public class GestioneCorso {
 	public boolean nuovoCorso(Docente d, String titolo, String descrizione
 			, int numLezioni, Date dataInizio,int orePerGiorno, int numLezioniXgiorno
 			, int numMaxStudenti, String requistiMinimi, String sede
-			, String immagine) {
+			, String immagine, Date oraInizioLezioni, String patternLezioni) {
 		EntityManager em = JPAUtility.emf.createEntityManager();
 		Docente docente = null;
 		try {
@@ -31,6 +31,9 @@ public class GestioneCorso {
 			corso.setSede(sede);
 			corso.setImmagine(immagine);
 			corso.setDocente(d);
+			corso.setOraInizioLezioni(oraInizioLezioni);
+			corso.setPatternLezioni(patternLezioni);
+			
 			
 			em.getTransaction().begin();
 			em.persist(corso);
@@ -91,16 +94,24 @@ public class GestioneCorso {
 		EntityManager em = JPAUtility.emf.createEntityManager();
 		Docente docente = null;
 		Studente studente = null;
+		Corso corso = null;
 		try {
 		docente = em.find(Docente.class, d.getMail());
 		studente = em.find(Studente.class, s.getMail());
+		corso = em.find(Corso.class, c.getIdCorso());
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		if(docente!=null && studente!=null) {
-			
+		if(docente!=null && studente!=null && corso!=null) {
+			IscrizionePk iscrizione = new IscrizionePk();
+			iscrizione.setIdCorso(corso.getIdCorso());
+			iscrizione.setMailStudente(studente.getMail());
+			em.getTransaction().begin();
+			em.persist(iscrizione);
+			em.getTransaction().commit();
+			return true;
 		}
-		return true;
+		return false;
 	}
 	
 	public boolean cancellaStudente(Docente d, Studente s, Corso c) {
