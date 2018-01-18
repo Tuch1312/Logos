@@ -32,5 +32,6 @@ class GestionePresenzaTest {
 		assertTrue("funziona", esito == true);
 		
 	}
+	
 
 }
