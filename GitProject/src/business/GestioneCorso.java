@@ -199,6 +199,13 @@ public class GestioneCorso {
 	}
 
 	//Tested
+	/*
+	 * Permette ad uno studente di iscriversi autonumamente ad un corso avendo
+	 * il codice identificativo del corso che puo chiedere al suo inseggannte 
+	 * 
+	 * Studente s : Lo studente che si vuole iscrivere al corso
+	 * String codiceCorso : Il codice identificativo del corso al quale lo studente si vuole iscrivere
+	 */
 	public boolean iscriviti(Studente s, String codiceCorso) {
 		EntityManager em = JPAUtility.emf.createEntityManager();
 		StringBuilder sb = new StringBuilder(codiceCorso);

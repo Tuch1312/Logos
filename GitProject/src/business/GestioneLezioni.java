@@ -11,6 +11,12 @@ import entity.*;
 
 public class GestioneLezioni {
 	
+	//Tested
+	/*
+	 * Crea tutte le lezioni necessarie ad un corso
+	 * chiama il metodo calcNumLezioni() per sapere quante lezioni creare
+	 * chiama il metodo datlezioni() per assegnare una data 
+	 */
 	public boolean creaLezioni(Corso c) {
 		EntityManager em = JPAUtility.emf.createEntityManager();
 		for(int i = 0;i<calcNumLezioni(c);i++) {
@@ -30,18 +36,32 @@ public class GestioneLezioni {
 		
 	}
 	
+	/*
+	 * Calcola le ore per giorno di un corso 
+	 */
 	public int calcOrePerGiorno(Corso c) {
 		return c.getDurataLezione() * c.getLezionePerGiorno();
 	}
 	
+	/*
+	 * Calcola le ore totali di un corso 
+	 */
 	public int calcOreTotali(Corso c) {
 		return c.getNumeroLezioni() * c.getDurataLezione();
 	}
 	
+	/*
+	 * Calcola il numero totale di lezioni di un corso 
+	 */
 	public int calcNumLezioni(Corso c) {
 		return c.getNumeroGiorni() * c.getLezionePerGiorno();
 	}
 	
+	/*
+	 * Assegna una data ad ogni lezione di un corso
+	 * Chiama il metodo addgiorno per stabile quanti giorni 
+	 *aggiungere dall'ultima data memorizzata
+	 */
 	private Corso dataLezioni(Corso c) {
 		Calendar cal = Calendar.getInstance();
 		Date xOra = c.getOraInizioLezioni();
@@ -68,7 +88,10 @@ public class GestioneLezioni {
 		return c;
 	}
 
-	
+	/*
+	 * AGgiunge tot giorni alla passata per distribuire le lezioni nella settimana
+	 * utilizza il pattern contenuto nell'attributo Corso.patternLezioni
+	 */
 	private static Date addGiorno(Date d, Corso c) {
 		
 		String[] giorni = c.getPatternLezioni().split(",");
