@@ -54,8 +54,6 @@ public class Corso implements Serializable {
 
 	private int oreTrascorse;
 
-	private String requisitiMin;
-
 	private String sede;
 
 	@Column(nullable=false)
@@ -221,14 +219,6 @@ public class Corso implements Serializable {
 
 	public void setOreTrascorse(int oreTrascorse) {
 		this.oreTrascorse = oreTrascorse;
-	}
-
-	public String getRequisitiMin() {
-		return this.requisitiMin;
-	}
-
-	public void setRequisitiMin(String requisitiMin) {
-		this.requisitiMin = requisitiMin;
 	}
 
 	public String getSede() {
