@@ -20,7 +20,7 @@ public class GestioneLezioni {
 			c.addLezione(lez);
 		}
 		em.getTransaction().begin();
-		em.persist(dataLezioni(c));
+		em.merge(dataLezioni(c));
 		em.getTransaction().commit();
 		Corso check = em.find(Corso.class, c.getIdCorso());
 		if (check.getLeziones().size() == calcNumLezioni(c)) {
@@ -42,7 +42,7 @@ public class GestioneLezioni {
 		return c.getNumeroGiorni() * c.getLezionePerGiorno();
 	}
 	
-	public Corso dataLezioni(Corso c) {
+	private Corso dataLezioni(Corso c) {
 		Calendar cal = Calendar.getInstance();
 		Date xOra = c.getOraInizioLezioni();
 		Date xData = c.getDataInizio();
@@ -69,7 +69,7 @@ public class GestioneLezioni {
 	}
 
 	
-	public static Date addGiorno(Date d, Corso c) {
+	private static Date addGiorno(Date d, Corso c) {
 		
 		String[] giorni = c.getPatternLezioni().split(",");
 		if(c.getContatoreGiorniInterno() == giorni.length) {

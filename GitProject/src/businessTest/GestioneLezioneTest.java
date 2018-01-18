@@ -34,7 +34,7 @@ class GestioneLezioneTest {
 		Date ora = new Date(1516176000000L);
 		String pattern = "1,2,3"; 
 		//Lunedi, mercoledi, venerdi | 2 lezioni al giorno | 2 ore a lezione | a partire da oggi
-		gc.nuovoCorso(d, "corsoprovalezione", s, 30, inizio, 2, 4, 20, s, s, s, ora, pattern);
+		gc.nuovoCorso(d, "corsoprovalezione", s, 10, inizio, 2, 2, 20, s, s, s, ora, pattern);
 		Corso c = em.find(Corso.class, 1);
 		GestioneLezioni gl = new GestioneLezioni();
 		boolean esito = gl.creaLezioni(c);

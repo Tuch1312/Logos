@@ -34,7 +34,7 @@ public class Lezione implements Serializable {
 	
 	private int numeroLezione;
 
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.TIME)
 	private Date oraInizio;
 	
 	private float percentAssenti;

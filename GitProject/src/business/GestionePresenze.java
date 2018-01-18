@@ -1,5 +1,6 @@
 package business;
 
+import java.lang.reflect.Field;
 import java.util.Date;
 
 import javax.persistence.EntityManager;
@@ -12,7 +13,7 @@ public class GestionePresenze {
 	public boolean setOraIngresso(Docente d, Studente s, Corso c) {
 		Presenza p = new Presenza();
 		EntityManager em = JPAUtility.emf.createEntityManager();
-		String sq = "SELECT * FROM assenza a WHERE id_lezione = " + c.getLeziones().get(c.getLezioneCorrente()).getIdLezione() + "and mail = " + s.getMail();
+		String sq = "SELECT a.id_lezione FROM PRESENZA a WHERE a.id_lezione = " + c.getLeziones().get(c.getLezioneCorrente()).getIdLezione() + " and a.mail = '" + s.getMail() + "'";
 		Query q = em.createNativeQuery(sq);
 		Docente docente = null;
 		try {
@@ -27,9 +28,14 @@ public class GestionePresenze {
 				em.getTransaction().begin();
 				em.persist(p);
 				em.getTransaction().commit();
-				s.setPresenzaOggi(((Presenza)q.getSingleResult()).getId());
+				//s.setPresenzaOggi(((Presenza)q.getSingleResult()).getId());
+				Object o = q.getSingleResult(); 
+				System.out.print(o.toString());
+				
+				//provare il sistem out
 				return true;
-			} 
+		}
+				
 		else return false;
 	}
 	
