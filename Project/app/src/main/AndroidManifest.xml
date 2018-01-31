@@ -12,7 +12,7 @@
 
         <activity android:name=".Registration"></activity>
 
-        <activity android:name=".Registration" />
+       
 
         <activity android:name=".Login">
 
@@ -21,11 +21,13 @@
 
         </activity>
         <activity android:name=".DashBoardD" />
+        <activity android:name=".lista_lezioni_corso"></activity>
         <activity android:name=".DashBoardStudente">            <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter></activity>
     </application>
+
 
 </manifest>

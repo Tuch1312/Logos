@@ -16,18 +16,18 @@ import entity.Docente;
 import entity.Studente;
 
 public class GestioneCorsoTest {
-//	@Test
-//	public void nuovoCorsoTest() {
-//		GestioneCorso gc = new GestioneCorso();
-//		EntityManager em = JPAUtility.emf.createEntityManager();
-//		Docente d = em.find(Docente.class, Filltable.maildocente);
-//		String s = "1,2";
-//		Date aaa= new Date();
-//		boolean esito = gc.nuovoCorso(d, s, s, 2, aaa, 2, 2, 2, s, s, aaa, s);
-//		assertTrue("non funziona crea corso", esito == true);
-//		
-//		
-//	}
+	@Test
+	public void nuovoCorsoTest() {
+		GestioneCorso gc = new GestioneCorso();
+		EntityManager em = JPAUtility.emf.createEntityManager();
+		Docente d = em.find(Docente.class, Filltable.maildocente);
+		String s = "1,2";
+		Date aaa= new Date();
+		boolean esito = gc.nuovoCorso(d, s, s, 2, aaa, 2, 2, 2, s, s, aaa, s);
+		assertTrue("non funziona crea corso", esito == true);
+		
+		
+	}
 	
 //	@Test
 //	public void eliminaCorsoTest() {

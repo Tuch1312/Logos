@@ -15,4 +15,20 @@
         <item name="android:textSize">22sp</item>
     </style>
 
+    <style name="titolo_medio">
+        <item name="android:textSize">26dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">30dp</item>
+    </style>
+
+
+    <style name="titolo_grande">
+        <item name="android:textSize">36dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">30dp</item>
+    </style>
 </resources>

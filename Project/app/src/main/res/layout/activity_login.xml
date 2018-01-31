@@ -10,11 +10,10 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="55dp"
         android:text="@string/login"
-        android:textSize="36sp" />
+        style="@style/titolo_grande"/>
 
     <EditText
         android:id="@+id/editText"

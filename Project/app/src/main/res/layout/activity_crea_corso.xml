@@ -18,9 +18,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="@string/crea_corso"
-        android:textAlignment="center"
+        style="@style/titolo_medio"
         android:layout_gravity="center"
-        android:textSize="26sp" />
+         />
 
 
     <EditText
