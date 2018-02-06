@@ -20,7 +20,7 @@
         android:text="Corso"
         android:id="@+id/dashboard_title"
         android:layout_margin="25dp"
-        android:textSize="40dp"/>
+        android:textSize="40sp"/>
 
 
     <LinearLayout
@@ -53,22 +53,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="ciao"
-                android:textSize="25dp"/>
+                android:text="Ore totali:"
+                android:textSize="25dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="ciao"
-                android:textSize="25dp"/>
+                android:text="Ore trascorse:"
+                android:textSize="25dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="ciao"
-                android:textSize="25dp"/>
+                android:text="Ore assenza"
+                android:textSize="25dp" />
         </LinearLayout>
 
     </LinearLayout>
@@ -91,21 +91,23 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ciao"
                 android:layout_weight="1"
-                android:textSize="25dp"/>
+                android:text="Lezione: "
+                android:textSize="25dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ciao"
                 android:layout_weight="1"
-                android:textSize="25dp"/>
+                android:text="Docente: "
+                android:textSize="25dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ciao"
                 android:layout_weight="1"
-                android:textSize="25dp"/>
+                android:text="Test:"
+                android:textSize="25dp" />
 
         </LinearLayout>
 
@@ -118,21 +120,23 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ciao"
                 android:layout_weight="1"
-                android:textSize="25dp"/>
+                android:text="Ora inizio:"
+                android:textSize="25dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ciao"
                 android:layout_weight="1"
-                android:textSize="25dp"/>
+                android:text="Aula:"
+                android:textSize="25dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ciao"
                 android:layout_weight="1"
-                android:textSize="25dp"/>
+                android:text="Ore: "
+                android:textSize="25dp" />
         </LinearLayout>
     </LinearLayout>
         <LinearLayout
