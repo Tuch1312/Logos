@@ -27,6 +27,8 @@
     <string name="iscriviti">Iscriviti</string>
     <string name="per_maggiorni_informazioni">Mmaggiorni informazioni</string>
     <string name="inserisci_qui_il_codice">Inserisci qui il codice</string>
+    <string name="tab_text_1">Corsi</string>
+    <string name="tab_text_2">Lezioni</string>
 
 
 </resources>
