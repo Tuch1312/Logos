@@ -23,7 +23,8 @@ public class GestioneCorsoTest {
 		Docente d = em.find(Docente.class, Filltable.maildocente);
 		String s = "1,2";
 		Date aaa= new Date();
-		boolean esito = gc.nuovoCorso(d, s, s, 2, aaa, 2, 2, 2, s, s, aaa, s);
+		//boolean esito = gc.nuovoCorso(d, s, s, 2, aaa, 2, 2, 2, s, s, aaa, s, true);
+		boolean esito = gc.nuovoCorso(d, s, s, 2, s, s, false);
 		assertTrue("non funziona crea corso", esito == true);
 		
 		

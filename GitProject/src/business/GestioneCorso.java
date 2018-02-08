@@ -34,7 +34,7 @@ public class GestioneCorso {
 	 */
 	public boolean nuovoCorso(Docente d, String titolo, String descrizione, int numeroGiorni, Date dataInizio,
 			int durataLezione, int numLezioniXgiorno, int numMaxStudenti, String sede, String immagine,
-			Date oraInizioLezioni, String patternLezioni) {
+			Date oraInizioLezioni, String patternLezioni, boolean automaticFill) {
 		EntityManager em = JPAUtility.emf.createEntityManager();
 		Docente docente = null;
 		try {
@@ -42,17 +42,17 @@ public class GestioneCorso {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		if (docente != null) {
+		if (docente != null && automaticFill == true) {
 			Corso corso = new Corso();
 			corso.setTitolo(titolo);
 			corso.setDescrizione(descrizione);
 			corso.setNumeroGiorni(numeroGiorni);
 			corso.setDataInizio(dataInizio);
-			corso.setLezionePerGiorno(numLezioniXgiorno);
 			corso.setNumMaxStudenti(numMaxStudenti);
 			corso.setSede(sede);
 			corso.setImmagine(immagine);
 			corso.setDocente(d);
+			corso.setLezionePerGiorno(numLezioniXgiorno);
 			corso.setOraInizioLezioni(oraInizioLezioni);
 			corso.setPatternLezioni(patternLezioni);
 			corso.setDurataLezione(durataLezione);
@@ -62,9 +62,42 @@ public class GestioneCorso {
 			return true;
 			
 
+		}	
+		return false;
+	}
+	
+	public boolean nuovoCorso(Docente d, String titolo, String descrizione,int numMaxStudenti, String sede, String immagine,
+			boolean automaticFill) {
+		EntityManager em = JPAUtility.emf.createEntityManager();
+		Docente docente = null;
+		try {
+			docente = em.find(Docente.class, d.getMail());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		if (docente != null && automaticFill == false) {
+			Corso corso = new Corso();
+			corso.setTitolo(titolo);
+			corso.setDescrizione(descrizione);
+			corso.setNumeroGiorni(0);
+			corso.setDataInizio(null);
+			corso.setNumMaxStudenti(numMaxStudenti);
+			corso.setSede(sede);
+			corso.setImmagine(immagine);
+			corso.setDocente(d);
+			corso.setLezionePerGiorno(0);
+			corso.setOraInizioLezioni(null);
+			corso.setPatternLezioni(null);
+			corso.setDurataLezione(0);
+			em.getTransaction().begin();
+			em.persist(corso);
+			em.getTransaction().commit();
+			return true;
 		}
 		return false;
 	}
+		
+
 
 	//Tested
 	/*
