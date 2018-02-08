@@ -14,10 +14,11 @@ import business.GestioneLezioni;
 import business.JPAUtility;
 import entity.Corso;
 import entity.Docente;
+import entity.Lezione;
 
 class GestioneLezioneTest {
 
-	@Test
+	/*@Test
 	public void creaLezioneTest() {
 		EntityManager em = JPAUtility.emf.createEntityManager();
 		GestioneCorso gc = new GestioneCorso();
@@ -40,6 +41,42 @@ class GestioneLezioneTest {
 		boolean esito = gl.creaLezioni(c);
 		assertTrue("funziona", esito == true);
 		
+	}
+	@Test
+	public void eliminaLezioniTest() {
+		EntityManager em = JPAUtility.emf.createEntityManager();
+		GestioneLezioni gl = new GestioneLezioni();
+		Corso c = new Corso();
+		c.setIdCorso(1);
+		Lezione l = new Lezione();
+		l.setIdLezione(1);
+		boolean esito = gl.eliminaLezione(c, l);
+		assertTrue("funziona", esito == true);
+	}
+	
+	@Test
+	public void aggiungiLezioniTest() {
+		EntityManager em = JPAUtility.emf.createEntityManager();
+		GestioneLezioni gl = new GestioneLezioni();
+		Corso c = new Corso();
+		c.setIdCorso(1);
+		Lezione l = new Lezione();
+		l.setIdLezione(1);
+		boolean esito = gl.aggiungiLezione(c, l);
+		assertTrue("funziona", esito == true);
+	}*/
+	
+	@Test
+	public void modificaLezioniTest() {
+		EntityManager em = JPAUtility.emf.createEntityManager();
+		GestioneLezioni gl = new GestioneLezioni();
+		Corso c = new Corso();
+		c.setIdCorso(1);
+		Lezione l = new Lezione();
+		l.setIdLezione(22);
+		l.setDurata(25);
+		boolean esito = gl.modificaLezione(c, l);
+		assertTrue("funziona", esito == true);
 	}
 	
 	
