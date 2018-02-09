@@ -7,7 +7,7 @@ import android.view.*;
 import com.dettofatto.logos.R;
 
 
-public class Fragment2 extends Fragment {
+public class Fragment_dashboard_docente_lista_lezioni extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

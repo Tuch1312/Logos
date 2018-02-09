@@ -16,12 +16,12 @@ import java.util.ArrayList;
  * Created by itsadmin on 22/01/2018.
  */
 
-public class AdapterListaPresenze extends ArrayAdapter<Presenzarow> {
+public class AdapterListaPresenze extends ArrayAdapter<presenzarow> {
 
     Context ctx;  // superclasse da cui si estedono sottoclassi, tra ci c'è la mia activity
-    ArrayList<Presenzarow> values;
+    ArrayList<presenzarow> values;
 
-    public AdapterListaPresenze(Context ctx, ArrayList<Presenzarow> values) {
+    public AdapterListaPresenze(Context ctx, ArrayList<presenzarow> values) {
         super(ctx, R.layout.rows_list_presenze, values);
 
         this.ctx = ctx;
@@ -39,11 +39,7 @@ public class AdapterListaPresenze extends ArrayAdapter<Presenzarow> {
         Switch swi = (Switch) rowView.findViewById(R.id.studentePresAss);
 
 
-        nomeView.setText(values.get(position).nome);
-        cognomeView.setText("" + values.get(position).cognome);
-        ingressoView.setText("" + values.get(position).ingresso);
-        uscitaView.setText("" +values.get(position).uscita);
-        swi.setChecked(values.get(position).presass);
+
         return rowView;
 
     }

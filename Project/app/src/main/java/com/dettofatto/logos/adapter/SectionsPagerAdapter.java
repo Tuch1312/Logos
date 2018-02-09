@@ -4,27 +4,27 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.dettofatto.logos.fragment.Fragment1;
-import com.dettofatto.logos.fragment.Fragment2;
+import com.dettofatto.logos.fragment.Fragment_dashboard_docente_corso_dash;
+import com.dettofatto.logos.fragment.Fragment_dashboard_docente_corso_lezioni;
+import com.dettofatto.logos.fragment.Fragment_dashboard_docente_lista_corsi;
+import com.dettofatto.logos.fragment.Fragment_dashboard_docente_lista_lezioni;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
- * one of the sections/tabs/pages.
+ * Created by Tuch on 08/02/18.
  */
+
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     static List<Fragment> fragmentList = new ArrayList<Fragment>();
-    static Fragment1 fragment1 = new Fragment1();
-    static Fragment2 fragment2 = new Fragment2();
 
 
-    public SectionsPagerAdapter(FragmentManager fm) {
+
+    public SectionsPagerAdapter(FragmentManager fm, List<Fragment> fragmentList) {
         super(fm);
-        fragmentList.add(fragment1);
-        fragmentList.add(fragment2);
+       this.fragmentList = fragmentList;
     }
 
 
@@ -38,7 +38,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        // Show 3 total pages.
+        // Show 2 total pages.
         return 2;
     }
 }
