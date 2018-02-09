@@ -125,5 +125,74 @@ public class GestioneLezioni {
 	return cal.getTime();
 
 	}
-
+	
+	
+	public boolean eliminaLezione(Corso c, Lezione l){
+		EntityManager em = JPAUtility.emf.createEntityManager();
+		Corso corso = null;
+		Lezione lezione = null;
+		try {
+			corso = em.find(Corso.class, c.getIdCorso());
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			lezione = em.find(Lezione.class, l.getIdLezione());
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		if (corso!=null && lezione!=null) {
+			em.getTransaction().begin();
+			em.remove(lezione);
+			em.getTransaction().commit();
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean aggiungiLezione(Corso c, Lezione l){
+		EntityManager em = JPAUtility.emf.createEntityManager();
+		Corso corso = null;
+		Lezione lezione = null;
+		try {
+			corso = em.find(Corso.class, c.getIdCorso());
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			lezione = em.find(Lezione.class, l.getIdLezione());
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		if (corso!=null && lezione==null) {
+			em.getTransaction().begin();
+			em.persist(l);
+			em.getTransaction().commit();
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean modificaLezione(Corso c, Lezione l){
+		EntityManager em = JPAUtility.emf.createEntityManager();
+		Corso corso = null;
+		Lezione lezione = null;
+		try {
+			corso = em.find(Corso.class, c.getIdCorso());
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			lezione = em.find(Lezione.class, l.getIdLezione());
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		if (corso!=null && lezione!=null) {
+			em.getTransaction().begin();
+			em.merge(l);
+			em.getTransaction().commit();
+			return true;
+		}
+		return false;
+	}
 }

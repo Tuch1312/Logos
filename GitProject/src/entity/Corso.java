@@ -18,11 +18,11 @@ public class Corso implements Serializable {
 	@OneToMany(mappedBy="corso")
 	private List<Iscrizione> iscrizioni;
 
-	@Column(nullable=false)
+	@Column(nullable=true)
 	@Temporal(TemporalType.DATE)
 	private Date dataInizio;
 	
-	@Column(nullable=false)
+	@Column(nullable=true)
 	@Temporal(TemporalType.TIME)
 	private Date oraInizioLezioni;
 	
@@ -38,7 +38,7 @@ public class Corso implements Serializable {
 	@Column(nullable = true)
 	private int lezioneEffettuate;
 	
-	@Column(nullable=false)
+	@Column(nullable=true)
 	private int numeroGiorni;
 
 	private int numeroLezioni;
@@ -47,7 +47,7 @@ public class Corso implements Serializable {
 
 	private int numMaxStudenti;
 	
-	@Column(nullable=false)
+	@Column(nullable=true)
 	private int durataLezione;
 
 	private int oreTotali;
@@ -59,13 +59,13 @@ public class Corso implements Serializable {
 	@Column(nullable=false)
 	private String titolo;
 	
-	@Column(nullable=false)
+	@Column(nullable=true)
 	private Integer lezionePerGiorno;
 	
 	private int contatoreGiorniInterno;
 	
 	//Utilizzata per definire in quali gionri della settimana si svolge il corso, nella forma (1,2,3,4,5,6,7) dove 1 = lunedi e 7 = domenica..
-	@Column(nullable=false)
+	@Column(nullable=true)
 	private String patternLezioni;
 
 	@ManyToOne

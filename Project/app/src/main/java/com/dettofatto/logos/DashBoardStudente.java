@@ -1,64 +1,66 @@
 package com.dettofatto.logos;
 
-import android.app.Activity;
-import android.content.Context;
-import android.database.DataSetObserver;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
-import android.view.Display;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 
-import com.jackandphantom.circularprogressbar.CircleProgressbar;
+import com.dettofatto.logos.adapter.SectionsPagerAdapter;
+import com.dettofatto.logos.adapter.SectionsPagerAdapter_dashboard_studente;
+import com.dettofatto.logos.fragment.Fragment_dashbaord_studente_dash;
+import com.dettofatto.logos.fragment.Fragment_dashboard_studente_lezioni;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class DashBoardStudente extends Activity {
+public class DashBoardStudente extends AppCompatActivity {
 
+    //Adapter
+    private SectionsPagerAdapter mSectionsPagerAdapter;
+    //Viewpager
+    private ViewPager mViewPager;
+    //Fragment
+    static List<Fragment> fragmentList = new ArrayList<Fragment>();
+    static Fragment_dashbaord_studente_dash fragment1 = new Fragment_dashbaord_studente_dash();
+    static Fragment_dashboard_studente_lezioni fragment2 = new Fragment_dashboard_studente_lezioni();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash_board_studente);
-        CircleProgressbar c = findViewById(R.id.cerchio);
-        c.invalidate();
 
-        //questa parte di codece risolve il problema di mostrare la circular progressBar buggata
-        Display display = getWindowManager().getDefaultDisplay();
-        DisplayMetrics outMetrics = new DisplayMetrics ();
-        display.getMetrics(outMetrics);
-        float density  = getResources().getDisplayMetrics().density;
-        float dpHeight = outMetrics.heightPixels / density;
-        float dpWidth  = outMetrics.widthPixels / density;
-        c.setLayoutParams(new LinearLayout.LayoutParams((int)dpHeight,(int)dpWidth));
+        // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        // setSupportActionBar(toolbar);
 
+        //Carico i fragment nella lista
+        fragmentList.add(fragment1);
+        fragmentList.add(fragment2);
 
-        LinearLayout lv = findViewById(R.id.list);
-        ArrayList<String>  m = new ArrayList<String>();
-        m.add("weila");
-        m.add("weila");
-        m.add("weila");
-        m.add("weila");
-        m.add("weila");
-        m.add("weila");
-        m.add("weila");
-        m.add("weila");
-        m.add("weila");
-        m.add("weila");
-        m.add("weila");
-        m.add("weila");
-        m.add("weila");
-        m.add("weila");
-        ArrayAdapter<String> aa = new ArrayAdapter<String>(getApplicationContext(), R.layout.row_dash , m);
-        for(int i = 0; i<m.size();i++){
-            lv.addView(aa.getView(i,null,lv));
+        // Create the adapter that will return a fragment for each of the three
+        // primary sections of the activity.
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), fragmentList);
 
-        }
+        // Set up the ViewPager with the sections adapter.
+        mViewPager = (ViewPager) findViewById(R.id.container);
+        mViewPager.setAdapter(mSectionsPagerAdapter);
 
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+
+        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
 
     }
 }

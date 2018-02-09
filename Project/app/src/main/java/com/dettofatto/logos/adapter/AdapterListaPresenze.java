@@ -21,12 +21,21 @@ import java.util.Date;
  * Created by itsadmin on 22/01/2018.
  */
 
+<<<<<<< HEAD:Project/app/src/main/java/com/dettofatto/logos/adapter/AdapterListaPresenze.java
 public class AdapterListaPresenze extends ArrayAdapter<Presenza> {
 
     Context ctx;  // superclasse da cui si estedono sottoclassi, tra ci c'è la mia activity
     ArrayList<Presenza> values;
 
     public AdapterListaPresenze(Context ctx, ArrayList<Presenza> values) {
+=======
+public class AdapterListaPresenze extends ArrayAdapter<presenzarow> {
+
+    Context ctx;  // superclasse da cui si estedono sottoclassi, tra ci c'è la mia activity
+    ArrayList<presenzarow> values;
+
+    public AdapterListaPresenze(Context ctx, ArrayList<presenzarow> values) {
+>>>>>>> 12df95e7edbaa6b2aad9d0aabab41574a08239db:Project/app/src/main/java/com/dettofatto/logos/AdapterListaPresenze.java
         super(ctx, R.layout.rows_list_presenze, values);
 
         this.ctx = ctx;
@@ -44,11 +53,15 @@ public class AdapterListaPresenze extends ArrayAdapter<Presenza> {
         Switch swi = (Switch) rowView.findViewById(R.id.studentePresAss);
 
 
+<<<<<<< HEAD:Project/app/src/main/java/com/dettofatto/logos/adapter/AdapterListaPresenze.java
         nomeView.setText(values.get(position).getStudente().getNome().toString());
         cognomeView.setText( values.get(position).getStudente().getCognome().toString());
         ingressoView.setText(formatTime( values.get(position).getOraArrivo()));
         uscitaView.setText(formatTime(values.get(position).getOraUscita()));
         swi.setChecked(values.get(position).isPresass());
+=======
+
+>>>>>>> 12df95e7edbaa6b2aad9d0aabab41574a08239db:Project/app/src/main/java/com/dettofatto/logos/AdapterListaPresenze.java
         return rowView;
 
     }
