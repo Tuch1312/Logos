@@ -13,17 +13,16 @@
         <activity android:name=".Login" />
         <activity android:name=".CreaCorso" />
         <activity android:name=".DashBoardDocenteListe">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity android:name=".lista_lezioni_corso" />
-        <activity android:name=".DashBoardStudente">
+        <activity android:name=".DashBoardStudente"/>
+        <activity android:name=".PresenzeAssenze"> <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
 
-        </activity>
+        <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter></activity>
         <activity android:name=".DashboardDocenteCorsi" />
         <activity android:name=".DashboardDocenteLezione" />
     </application>
