@@ -20,12 +20,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Data"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:id="@+id/lista_lezioni_riga_data"/>
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Ora"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:id="@+id/lista_lezioni_riga_ora"/>
 
         </LinearLayout>
 
@@ -38,6 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Aula"
+                android:id="@+id/lista_lezioni_riga_aula"
                 />
 
 
@@ -52,6 +55,7 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:text="N"
-        android:textSize="40sp"/>
+        android:textSize="40sp"
+        android:id="@+id/lista_lezioni_riga_numero"/>
 
 </LinearLayout>

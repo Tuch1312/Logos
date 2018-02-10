@@ -10,7 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.dettofatto.logos.adapter.SectionsPagerAdapter;
-import com.dettofatto.logos.adapter.SectionsPagerAdapter_dashboard_studente;
+
 import com.dettofatto.logos.fragment.Fragment_dashbaord_studente_dash;
 import com.dettofatto.logos.fragment.Fragment_dashboard_studente_lezioni;
 

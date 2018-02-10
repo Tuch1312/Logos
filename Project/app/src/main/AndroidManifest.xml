@@ -15,7 +15,7 @@
         <activity android:name=".DashBoardDocenteListe">
 
         </activity>
-        <activity android:name=".lista_lezioni_corso" />
+
         <activity android:name=".DashBoardStudente">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
