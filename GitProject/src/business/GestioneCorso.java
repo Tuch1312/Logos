@@ -1,6 +1,7 @@
 package business;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 
@@ -289,8 +290,13 @@ public class GestioneCorso {
 	public String calcolaCodice(int id) {
 		EntityManager em = JPAUtility.emf.createEntityManager();
 		Corso c = em.find(Corso.class, id);
+		if (c!=null) {
 		int k = key * c.getIdCorso();
 		String code = "Cn" + Integer.toHexString(k);
 		return code;
+		} 
+		else return "Corso inesistente";
 	}
+	
+	
 	}

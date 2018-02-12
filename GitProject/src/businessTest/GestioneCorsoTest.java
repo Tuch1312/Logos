@@ -4,11 +4,15 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
 import org.junit.*;
+
+
+
 import business.GestioneCorso;
 import business.JPAUtility;
 import entity.Corso;
@@ -16,20 +20,20 @@ import entity.Docente;
 import entity.Studente;
 
 public class GestioneCorsoTest {
-	@Test
-	public void nuovoCorsoTest() {
-		GestioneCorso gc = new GestioneCorso();
-		EntityManager em = JPAUtility.emf.createEntityManager();
-		Docente d = em.find(Docente.class, Filltable.maildocente);
-		String s = "1,2";
-		Date aaa= new Date();
-		//boolean esito = gc.nuovoCorso(d, s, s, 2, aaa, 2, 2, 2, s, s, aaa, s, true);
-		boolean esito = gc.nuovoCorso(d, s, s, 2, s, s, false);
-		assertTrue("non funziona crea corso", esito == true);
-		
-		
-	}
-	
+//	@Test
+//	public void nuovoCorsoTest() {
+//		GestioneCorso gc = new GestioneCorso();
+//		EntityManager em = JPAUtility.emf.createEntityManager();
+//		Docente d = em.find(Docente.class, Filltable.maildocente);
+//		String s = "1,2";
+//		Date aaa= new Date();
+//		//boolean esito = gc.nuovoCorso(d, s, s, 2, aaa, 2, 2, 2, s, s, aaa, s, true);
+//		boolean esito = gc.nuovoCorso(d, s, s, 2, s, s, false);
+//		assertTrue("non funziona crea corso", esito == true);
+//		
+//		
+//	}
+//	
 //	@Test
 //	public void eliminaCorsoTest() {
 //		GestioneCorso gc = new GestioneCorso();
@@ -103,4 +107,7 @@ public class GestioneCorsoTest {
 //
 //		
 //	}
+	
+
+	
 }

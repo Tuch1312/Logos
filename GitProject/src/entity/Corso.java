@@ -73,7 +73,7 @@ public class Corso implements Serializable {
 	private Docente docente;
 
 	@OneToMany(cascade = CascadeType.ALL, 
-	        mappedBy = "corso")
+	        mappedBy = "corso", fetch = FetchType.EAGER )
 	private List<Lezione> leziones;
 
 	//Metodi

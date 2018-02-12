@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 
@@ -11,10 +12,13 @@ import org.junit.jupiter.api.Test;
 
 import business.GestioneCorso;
 import business.GestioneLezioni;
+import business.GestionePersona;
 import business.JPAUtility;
+import business.Lister;
 import entity.Corso;
 import entity.Docente;
 import entity.Lezione;
+import entity.Studente;
 
 class GestioneLezioneTest {
 
@@ -66,18 +70,19 @@ class GestioneLezioneTest {
 		assertTrue("funziona", esito == true);
 	}*/
 	
-	@Test
-	public void modificaLezioniTest() {
-		EntityManager em = JPAUtility.emf.createEntityManager();
-		GestioneLezioni gl = new GestioneLezioni();
-		Corso c = new Corso();
-		c.setIdCorso(1);
-		Lezione l = new Lezione();
-		l.setIdLezione(22);
-		l.setDurata(25);
-		boolean esito = gl.modificaLezione(c, l);
-		assertTrue("funziona", esito == true);
-	}
+//	@Test
+//	public void modificaLezioniTest() {
+//		EntityManager em = JPAUtility.emf.createEntityManager();
+//		GestioneLezioni gl = new GestioneLezioni();
+//		Corso c = new Corso();
+//		c.setIdCorso(1);
+//		Lezione l = new Lezione();
+//		l.setIdLezione(22);
+//		l.setDurata(25);
+//		boolean esito = gl.modificaLezione(c, l);
+//		assertTrue("funziona", esito == true);
+//	}
 	
+
 	
 }

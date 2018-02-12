@@ -1,7 +1,10 @@
 package business;
 
+import java.util.List;
+
 import javax.persistence.*;
 
+import entity.Corso;
 import entity.Docente;
 import entity.Persona;
 import entity.Studente;
@@ -87,6 +90,7 @@ public class GestionePersona {
 				}
 			}else return false;
 	}
+
 		
 		
 		
