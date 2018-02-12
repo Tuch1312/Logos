@@ -9,17 +9,15 @@ import java.util.List;
 public class Studente extends Persona {
 
     private List<Iscrizione> iscrizioni;
-
-
-
     private List<Presenza> presenza;
-
     private int presenzaOggi;
 
-
+//Costruttore
 
     public Studente() {
     }
+
+    //getter and setter
 
 
 
@@ -58,8 +56,26 @@ public class Studente extends Persona {
         return presenza;
     }
 
-    public String getNome() {
-       return super.getNome();
+    public String getNome() {return super.getNome();}
+
+    public void setNome(String nome) {super.setNome(nome);}
+
+    public String getCognome() {
+        return super.getCognome();
     }
+
+    public void setCognome(String cognome) {super.setCognome(cognome);}
+
+    public String getMail() {return super.getMail();}
+
+    public void setMail(String mail)  {super.setMail(mail);}
+
+    public String getIndirizzo() {return super.getIndirizzo();}
+
+    public void setIndirizzo(String indirizzo){super.setIndirizzo(indirizzo);}
+
+    public String getImmagine(){return super.getImmagine();}
+
+    public void setImmagine(String immagine){super.setImmagine(immagine);}
 
 }
