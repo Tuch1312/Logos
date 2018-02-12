@@ -6,24 +6,14 @@ package com.dettofatto.logos.entities;
 
 public class Presenza {
 
-
-
     private int id;
-
-
-
     private Long oraArrivo;
-
-
     private Long oraUscita;
-
-
     private Lezione lezione;
-
-
     private Studente studente;
-
     private boolean isPresass;
+
+    public Presenza() {}
 
     public boolean isPresass() {
         return isPresass;
@@ -31,9 +21,6 @@ public class Presenza {
 
     public void setPresass(boolean presass) {
         isPresass = presass;
-    }
-
-    public Presenza() {
     }
 
     public int getId() {

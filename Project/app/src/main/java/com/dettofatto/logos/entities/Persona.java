@@ -9,13 +9,15 @@ public class Persona {
 
     private String mail;
 
+    private String nome;
+
     private String cognome;
 
     private String immagine;
 
     private String indirizzo;
 
-    private String nome;
+
 
     private String password;
 

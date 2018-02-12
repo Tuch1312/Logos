@@ -10,7 +10,9 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.dettofatto.logos.adapter.AdapterListaPresenze;
+import com.dettofatto.logos.entities.Persona;
 import com.dettofatto.logos.entities.Presenza;
+import com.dettofatto.logos.entities.Studente;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -29,8 +31,20 @@ public class PresenzeAssenze extends Activity {
 
         //Solo per test
         ArrayList<Presenza> values = new ArrayList<Presenza>();
-        Presenza p1 = new Presenza("Giovanni","Rossini", new Date().getTime(), new Date().getTime());
-        Presenza p2 = new Presenza("Matteo","Lia", new Date().getTime(), new Date().getTime());
+        Studente s1 = new Studente();
+        s1.setNome("matteo");
+        s1.setCognome("abc");
+        Studente s2 = new Studente();
+        s2.setNome("luca");
+        s2.setCognome("gfgf");
+        Presenza p1 = new Presenza();
+        Presenza p2 = new Presenza();
+        p1.setStudente(s1);
+        p1.setOraArrivo(new Date().getTime());
+        p1.setOraUscita(new Date().getTime());
+        p2.setStudente(s2);
+        p2.setOraArrivo(new Date().getTime());
+        p2.setOraUscita(new Date().getTime());
 
         values.add(p1);
         values.add(p2);
