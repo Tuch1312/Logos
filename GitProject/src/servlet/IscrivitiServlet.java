@@ -15,16 +15,16 @@ import entity.Docente;
 import entity.Studente;
 
 /**
- * Servlet implementation class CancellaStudenteServlet
+ * Servlet implementation class IscrivitiServlet
  */
-@WebServlet("/CancellaStudenteServlet")
-public class CancellaStudenteServlet extends HttpServlet {
+@WebServlet("/IscrivitiServlet")
+public class IscrivitiServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CancellaStudenteServlet() {
+    public IscrivitiServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,11 +42,11 @@ public class CancellaStudenteServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ObjectMapper om = new ObjectMapper();
-		Docente d = om.readValue(request.getParameter("docente"), Docente.class);
-		Corso c = om.readValue(request.getParameter("corso"), Corso.class);
+		String codiceCorso = request.getParameter("codiceCorso");
 		Studente s = om.readValue(request.getParameter("studente"), Studente.class);
 		GestioneCorso gc = new GestioneCorso(); 
-		Boolean andataBuonFine = gc.cancellaStudente(d, c, s);
+		String i = gc.calcolaCodice(2);
+		Boolean andataBuonFine = gc.iscriviti(s, i);
 		response.getWriter().append(andataBuonFine.toString());
 	}
 
