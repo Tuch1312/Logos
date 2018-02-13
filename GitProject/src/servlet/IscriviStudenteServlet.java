@@ -14,16 +14,16 @@ import entity.Corso;
 import entity.Docente;
 
 /**
- * Servlet implementation class ModificaCorso
+ * Servlet implementation class IscriviStudenteServlet
  */
-@WebServlet("/ModificaCorso")
-public class ModificaCorsoServlet extends HttpServlet {
+@WebServlet("/IscriviStudenteServlet")
+public class IscriviStudenteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ModificaCorsoServlet() {
+    public IscriviStudenteServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,8 +43,9 @@ public class ModificaCorsoServlet extends HttpServlet {
 		ObjectMapper om = new ObjectMapper();
 		Docente d = om.readValue(request.getParameter("docente"), Docente.class);
 		Corso c = om.readValue(request.getParameter("corso"), Corso.class);
+		String mail = request.getParameter("mail");
 		GestioneCorso gc = new GestioneCorso(); 
-		Boolean andataBuonFine = gc.modificaCorso(c, d);
+		Boolean andataBuonFine = gc.iscriviStudente(d, c, mail);
 		response.getWriter().append(andataBuonFine.toString());
 	}
 

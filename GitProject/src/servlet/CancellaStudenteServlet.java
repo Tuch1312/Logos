@@ -14,16 +14,16 @@ import entity.Corso;
 import entity.Docente;
 
 /**
- * Servlet implementation class ModificaCorso
+ * Servlet implementation class CancellaStudenteServlet
  */
-@WebServlet("/ModificaCorso")
-public class ModificaCorsoServlet extends HttpServlet {
+@WebServlet("/CancellaStudenteServlet")
+public class CancellaStudenteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ModificaCorsoServlet() {
+    public CancellaStudenteServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -44,7 +44,7 @@ public class ModificaCorsoServlet extends HttpServlet {
 		Docente d = om.readValue(request.getParameter("docente"), Docente.class);
 		Corso c = om.readValue(request.getParameter("corso"), Corso.class);
 		GestioneCorso gc = new GestioneCorso(); 
-		Boolean andataBuonFine = gc.modificaCorso(c, d);
+		Boolean andataBuonFine = gc.eliminaCorso(d, c);
 		response.getWriter().append(andataBuonFine.toString());
 	}
 
