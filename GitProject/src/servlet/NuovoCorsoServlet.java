@@ -54,12 +54,13 @@ public class NuovoCorsoServlet extends HttpServlet {
 		String sede = request.getParameter("sede");
 		String immagine = request.getParameter("immagine");
 		
+		
 		Boolean andataBuonFine;
 		if (automaticFill == false) {
 			andataBuonFine = gc.nuovoCorso(d, titolo, descrizione, numMaxStudenti, sede, immagine, automaticFill);
 		} else {
-			int numeroGiorni = Integer.parseInt(request.getParameter("numeroGiorni"));
 			Date dataInizio = new Date (Date.parse(request.getParameter("dataInizio"))); 
+			int numeroGiorni = Integer.parseInt(request.getParameter("numeroGiorni"));
 			int durataLezione = Integer.parseInt(request.getParameter("durataLezione"));
 			int numLezioniXgiorno = Integer.parseInt(request.getParameter("numLezioniXgiorno"));
 			Date oraInizioLezioni = new Date (Date.parse(request.getParameter("oraInizioLezioni")));
