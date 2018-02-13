@@ -54,17 +54,20 @@ public class NuovoCorsoServlet extends HttpServlet {
 		String sede = request.getParameter("sede");
 		String immagine = request.getParameter("immagine");
 		
-		boolean andataBuonFine;
+		Boolean andataBuonFine;
 		if (automaticFill == false) {
 			andataBuonFine = gc.nuovoCorso(d, titolo, descrizione, numMaxStudenti, sede, immagine, automaticFill);
 		} else {
 			int numeroGiorni = Integer.parseInt(request.getParameter("numeroGiorni"));
 			Date dataInizio = new Date (Date.parse(request.getParameter("dataInizio"))); 
 			int durataLezione = Integer.parseInt(request.getParameter("durataLezione"));
-			int numLezioniXgiorno = Integer.parseInt( int numMaxStudenti, 
-			Date oraInizioLezioni, String patternLezioni
-			andataBuonfine = gc.
+			int numLezioniXgiorno = Integer.parseInt(request.getParameter("numLezioniXgiorno"));
+			Date oraInizioLezioni = new Date (Date.parse(request.getParameter("oraInizioLezioni")));
+			String patternLezioni = request.getParameter("patternLezioni");
+			andataBuonFine = gc.nuovoCorso(d, titolo, descrizione, numeroGiorni, dataInizio, durataLezione, numLezioniXgiorno, numMaxStudenti, sede, immagine, oraInizioLezioni, patternLezioni, automaticFill);
 		}
+		
+		response.getWriter().append(andataBuonFine.toString());
 	}
 
 }
