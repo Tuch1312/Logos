@@ -14,13 +14,13 @@ import entity.Corso;
 import entity.Studente;
 
 public class GestionePersonaTest {
-	@Test
-	public void testLogin() {
-		GestionePersona gp = new GestionePersona();
-		
-		boolean esito = gp.login("ciaone", "0000");
-		assertTrue("non funziona", esito == false);
-	}
+//	@Test
+//	public void testLogin() {
+//		GestionePersona gp = new GestionePersona();
+//		
+//		boolean esito = gp.login("ciaone", "0000");
+//		assertTrue("non funziona", esito == false);
+//	}
 	
 	
 	@Test
