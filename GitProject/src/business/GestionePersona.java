@@ -1,17 +1,14 @@
 package business;
 
-import java.util.List;
-
 import javax.persistence.*;
 
-import entity.Corso;
 import entity.Docente;
 import entity.Persona;
 import entity.Studente;
 
 public class GestionePersona {
 	
-	public Boolean login(String mail, String psw) {
+	public Persona login(String mail, String psw) {
 		EntityManager em = JPAUtility.emf.createEntityManager();
 		Persona persona = null;
 		try {
@@ -19,10 +16,10 @@ public class GestionePersona {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		if (persona!=null) {
-			return checkPassword(psw, persona);
-			}
-		else return false;
+		if (persona!=null && checkPassword(psw, persona)) {
+			return persona;
+				}
+		else return null;
 		}
 	
 	public boolean registrazione(String nome, String cognome, String mail, String password, String immagine, String indirizzo, boolean isDocente) {
@@ -65,7 +62,7 @@ public class GestionePersona {
 		EntityManager em = JPAUtility.emf.createEntityManager();
 		Persona s = em.find(Persona.class, p.getMail());
 		
-		if(s.getPassword()==oldPassword) {
+		if(s.getPassword().equals(oldPassword)) {
 			em.getTransaction().begin();
 			s.setPassword(newPassword);
 			em.getTransaction().commit();
@@ -74,23 +71,23 @@ public class GestionePersona {
 			return false;
 		}
 	}
-	
-	public boolean cambiaMail(String password,String newMail, Persona p) {
-		EntityManager em = JPAUtility.emf.createEntityManager();
-		Persona s = em.find(Persona.class, p.getMail());
-		Persona z = em.find(Persona.class, newMail);
-		if (z!=null) {
-			if(s.getPassword() == password) {
-				em.getTransaction().begin();
-				s.setMail(newMail);
-				em.getTransaction().commit();
-				return true;
-			} else {
-				return false;
-				}
-			}else return false;
-	}
-
+//	//Dato che la mail è mappata come primary key non si puo cambiare all'interno del database e di conseguenza 
+//	//sono costretto a cancellare e a ricreare l'oggetto persona
+//	public boolean cambiaMail(String password,String newMail, Persona p) {
+//		EntityManager em = JPAUtility.emf.createEntityManager();
+//		Persona s = em.find(Persona.class, p.getMail());
+//		Persona z = em.find(Persona.class, newMail);
+//		if (z==null) {
+//			if(s.getPassword().equals(password)) {
+//				em.getTransaction().begin();
+//				s.setMail(newMail);
+//				em.getTransaction().commit();
+//				return true;
+//			} else {
+//				return false;
+//				}
+//			}else return false;
+//	}
 		
 		
 		

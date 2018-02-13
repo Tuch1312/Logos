@@ -31,8 +31,7 @@ public class GestioneCorsoTest {
 //		boolean esito = gc.nuovoCorso(d, s, s, 2, s, s, false);
 //		assertTrue("non funziona crea corso", esito == true);
 //		
-//		
-//	}
+//			}
 //	
 //	@Test
 //	public void eliminaCorsoTest() {
