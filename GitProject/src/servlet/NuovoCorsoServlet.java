@@ -47,7 +47,7 @@ public class NuovoCorsoServlet extends HttpServlet {
 		
 		GestioneCorso gc = new GestioneCorso();
 		
-		Docente d = om.readValue(request.getParameter("docente"), Docente.class);
+		Docente d = om.readValue(request.getParameter("json"), Docente.class);
 		String titolo = request.getParameter("titolo");
 		String descrizione = request.getParameter("descrizione");
 		int numMaxStudenti = Integer.parseInt(request.getParameter("numMaxStudenti"));
