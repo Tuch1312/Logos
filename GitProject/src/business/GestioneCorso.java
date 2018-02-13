@@ -57,6 +57,8 @@ public class GestioneCorso {
 			corso.setOraInizioLezioni(oraInizioLezioni);
 			corso.setPatternLezioni(patternLezioni);
 			corso.setDurataLezione(durataLezione);
+			GestioneLezioni gl = new GestioneLezioni();
+			gl.creaLezioni(corso);
 			em.getTransaction().begin();
 			em.persist(corso);
 			em.getTransaction().commit();
