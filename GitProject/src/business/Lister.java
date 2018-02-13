@@ -189,6 +189,7 @@ public class Lister {
 		return l;
 	}
 
+	//ottiene un aconnessione con il databse
 	private Connection getConnection() throws ClassNotFoundException, SQLException {
 		Class.forName("org.mariadb.jdbc.Driver");
 		Connection con = DriverManager.getConnection("jdbc:mariadb://18.196.84.13:3306/main_table", "dbmaster",
