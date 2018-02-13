@@ -48,27 +48,41 @@ class ListerTest {
 //			}
 //		}
 //	
-	@Test 
-	public void getLeziozniDiOggi() {
-		Studente d = new Studente();
-		d.setMail("studente@mail");
-		Lister gc = new Lister();
-		List<Lezione> ll = gc.getLezioniDiOggi(d);
-		for (Lezione l : ll) {
-			System.out.println(l.getIdLezione());
-		}
-	}
-//	
 //	@Test 
-//	public void getLeziozniDiDomani() {
+//	public void getLeziozniDiOggi() {
+//		Studente d = new Studente();
+//		d.setMail("studente@mail");
 //		Lister gc = new Lister();
-//		Docente d = new Docente();
-//		d.setMail("docente@mail");
-//		List<Lezione> ll = gc.getLezioniDiDomani(d);
+//		List<Lezione> ll = gc.getLezioniDiOggi(d);
 //		for (Lezione l : ll) {
 //			System.out.println(l.getIdLezione());
+//			System.out.println(l.getNumeroLezione());
+//			System.out.println(l.getOraInizio());
+//		
 //		}
 //	}
+//	
+	@Test 
+	public void getLeziozniDiDomani() {
+		Lister gc = new Lister();
+		Studente d = new Studente();
+		d.setMail("studente@mail");
+		List<Lezione> ll = gc.getLezioniDiDomani(d);
+		for (Lezione l : ll) {
+			System.out.println(l.getIdLezione());
+			System.out.println(l.getNumeroLezione());
+			System.out.println(l.getArgomenti());
+			System.out.println(l.getAssenti());
+			System.out.println(l.getDurata());
+			System.out.println(l.getAula());
+			System.out.println(l.getPercentAssenti());
+			System.out.println(l.getOraInizio());
+			System.out.println(l.getNumAssenti());
+			System.out.println(l.getNumeroLezione());
+			System.out.println(l.getCorso().toString());
+			System.out.println(l.getData());
+		}
+	}
 	
 	
 	
