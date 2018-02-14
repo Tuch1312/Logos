@@ -31,25 +31,24 @@ public class GestioneCorsoTest {
 //		boolean esito = gc.nuovoCorso(d, s, s, 2, s, s, false);
 //		assertTrue("non funziona crea corso", esito == true);
 //		
-//		
-//	}
+//			}
 //	
-//	@Test
-//	public void eliminaCorsoTest() {
-//		GestioneCorso gc = new GestioneCorso();
-//		Docente d = new Docente();
-//		d.setNome("ciao");
-//		d.setCognome("ciao");
-//		//ho impostato una mail che non esiste nel database
-//		//in questo modo il metodo non effettua modifiche sul db
-//		//ma � funzionante
-//		d.setMail("cia");
-//		d.setPassword("ciao");
-//		Corso c = new Corso();
-//		c.setIdCorso(3);
-//		boolean esito = gc.eliminaCorso(d, c);
-//		assertTrue("funziona", esito == false);
-//	}
+	@Test
+	public void eliminaCorsoTest() {
+		GestioneCorso gc = new GestioneCorso();
+		Docente d = new Docente();
+		d.setNome("ciao");
+		d.setCognome("ciao");
+		//ho impostato una mail che non esiste nel database
+		//in questo modo il metodo non effettua modifiche sul db
+		//ma � funzionante
+		d.setMail("docente@mail");
+		d.setPassword("ciao");
+		Corso c = new Corso();
+		c.setIdCorso(1);
+		boolean esito = gc.eliminaCorso(d, c);
+		assertTrue("funziona", esito == true);
+	}
 	
 //	@Test
 //	public void modificaCorsoTest() {

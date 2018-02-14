@@ -12,18 +12,19 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import business.GestioneCorso;
 import entity.Corso;
 import entity.Docente;
+import entity.Studente;
 
 /**
- * Servlet implementation class ModificaCorso
+ * Servlet implementation class IscrivitiServlet
  */
-@WebServlet("/ModificaCorso")
-public class ModificaCorsoServlet extends HttpServlet {
+@WebServlet("/IscrivitiServlet")
+public class IscrivitiServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ModificaCorsoServlet() {
+    public IscrivitiServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,10 +42,11 @@ public class ModificaCorsoServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ObjectMapper om = new ObjectMapper();
-		Docente d = om.readValue(request.getParameter("docente"), Docente.class);
-		Corso c = om.readValue(request.getParameter("corso"), Corso.class);
+		String codiceCorso = request.getParameter("codiceCorso");
+		Studente s = om.readValue(request.getParameter("studente"), Studente.class);
 		GestioneCorso gc = new GestioneCorso(); 
-		Boolean andataBuonFine = gc.modificaCorso(c, d);
+		String i = gc.calcolaCodice(2);
+		Boolean andataBuonFine = gc.iscriviti(s, i);
 		response.getWriter().append(andataBuonFine.toString());
 	}
 

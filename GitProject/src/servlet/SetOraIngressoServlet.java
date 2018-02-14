@@ -9,21 +9,22 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import business.GestioneCorso;
+import business.GestionePresenze;
 import entity.Corso;
 import entity.Docente;
+import entity.Studente;
 
 /**
- * Servlet implementation class ModificaCorso
+ * Servlet implementation class SetOraIngressoServlet
  */
-@WebServlet("/ModificaCorso")
-public class ModificaCorsoServlet extends HttpServlet {
+@WebServlet("/SetOraIngressoServlet")
+public class SetOraIngressoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ModificaCorsoServlet() {
+    public SetOraIngressoServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,10 +42,11 @@ public class ModificaCorsoServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ObjectMapper om = new ObjectMapper();
-		Docente d = om.readValue(request.getParameter("docente"), Docente.class);
-		Corso c = om.readValue(request.getParameter("corso"), Corso.class);
-		GestioneCorso gc = new GestioneCorso(); 
-		Boolean andataBuonFine = gc.modificaCorso(c, d);
+		Docente d = om.readValue("docente", Docente.class);
+		Studente s = om.readValue("studente", Studente.class);
+		Corso c = om.readValue("corso", Corso.class);
+		GestionePresenze gp = new GestionePresenze();
+		Boolean andataBuonFine = gp.setOraIngresso(d, s, c);
 		response.getWriter().append(andataBuonFine.toString());
 	}
 
