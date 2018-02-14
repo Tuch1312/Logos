@@ -121,7 +121,13 @@ public class GestioneCorso {
 		if (docente != null) {
 			if (docente.getMail().equals((em.find(Corso.class, c.getIdCorso()).getDocente().getMail()))) {
 				Corso corso = em.find(Corso.class, c.getIdCorso());
+				Lister li = new Lister();
+				List<Iscrizione> iscrizioniList = li.getIscrizioniperCorso(corso);
 				em.getTransaction().begin();
+				for (Iscrizione i : iscrizioniList) {
+					Iscrizione isc = em.find(Iscrizione.class, i.getIscrizionePk());
+					em.remove(isc);
+				}
 				em.remove(corso);
 				em.getTransaction().commit();
 				return true;

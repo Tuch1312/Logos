@@ -9,7 +9,7 @@
 		<class>src.entity.Iscrizione</class>
 		<class>src.entity.Corso</class>
 		<class>src.entity.IscrizionePk</class>
-		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 	<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://18.196.84.13:3306/main_table"/>
 			<property name="javax.persistence.jdbc.user" value="dbmaster"/>
