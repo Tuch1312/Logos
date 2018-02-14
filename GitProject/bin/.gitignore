@@ -1,2 +1,5 @@
-/servlet/
+/META-INF/
+/business/
+/businessTest/
 /entity/
+/servlet/

@@ -27,4 +27,11 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     compile 'com.jackandphantom.android:circularprogressbar:1.2.0'
     implementation 'com.android.support:design:26.0.0'
+
+        // Retrofit & OkHttp
+        compile 'com.squareup.retrofit2:retrofit:2.3.0'
+
+        // JSON Converter
+        compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+
 }
