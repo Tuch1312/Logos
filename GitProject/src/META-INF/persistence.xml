@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="GitProject">
-		<class>src.entity.Presenza</class>
-		<class>src.entity.Docente</class>
-		<class>src.entity.Lezione</class>
-		<class>src.entity.Persona</class>
-		<class>src.entity.Studente</class>
-		<class>src.entity.Iscrizione</class>
-		<class>src.entity.Corso</class>
-		<class>src.entity.IscrizionePk</class>
+		<class>entity.Presenza</class>
+		<class>entity.Docente</class>
+		<class>entity.Lezione</class>
+		<class>entity.Persona</class>
+		<class>entity.Studente</class>
+		<class>entity.Iscrizione</class>
+		<class>entity.Corso</class>
+		<class>entity.IscrizionePk</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 	<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://18.196.84.13:3306/main_table"/>
