@@ -223,7 +223,7 @@ public class Lister {
 	}
 	
 	/*
-     * Ritorna tutte le iscirzioni per un determinato corso
+     * Ritorna tutte le iscirzioni per un determinato corsoa
      */
     public List<Iscrizione> getIscrizioniperCorso(Corso c) {
         EntityManager em = JPAUtility.emf.createEntityManager();
