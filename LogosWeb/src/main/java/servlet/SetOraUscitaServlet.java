@@ -42,9 +42,9 @@ public class SetOraUscitaServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ObjectMapper om = new ObjectMapper();
-		Docente d = om.readValue("docente", Docente.class);
-		Studente s = om.readValue("studente", Studente.class);
-		Corso c = om.readValue("corso", Corso.class);
+		Docente d = om.readValue(request.getParameter("docente"), Docente.class);
+		Studente s = om.readValue(request.getParameter("studente"), Studente.class);
+		Corso c = om.readValue(request.getParameter("corso"), Corso.class);
 		GestionePresenze gp = new GestionePresenze();
 		Boolean andataBuonFine = gp.setOraUscita(d, s, c);
 		response.getWriter().append(andataBuonFine.toString());
