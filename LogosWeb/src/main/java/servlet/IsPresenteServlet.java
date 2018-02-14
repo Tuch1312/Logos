@@ -42,8 +42,8 @@ public class IsPresenteServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ObjectMapper om = new ObjectMapper();
-		Studente s = om.readValue("studente", Studente.class);
-		Corso c = om.readValue("corso", Corso.class);
+		Studente s = om.readValue(request.getParameter("studente"), Studente.class);
+		Corso c = om.readValue(request.getParameter("corso"), Corso.class);
 		GestionePresenze gp = new GestionePresenze();
 		Boolean andataBuonFine = gp.isPresente(s, c);
 		response.getWriter().append(andataBuonFine.toString());
