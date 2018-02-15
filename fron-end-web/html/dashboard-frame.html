@@ -38,6 +38,42 @@
                 </a>
             </div>
             <div class="sidebar-wrapper">
+                <div class="user">
+                    <div class="photo">
+                        <img src="../assets/img/faces/avatar.jpg">
+                    </div>
+                    <div class="info">
+                        <a data-toggle="collapse" href="#collapseExample" class="" aria-expanded="true">
+                            <span>
+                                Tania Andrew
+                                <b class="caret"></b>
+                            </span>
+                        </a>
+                        <div class="clearfix"></div>
+                        <div class="collapse in" id="collapseExample" aria-expanded="true" style="">
+                            <ul class="nav">
+                                <li>
+                                    <a href="#">
+                                        
+                                        <span class="sidebar-normal"> My Profile </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                       
+                                        <span class="sidebar-normal"> Edit Profile </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                              
+                                        <span class="sidebar-normal"> Settings </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
               <!-- Are Menu, aggiungere un menu (solo <ul>) ------------------------------------------------------ -->
       
                 <!-- Fine Are Menu ------------------------------------------------------------------------------- -->
@@ -77,97 +113,65 @@
                             <!-- Qui mettiamo dentro le card ------------------------------------------------------------------------------------------------------ -->
                             
                     <div class="card">
-                                <div class="card-header" data-background-color="orange">
-                                    <h4 class="title">Crea Nuovo corso</h4>
-                                    <p class="category">Completa il form per creare un nuovo corso</p>
-                                </div>
-                                <div class="card-content">
-                                     <div class="row" id="riga-titolo">
-                                            <label class="col-sm-2 label-on-left">Titolo</label>
-                                            <div class="col-sm-6">
-                                                <div class="form-group label-floating is-empty">
-                                                    <label class="control-label"></label>
-                                                    <input type="text" class="form-control" value="">
-                                                <span class="material-input"></span></div>
-                                            </div>
-                                        </div>
-                                         <div class="row" id="riga-descrizione">
-                                            <label class="col-sm-2 label-on-left">Descrizione</label>
-                                            <div class="col-sm-10">
-                                                <div class="form-group label-floating is-empty">
-                                                    <label class="control-label"></label>
-                                                    <input type="text" class="form-control" value="">
-                                                <span class="material-input"></span></div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <label class="col-sm-2 label-on-left">N° massimo iscirzioni</label>
-                                            <div class="col-sm-4">
-                                                <div class="form-group label-floating is-empty">
-                                                    <label class="control-label"></label>
-                                                    <input type="text" class="form-control" value="">
-                                                    <span class="help-block">Numero massimo di posti disponibili per questo corso</span>
-                                                <span class="material-input"></span></div>
-                                            </div>
-                                        </div>
-                                      <div class="row">
-                                            <label class="col-sm-2 label-on-left">Sede</label>
-                                            <div class="col-sm-6">
-                                                <div class="form-group label-floating is-empty">
-                                                    <label class="control-label"></label>
-                                                    <input type="text" class="form-control" value="">
-                                                    <span class="help-block">Indirizzo della sede di svolgimento del corso</span>
-                                                <span class="material-input"></span></div>
-                                            </div>
-                                        </div>
-                                    
-                                    <div class="row">
-                                            <label class="col-sm-2 label-on-left">Genera lezioni automaticamente</label>
-                                            <div class="col-sm-10">
-                                                <div class="form-group">
-                                                    <p class="form-control-static">"Genera lezioni automaticamente" permette di generare le lezioni automaticamnte, asegnadolgi una data ed un'ora di inizio a partire da un giorno da voi scelto.
-                                                    I dati che è necessario inserire </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                              
-                                        <div class="row">
-                                            <label class="col-sm-2 label-on-left"></label>
-                                            <div class="col-sm-10">
-                                                <div class="form-group label-floating is-empty riga-form-bassa">
-                                                    <div class="mdc-form-field">
-                                                      <div class="mdc-checkbox">
-                                                        <input type="checkbox"
-                                                               id="my-checkbox"
-                                                               class="mdc-checkbox__native-control"/>
-                                                        <div class="mdc-checkbox__background">
-                                                          <svg class="mdc-checkbox__checkmark"
-                                                               viewBox="0 0 24 24">
-                                                            <path class="mdc-checkbox__checkmark-path"
-                                                                  fill="none"
-                                                                  stroke="white"
-                                                                  d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                                                          </svg>
-                                                          <div class="mdc-checkbox__mixedmark"></div>
-                                                        </div>
-                                                      </div>
+	<div class="card-header" data-background-color="orange">
+		<h4 class="title">Crea Nuovo corso</h4>
+		<p class="category">Completa il form per creare un nuovo corso</p>
+	</div>
+	<div class="card-content">
+			<div class="row">
+				<label class="col-sm-2 label-on-left">Pattern settimanale</label>
+				<div class="col-sm-6">
+					<div class="form-group label-floating is-empty">
+						<label class="control-label"></label>
+						<input type="email" class="form-control" id="input-pattern" value="">
+						<span class="material-input"></span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<label class="col-sm-2 label-on-left"></label>
+				<div class="col-sm-10">
+					<div class="form-group riga-form-bassa">
+						<p class="form-control-static">Per iscirvere uno studente ad un corso è necesario il suo indirizzo email. <br />
+							Per avere maggiori informazioni <a href="">clicca qui.</a>
+						</p>
+					</div>
+				</div>
+			</div>
+        
+        
+        <div class="row">
+            <label class="col-sm-2 label-on-left"></label>
+			<div class="col-sm-10">
+				<div class="form-group label-floating is-empty ">
+					<div class="mdc-form-field">
+						<div class="mdc-checkbox">
+							<input type="checkbox" id="input-auto-fill" class="mdc-checkbox__native-control"/>
+							<div class="mdc-checkbox__background">
+								<svg class="mdc-checkbox__checkmark"
+									viewBox="0 0 24 24">
+									<path class="mdc-checkbox__checkmark-path"
+										fill="none"
+										stroke="white"
+										d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+								</svg>
+								<div class="mdc-checkbox__mixedmark"></div>
+							</div>
+						</div>
+						<label for="my-checkbox">Ho letto ed accetto i <a href="">termini e le condizoini</a></label>
+					</div>
+					<span class="material-input"></span>
+				</div>
+			</div>
+		</div>
+			<button type="submit" class="btn btn-primary pull-right">Iscrivi</button>
+		</div>
+	</div>
 
-                                                      <label for="my-checkbox">Genera lezioni automaticamente</label>
-                                                    </div>
-                                                <span class="material-input"></span></div>
-                                            </div>
-                                        </div>
-                            
-                                        
-                                      
-                               
-                                    </div>
-                        
-                        
-                        </div>
-                           
-                            
-                            
+
+
+
+
                             <!-- Fine area card ------------------------------------------------------------------------------------------------------------------- -->
                         </div>
                     </div>
@@ -195,7 +199,7 @@
                         <script>
                             document.write(new Date().getFullYear())
                         </script>
-                        <a href="http://logoscloud.ddns.net">Logos Team</a>, made with love for a better web
+                        <a href="http://logoscloud.ddns.net">Logos Team</a>, made with  &hearts;  for a better web 
                     </p>
                 </div>
             </footer>
