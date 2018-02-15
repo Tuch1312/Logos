@@ -16,14 +16,16 @@ import entity.Iscrizione;
 import entity.IscrizionePk;
 import entity.Studente;
 
-class Filltable {
+public class Filltable {
 	
 	static final String mailstudente = "studente@mail";
 	static final String maildocente = "docente@mail";
 	static final int idcorso = 1;
+	
+
 
 	@Test
-	void test() {
+	public void test() {
 		EntityManager em = JPAUtility.emf.createEntityManager();
 		Docente d = new Docente();
 		Studente s = new Studente();
@@ -44,7 +46,7 @@ class Filltable {
 		c.setNumeroGiorni(10);
 		c.setOraInizioLezioni(new Date());
 		
-		ipk.setIdCorso(1);
+		ipk.setIdCorso(2);
 		ipk.setMailStudente("studente@mail");
 		
 		i.setIscrizionePk(ipk);
