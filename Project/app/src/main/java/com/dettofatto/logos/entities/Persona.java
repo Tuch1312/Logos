@@ -1,25 +1,29 @@
 package com.dettofatto.logos.entities;
 
+import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
+
 /**
  * Created by itsadmin on 09/02/2018.
  */
 
 public class Persona {
 
-
+    @SerializedName("mail")
     private String mail;
-
+    @SerializedName("nome")
     private String nome;
-
+    @SerializedName("cognome")
     private String cognome;
-
+    @SerializedName("immagine")
     private String immagine;
-
+    @SerializedName("indirizzo")
     private String indirizzo;
-
-
-
+    @SerializedName("password")
     private String password;
+
+
 
     public Persona() {
     }

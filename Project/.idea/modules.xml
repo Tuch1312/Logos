@@ -3,11 +3,15 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Project.iml" filepath="$PROJECT_DIR$/Project.iml" />
+<<<<<<< HEAD
       <module fileurl="file://C:\Users\User\git\Logos\Project\Project.iml" filepath="C:\Users\User\git\Logos\Project\Project.iml" />
       <module fileurl="file://C:\Users\User\Documents\PROGETTO\Project\Project.iml" filepath="C:\Users\User\Documents\PROGETTO\Project\Project.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://C:\Users\User\Documents\PROGETTO\Project\app\app.iml" filepath="C:\Users\User\Documents\PROGETTO\Project\app\app.iml" />
       <module fileurl="file://C:\Users\User\git\Logos\Project\app\app.iml" filepath="C:\Users\User\git\Logos\Project\app\app.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+>>>>>>> 5920b3d2e7e6b5bfc0bdc865f138a13936157351
     </modules>
   </component>
 </project>
