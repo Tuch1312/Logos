@@ -1,5 +1,6 @@
 package com.dettofatto.logos.RetroInterfaces;
 
+import com.dettofatto.logos.entities.Corso;
 import com.dettofatto.logos.entities.Iscrizione;
 import com.dettofatto.logos.entities.Studente;
 
@@ -28,7 +29,7 @@ public interface RetroLister {
     Call<List<RetroLezione>> getLezioniDiDomaniStudente();
 
     @GET("getCorsiPerDocenteServlet")
-    Call<List<RetroCorso>> getCorsiPerDocente();
+    Call<List<Corso>> getCorsiPerDocente();
 
     @GET("GetgetCorsiPerStudenteServlet")
     Call<List<RetroCorso>> getCorsiPerStudente();
