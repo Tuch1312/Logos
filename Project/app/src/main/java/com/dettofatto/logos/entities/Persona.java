@@ -2,6 +2,8 @@ package com.dettofatto.logos.entities;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 /**
  * Created by itsadmin on 09/02/2018.
  */
@@ -18,10 +20,10 @@ public class Persona {
     private String immagine;
     @SerializedName("indirizzo")
     private String indirizzo;
-
-
-
+    @SerializedName("password")
     private String password;
+
+
 
     public Persona() {
     }

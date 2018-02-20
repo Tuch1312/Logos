@@ -20,8 +20,6 @@
         <activity android:name=".CreaCorso" />
         <activity android:name=".DashBoardDocenteListe">
 
-
-
         </activity>
 
         <activity android:name=".PresenzeAssenze">
