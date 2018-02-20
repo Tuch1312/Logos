@@ -10,11 +10,13 @@ import entity.*;
 
 public class GestionePresenze {
 	
-	public boolean setOraIngresso(Docente d, Studente s, Corso c) {
+	public boolean setOraIngresso(Docente d, Studente s, Corso co) {
 		Presenza p = new Presenza();
 		EntityManager em = JPAUtility.emf.createEntityManager();
-		String sq = "SELECT a.id_lezione FROM PRESENZA a WHERE a.id_lezione = " + c.getLeziones().get(c.getLezioneCorrente()).getIdLezione() + " and a.mail = '" + s.getMail() + "'";
-		Query q = em.createNativeQuery(sq);
+		Corso prova = null;
+		Corso c = em.find(Corso.class, co.getIdCorso());
+		//String sq = "SELECT a.id_lezione FROM PRESENZA a WHERE a.id_lezione = " + c.getLeziones().get(c.getLezioneCorrente()).getIdLezione() + " and a.mail = '" + s.getMail() + "'";
+		//Query q = em.createNativeQuery(sq);
 		Docente docente = null;
 		try {
 			docente = em.find(Docente.class, d.getMail());
@@ -29,8 +31,8 @@ public class GestionePresenze {
 				em.persist(p);
 				em.getTransaction().commit();
 				//s.setPresenzaOggi(((Presenza)q.getSingleResult()).getId());
-				Object o = q.getSingleResult(); 
-				System.out.print(o.toString());
+				//Object o = q.getSingleResult(); 
+				
 				
 				//provare il sistem out
 				return true;

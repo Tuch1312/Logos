@@ -2,6 +2,9 @@ package entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Date;
 import java.util.List;
 
@@ -45,6 +48,7 @@ public class Lezione implements Serializable {
 	private List<Presenza> presenza;
 
 	//bi-directional many-to-one association to Corso
+	@JsonIgnore
 	@ManyToOne
 	private Corso corso;
 

@@ -16,7 +16,7 @@ import entity.Lezione;
 /**
  * Servlet implementation class EliminaLezioneServlet
  */
-@WebServlet("/EliminaLezioneServlet")
+@WebServlet("/EliminaLezione")
 public class EliminaLezioneServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

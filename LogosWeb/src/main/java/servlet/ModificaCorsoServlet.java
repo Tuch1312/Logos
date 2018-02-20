@@ -16,7 +16,7 @@ import entity.Docente;
 /**
  * Servlet implementation class ModificaCorso
  */
-@WebServlet("/ModificaCorso")
+@WebServlet("/ModificaCorsoServlet")
 public class ModificaCorsoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

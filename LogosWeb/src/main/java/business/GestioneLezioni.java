@@ -22,7 +22,7 @@ public class GestioneLezioni {
 		for(int i = 0;i<calcNumLezioni(c);i++) {
 			Lezione lez = new Lezione();
 			lez.setCorso(c);
-			lez.setNumeroLezione(i);
+			lez.setNumeroLezione(i + 1);
 			c.addLezione(lez);
 		}
 		em.getTransaction().begin();

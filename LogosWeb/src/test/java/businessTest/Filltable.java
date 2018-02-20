@@ -18,8 +18,8 @@ import entity.Studente;
 
 public class Filltable {
 	
-	static final String mailstudente = "studente@mail";
-	static final String maildocente = "docente@mail";
+	static final String mailstudente = "studente2@mail";
+	static final String maildocente = "docente2@mail";
 	static final int idcorso = 1;
 	
 
@@ -45,6 +45,7 @@ public class Filltable {
 		c.setPatternLezioni("1,3,5");
 		c.setNumeroGiorni(10);
 		c.setOraInizioLezioni(new Date());
+	
 		
 		ipk.setIdCorso(2);
 		ipk.setMailStudente("studente@mail");
