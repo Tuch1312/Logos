@@ -19,7 +19,7 @@ public class Studente extends Persona {
 	@OneToMany(mappedBy = "studente")
 	private List<Presenza> presenza;
 	
-	private int presenzaOggi;
+	private Presenza presenzaOggi;
 	
 	//Getter and Setter
 	
@@ -28,13 +28,13 @@ public class Studente extends Persona {
 	
 	
 
-	public int getPresenzaOggi() {
+	public Presenza getPresenzaOggi() {
 		return presenzaOggi;
 	}
 
 
 
-	public void setPresenzaOggi(int presenzaOggi) {
+	public void setPresenzaOggi(Presenza presenzaOggi) {
 		this.presenzaOggi = presenzaOggi;
 	}
 

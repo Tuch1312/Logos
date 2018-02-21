@@ -251,11 +251,11 @@ public class Corso implements Serializable {
 		this.leziones = leziones;
 	}
 
-	public Lezione addLezione(Lezione lezione) {
+	public void addLezione(Lezione lezione) {
 		getLeziones().add(lezione);
 		lezione.setCorso(this);
 
-		return lezione;
+
 	}
 
 	public Lezione removeLezione(Lezione lezione) {
