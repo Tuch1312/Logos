@@ -15,8 +15,9 @@ public interface RetroPersona {
     @POST("logos/LoginServlet")
     Call<ResponseBody> login(@Field("mail")String mail, @Field("password")String password);
 
-    @POST("RegistrazioneServlet")
-    Call<Boolean> registrazione();
+    @FormUrlEncoded
+    @POST("logos/RegistrazioneServlet")
+    Call<Boolean> registrazione(@Field("mail")String mail, @Field("password")String password,@Field("nome")String nome, @Field("cognome")String cognome,@Field("idDocente")boolean isDocente);
 
     @POST("CambiaPasswordServlet")
     Call<Boolean> cambiaPassword();
