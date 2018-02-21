@@ -15,6 +15,7 @@ public class GestionePresenze {
 		EntityManager em = JPAUtility.emf.createEntityManager();
 		Corso prova = null;
 		Corso c = em.find(Corso.class, co.getIdCorso());
+		// !NON SI SA A COSA SERVA QUESTA QUERY! 
 		//String sq = "SELECT a.id_lezione FROM PRESENZA a WHERE a.id_lezione = " + c.getLeziones().get(c.getLezioneCorrente()).getIdLezione() + " and a.mail = '" + s.getMail() + "'";
 		//Query q = em.createNativeQuery(sq);
 		Docente docente = null;
@@ -27,8 +28,10 @@ public class GestionePresenze {
 				p.setOraArrivo(new Date().getTime());
 				p.setStudente(s);
 				p.setLezione(c.getLeziones().get(c.getLezioneCorrente()));
+				s.setPresenzaOggi(p);
 				em.getTransaction().begin();
 				em.persist(p);
+				em.merge(p);
 				em.getTransaction().commit();
 				//s.setPresenzaOggi(((Presenza)q.getSingleResult()).getId());
 				//Object o = q.getSingleResult(); 
@@ -41,16 +44,18 @@ public class GestionePresenze {
 		else return false;
 	}
 	
-	public boolean setOraUscita(Docente d, Studente s, Corso c) {
+	public boolean setOraUscita(Docente d, Studente s, Corso cor) {
 		EntityManager em = JPAUtility.emf.createEntityManager();
 		Presenza p = em.find(Presenza.class, s.getPresenzaOggi());
 		Docente docente = null;
+		Corso c = em.find(Corso.class, cor.getIdCorso());
 		try {
 			docente = em.find(Docente.class, d.getMail());
 		} catch(Exception e) {
 				e.printStackTrace();
 		}
 		if (docente!=null) {
+	
 				p.setOraUscita(new Date().getTime());
 				em.getTransaction().begin();
 				em.persist(p);
