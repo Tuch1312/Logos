@@ -20,6 +20,7 @@
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"> 
 </head>
 
 <body>
@@ -251,7 +252,7 @@
                                             <div class="row">
                                                 <div class="col-lg-6 col-md-6">
                                                     <div class="card ">
-                                                        <div class="card-header card-header-icon card-header-stretto" data-background-color="orange">
+                                                        <div class="card-header card-header-icon card-header-stretto" data-background-color="purple">
                                                             <i class="material-icons">assignment</i>
                                                         </div>
                                                         <div class="card-content">
@@ -295,7 +296,7 @@
                                                 </div>
                                                 <div class="col-lg-6 col-md-6">
                                                     <div class="card ">
-                                                        <div class="card-header card-header-icon card-header-stretto" data-background-color="orange">
+                                                        <div class="card-header card-header-icon card-header-stretto" data-background-color="purple">
                                                             <i class="material-icons">assignment</i>
                                                         </div>
                                                         <div class="card-content">
@@ -403,10 +404,6 @@
                             </div>
 
 
-
-
-
-
                             <!--Tabbed-liste-docente----------------------- -->
 
 
@@ -416,7 +413,7 @@
                                         <div class="nav-tabs-wrapper">
                                             <span class="flex-container">
                                             
-                                                <h4 class="nav-tabs-title titolo-destra">Titolo corso (liste docente)</h4>
+                                                
                                   
                                             <ul class="nav nav-tabs" data-tabs="tabs">
                                                 <li class="active">
@@ -639,7 +636,7 @@
 
 
                             <div class="card" id="tabbed-dashboard-docente">
-                                <div class="card-header" data-background-color="orange">
+                                <div class="card-header" data-background-color="purple">
                                     <h4 class="title">Titolo corso (lista lezioni docente)</h4>
                                     <p class="category">Descrizione corso</p>
                                 </div>
@@ -734,7 +731,7 @@
                             <!-- Crea nuovo corso (docente) -->
 
                             <div class="card">
-                                <div class="card-header" data-background-color="orange">
+                                <div class="card-header" data-background-color="purple">
                                     <h4 class="title">Crea Nuovo corso</h4>
                                     <p class="category">Completa il form per creare un nuovo corso</p>
                                 </div>
@@ -979,8 +976,8 @@
                             <!-- -Iscrivi studente (docente) -->
 
                             <div class="card">
-                                <div class="card-header" data-background-color="orange">
-                                    <h4 class="title">Iscrivi studente ad un corso</h4>
+                                <div class="card-header" data-background-color="purple">
+                                    <h4 class="title">Iscrivi uno studente ad un corso</h4>
                                     <p class="category">Puoi fornire questo codice agli studenti perchè si iscrivano in autonomia: <span id="codice-corso-iscrivi-studente">/codice/</span></p>
                                 </div>
                                 <div class="card-content">
@@ -1037,7 +1034,7 @@
 
 
                             <div class="card">
-                                <div class="card-header" data-background-color="orange">
+                                <div class="card-header" data-background-color="purple">
                                     <h4 class="title">Iscriviti ad un nuovo corso</h4>
                                     <p class="category">Inserisci il codice per iscriverti</p>
                                 </div>
@@ -1064,6 +1061,400 @@
                                     <button type="submit" class="btn btn-primary pull-right">Iscriviti</button>
                                 </div>
                             </div>
+                            
+                            
+                            <!-- Lista corwsi studente ------------------------------------------ -->
+                            
+                            <div class="card" id="lista-corsi-studente">
+                                <div class="card-header" data-background-color="purple">
+                                    <h4 class="title">Titolo corso (lista corsi studente)</h4>
+                                    <p class="category">Descrizione corso</p>
+                                </div>
+                                <div class="card-content table-responsive">
+                                   <table class="table table-hover" id="lista-corsi">
+                                        <thead class="text-warning">
+                                            <tr><th>Titolo</th>
+                                            <th>Docente</th>
+                                            <th>Prossima lezione</th>
+                                            <th>Ore Totali</th>
+                                            <th>% Assenze</th>
+                                            
+                                            
+                                        </tr></thead>
+                                        <tbody>
+                                            <tr>
+                                                
+                                                <td>Java devolpment, Database</td>
+                                                <td>Mario Rossi</td>
+                                                <td>25/02/2018 - 12:36</td>
+                                                <td>420</td>
+                                                <td>13%</td>
+                                                
+                                            </tr>
+                                                <tr>
+                                                
+                                                <td>Java devolpment, Database</td>
+                                                <td>Mario Rossi</td>
+                                                <td>25/02/2018 - 12:36</td>
+                                                <td>420</td>
+                                                <td>13%</td>
+                                                
+                                            </tr>
+                                                    <tr>
+                                                
+                                                <td>Java devolpment, Database</td>
+                                                <td>Mario Rossi</td>
+                                                <td>25/02/2018 - 12:36</td>
+                                                <td>420</td>
+                                                <td>13%</td>
+                                                
+                                            </tr>
+                                                    <tr>
+                                                
+                                                <td>Java devolpment, Database</td>
+                                                <td>Mario Rossi</td>
+                                                <td>25/02/2018 - 12:36</td>
+                                                <td>420</td>
+                                                <td>13%</td>
+                                                
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Dashboard corso docente -->
+                            
+        
+                            <div class="card" id="dashboard-corsi-docente">
+                                <div class="card-header" data-background-color="purple">
+                                    <h4 class="title">Titolo corso ( Dashboard corso docente)</h4>
+                                    <p class="category">Descrizione corso</p>
+                                </div>
+                              <div class="card-content">
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="attivita-dashbaord-studente">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4">
+                                                    <div style="margin-top:20px;" id="example-gallery-four" class="ct-chart ct-golden-section" data-example="dmFyIGRhdGEgPSB7CiAgc2VyaWVzOiBbNjAsIDIwXQp9OwoKdmFyIG9wdGlvbnMgPSB7CiAgZG9udXQ6IHRydWUsCiAgICBkb251dFdpZHRoOiA0MCwKICAgIHRvdGFsOiAxMDAsCiAgICBsYWJlbEludGVycG9sYXRpb25GbmM6IGZ1bmN0aW9uKHZhbHVlKSB7CiAgICByZXR1cm4gdmFsdWUgKyAnJSc7CiAgfQp9OwoKdmFyIHJlc3BvbnNpdmVPcHRpb25zID0gWwogIFsKICAgIEZvdW5kYXRpb24ubWVkaWFfcXVlcmllcy5tZWRpdW0sCiAgICB7CiAgICAgIGxhYmVsT2Zmc2V0OiAzMCwKICAgICAgY2hhcnRQYWRkaW5nOiAxMCwKICAgICAgbGFiZWxEaXJlY3Rpb246ICdleHBsb2RlJwogICAgfQogIF0sCiAgWwogICAgRm91bmRhdGlvbi5tZWRpYV9xdWVyaWVzLmxhcmdlLAogICAgewogICAgICBsYWJlbE9mZnNldDogLTMwLAogICAgICBjaGFydFBhZGRpbmc6IDAsCiAgICAgIGxhYmVsRGlyZWN0aW9uOiAnaW1wbG9kZScKICAgIH0KICBdCl07CgpuZXcgQ2hhcnRpc3QuUGllKCcuY3QtY2hhcnQnLCBkYXRhLCBvcHRpb25zLCByZXNwb25zaXZlT3B0aW9ucyk7"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series ct-series-a"><path d="M87.918,108.35A46.075,46.075,0,1,0,115,25" class="ct-slice-donut" ct:value="60" style="stroke-width: 40px;"></path></g><g class="ct-series ct-series-b"><path d="M71.18,56.837A46.075,46.075,0,0,0,88.048,108.445" class="ct-slice-donut" ct:value="20" style="stroke-width: 40px;"></path></g><g><text dx="158.81993334189042" dy="85.31296400802997" text-anchor="middle" class="ct-label">60%</text><text dx="71.18006665810957" dy="85.31296400802997" text-anchor="middle" class="ct-label">20%</text></g></svg></div>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-4 colonna-dashboard">
+                                                    <div class="row">
+                                                        <label class="col-sm-6 label-on-left">Numero studenti:</label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group riga-form-bassa">
+                                                                <span class="form-control-static">17</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label class="col-sm-6 label-on-left">Ore trascorse:</label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group riga-form-bassa">
+                                                                <span class="form-control-static">7</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label class="col-sm-6 label-on-left">Altre stronzate</label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group riga-form-bassa">
+                                                                <span class="form-control-static">34</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-4 colonna-dashboard">
+                                                    <div class="row">
+                                                        <label class="col-sm-6 label-on-left">Numero studenti:</label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group riga-form-bassa">
+                                                                <span class="form-control-static">17</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label class="col-sm-6 label-on-left">Ore trascorse:</label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group riga-form-bassa">
+                                                                <span class="form-control-static">7</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label class="col-sm-6 label-on-left">Altre stronzate</label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group riga-form-bassa">
+                                                                <span class="form-control-static">34</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="card ">
+                                                        <div class="card-header card-header-icon card-header-stretto" data-background-color="purple">
+                                                            <i class="material-icons">assignment</i>
+                                                        </div>
+                                                        <div class="card-content">
+                                                            <h4 class="card-title">Prossimi argomenti</h4>
+                                                            <div class="table-responsive">
+                                                                <table class="table">
+                                                                    <thead class="text-primary">
+                                                                        <tr>
+                                                                            <th>N° lezione</th>
+                                                                            <th>Argomenti</th>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+
+                                                                        <tr>
+                                                                            <td>5</td>
+                                                                            <td>Netherlands</td>
+
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>4</td>
+                                                                            <td>Korea, South</td>
+
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>4</td>
+                                                                            <td>Malawi</td>
+
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>3</td>
+                                                                            <td>Chile</td>
+
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="card ">
+                                                        <div class="card-header card-header-icon card-header-stretto" data-background-color="purple">
+                                                            <i class="material-icons">assignment</i>
+                                                        </div>
+                                                        <div class="card-content" style="padding-left:10px;">
+                                                            <h4 class="card-title" style="margin-left:10px;">Assenze/Argomenti</h4>
+                                                            <div class="table-responsive">
+                                                                          <div class="chart"><div class="ct-chart ct-golden-section"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-bar" style="width: 100%; height: 100%;"><g class="ct-grids"><line x1="50" x2="50" y1="15" y2="263.7166748046875" class="ct-grid ct-horizontal"></line><line x1="109.76190185546875" x2="109.76190185546875" y1="15" y2="263.7166748046875" class="ct-grid ct-horizontal"></line><line x1="169.5238037109375" x2="169.5238037109375" y1="15" y2="263.7166748046875" class="ct-grid ct-horizontal"></line><line x1="229.28570556640625" x2="229.28570556640625" y1="15" y2="263.7166748046875" class="ct-grid ct-horizontal"></line><line x1="289.047607421875" x2="289.047607421875" y1="15" y2="263.7166748046875" class="ct-grid ct-horizontal"></line><line x1="348.80950927734375" x2="348.80950927734375" y1="15" y2="263.7166748046875" class="ct-grid ct-horizontal"></line><line x1="408.5714111328125" x2="408.5714111328125" y1="15" y2="263.7166748046875" class="ct-grid ct-horizontal"></line><line y1="263.7166748046875" y2="263.7166748046875" x1="50" x2="468.33331298828125" class="ct-grid ct-vertical"></line><line y1="232.62709045410156" y2="232.62709045410156" x1="50" x2="468.33331298828125" class="ct-grid ct-vertical"></line><line y1="201.53750610351562" y2="201.53750610351562" x1="50" x2="468.33331298828125" class="ct-grid ct-vertical"></line><line y1="170.4479217529297" y2="170.4479217529297" x1="50" x2="468.33331298828125" class="ct-grid ct-vertical"></line><line y1="139.35833740234375" y2="139.35833740234375" x1="50" x2="468.33331298828125" class="ct-grid ct-vertical"></line><line y1="108.26875305175781" y2="108.26875305175781" x1="50" x2="468.33331298828125" class="ct-grid ct-vertical"></line><line y1="77.17916870117188" y2="77.17916870117188" x1="50" x2="468.33331298828125" class="ct-grid ct-vertical"></line><line y1="46.08958435058594" y2="46.08958435058594" x1="50" x2="468.33331298828125" class="ct-grid ct-vertical"></line><line y1="15" y2="15" x1="50" x2="468.33331298828125" class="ct-grid ct-vertical"></line></g><g><g class="ct-series ct-series-a"><line x1="79.88095092773438" x2="79.88095092773438" y1="263.7166748046875" y2="15" class="ct-bar" ct:value="20"></line></g><g class="ct-series ct-series-b"><line x1="139.64285278320312" x2="139.64285278320312" y1="263.7166748046875" y2="64.74333496093749" class="ct-bar" ct:value="16"></line></g><g class="ct-series ct-series-c"><line x1="199.40475463867188" x2="199.40475463867188" y1="263.7166748046875" y2="114.486669921875" class="ct-bar" ct:value="12"></line></g><g class="ct-series ct-series-d"><line x1="259.1666564941406" x2="259.1666564941406" y1="263.7166748046875" y2="15" class="ct-bar" ct:value="20"></line></g><g class="ct-series ct-series-e"><line x1="318.9285583496094" x2="318.9285583496094" y1="263.7166748046875" y2="39.871667480468744" class="ct-bar" ct:value="18"></line></g><g class="ct-series ct-series-f"><line x1="378.6904602050781" x2="378.6904602050781" y1="263.7166748046875" y2="15" class="ct-bar" ct:value="20"></line></g><g class="ct-series ct-series-g"><line x1="438.4523620605469" x2="438.4523620605469" y1="263.7166748046875" y2="139.35833740234375" class="ct-bar" ct:value="10"></line></g></g><g class="ct-labels"><foreignObject style="overflow: visible;" x="50" y="268.7166748046875" width="59.76190185546875" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 60px; height: 20px;">Introduzioe</span></foreignObject><foreignObject style="overflow: visible;" x="109.76190185546875" y="268.7166748046875" width="59.76190185546875" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 60px; height: 20px;">Java foundamental</span></foreignObject><foreignObject style="overflow: visible;" x="169.5238037109375" y="268.7166748046875" width="59.76190185546875" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 60px; height: 20px;">Databse structure and SQL</span></foreignObject><foreignObject style="overflow: visible;" x="229.28570556640625" y="268.7166748046875" width="59.76190185546875" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 60px; height: 20px;">Android Linear Layout</span></foreignObject><foreignObject style="overflow: visible;" x="289.047607421875" y="268.7166748046875" width="59.76190185546875" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 60px; height: 20px;">Maven Build tool</span></foreignObject><foreignObject style="overflow: visible;" x="348.80950927734375" y="268.7166748046875" width="59.76190185546875" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 60px; height: 20px;">Introduzioe</span></foreignObject><foreignObject style="overflow: visible;" x="408.5714111328125" y="268.7166748046875" width="59.76190185546875" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 60px; height: 20px;">Java foundamental</span></foreignObject><foreignObject style="overflow: visible;" y="232.62709045410156" x="10" height="31.089584350585938" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 31px; width: 30px;">0</span></foreignObject><foreignObject style="overflow: visible;" y="201.53750610351562" x="10" height="31.089584350585938" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 31px; width: 30px;">2.5</span></foreignObject><foreignObject style="overflow: visible;" y="170.4479217529297" x="10" height="31.089584350585938" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 31px; width: 30px;">5</span></foreignObject><foreignObject style="overflow: visible;" y="139.35833740234375" x="10" height="31.089584350585938" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 31px; width: 30px;">7.5</span></foreignObject><foreignObject style="overflow: visible;" y="108.26875305175781" x="10" height="31.089584350585938" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 31px; width: 30px;">10</span></foreignObject><foreignObject style="overflow: visible;" y="77.17916870117188" x="10" height="31.089584350585938" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 31px; width: 30px;">12.5</span></foreignObject><foreignObject style="overflow: visible;" y="46.08958435058594" x="10" height="31.089584350585938" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 31px; width: 30px;">15</span></foreignObject><foreignObject style="overflow: visible;" y="15" x="10" height="31.089584350585938" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 31px; width: 30px;">17.5</span></foreignObject><foreignObject style="overflow: visible;" y="-15" x="10" height="30" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 30px; width: 30px;">20</span></foreignObject></g></svg></div></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Dashboard  lezione Docente ----------------------------- -->
+                            
+                            
+                            
+                             <div class="card" id="dashboard-lezione-docente">
+                                <div class="card-header" data-background-color="purple">
+                                    <h4 class="title">Titolo corso ( Dashboard  lezione Docente)</h4>
+                                    <p class="category">Descrizione corso</p>
+                                </div>
+                              <div class="card-content">
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="attivita-dashbaord-studente">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4">
+                                                    <div style="margin-top:20px;" id="example-gallery-four" class="ct-chart ct-golden-section" data-example="dmFyIGRhdGEgPSB7CiAgc2VyaWVzOiBbNjAsIDIwXQp9OwoKdmFyIG9wdGlvbnMgPSB7CiAgZG9udXQ6IHRydWUsCiAgICBkb251dFdpZHRoOiA0MCwKICAgIHRvdGFsOiAxMDAsCiAgICBsYWJlbEludGVycG9sYXRpb25GbmM6IGZ1bmN0aW9uKHZhbHVlKSB7CiAgICByZXR1cm4gdmFsdWUgKyAnJSc7CiAgfQp9OwoKdmFyIHJlc3BvbnNpdmVPcHRpb25zID0gWwogIFsKICAgIEZvdW5kYXRpb24ubWVkaWFfcXVlcmllcy5tZWRpdW0sCiAgICB7CiAgICAgIGxhYmVsT2Zmc2V0OiAzMCwKICAgICAgY2hhcnRQYWRkaW5nOiAxMCwKICAgICAgbGFiZWxEaXJlY3Rpb246ICdleHBsb2RlJwogICAgfQogIF0sCiAgWwogICAgRm91bmRhdGlvbi5tZWRpYV9xdWVyaWVzLmxhcmdlLAogICAgewogICAgICBsYWJlbE9mZnNldDogLTMwLAogICAgICBjaGFydFBhZGRpbmc6IDAsCiAgICAgIGxhYmVsRGlyZWN0aW9uOiAnaW1wbG9kZScKICAgIH0KICBdCl07CgpuZXcgQ2hhcnRpc3QuUGllKCcuY3QtY2hhcnQnLCBkYXRhLCBvcHRpb25zLCByZXNwb25zaXZlT3B0aW9ucyk7"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series ct-series-a"><path d="M87.918,108.35A46.075,46.075,0,1,0,115,25" class="ct-slice-donut" ct:value="60" style="stroke-width: 40px;"></path></g><g class="ct-series ct-series-b"><path d="M71.18,56.837A46.075,46.075,0,0,0,88.048,108.445" class="ct-slice-donut" ct:value="20" style="stroke-width: 40px;"></path></g><g><text dx="158.81993334189042" dy="85.31296400802997" text-anchor="middle" class="ct-label">60%</text><text dx="71.18006665810957" dy="85.31296400802997" text-anchor="middle" class="ct-label">20%</text></g></svg></div>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-4 colonna-dashboard">
+                                                    <div class="row">
+                                                        <label class="col-sm-6 label-on-left">Numero studenti:</label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group riga-form-bassa">
+                                                                <span class="form-control-static">17</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label class="col-sm-6 label-on-left">Ore trascorse:</label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group riga-form-bassa">
+                                                                <span class="form-control-static">7</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label class="col-sm-6 label-on-left">Altre stronzate</label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group riga-form-bassa">
+                                                                <span class="form-control-static">34</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-4 colonna-dashboard">
+                                                    <div class="row">
+                                                        <label class="col-sm-6 label-on-left">Numero studenti:</label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group riga-form-bassa">
+                                                                <span class="form-control-static">17</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label class="col-sm-6 label-on-left">Ore trascorse:</label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group riga-form-bassa">
+                                                                <span class="form-control-static">7</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label class="col-sm-6 label-on-left">Altre stronzate</label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group riga-form-bassa">
+                                                                <span class="form-control-static">34</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="card ">
+                                                        <div class="card-header card-header-icon card-header-stretto" data-background-color="purple">
+                                                            <i class="material-icons">assignment</i>
+                                                        </div>
+                                                        <div class="card-content">
+                                                            <h4 class="card-title">Prossimi argomenti</h4>
+                                                            <div class="table-responsive">
+                                                                <table class="table">
+                                                                    <thead class="text-primary">
+                                                                        <tr>
+                                                                             <th>Argomento</th>
+                                                                            <th>Spiegato</th>
+                                                                           
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+
+                                                                        <tr>
+                                                                              <td>Netherlands</td>
+                                                                           <td>
+                                                                           <div class="mdc-form-field">
+                                                                              <div class="mdc-checkbox">
+                                                                                 <input type="checkbox" id="input-auto-fill" class="mdc-checkbox__native-control" />
+                                                                                 <div class="mdc-checkbox__background">
+                                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                                       <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                                                                    </svg>
+                                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                                 </div>
+                                                                              </div>
+                                                                           </div>
+                                                                        </td>
+                                                                          
+
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Korea, South</td>
+                                                                                            <td>
+                                                                           <div class="mdc-form-field">
+                                                                              <div class="mdc-checkbox">
+                                                                                 <input type="checkbox" id="input-auto-fill" class="mdc-checkbox__native-control" />
+                                                                                 <div class="mdc-checkbox__background">
+                                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                                       <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                                                                    </svg>
+                                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                                 </div>
+                                                                              </div>
+                                                                           </div>
+                                                                        </td>
+                                                                            
+
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Malawidfskjgvgfuaeh vadishvkahsdf jasgdf jgcaewg</td>
+                                                                                            <td>
+                                                                           <div class="mdc-form-field">
+                                                                              <div class="mdc-checkbox">
+                                                                                 <input type="checkbox" id="input-auto-fill" class="mdc-checkbox__native-control" />
+                                                                                 <div class="mdc-checkbox__background">
+                                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                                       <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                                                                    </svg>
+                                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                                 </div>
+                                                                              </div>
+                                                                           </div>
+                                                                        </td>
+                                                                            
+
+                                                                        </tr>
+                                                                        <tr>
+                                                                             <td>Chile</td>
+                                                                                            <td>
+                                                                           <div class="mdc-form-field">
+                                                                              <div class="mdc-checkbox">
+                                                                                 <input type="checkbox" id="input-auto-fill" class="mdc-checkbox__native-control" />
+                                                                                 <div class="mdc-checkbox__background">
+                                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                                       <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                                                                    </svg>
+                                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                                 </div>
+                                                                              </div>
+                                                                           </div>
+                                                                        </td>
+                                                                           
+
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="card ">
+                                                        <div class="card-header card-header-icon card-header-stretto" data-background-color="purple">
+                                                            <i class="material-icons">assignment</i>
+                                                        </div>
+                                                        <div class="card-content" >
+                                                            <h4 class="card-title">Note</h4>
+                                                            <div class="table-responsive">
+                                                                          <textarea>    </textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+        
 
 
                             <!-- Fine area card ------------------------------------------------------------------------------------------------------------------- -->
