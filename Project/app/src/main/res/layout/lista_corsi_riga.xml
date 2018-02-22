@@ -17,6 +17,7 @@
             android:orientation="horizontal"
             android:layout_weight="1">
             <TextView
+                android:id="@+id/titoloCorso"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Titolo"
@@ -30,6 +31,7 @@
             android:orientation="horizontal"
             android:layout_weight="1">
             <TextView
+                android:id="@+id/dataInizio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="12/12/12 9:00"
@@ -41,6 +43,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/contatore"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"

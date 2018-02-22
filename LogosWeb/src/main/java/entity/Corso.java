@@ -2,6 +2,9 @@ package entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Date;
 import java.util.List;
 
@@ -68,13 +71,16 @@ public class Corso implements Serializable {
 	@Column(nullable=true)
 	private String patternLezioni;
 
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="mail_docente")
 	private Docente docente;
 
 	@OneToMany(cascade = CascadeType.ALL, 
-	        mappedBy = "corso")
+	        mappedBy = "corso",
+	        fetch = FetchType.EAGER)
 	private List<Lezione> leziones;
+ 
 
 	//Metodi
 	
@@ -245,11 +251,11 @@ public class Corso implements Serializable {
 		this.leziones = leziones;
 	}
 
-	public Lezione addLezione(Lezione lezione) {
+	public void addLezione(Lezione lezione) {
 		getLeziones().add(lezione);
 		lezione.setCorso(this);
 
-		return lezione;
+
 	}
 
 	public Lezione removeLezione(Lezione lezione) {
