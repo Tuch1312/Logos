@@ -1,0 +1,1118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Material Dashboard by Creative Tim</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Bootstrap core CSS     -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!--  Material Dashboard CSS    -->
+    <link href="../assets/css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar sidebar-colorata" data-color="purple">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+            <div class="logo">
+                <a href="http://logoscloud.ddns.net" class="simple-text">
+                    LOGOS Web
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <div class="user">
+                    <div class="photo">
+                        <img src="../assets/img/faces/avatar.jpg">
+                    </div>
+                    <div class="info">
+                        <a data-toggle="collapse" href="#collapseExample" class="" aria-expanded="true">
+                            <span>
+                                Mario Rossi
+                                <b class="caret"></b>
+                            </span>
+                        </a>
+                        <div class="clearfix"></div>
+                        <div class="collapse in" id="collapseExample" aria-expanded="true" style="">
+                            <ul class="nav">
+                                <li>
+                                    <a href="#">
+                                       
+                                        <span class="sidebar-normal"> Il mio account </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                              
+                                        <span class="sidebar-normal"> Impostazioni </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Are Menu ------------------------------------------------------ -->
+                <div id="menu-studente">
+                    <ul class="nav">
+                        <li class="active">
+                            <a href="./user.html">
+                            <i class="material-icons">school</i>
+                            <p>I miei corsi</p>
+                        </a>
+                        </li>
+                        <li>
+                            <a href="dashboard.html">
+                            <i class="material-icons">dashboard</i>
+                            <p>Dashboard</p>
+                        </a>
+                        </li>
+                        <li>
+                            <a href="./table.html">
+                            <i class="material-icons">add</i>
+                            <p>Iscriviti</p>
+                        </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div id="menu-docente">
+                    <ul class="nav">
+                        <li class="active">
+                            <a href="./user.html">
+                            <i class="material-icons">school</i>
+                            <p>I miei corsi</p>
+                        </a>
+                        </li>
+                        <li>
+                            <a href="dashboard.html">
+                            <i class="material-icons">dashboard</i>
+                            <p>Dashboard</p>
+                        </a>
+                        </li>
+                        <li>
+                            <a href="./table.html">
+                            <i class="material-icons">add</i>
+                            <p>Nuovo cordo</p>
+                        </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- Fine Are Menu ------------------------------------------------------------------------------- -->
+            </div>
+        </div>
+        <div class="main-panel">
+            <nav class="navbar navbar-transparent navbar-absolute">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+
+                        <p class="date">
+
+                            <script>
+                                document.write(new Date().toLocaleDateString())
+                            </script>
+                            -
+
+                            <script>
+                                var data = new Date().toLocaleTimeString()
+                                 document.write(data.charAt(0))
+                                    document.write(data.charAt(1))
+                                   document.write(data.charAt(2))
+                                 document.write(data.charAt(3))
+                                   document.write(data.charAt(4))
+                            </script>
+                        </p>
+
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+
+                            <li>
+                                <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="material-icons">person</i>
+                                    <p class="hidden-lg hidden-md">Profile</p>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+            <div class="content">
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <!-- Qui mettiamo dentro le card ------------------------------------------------------------------------------------------------------ -->
+
+
+                            <!-- Tabbed-dashboard-studente----------------------- -->
+                            <div class="card card-nav-tabs" id="Tabbed-dashbaord-studente">
+                                <div class="card-header" data-background-color="purple">
+                                    <div class="nav-tabs-navigation">
+                                        <div class="nav-tabs-wrapper">
+
+                                            <h4 class="nav-tabs-title titolo-destra">Titolo corso (dashboard studente)</h4>
+                                            <ul class="nav nav-tabs" data-tabs="tabs">
+                                                <li class="active">
+                                                    <a href="#attivita-dashbaord-studente" data-toggle="tab" aria-expanded="true">
+                                                        <i class="material-icons">dashboard</i> Dashboard
+                                                        <div class="ripple-container"></div>
+                                                    </a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="#lezioni-dashbaord-studente" data-toggle="tab" aria-expanded="false">
+                                                        <i class="material-icons">school</i> Lezioni
+                                                        <div class="ripple-container"></div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="attivita-dashbaord-studente">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4">
+                                                    <div style="margin-top:20px;" id="example-gallery-four" class="ct-chart ct-golden-section" data-example="dmFyIGRhdGEgPSB7CiAgc2VyaWVzOiBbNjAsIDIwXQp9OwoKdmFyIG9wdGlvbnMgPSB7CiAgZG9udXQ6IHRydWUsCiAgICBkb251dFdpZHRoOiA0MCwKICAgIHRvdGFsOiAxMDAsCiAgICBsYWJlbEludGVycG9sYXRpb25GbmM6IGZ1bmN0aW9uKHZhbHVlKSB7CiAgICByZXR1cm4gdmFsdWUgKyAnJSc7CiAgfQp9OwoKdmFyIHJlc3BvbnNpdmVPcHRpb25zID0gWwogIFsKICAgIEZvdW5kYXRpb24ubWVkaWFfcXVlcmllcy5tZWRpdW0sCiAgICB7CiAgICAgIGxhYmVsT2Zmc2V0OiAzMCwKICAgICAgY2hhcnRQYWRkaW5nOiAxMCwKICAgICAgbGFiZWxEaXJlY3Rpb246ICdleHBsb2RlJwogICAgfQogIF0sCiAgWwogICAgRm91bmRhdGlvbi5tZWRpYV9xdWVyaWVzLmxhcmdlLAogICAgewogICAgICBsYWJlbE9mZnNldDogLTMwLAogICAgICBjaGFydFBhZGRpbmc6IDAsCiAgICAgIGxhYmVsRGlyZWN0aW9uOiAnaW1wbG9kZScKICAgIH0KICBdCl07CgpuZXcgQ2hhcnRpc3QuUGllKCcuY3QtY2hhcnQnLCBkYXRhLCBvcHRpb25zLCByZXNwb25zaXZlT3B0aW9ucyk7"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series ct-series-a"><path d="M87.918,108.35A46.075,46.075,0,1,0,115,25" class="ct-slice-donut" ct:value="60" style="stroke-width: 40px;"></path></g><g class="ct-series ct-series-b"><path d="M71.18,56.837A46.075,46.075,0,0,0,88.048,108.445" class="ct-slice-donut" ct:value="20" style="stroke-width: 40px;"></path></g><g><text dx="158.81993334189042" dy="85.31296400802997" text-anchor="middle" class="ct-label">60%</text><text dx="71.18006665810957" dy="85.31296400802997" text-anchor="middle" class="ct-label">20%</text></g></svg></div>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-4 colonna-dashboard">
+                                                    <div class="row">
+                                                        <label class="col-sm-6 label-on-left">Numero studenti:</label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group riga-form-bassa">
+                                                                <span class="form-control-static">17</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label class="col-sm-6 label-on-left">Ore trascorse:</label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group riga-form-bassa">
+                                                                <span class="form-control-static">7</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label class="col-sm-6 label-on-left">Altre stronzate</label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group riga-form-bassa">
+                                                                <span class="form-control-static">34</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-4 colonna-dashboard">
+                                                    <div class="row">
+                                                        <label class="col-sm-6 label-on-left">Numero studenti:</label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group riga-form-bassa">
+                                                                <span class="form-control-static">17</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label class="col-sm-6 label-on-left">Ore trascorse:</label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group riga-form-bassa">
+                                                                <span class="form-control-static">7</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <label class="col-sm-6 label-on-left">Altre stronzate</label>
+                                                        <div class="col-sm-6">
+                                                            <div class="form-group riga-form-bassa">
+                                                                <span class="form-control-static">34</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="card ">
+                                                        <div class="card-header card-header-icon card-header-stretto" data-background-color="orange">
+                                                            <i class="material-icons">assignment</i>
+                                                        </div>
+                                                        <div class="card-content">
+                                                            <h4 class="card-title">Argomenti passati</h4>
+                                                            <div class="table-responsive">
+                                                                <table class="table">
+                                                                    <thead class="text-primary">
+                                                                        <tr>
+                                                                            <th>N° lezione</th>
+                                                                            <th>Argomenti</th>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+
+                                                                        <tr>
+                                                                            <td>5</td>
+                                                                            <td>Netherlands</td>
+
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>4</td>
+                                                                            <td>Korea, South</td>
+
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>4</td>
+                                                                            <td>Malawi</td>
+
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>3</td>
+                                                                            <td>Chile</td>
+
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="card ">
+                                                        <div class="card-header card-header-icon card-header-stretto" data-background-color="orange">
+                                                            <i class="material-icons">assignment</i>
+                                                        </div>
+                                                        <div class="card-content">
+                                                            <h4 class="card-title">Prossimi argomenti</h4>
+                                                            <div class="table-responsive">
+                                                                <table class="table">
+                                                                    <thead class="text-primary">
+                                                                        <tr>
+                                                                            <th>N° lezione</th>
+                                                                            <th>Argomenti</th>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>6</td>
+                                                                            <td>Niger</td>
+
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>5</td>
+                                                                            <td>Curaçao</td>
+
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>5</td>
+                                                                            <td>Netherlands</td>
+
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>4</td>
+                                                                            <td>Korea, South</td>
+
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>4</td>
+                                                                            <td>Malawi</td>
+
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>3</td>
+                                                                            <td>Chile</td>
+
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="lezioni-dashbaord-studente">
+                                            <table class="table table-hover" id="lista-lezioni">
+                                                <thead class="text-warning">
+                                                    <tr>
+                                                        <th>N° Lezione</th>
+                                                        <th>Argomenti</th>
+                                                        <th>Data</th>
+                                                        <th>Ora</th>
+                                                        <th>Aula</th>
+
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Java devolpment, Database</td>
+                                                        <td>25/02/2018</td>
+                                                        <td>12:36</td>
+                                                        <td>Aula 1</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Java devolpment, Database</td>
+                                                        <td>25/02/2018</td>
+                                                        <td>12:36</td>
+                                                        <td>Aula 1</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Java devolpment, Database</td>
+                                                        <td>25/02/2018</td>
+                                                        <td>12:36</td>
+                                                        <td>Aula 1</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Java devolpment, Database</td>
+                                                        <td>25/02/2018</td>
+                                                        <td>12:36</td>
+                                                        <td>Aula 1</td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+                            <!--Tabbed-liste-docente----------------------- -->
+
+
+                            <div class="card card-nav-tabs" id="tabbed-liste-docente">
+                                <div class="card-header" data-background-color="purple">
+                                    <div class="nav-tabs-navigation">
+                                        <div class="nav-tabs-wrapper">
+                                            <span class="flex-container">
+                                            
+                                                <h4 class="nav-tabs-title titolo-destra">Titolo corso (liste docente)</h4>
+                                  
+                                            <ul class="nav nav-tabs" data-tabs="tabs">
+                                                <li class="active">
+                                                    <a href="#attivita-liste-docente" data-toggle="tab" aria-expanded="true">
+                                                        <i class="material-icons">assignment</i> Prossime lezioni
+                                                        <div class="ripple-container"></div>
+                                                    </a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="#corsi-liste-docente" data-toggle="tab" aria-expanded="false">
+                                                        <i class="material-icons">school</i> Corsi
+                                                        <div class="ripple-container"></div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                              
+                                                
+                                                </span>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="attivita-liste-docente">
+                                            <table class="table table-hover" id="lista-lezioni">
+                                                <thead class="text-warning">
+                                                    <tr>
+                                                        <th>N° Lezione</th>
+                                                        <th>Argomenti</th>
+                                                        <th>Data</th>
+                                                        <th>Ora</th>
+                                                        <th>Aula</th>
+                                                        <th>Azioni</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Java devolpment, Database</td>
+                                                        <td>25/02/2018</td>
+                                                        <td>12:36</td>
+                                                        <td>Aula 1</td>
+                                                        <td class="td-actions text-right">
+
+                                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                            <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                                            <i class="material-icons">close</i>
+                                                        </button>
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Matematica</td>
+                                                        <td>12/02/2018</td>
+                                                        <td>13:50</td>
+                                                        <td>Stanza gialla</td>
+                                                        <td class="td-actions text-right">
+
+                                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                            <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                                            <i class="material-icons">close</i>
+                                                        </button>
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Storia antica</td>
+                                                        <td>12/03/2018z</td>
+                                                        <td>10:20</td>
+                                                        <td>Aula 3</td>
+                                                        <td class="td-actions text-right">
+
+                                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                            <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                                            <i class="material-icons">close</i>
+                                                        </button>
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Letteratura antica</td>
+                                                        <td>12/04/2018</td>
+                                                        <td>11:25</td>
+                                                        <td>Aula verde</td>
+                                                        <td class="td-actions text-right">
+
+                                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                            <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                                            <i class="material-icons">close</i>
+                                                        </button>
+                                                        </td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="tab-pane" id="corsi-liste-docente">
+                                            <table class="table table-hover" id="lista-corsi">
+                                                <thead class="text-warning">
+                                                    <tr>
+                                                        <th>Titolo</th>
+                                                        <th>Data Inizio</th>
+                                                        <th>N° Iscritti</th>
+                                                        <th>Prossima Lezione</th>
+                                                        <th>Codice</th>
+                                                        <th>Azioni</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+
+                                                        <td>Java devolpment, Database</td>
+                                                        <td>25/02/2018</td>
+                                                        <td>1</td>
+                                                        <td>25/02/2018 12:36</td>
+                                                        <td>1f8e7vg</td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" class="btn btn-info" data-original-title="" title="">
+                                                            <i class="material-icons">person</i>
+                                                        </button>
+                                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                            <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                                            <i class="material-icons">close</i>
+                                                        </button>
+                                                        </td>
+
+
+                                                    </tr>
+                                                    <tr>
+
+                                                        <td>Matematica</td>
+                                                        <td>12/02/2018</td>
+                                                        <td>2</td>
+                                                        <td>25/02/2018 13:50</td>
+                                                        <td>17bfv8</td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" class="btn btn-info" data-original-title="" title="">
+                                                            <i class="material-icons">person</i>
+                                                        </button>
+                                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                            <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                                            <i class="material-icons">close</i>
+                                                        </button>
+                                                        </td>
+
+
+                                                    </tr>
+                                                    <tr>
+
+                                                        <td>Storia antica</td>
+                                                        <td>12/03/2018z</td>
+                                                        <td>3</td>
+                                                        <td>25/02/2018 10:20</td>
+                                                        <td>d78bd1</td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" class="btn btn-info" data-original-title="" title="">
+                                                            <i class="material-icons">person</i>
+                                                        </button>
+                                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                            <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                                            <i class="material-icons">close</i>
+                                                        </button>
+                                                        </td>
+
+
+                                                    </tr>
+                                                    <tr>
+
+                                                        <td>Letteratura antica</td>
+                                                        <td>12/04/2018</td>
+                                                        <td>4</td>
+                                                        <td>25/02/2018 11:25</td>
+                                                        <td>1dssd3</td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" class="btn btn-info" data-original-title="" title="">
+                                                            <i class="material-icons">person</i>
+                                                        </button>
+                                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                            <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                                            <i class="material-icons">close</i>
+                                                        </button>
+                                                        </td>
+
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Lista lezioni docente -->
+
+
+                            <div class="card" id="tabbed-dashboard-docente">
+                                <div class="card-header" data-background-color="orange">
+                                    <h4 class="title">Titolo corso (lista lezioni docente)</h4>
+                                    <p class="category">Descrizione corso</p>
+                                </div>
+                                <div class="card-content table-responsive">
+                                    <table class="table table-hover" id="lista-lezioni">
+                                        <thead class="text-warning">
+                                            <tr>
+                                                <th>N° Lezione</th>
+                                                <th>Argomenti</th>
+                                                <th>Data</th>
+                                                <th>Ora</th>
+                                                <th>Aula</th>
+                                                <th>Azioni</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Java devolpment, Database</td>
+                                                <td>25/02/2018</td>
+                                                <td>12:36</td>
+                                                <td>Aula 1</td>
+                                                <td class="td-actions text-right">
+
+                                                    <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                    <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                                            <i class="material-icons">close</i>
+                                                        </button>
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Matematica</td>
+                                                <td>12/02/2018</td>
+                                                <td>13:50</td>
+                                                <td>Stanza gialla</td>
+                                                <td class="td-actions text-right">
+
+                                                    <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                    <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                                            <i class="material-icons">close</i>
+                                                        </button>
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Storia antica</td>
+                                                <td>12/03/2018z</td>
+                                                <td>10:20</td>
+                                                <td>Aula 3</td>
+                                                <td class="td-actions text-right">
+
+                                                    <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                    <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                                            <i class="material-icons">close</i>
+                                                        </button>
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Letteratura antica</td>
+                                                <td>12/04/2018</td>
+                                                <td>11:25</td>
+                                                <td>Aula verde</td>
+                                                <td class="td-actions text-right">
+
+                                                    <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                    <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                                            <i class="material-icons">close</i>
+                                                        </button>
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+
+                            <!-- Crea nuovo corso (docente) -->
+
+                            <div class="card">
+                                <div class="card-header" data-background-color="orange">
+                                    <h4 class="title">Crea Nuovo corso</h4>
+                                    <p class="category">Completa il form per creare un nuovo corso</p>
+                                </div>
+                                <div class="card-content">
+                                    <div class="row" id="riga-titolo">
+                                        <label class="col-sm-2 label-on-left">Titolo</label>
+                                        <div class="col-sm-6">
+                                            <div class="form-group label-floating is-empty">
+                                                <label class="control-label"></label>
+                                                <input type="text" class="form-control" id="input-titolo" value="">
+                                                <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="riga-descrizione">
+                                        <label class="col-sm-2 label-on-left">Descrizione</label>
+                                        <div class="col-sm-10">
+                                            <div class="form-group label-floating is-empty">
+                                                <label class="control-label"></label>
+                                                <input type="text" class="form-control" value="">
+                                                <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-2 label-on-left">N° massimo iscirzioni</label>
+                                        <div class="col-sm-4">
+                                            <div class="form-group label-floating is-empty">
+                                                <label class="control-label"></label>
+                                                <input type="number" class="form-control" id="input-max-iscrizioni" value="">
+                                                <span class="help-block">Numero massimo di posti disponibili per questo corso</span>
+                                                <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-2 label-on-left">Sede</label>
+                                        <div class="col-sm-6">
+                                            <div class="form-group label-floating is-empty">
+                                                <label class="control-label"></label>
+                                                <input type="text" class="form-control" id="input-sede" value="">
+                                                <span class="help-block">Indirizzo della sede di svolgimento del corso</span>
+                                                <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-2 label-on-left">Genera lezioni automaticamente</label>
+                                        <div class="col-sm-10">
+                                            <div class="form-group">
+                                                <p class="form-control-static">"Genera lezioni automaticamente" permette di generare le lezioni automaticamnte, asegnadolgi una data ed un'ora di inizio. <br />Le lezioni possono poi essere modificate singolarmente. <br /> Per avere maggiori
+                                                    informazioni <a href="">clicca qui.</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-10">
+                                            <div class="form-group label-floating is-empty ">
+                                                <div class="mdc-form-field">
+                                                    <div class="mdc-checkbox">
+                                                        <input type="checkbox" id="input-auto-fill" class="mdc-checkbox__native-control" />
+                                                        <div class="mdc-checkbox__background">
+                                                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+									<path class="mdc-checkbox__checkmark-path"
+										fill="none"
+										stroke="white"
+										d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+								</svg>
+                                                            <div class="mdc-checkbox__mixedmark"></div>
+                                                        </div>
+                                                    </div>
+                                                    <label for="my-checkbox">Genera lezioni automaticamente</label>
+                                                </div>
+                                                <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="formlezioni-automatiche">
+                                        <div class="row" id="riga-descrizione">
+                                            <label class="col-sm-2 label-on-left">Data inizio corso</label>
+                                            <div class="col-sm-4">
+                                                <div class="form-group label-floating is-empty">
+                                                    <label class="control-label"></label>
+                                                    <input type="date" class="form-control" id="input-data" value="">
+                                                    <span class="material-input"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label class="col-sm-2 label-on-left">Ora inizio lezioni</label>
+                                            <div class="col-sm-4">
+                                                <div class="form-group label-floating is-empty">
+                                                    <label class="control-label"></label>
+                                                    <input type=time class="form-control" id="input-ora-inizio" value="">
+                                                    <span class="help-block">Ora di inzio della prima lezione del giorno.</span>
+                                                    <span class="material-input"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label class="col-sm-2 label-on-left">N° Giorni</label>
+                                            <div class="col-sm-4">
+                                                <div class="form-group label-floating is-empty">
+                                                    <label class="control-label"></label>
+                                                    <input type="number" class="form-control" id="input-num-giorni" value="">
+                                                    <span class="help-block">Numero di giorni (effettivi) in cui si svolgono le lezioni.</span>
+                                                    <span class="material-input"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label class="col-sm-2 label-on-left">N° Lezioni per giorno</label>
+                                            <div class="col-sm-4">
+                                                <div class="form-group label-floating is-empty">
+                                                    <label class="control-label"></label>
+                                                    <input type="number" class="form-control" id="input-lez-per-giorno" value="">
+                                                    <span class="help-block">Numero di lezioni svolte per singolo giorno di corso.</span>
+                                                    <span class="material-input"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label class="col-sm-2 label-on-left">Durata lezioni</label>
+                                            <div class="col-sm-4">
+                                                <div class="form-group label-floating is-empty">
+                                                    <label class="control-label"></label>
+                                                    <input type="number" class="form-control" id="input-durata" value="">
+                                                    <span class="help-block">Durata (in ore) delle lezioni.</span>
+                                                    <span class="material-input"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label class="col-sm-2 label-on-left">Pattern settimanale</label>
+                                            <div class="col-sm-10">
+                                                <div class="form-group label-floating is-empty ">
+                                                    <div class="mdc-form-field">
+                                                        <div class="mdc-checkbox">
+                                                            <input type="checkbox" id="input-auto-fill" class="mdc-checkbox__native-control" />
+                                                            <div class="mdc-checkbox__background">
+                                                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+									<path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                                                <div class="mdc-checkbox__mixedmark"></div>
+                                                            </div>
+                                                        </div>
+                                                        <label for="my-checkbox" class="day-label">Lunedì</label>
+                                                    </div>
+                                                    <div class="mdc-form-field">
+                                                        <div class="mdc-checkbox">
+                                                            <input type="checkbox" id="input-auto-fill" class="mdc-checkbox__native-control" />
+                                                            <div class="mdc-checkbox__background">
+                                                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+									<path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                                                <div class="mdc-checkbox__mixedmark"></div>
+                                                            </div>
+                                                        </div>
+                                                        <label for="my-checkbox" class="day-label">Martedì</label>
+                                                    </div>
+                                                    <div class="mdc-form-field">
+                                                        <div class="mdc-checkbox">
+                                                            <input type="checkbox" id="input-auto-fill" class="mdc-checkbox__native-control" />
+                                                            <div class="mdc-checkbox__background">
+                                                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+									<path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                                                <div class="mdc-checkbox__mixedmark"></div>
+                                                            </div>
+                                                        </div>
+                                                        <label for="my-checkbox" class="day-label">Mercoledì</label>
+                                                    </div>
+                                                    <div class="mdc-form-field">
+                                                        <div class="mdc-checkbox">
+                                                            <input type="checkbox" id="input-auto-fill" class="mdc-checkbox__native-control" />
+                                                            <div class="mdc-checkbox__background">
+                                                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+									<path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                                                <div class="mdc-checkbox__mixedmark"></div>
+                                                            </div>
+                                                        </div>
+                                                        <label for="my-checkbox" class="day-label">Giovedì</label>
+                                                    </div>
+                                                    <div class="mdc-form-field">
+                                                        <div class="mdc-checkbox">
+                                                            <input type="checkbox" id="input-auto-fill" class="mdc-checkbox__native-control" />
+                                                            <div class="mdc-checkbox__background">
+                                                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+									<path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                                                <div class="mdc-checkbox__mixedmark"></div>
+                                                            </div>
+                                                        </div>
+                                                        <label for="my-checkbox" class="day-label">Venerdì</label>
+                                                    </div>
+                                                    <div class="mdc-form-field">
+                                                        <div class="mdc-checkbox">
+                                                            <input type="checkbox" id="input-auto-fill" class="mdc-checkbox__native-control" />
+                                                            <div class="mdc-checkbox__background">
+                                                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+									<path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                                                <div class="mdc-checkbox__mixedmark"></div>
+                                                            </div>
+                                                        </div>
+                                                        <label for="my-checkbox" class="day-label">Sabato</label>
+                                                    </div>
+                                                    <div class="mdc-form-field">
+                                                        <div class="mdc-checkbox">
+                                                            <input type="checkbox" id="input-auto-fill" class="mdc-checkbox__native-control" />
+                                                            <div class="mdc-checkbox__background">
+                                                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+									<path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                                                <div class="mdc-checkbox__mixedmark"></div>
+                                                            </div>
+                                                        </div>
+                                                        <label for="my-checkbox" class="day-label">Domenica</label>
+                                                    </div>
+                                                    <span class="material-input"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label class="col-sm-2 label-on-left"></label>
+                                            <div class="col-sm-10">
+                                                <div class="form-group riga-form-bassa">
+                                                    <p class="form-control-static">Il "Pattern settimanale" serve per stabilre in quali giorni della settimana si svolge il corso.<br /> Per avere maggiori informazioni <a href="">clicca qui.</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary pull-right">Crea</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <!-- -Iscrivi studente (docente) -->
+
+                            <div class="card">
+                                <div class="card-header" data-background-color="orange">
+                                    <h4 class="title">Iscrivi studente ad un corso</h4>
+                                    <p class="category">Puoi fornire questo codice agli studenti perchè si iscrivano in autonomia: <span id="codice-corso-iscrivi-studente">/codice/</span></p>
+                                </div>
+                                <div class="card-content">
+                                    <div class="row">
+                                        <label class="col-sm-2 label-on-left">Mail dello studente</label>
+                                        <div class="col-sm-6">
+                                            <div class="form-group label-floating is-empty">
+                                                <label class="control-label"></label>
+                                                <input type="email" class="form-control" id="input-pattern" value="">
+                                                <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-2 label-on-left"></label>
+                                        <div class="col-sm-10">
+                                            <div class="form-group riga-form-bassa">
+                                                <p class="form-control-static">Per iscirvere uno studente ad un corso è necesario il suo indirizzo email. <br /> Per avere maggiori informazioni <a href="">clicca qui.</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <label class="col-sm-2 label-on-left"></label>
+                                        <div class="col-sm-10">
+                                            <div class="form-group label-floating is-empty ">
+                                                <div class="mdc-form-field">
+                                                    <div class="mdc-checkbox">
+                                                        <input type="checkbox" id="input-auto-fill" class="mdc-checkbox__native-control" />
+                                                        <div class="mdc-checkbox__background">
+                                                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+									<path class="mdc-checkbox__checkmark-path"
+										fill="none"
+										stroke="white"
+										d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+								</svg>
+                                                            <div class="mdc-checkbox__mixedmark"></div>
+                                                        </div>
+                                                    </div>
+                                                    <label for="my-checkbox">Ho letto ed accetto i <a href="">termini e le condizoini</a></label>
+                                                </div>
+                                                <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary pull-right">Iscrivi</button>
+                                </div>
+                            </div>
+
+
+                            <!-- Iscriviti (studente) -->
+
+
+                            <div class="card">
+                                <div class="card-header" data-background-color="orange">
+                                    <h4 class="title">Iscriviti ad un nuovo corso</h4>
+                                    <p class="category">Inserisci il codice per iscriverti</p>
+                                </div>
+                                <div class="card-content">
+                                    <div class="row">
+                                        <label class="col-sm-2 label-on-left">Pattern settimanale</label>
+                                        <div class="col-sm-6">
+                                            <div class="form-group label-floating is-empty">
+                                                <label class="control-label"></label>
+                                                <input type="text" class="form-control" id="input-pattern" value="">
+                                                <span class="material-input"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-2 label-on-left"></label>
+                                        <div class="col-sm-10">
+                                            <div class="form-group riga-form-bassa">
+                                                <p class="form-control-static">Per iscriverti chiedi al tuo professore il codice del corso, è tipo "2df35" di lunghezza variabile. <br /> Per avere maggiori informazioni <a href="">clicca qui.</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary pull-right">Iscriviti</button>
+                                </div>
+                            </div>
+
+
+                            <!-- Fine area card ------------------------------------------------------------------------------------------------------------------- -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="pull-left">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Company
+                                </a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                    <p class="copyright pull-right">
+                        &copy;
+                        <script>
+                            document.write(new Date().toLocaleDateString())
+                        </script>
+                        Made with much &hearts; by <a href="http://logoscloud.ddns.net">Logos Team</a>
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+<!--   Core JS Files   -->
+<script src="../assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../assets/js/material.min.js" type="text/javascript"></script>
+<!--  Charts Plugin -->
+<script src="../assets/js/chartist.min.js"></script>
+<!-- Material Dashboard javascript methods -->
+<script src="../assets/js/material-dashboard.js?v=1.2.0"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+    
+    });
+</script>
+
+</html>

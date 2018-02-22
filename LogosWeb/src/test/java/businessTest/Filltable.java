@@ -18,8 +18,8 @@ import entity.Studente;
 
 public class Filltable {
 	
-	static final String mailstudente = "studente@mail";
-	static final String maildocente = "docente@mail";
+	static final String mailstudente = "studente2@mail";
+	static final String maildocente = "docente2@mail";
 	static final int idcorso = 1;
 	
 
@@ -27,42 +27,45 @@ public class Filltable {
 	@Test
 	public void test() {
 		EntityManager em = JPAUtility.emf.createEntityManager();
-		Docente d = new Docente();
-		Studente s = new Studente();
-		Corso c = new Corso();
-		IscrizionePk ipk = new IscrizionePk();
-		Iscrizione i = new Iscrizione();
-		
-		d.setMail("docente@mail");
-
-		s.setMail("studente@mail");
-		
-		c.setDataInizio(new Date());
-		c.setDurataLezione(2);
-		c.setDocente(d);
-		c.setLezionePerGiorno(2);
-		c.setTitolo("corsoprova");
-		c.setPatternLezioni("1,3,5");
-		c.setNumeroGiorni(10);
-		c.setOraInizioLezioni(new Date());
-		
-		ipk.setIdCorso(2);
-		ipk.setMailStudente("studente@mail");
-		
-		i.setIscrizionePk(ipk);
-		i.setCorso(c);
-		i.setStudenteIscritto(s);
-		
-		em.getTransaction().begin();
-		em.persist(s);
-		em.persist(d);
-		em.persist(c);
-		em.persist(i);
-		em.getTransaction().commit();
-		
-		c = em.find(Corso.class, 1);
+//		Docente d = new Docente();
+//		Studente s = new Studente();
+//		Corso c = new Corso();
+//		IscrizionePk ipk = new IscrizionePk();
+//		Iscrizione i = new Iscrizione();
+//		
+//		d.setMail("docente@mail");
+//
+//		s.setMail("studente@mail");
+//		
+//		c.setDataInizio(new Date());
+//		c.setDurataLezione(2);
+//		c.setDocente(d);
+//		c.setLezionePerGiorno(2);
+//		c.setTitolo("corsoprova");
+//		c.setPatternLezioni("1,3,5");
+//		c.setNumeroGiorni(10);
+//		c.setOraInizioLezioni(new Date());
+//	
+//		
+//		ipk.setIdCorso(1);
+//		ipk.setMailStudente("studente@mail");
+//		
+//		i.setIscrizionePk(ipk);
+//		i.setCorso(c);
+//		i.setStudenteIscritto(s);
+//		
+//		em.getTransaction().begin();
+//		em.persist(s);
+//		em.persist(d);
+//		em.persist(c);
+//		em.persist(i);
+//		em.getTransaction().commit();
+//		
+//		
+//		
+		Corso c2 = em.find(Corso.class, 1);
 		GestioneLezioni gl = new GestioneLezioni();
-		gl.creaLezioni(c);
+		gl.creaLezioni(c2);
 		boolean b = true;
 		assertTrue("funziona", b == true);
 	}

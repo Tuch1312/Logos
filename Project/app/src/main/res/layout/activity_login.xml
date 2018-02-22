@@ -46,4 +46,12 @@
         android:text="@string/accedi"
         style="@style/pulsante_schermo_intero"
         />
+
+    <Button
+        android:id="@+id/reg"
+        android:layout_below="@id/Button"
+        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
+        android:text="Registrati"
+        style="@style/pulsante_schermo_intero"/>
 </RelativeLayout>

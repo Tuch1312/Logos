@@ -2,15 +2,6 @@
 
 
 
-@media screen and (min-width: 1200px)
-
-}
-
-.contenitoreTab {
-    width: 100% !important;
-}
-
-
 .sidebar-colorata {
     background-color: rgba(227,242,253,0.4);
 }
@@ -83,6 +74,41 @@ td.td-actions > button.btn {
     margin-top: 15px;
     text-align: center;
     padding: 0;
+}
+
+.day-label {
+    margin-right: 30% !important;
+}
+
+.titolo-destra {
+    float: right !important;
+    padding: 0px !important;
+    
+}
+
+.colonna-dashboard {
+    margin-top: 30px;
+}
+
+.card-header-stretto {
+    max-width: 56px;
+}
+
+.card .card-header.card-header-icon + .card-content .card-title {
+
+    padding-bottom: 15px;
+
+}
+.card .card-title {
+
+    margin-top: 0;
+    margin-bottom: 3px;
+
+}
+.title, .title a, .card-title, .card-title a, .info-title, .info-title a, .footer-brand, .footer-brand a, .footer-big h5, .footer-big h5 a, .footer-big h4, .footer-big h4 a, .media .media-heading, .media .media-heading a {
+
+    color: #3C4858;
+    text-decoration: none;
 }
 
 

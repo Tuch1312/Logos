@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
+<<<<<<< HEAD
     android:weightSum="3">
 
     <LinearLayout
@@ -10,6 +11,17 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_weight="1">
+=======
+    android:weightSum="3"
+    android:background="@android:color/darker_gray">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+>>>>>>> 8677f9e4a45af7d61523521ae1b7beea59b3a3fc
 
         <TextView
             android:id="@+id/nomeStudPres"
@@ -25,7 +37,11 @@
     </LinearLayout>
 
     <LinearLayout
+<<<<<<< HEAD
         android:layout_width="wrap_content"
+=======
+        android:layout_width="0dp"
+>>>>>>> 8677f9e4a45af7d61523521ae1b7beea59b3a3fc
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_weight="1">
@@ -44,10 +60,17 @@
     </LinearLayout>
 
     <LinearLayout
+<<<<<<< HEAD
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_weight="1">
+=======
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+>>>>>>> 8677f9e4a45af7d61523521ae1b7beea59b3a3fc
 
         <Switch
             android:id="@+id/studentePresAss"

@@ -12,11 +12,18 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Registration" />
         <activity android:name=".Login">
+<<<<<<< HEAD
        </activity>
+=======
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+>>>>>>> 8677f9e4a45af7d61523521ae1b7beea59b3a3fc
         <activity android:name=".CreaCorso" />
         <activity android:name=".DashBoardDocenteListe">
-
-
 
         </activity>
 
