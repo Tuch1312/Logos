@@ -43,7 +43,7 @@
                     </div>
                     <div class="info">
                         <a data-toggle="collapse" href="#collapseExample" class="" aria-expanded="true">
-                            <span>
+                            <span id="nomePersona">
                                 Mario Rossi
                                 <b class="caret"></b>
                             </span>
@@ -164,21 +164,21 @@
 
 
                             <!-- Tabbed-dashboard-studente----------------------- -->
-                            <div class="card card-nav-tabs" id="Tabbed-dashbaord-studente">
+                            <div class="card card-nav-tabs" id="Tabbed-dashboard-studente">
                                 <div class="card-header" data-background-color="purple">
                                     <div class="nav-tabs-navigation">
                                         <div class="nav-tabs-wrapper">
 
-                                            <h4 class="nav-tabs-title titolo-destra">Titolo corso (dashboard studente)</h4>
+                                            <h4 class="nav-tabs-title titolo-destra" id="titolo-corso-dashboard-studente">Titolo corso (dashboard studente)</h4>
                                             <ul class="nav nav-tabs" data-tabs="tabs">
                                                 <li class="active">
-                                                    <a href="#attivita-dashbaord-studente" data-toggle="tab" aria-expanded="true">
+                                                    <a href="#attivita-dashboard-studente" data-toggle="tab" aria-expanded="true">
                                                         <i class="material-icons">dashboard</i> Dashboard
                                                         <div class="ripple-container"></div>
                                                     </a>
                                                 </li>
                                                 <li class="">
-                                                    <a href="#lezioni-dashbaord-studente" data-toggle="tab" aria-expanded="false">
+                                                    <a href="#lezioni-dashboard-studente" data-toggle="tab" aria-expanded="false">
                                                         <i class="material-icons">school</i> Lezioni
                                                         <div class="ripple-container"></div>
                                                     </a>
@@ -189,7 +189,7 @@
                                 </div>
                                 <div class="card-content">
                                     <div class="tab-content">
-                                        <div class="tab-pane active" id="attivita-dashbaord-studente">
+                                        <div class="tab-pane active" id="attivita-dashboard-studente">
                                             <div class="row">
                                                 <div class="col-lg-4 col-md-4">
                                                     <div style="margin-top:20px;" id="example-gallery-four" class="ct-chart ct-golden-section" data-example="dmFyIGRhdGEgPSB7CiAgc2VyaWVzOiBbNjAsIDIwXQp9OwoKdmFyIG9wdGlvbnMgPSB7CiAgZG9udXQ6IHRydWUsCiAgICBkb251dFdpZHRoOiA0MCwKICAgIHRvdGFsOiAxMDAsCiAgICBsYWJlbEludGVycG9sYXRpb25GbmM6IGZ1bmN0aW9uKHZhbHVlKSB7CiAgICByZXR1cm4gdmFsdWUgKyAnJSc7CiAgfQp9OwoKdmFyIHJlc3BvbnNpdmVPcHRpb25zID0gWwogIFsKICAgIEZvdW5kYXRpb24ubWVkaWFfcXVlcmllcy5tZWRpdW0sCiAgICB7CiAgICAgIGxhYmVsT2Zmc2V0OiAzMCwKICAgICAgY2hhcnRQYWRkaW5nOiAxMCwKICAgICAgbGFiZWxEaXJlY3Rpb246ICdleHBsb2RlJwogICAgfQogIF0sCiAgWwogICAgRm91bmRhdGlvbi5tZWRpYV9xdWVyaWVzLmxhcmdlLAogICAgewogICAgICBsYWJlbE9mZnNldDogLTMwLAogICAgICBjaGFydFBhZGRpbmc6IDAsCiAgICAgIGxhYmVsRGlyZWN0aW9uOiAnaW1wbG9kZScKICAgIH0KICBdCl07CgpuZXcgQ2hhcnRpc3QuUGllKCcuY3QtY2hhcnQnLCBkYXRhLCBvcHRpb25zLCByZXNwb25zaXZlT3B0aW9ucyk7"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series ct-series-a"><path d="M87.918,108.35A46.075,46.075,0,1,0,115,25" class="ct-slice-donut" ct:value="60" style="stroke-width: 40px;"></path></g><g class="ct-series ct-series-b"><path d="M71.18,56.837A46.075,46.075,0,0,0,88.048,108.445" class="ct-slice-donut" ct:value="20" style="stroke-width: 40px;"></path></g><g><text dx="158.81993334189042" dy="85.31296400802997" text-anchor="middle" class="ct-label">60%</text><text dx="71.18006665810957" dy="85.31296400802997" text-anchor="middle" class="ct-label">20%</text></g></svg></div>
@@ -200,7 +200,7 @@
                                                         <label class="col-sm-6 label-on-left">Numero studenti:</label>
                                                         <div class="col-sm-6">
                                                             <div class="form-group riga-form-bassa">
-                                                                <span class="form-control-static">17</span>
+                                                                <span class="form-control-static" id="numero-studenti-dashboard-studenti">1717</span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -208,47 +208,21 @@
                                                         <label class="col-sm-6 label-on-left">Ore trascorse:</label>
                                                         <div class="col-sm-6">
                                                             <div class="form-group riga-form-bassa">
-                                                                <span class="form-control-static">7</span>
+                                                                <span class="form-control-static"  id="ore-trascorse-dashboard-studente">7</span>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <label class="col-sm-6 label-on-left">Altre stronzate</label>
+                                                        <label class="col-sm-6 label-on-left">Ore assenza</label>
                                                         <div class="col-sm-6">
                                                             <div class="form-group riga-form-bassa">
-                                                                <span class="form-control-static">34</span>
+                                                                <span class="form-control-static"  id="ore-assenze-dashboard-studente">34</span>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-4 col-md-4 colonna-dashboard">
-                                                    <div class="row">
-                                                        <label class="col-sm-6 label-on-left">Numero studenti:</label>
-                                                        <div class="col-sm-6">
-                                                            <div class="form-group riga-form-bassa">
-                                                                <span class="form-control-static">17</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <label class="col-sm-6 label-on-left">Ore trascorse:</label>
-                                                        <div class="col-sm-6">
-                                                            <div class="form-group riga-form-bassa">
-                                                                <span class="form-control-static">7</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <label class="col-sm-6 label-on-left">Altre stronzate</label>
-                                                        <div class="col-sm-6">
-                                                            <div class="form-group riga-form-bassa">
-                                                                <span class="form-control-static">34</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                
                                             <div class="row">
                                                 <div class="col-lg-6 col-md-6">
                                                     <div class="card ">
@@ -258,7 +232,7 @@
                                                         <div class="card-content">
                                                             <h4 class="card-title">Argomenti passati</h4>
                                                             <div class="table-responsive">
-                                                                <table class="table">
+                                                                <table class="table"  id="tabella-argomenti-passati-dashboard-studente">
                                                                     <thead class="text-primary">
                                                                         <tr>
                                                                             <th>N° lezione</th>
@@ -302,7 +276,7 @@
                                                         <div class="card-content">
                                                             <h4 class="card-title">Prossimi argomenti</h4>
                                                             <div class="table-responsive">
-                                                                <table class="table">
+                                                                <table  class="table" id="tabella-argomenti-prossimi-dashboard-studente">
                                                                     <thead class="text-primary">
                                                                         <tr>
                                                                             <th>N° lezione</th>
@@ -349,8 +323,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="tab-pane" id="lezioni-dashbaord-studente">
-                                            <table class="table table-hover" id="lista-lezioni">
+                                        </div>
+                                        <div class="tab-pane" id="lezioni-dashboard-studente">
+                                            <table  class="table table-hover" id="lista-lezioni-dashboard-studente">
                                                 <thead class="text-warning">
                                                     <tr>
                                                         <th>N° Lezione</th>
@@ -441,7 +416,7 @@
                                 <div class="card-content">
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="attivita-liste-docente">
-                                            <table class="table table-hover" id="lista-lezioni">
+                                            <table class="table table-hover" id="lista-lezioni-docente">
                                                 <thead class="text-warning">
                                                     <tr>
                                                         <th>N° Lezione</th>
@@ -637,7 +612,7 @@
 
                             <div class="card" id="tabbed-dashboard-docente">
                                 <div class="card-header" data-background-color="purple">
-                                    <h4 class="title">Titolo corso (lista lezioni docente)</h4>
+                                    <h4 class="title" id="titolo-corso-lista-lezioni-docente">Titolo corso (lista lezioni docente)</h4>
                                     <p class="category">Descrizione corso</p>
                                 </div>
                                 <div class="card-content table-responsive">
@@ -757,7 +732,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <label class="col-sm-2 label-on-left">N° massimo iscirzioni</label>
+                                        <label class="col-sm-2 label-on-left">N° massimo iscrizioni</label>
                                         <div class="col-sm-4">
                                             <div class="form-group label-floating is-empty">
                                                 <label class="control-label"></label>
@@ -1134,7 +1109,7 @@
                                 </div>
                               <div class="card-content">
                                     <div class="tab-content">
-                                        <div class="tab-pane active" id="attivita-dashbaord-studente">
+                                        <div class="tab-pane active" id="attivita-dashboard-studente">
                                             <div class="row">
                                                 <div class="col-lg-4 col-md-4">
                                                     <div style="margin-top:20px;" id="example-gallery-four" class="ct-chart ct-golden-section" data-example="dmFyIGRhdGEgPSB7CiAgc2VyaWVzOiBbNjAsIDIwXQp9OwoKdmFyIG9wdGlvbnMgPSB7CiAgZG9udXQ6IHRydWUsCiAgICBkb251dFdpZHRoOiA0MCwKICAgIHRvdGFsOiAxMDAsCiAgICBsYWJlbEludGVycG9sYXRpb25GbmM6IGZ1bmN0aW9uKHZhbHVlKSB7CiAgICByZXR1cm4gdmFsdWUgKyAnJSc7CiAgfQp9OwoKdmFyIHJlc3BvbnNpdmVPcHRpb25zID0gWwogIFsKICAgIEZvdW5kYXRpb24ubWVkaWFfcXVlcmllcy5tZWRpdW0sCiAgICB7CiAgICAgIGxhYmVsT2Zmc2V0OiAzMCwKICAgICAgY2hhcnRQYWRkaW5nOiAxMCwKICAgICAgbGFiZWxEaXJlY3Rpb246ICdleHBsb2RlJwogICAgfQogIF0sCiAgWwogICAgRm91bmRhdGlvbi5tZWRpYV9xdWVyaWVzLmxhcmdlLAogICAgewogICAgICBsYWJlbE9mZnNldDogLTMwLAogICAgICBjaGFydFBhZGRpbmc6IDAsCiAgICAgIGxhYmVsRGlyZWN0aW9uOiAnaW1wbG9kZScKICAgIH0KICBdCl07CgpuZXcgQ2hhcnRpc3QuUGllKCcuY3QtY2hhcnQnLCBkYXRhLCBvcHRpb25zLCByZXNwb25zaXZlT3B0aW9ucyk7"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series ct-series-a"><path d="M87.918,108.35A46.075,46.075,0,1,0,115,25" class="ct-slice-donut" ct:value="60" style="stroke-width: 40px;"></path></g><g class="ct-series ct-series-b"><path d="M71.18,56.837A46.075,46.075,0,0,0,88.048,108.445" class="ct-slice-donut" ct:value="20" style="stroke-width: 40px;"></path></g><g><text dx="158.81993334189042" dy="85.31296400802997" text-anchor="middle" class="ct-label">60%</text><text dx="71.18006665810957" dy="85.31296400802997" text-anchor="middle" class="ct-label">20%</text></g></svg></div>
@@ -1274,7 +1249,7 @@
                                 </div>
                               <div class="card-content">
                                     <div class="tab-content">
-                                        <div class="tab-pane active" id="attivita-dashbaord-studente">
+                                        <div class="tab-pane active" id="attivita-dashboard-studente">
                                             <div class="row">
                                                 <div class="col-lg-4 col-md-4">
                                                     <div style="margin-top:20px;" id="example-gallery-four" class="ct-chart ct-golden-section" data-example="dmFyIGRhdGEgPSB7CiAgc2VyaWVzOiBbNjAsIDIwXQp9OwoKdmFyIG9wdGlvbnMgPSB7CiAgZG9udXQ6IHRydWUsCiAgICBkb251dFdpZHRoOiA0MCwKICAgIHRvdGFsOiAxMDAsCiAgICBsYWJlbEludGVycG9sYXRpb25GbmM6IGZ1bmN0aW9uKHZhbHVlKSB7CiAgICByZXR1cm4gdmFsdWUgKyAnJSc7CiAgfQp9OwoKdmFyIHJlc3BvbnNpdmVPcHRpb25zID0gWwogIFsKICAgIEZvdW5kYXRpb24ubWVkaWFfcXVlcmllcy5tZWRpdW0sCiAgICB7CiAgICAgIGxhYmVsT2Zmc2V0OiAzMCwKICAgICAgY2hhcnRQYWRkaW5nOiAxMCwKICAgICAgbGFiZWxEaXJlY3Rpb246ICdleHBsb2RlJwogICAgfQogIF0sCiAgWwogICAgRm91bmRhdGlvbi5tZWRpYV9xdWVyaWVzLmxhcmdlLAogICAgewogICAgICBsYWJlbE9mZnNldDogLTMwLAogICAgICBjaGFydFBhZGRpbmc6IDAsCiAgICAgIGxhYmVsRGlyZWN0aW9uOiAnaW1wbG9kZScKICAgIH0KICBdCl07CgpuZXcgQ2hhcnRpc3QuUGllKCcuY3QtY2hhcnQnLCBkYXRhLCBvcHRpb25zLCByZXNwb25zaXZlT3B0aW9ucyk7"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series ct-series-a"><path d="M87.918,108.35A46.075,46.075,0,1,0,115,25" class="ct-slice-donut" ct:value="60" style="stroke-width: 40px;"></path></g><g class="ct-series ct-series-b"><path d="M71.18,56.837A46.075,46.075,0,0,0,88.048,108.445" class="ct-slice-donut" ct:value="20" style="stroke-width: 40px;"></path></g><g><text dx="158.81993334189042" dy="85.31296400802997" text-anchor="middle" class="ct-label">60%</text><text dx="71.18006665810957" dy="85.31296400802997" text-anchor="middle" class="ct-label">20%</text></g></svg></div>
@@ -1524,8 +1499,7 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSaSxv01RBLnlu5EyBHLs57s-IquPaows"></script>
 <!-- Material Dashboard javascript methods -->
 <script src="../assets/js/material-dashboard.js?v=1.2.0"></script>
-<!-- Material Dashboard DEMO methods, don't include it in your project! -->
-<script src="../assets/js/demo.js"></script>
+
 <script type="text/javascript">
     $(document).ready(function() {
 
