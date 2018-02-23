@@ -11,12 +11,46 @@
  *
  * ========================================================= */
 
+.senza-account {
+    padding: 0.5rem;
+}
+
+.btn-login {
+    margin-bottom: 1.5rem !important;
+    margin-top: 2rem !important;
+}
+
+.login-form-imput {
+        padding-top: 10px !important;
+    margin-bottom: 1rem !important;
+}
+
+.login-form-icon {
+        margin-bottom: 0px !important;
+    padding-top: 40px !important;
+}
+
+.login-header {
+ background: linear-gradient(60deg, #A945BB, #8F22Ab) !important;
+ background-image: linear-gradient(60deg, rgb(169, 68, 187), rgb(169, 68, 187));
+    color: white;
+    
+}
+
+.img-container {
+    width: 100%;
+    height: 400px;
+    
+        background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 .lgwp-doubles .double-item {
     text-align: left;
 }
 .lgwp-doubles .double-item {
-    padding: 2rem 0;
+    padding: 1rem 0;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -50,6 +84,7 @@
 .login-page .card-login .card-header {
     margin-top: -40px;
     margin-bottom: 20px;
+       
 }
 
 .login-page .card-login .card-header .title {
