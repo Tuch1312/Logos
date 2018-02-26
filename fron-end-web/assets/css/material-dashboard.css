@@ -111,6 +111,41 @@ td.td-actions > button.btn {
     text-decoration: none;
 }
 
+.colonna-dashboard > .row {
+
+    margin-bottom: 15px;
+}
+
+.colonna-dashboard > .row > div > div .form-control-static {
+
+
+    font-weight: 400;
+
+
+}
+
+textarea {
+    display: block;
+    padding: 0.125rem 0.125rem 0.0625rem;
+    font-size: 1.7rem;
+    border-width: 0;
+    border-color: transparent;
+    line-height: 1.9;
+    width: 100%;
+    min-height: 250px;
+    color: #424242;
+    -webkit-transition: all 0.28s ease;
+    transition: all 0.28s ease;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+      resize: none;
+    font-family: 'Indie Flower', cursive;
+}
+
+
+
+
+
 
 
 
@@ -130,6 +165,36 @@ td.td-actions > button.btn {
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*!
