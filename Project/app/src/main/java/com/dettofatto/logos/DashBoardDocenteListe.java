@@ -1,5 +1,6 @@
 package com.dettofatto.logos;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -32,6 +33,10 @@ public class DashBoardDocenteListe extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard_liste_docente);
+
+        final Intent presenzeAssenze = new Intent(this, PresenzeAssenze.class);
+        startActivity(presenzeAssenze);
+
 
         //Aggiungo i fragment alla lista
         fragmentList.add(fragment1);
