@@ -11,6 +11,10 @@
  *
  * ========================================================= */
 
+#login-fallito, #registrazione-fallita{
+    display: none;
+    color: red;
+}
 
 .fake-link {
     color: darkviolet !important;

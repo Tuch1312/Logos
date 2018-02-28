@@ -53,7 +53,7 @@
                      </a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="" data-toggle="modal" data-target="#myModal">
+                     <a class="nav-link" href="" data-toggle="modal" data-target="#myModal" id="login-button">
                      <i class="material-icons">person</i> Login
                      </a>
                   </li>
@@ -337,6 +337,7 @@
       </div>
       <!-- Login Modal -->
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+
          <div class="modal-dialog" role="document" id="login-card">
             <div class="card card-login modal-content">
                 <form id="login-form">
@@ -377,6 +378,7 @@
                       <div class="col-sm-2"></div>
                    </div>
                    <div class="footer text-center">
+                       <h6 id="login-fallito">Login fallito, riprovare</h6>
                       <div id="submit-login" class="btn btn-primary btn-login">Login</div>
                       <div class="description senza-account">Non hai ancora un account? <a class="fake-link" id="registrati-on" >Registrati</a></div>
                    </div>
@@ -384,7 +386,7 @@
             </div>
          </div>
           
-              <div class="modal-dialog" role="document" id="register-card" style="display: none">
+        <div class="modal-dialog" role="document" id="register-card" style="display: none">
             <div class="card card-login modal-content">
                 <form id="registrati-form">
                <div class="card-header text-center login-header" data-background-color="purple">
@@ -432,6 +434,7 @@
                         <input type="mail" class="form-control" id="input-mail-registrati" name="mail" placeholder="E-mail">
                         <span class="material-input"></span>
                         <span class="material-input"></span>
+                        <p id="error-registrati-mail" style="color: red"></p>
                      </div>
                   </div>
                   <div class="col-sm-2"></div>
@@ -457,7 +460,7 @@
                   <div class="col-sm-4">
           <div class="mdc-form-field">
             <div class="mdc-radio" data-demo-no-js="">
-              <input class="mdc-radio__native-control" type="radio" id="ex1-default-radio1" checked="" name="ex1-default">
+              <input class="mdc-radio__native-control" type="radio" id="ex1-default-radio1" checked="" name="tipo" value="true">
               <div class="mdc-radio__background">
                 <div class="mdc-radio__outer-circle"></div>
                 <div class="mdc-radio__inner-circle"></div>
@@ -469,7 +472,7 @@
                        <div class="col-sm-4">
           <div class="mdc-form-field">
             <div class="mdc-radio" data-demo-no-js="">
-              <input class="mdc-radio__native-control" type="radio" id="ex1-default-radio2" name="ex1-default">
+              <input class="mdc-radio__native-control" type="radio" id="ex1-default-radio2" name="tipo" value="false">
               <div class="mdc-radio__background">
                 <div class="mdc-radio__outer-circle"></div>
                 <div class="mdc-radio__inner-circle"></div>
@@ -486,10 +489,18 @@
                     <div class="col-sm-1"></div>
                 </div>
                <div class="footer text-center">
-                  <button type="submit" class="btn btn-primary btn-login">Registrati</button>
+                   <h6 id="registrazione-fallita">Registrazione fallita, riprovare</h6>
+                  <div id="submit-registrazione" class="btn btn-primary btn-login">Registrati</div>
                   <div class="description senza-account">Già registrato? <a class="fake-link" id="login-on" >Login</a></div>
                </div>
                 </form>
+            </div>
+         </div>
+          
+        <div class="modal-dialog" role="document" id="gia-loggato" style="display: none">
+            <div class="card card-login modal-content text-center">
+                <h2 class="title">Già loggato</h2>
+                
             </div>
          </div>
          
