@@ -239,6 +239,7 @@ public class Corso implements Serializable {
 		return this.titolo;
 	}
 
+	
 	public void setTitolo(String titolo) {
 		this.titolo = titolo;
 	}

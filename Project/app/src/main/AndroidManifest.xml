@@ -20,11 +20,7 @@
         </activity>
 
         <activity android:name=".PresenzeAssenze">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
 
@@ -38,7 +34,13 @@
 
         </activity>
 
-        <activity android:name=".DashboardDocenteLezione" />
+        <activity android:name=".DashboardDocenteLezione" >
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
     </application>
 
 </manifest>
