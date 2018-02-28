@@ -16,11 +16,10 @@ public class PresenzeAssenze extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_presenze_assenze);
 
-        final Intent presenzarow = new Intent(this,PresenzaRow.class);
-        startActivity(presenzarow);
-
-
         listaListView  = findViewById(R.id.listaPresAss);
+
+        final Intent presenzarow = new Intent(this, PresenzaRow.class);
+        startActivity(presenzarow);
 
 //        //Solo per test
 //        ArrayList<Presenza> values = new ArrayList<Presenza>();
