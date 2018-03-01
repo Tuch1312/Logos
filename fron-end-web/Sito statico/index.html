@@ -48,7 +48,7 @@
                      </a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href=":voi)" onclick="scrollToDownload()">
+                     <a class="nav-link" href="dashboard.html" onclick="scrollToDownload()">
                      <i class="material-icons">dashboard</i> Dashboard
                      </a>
                   </li>
@@ -512,25 +512,21 @@
             <nav class="pull-left">
                <ul>
                   <li>
-                     <a href="https://www.creative-tim.com">
-                     Creative Tim
+                     <a href="index.html">
+                     Home
                      </a>
                   </li>
                   <li>
-                     <a href="http://presentation.creative-tim.com">
-                     About Us
+                     <a href="chi-saimo.html">
+                     Chi siamo
                      </a>
                   </li>
-                  <li>
-                     <a href="http://blog.creative-tim.com">
-                     Blog
-                     </a>
-                  </li>
-                  <li>
-                     <a href="https://www.creative-tim.com/license">
-                     Licenses
-                     </a>
-                  </li>
+                 <li>
+                        <a href="cose-logos.html">
+                            Cos'è Logos
+                        </a>
+                    </li>
+                   
                </ul>
             </nav>
             <div class="copyright pull-right">
@@ -559,6 +555,10 @@
        <script src="assets/js/login.js"></script>
       <script>
          $(document).ready(function() {
+             
+             var u = JSON.parse(localStorage.getItem("utente"));
+            $("#login-button").html("<i class=\"material-icons\">person</i>" + u.nome + " " + u.cognome)
+             
          
              //init DateTimePickers
              materialKit.initFormExtendedDatetimepickers();

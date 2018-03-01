@@ -126,7 +126,7 @@ $("#input-mail-registrati").click(function () {
 
 //Se sei già registrato e clicchi su Login
 $("#login-button").click( function () {
-    if (localStorage.getItem("utente").includes("oreDaTenere") && localStorage.getItem("utente").includes("cognome")) {
+    if (localStorage.getItem("utente").includes("password") && localStorage.getItem("utente").includes("cognome")) {
                   $("#login-card").css("display", "none")
                   $("#register-card").css("display", "none")
                 $("#gia-loggato").css("display", "block")
