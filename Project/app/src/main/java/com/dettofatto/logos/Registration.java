@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,16 +43,17 @@ public class Registration extends Activity {
         final EditText et4 = findViewById(R.id.editText4);
         final RadioGroup rg = findViewById(R.id.radioGroup);
         Button registrati = findViewById(R.id.registrati);
+        final RadioButton r3 = findViewById(R.id.radioButton3);
 
 
         registrati.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                boolean isDocente=false;
+                if(r3.isChecked()) {
+                    isDocente=true;
+                }
 
-                        boolean isDocente=false;
-                        if(rg.getCheckedRadioButtonId()==R.id.radioButton3) {
-                            isDocente=true;
-                        }
 
                         RetroPersona rp = r.create(RetroPersona.class);
                         Call<Boolean> p =  rp.registrazione(et3.getText().toString(),et4.getText().toString(),et.getText().toString(),et2.getText().toString(), isDocente);
