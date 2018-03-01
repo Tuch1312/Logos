@@ -11,6 +11,11 @@
  *
  * ========================================================= */
 
+
+.menu-item {
+    cursor: pointer !important;
+}
+
 #login-fallito, #registrazione-fallita{
     display: none;
     color: red;
