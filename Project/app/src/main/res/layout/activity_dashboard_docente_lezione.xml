@@ -1,9 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dettofatto.logos.DashboardDocenteLezione">
+    tools:context="com.dettofatto.logos.DashboardDocenteLezione"
+    android:orientation="vertical"
+    android:padding="4dp">
 
-</android.support.constraint.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/argomenti_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ARGOMENTI"
+            android:layout_weight="4"/>
+
+        <TextView
+            android:id="@+id/numero_lezione_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NUMEROLEZIONE"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/aula_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AULA"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/data_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DATA"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/ora_inizio_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ORAINIZIO"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/durata_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DURATA"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/num_assenti_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NUMASSENTI"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/percent_assenti_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PERCENTASSENTI"
+            android:layout_weight="1"/>
+</LinearLayout>

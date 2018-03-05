@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.dettofatto.logos.RetroInterfaces.RetroPersona;
+import com.dettofatto.logos.entities.Docente;
 import com.dettofatto.logos.entities.Persona;
 import com.dettofatto.logos.entities.Studente;
 import com.google.gson.Gson;
@@ -68,13 +69,20 @@ public class Login extends Activity {
                             e.printStackTrace();
                         }
                         if(o.contains("oreDaTenere")){
+                            Gson j = new Gson();
+                            Docente d = j.fromJson(o, Docente.class);
+                            dashboardDocente.putExtra("docente", d);
                             startActivity(dashboardDocente);
                         }
 
                         if(o.contains("presenzaOggi")){
+                            Gson j = new Gson();
+                            Studente s = j.fromJson(o, Studente.class);
+                            StudentListaCorsi.putExtra("studente", s);
                             startActivity(StudentListaCorsi);
+                        } else {
+                            Toast.makeText(getApplicationContext(), "I dati inseriti non sono corretti", Toast.LENGTH_LONG).show();
                         }
-                        Toast.makeText(getApplicationContext(),"I dati inseriti non sono corretti",Toast.LENGTH_LONG).show();
                     }
 
                     @Override

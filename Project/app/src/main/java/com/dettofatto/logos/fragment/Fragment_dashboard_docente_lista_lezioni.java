@@ -56,7 +56,17 @@ class LezioniAdapter extends ArrayAdapter<Lezione>{
 }
 
 
+
+
+
+
 public class Fragment_dashboard_docente_lista_lezioni extends Fragment {
+
+
+    List<Lezione> lista;
+    List<Lezione> lista2;
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -84,10 +94,11 @@ public class Fragment_dashboard_docente_lista_lezioni extends Fragment {
         Call<List<Lezione>> c = rv.getLezioniDiOggi(g);
         Call<List<Lezione>> d = rv.getLezioniDiDomani(g);
 
+
         c.enqueue(new Callback<List<Lezione>>() {
             @Override
             public void onResponse(Call<List<Lezione>> call, Response<List<Lezione>> response) {
-                List<Lezione>lista = response.body();
+                lista = response.body();
                 LezioniAdapter lezioniAdapter = new LezioniAdapter(getContext(), lista);
                 lv.setAdapter(lezioniAdapter);
             }
@@ -101,7 +112,7 @@ public class Fragment_dashboard_docente_lista_lezioni extends Fragment {
         d.enqueue(new Callback<List<Lezione>>() {
             @Override
             public void onResponse(Call<List<Lezione>> call, Response<List<Lezione>> response) {
-                List<Lezione> lista2 = response.body();
+                lista2 = response.body();
                 LezioniAdapter lezioniAdapter2 = new LezioniAdapter(getContext(), lista2);
                 lv2.setAdapter(lezioniAdapter2);
             }
@@ -116,6 +127,8 @@ public class Fragment_dashboard_docente_lista_lezioni extends Fragment {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Lezione l = lista.get(position);
+                toDashLezione.putExtra("Lezione", l);
                 startActivity(toDashLezione);
             }
         });
@@ -123,6 +136,8 @@ public class Fragment_dashboard_docente_lista_lezioni extends Fragment {
         lv2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Lezione l = lista2.get(position);
+                toDashLezione.putExtra("Lezione", l);
                 startActivity(toDashLezione);
             }
         });

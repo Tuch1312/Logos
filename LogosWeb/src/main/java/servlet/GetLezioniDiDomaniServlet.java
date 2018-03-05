@@ -33,7 +33,7 @@ public class GetLezioniDiDomaniServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ObjectMapper om = new ObjectMapper();
 		Docente d = om.readValue(request.getParameter("docente"),Docente.class);
 		Lister lister = new Lister();

@@ -34,7 +34,7 @@ public class GetStudentiPerCorsoServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ObjectMapper om = new ObjectMapper();
 		Corso c = om.readValue(request.getParameter("corso"),Corso.class);
 		Lister lister = new Lister();

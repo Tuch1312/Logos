@@ -1,5 +1,6 @@
 package com.dettofatto.logos.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -7,7 +8,7 @@ import java.util.List;
  * Created by itsadmin on 09/02/2018.
  */
 
-public class Lezione {
+public class Lezione implements Serializable {
     private static final long serialVersionUID = 1L;
 
 
@@ -33,7 +34,7 @@ public class Lezione {
     private int numeroLezione;
 
 
-    private long oraInizio;
+    private String oraInizio;
 
     private float percentAssenti;
 
@@ -110,11 +111,11 @@ public class Lezione {
         this.numAssenti = numAssenti;
     }
 
-    public long getOraInizio() {
+    public String getOraInizio() {
         return this.oraInizio;
     }
 
-    public void setOraInizio(long oraInizio) {
+    public void setOraInizio(String oraInizio) {
         this.oraInizio = oraInizio;
     }
 

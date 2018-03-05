@@ -1,5 +1,6 @@
 package com.dettofatto.logos.adapter;
 
+import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -26,7 +27,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         super(fm);
        this.fragmentList = fragmentList;
     }
-
 
 
     @Override

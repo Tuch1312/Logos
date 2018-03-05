@@ -21,9 +21,9 @@ import retrofit2.http.Part;
 
 
 public interface RetroLister {
-
-    @GET("GetLezioniPerCorsoServlet")
-    Call<List<RetroLezione>> getLezioniPerCorso();
+    @FormUrlEncoded
+    @POST("logos/GetLezioniPerCorsoServlet")
+    Call<List<Lezione>> getLezioniPerCorso(@Field("corso") String Corso);
 
     @FormUrlEncoded
     @POST("logos/GetLezioniDiOggiServlet")
@@ -33,8 +33,9 @@ public interface RetroLister {
     @POST("logos/GetLezioniDiDomaniServlet")
     Call<List<Lezione>> getLezioniDiDomani(@Field("docente") String docente);
 
-    @GET("GetLezioniDiOggiStudenteServlet")
-    Call<List<RetroLezione>> getLezioniDiOggiStudente();
+    @FormUrlEncoded
+    @POST("logos/GetLezioniDiOggiStudenteServlet")
+    Call<List<Lezione>> getLezioniDiOggiStudente(@Field("studente") String studente);
 
     @GET("GetLezioniDiDomaniStudenteServlet")
     Call<List<RetroLezione>> getLezioniDiDomaniStudente();
