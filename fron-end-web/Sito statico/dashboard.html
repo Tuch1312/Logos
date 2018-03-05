@@ -16,6 +16,7 @@
 		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet"/>
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'/>
 		<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"/>
+        <link href="assets/css/logos.css" rel="stylesheet"/>
         
      
         
@@ -63,7 +64,7 @@
 						</div>
 					</div>
 					<!-- Are Menu ------------------------------------------------------ -->
-					<div id="menu-studente">
+					<div id="menu-studente" style="display: none">
 						<ul class="nav">
 							<li class="active menu-item"  id="menu-studente-corsi">
 								<a>
@@ -85,7 +86,7 @@
 							</li>
 						</ul>
 					</div>
-					<div id="menu-docente">
+					<div id="menu-docente" style="display: none">
 						<ul class="nav">
 							<li class="active">
 								<a id="menu-docente-corsi">
@@ -147,8 +148,9 @@
 							<div class="col-lg-12 col-md-12">
 								<!-- Qui mettiamo dentro le card ------------------------------------------------------------------------------------------------------ -->
 								<!-- Tabbed-dashboard-studente----------------------- -->
-								<div class="card card-nav-tabs card-main" id="tabbed-dashboard-studente">
-									<div class="card-header" data-background-color="purple">
+								<div class="card card-nav-tabs card-main" id="tabbed-dashboard-studente" style="display: none">
+
+                                            <div class="card-header" data-background-color="purple">
 										<div class="nav-tabs-navigation">
 											<div class="nav-tabs-wrapper">
 												<h4 class="nav-tabs-title titolo-destra" id="titolo-corso-dashboard-studente">Titolo corso (dashboard studente)</h4>
@@ -350,7 +352,7 @@
 									</div>
 								</div>
 								<!--Tabbed-liste-docente----------------------- -->
-								<div class="card card-nav-tabsb card-main" id="tabbed-liste-docente">
+								<div class="card card-nav-tabsb card-main" id="tabbed-liste-docente" style="display: none">
 									<div class="card-header" data-background-color="purple">
 										<div class="nav-tabs-navigation">
 											<div class="nav-tabs-wrapper">
@@ -543,7 +545,7 @@
 									</div>
 								</div>
 								<!-- Lista lezioni docente -->
-								<div class="card card-main" id="tabbed-dashboard-docente">
+								<div class="card card-main" id="tabbed-dashboard-docente" style="display: none">
 									<div class="card-header" data-background-color="purple">
 										<h4 class="title" id="titolo-corso-lista-lezioni-docente">Titolo corso (lista lezioni docente)</h4>
 										<p class="category">Descrizione corso</p>
@@ -626,7 +628,7 @@
 									</div>
 								</div>
 								<!-- Crea nuovo corso (docente) -->
-								<div class="card card-main" id="docente-crea-corso">
+								<div class="card card-main" id="docente-crea-corso" style="display: none">
 									<div class="card-header" data-background-color="purple">
 										<h4 class="title">Crea Nuovo corso</h4>
 										<p class="category">Completa il form per creare un nuovo corso</p>
@@ -867,7 +869,7 @@
 									</div>
 								</div>
 								<!-- -Iscrivi studente (docente) -->
-								<div class="card card-main">
+								<div class="card card-main" style="display: none">
 									<div class="card-header" data-background-color="purple">
 										<h4 class="title">Iscrivi uno studente ad un corso</h4>
 										<p class="category">Puoi fornire questo codice agli studenti perchè si iscrivano in autonomia: <span id="codice-corso-iscrivi-studente-da-docente">/codice/</span></p>
@@ -919,18 +921,18 @@
 									</div>
 								</div>
 								<!-- Iscriviti (studente) -->
-								<div class="card card-main" id="isciriviti-corso-studente">
+								<div class="card card-main" id="isciriviti-corso-studente" style="display: none">
 									<div class="card-header" data-background-color="purple">
 										<h4 class="title">Iscriviti ad un nuovo corso</h4>
 										<p class="category">Inserisci il codice per iscriverti</p>
 									</div>
 									<div class="card-content">
 										<div class="row">
-											<label class="col-sm-2 label-on-left">Pattern settimanale</label>
+											<label class="col-sm-2 label-on-left">Codice del corso</label>
 											<div class="col-sm-6">
 												<div class="form-group label-floating is-empty">
 													<label class="control-label"></label>
-													<input type="text" class="form-control" id="input-pattern-iscriviti-studente" value="">
+													<input type="text" class="form-control" id="input-iscriviti-studente" value="">
 													<span class="material-input"></span>
 												</div>
 											</div>
@@ -948,57 +950,19 @@
 									</div>
 								</div>
 								<!-- Lista corwsi studente ------------------------------------------ -->
-								<div class="card card-main" id="lista-corsi-studente">
+								<div class="card card-main" id="lista-corsi-studente" style="display: none">
 									<div class="card-header" data-background-color="purple">
 										<h4 class="title">Titolo corso (lista corsi studente)</h4>
 										<p class="category">Descrizione corso</p>
 									</div>
 									<div class="card-content table-responsive">
 										<table class="table table-hover" id="lista-corsi-lista-corsi-studente">
-											<thead class="text-warning">
-												<tr>
-													<th>Titolo</th>
-													<th>Docente</th>
-													<th>Prossima lezione</th>
-													<th>Ore Totali</th>
-													<th>% Assenze</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Java devolpment, Database</td>
-													<td>Mario Rossi</td>
-													<td>25/02/2018 - 12:36</td>
-													<td>420</td>
-													<td>13%</td>
-												</tr>
-												<tr>
-													<td>Java devolpment, Database</td>
-													<td>Mario Rossi</td>
-													<td>25/02/2018 - 12:36</td>
-													<td>420</td>
-													<td>13%</td>
-												</tr>
-												<tr>
-													<td>Java devolpment, Database</td>
-													<td>Mario Rossi</td>
-													<td>25/02/2018 - 12:36</td>
-													<td>420</td>
-													<td>13%</td>
-												</tr>
-												<tr>
-													<td>Java devolpment, Database</td>
-													<td>Mario Rossi</td>
-													<td>25/02/2018 - 12:36</td>
-													<td>420</td>
-													<td>13%</td>
-												</tr>
-											</tbody>
+											
 										</table>
 									</div>
 								</div>
 								<!-- Dashboard corso docente -->
-								<div class="card card-main" id="dashboard-corsi-docente">
+								<div class="card card-main" id="dashboard-corsi-docente"style="display: none">
 									<div class="card-header" data-background-color="purple">
 										<h4 class="title">Titolo corso ( Dashboard corso docente)</h4>
 										<p class="category">Descrizione corso</p>
@@ -1200,7 +1164,7 @@
 									</div>
 								</div>
 								<!-- Dashboard  lezione Docente ----------------------------- -->
-								<div class="card card-main" id="dashboard-lezione-docente">
+								<div class="card card-main" id="dashboard-lezione-docente" style="display: none">
 									<div class="card-header" data-background-color="purple">
 										<h4 class="title" id="titolo-corso-dash-lezioni-docente">Titolo corso ( Dashboard  lezione Docente)</h4>
 										<p class="category">Descrizione corso</p>
@@ -1422,7 +1386,9 @@
 		</div>
 		<!--   Core JS Files   -->
 		<script src="assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
-		<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+		    <script type="text/javascript" src="assets/js/core/popper.min.js"></script>
+       
+          <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
 		<script src="assets/js/material.min.js" type="text/javascript"></script>
 		<!--  Charts Plugin -->
 		<script src="assets/js/chartist.min.js"></script>
@@ -1434,10 +1400,7 @@
 
       <script src="assets/js/bootstrap-material-design.js"></script>
       <script src="assets/js/material-kit.js?v=2.0.2"></script>
-
-            
-        <script src="assets/js/tabler.js">
-        </script>
+         <script src="assets/js/tabler.js"></script>
         <script>
             
             
@@ -1451,11 +1414,12 @@
 			       if (utente.isDocente == "true") {
 			        $(".card-main").css("display", "none");
 			       $("#tabbed-liste-docente").css("display", "block")
-			           $("#menu-studente").css("display", "none");
+			           $("#menu-docente").css("display", "block");
 			       } else {
 			          $(".card-main").css("display", "none");
 			       $("#lista-corsi-studente").css("display", "block")
-			             $("#menu-docente").css("display", "none");
+			             $("#menu-studente").css("display", "block");
+                       getCorsiPerStudente();
 			        
 			       }
 			
@@ -1472,7 +1436,7 @@
 			     $("#lista-corsi-studente").css("display", "block")
                  $(".menu-item").removeClass("active");
                 $("#menu-studente-corsi").addClass("active");
-                getCorsiPerStudente() 
+                getCorsiPerStudente();
                 
             });
                 //dashboard
@@ -1487,7 +1451,7 @@
                $("#menu-studente-iscriviti").click(function () {
                  $(".card-main").css("display", "none");
 			     $("#isciriviti-corso-studente").css("display", "block")
-                $(".menu-item").removeClass("active");
+                $(".menu-item").removeClass("active")
                 $("#menu-studente-iscriviti").addClass("active");
                 
             });
@@ -1524,6 +1488,8 @@
 			
 			    
 		</script>
+      
+
         
        
 	</body>
