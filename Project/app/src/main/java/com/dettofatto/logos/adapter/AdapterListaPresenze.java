@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.dettofatto.logos.entities.Presenza;
 import com.dettofatto.logos.R;
+import com.dettofatto.logos.presenzarow;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

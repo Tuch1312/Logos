@@ -1,5 +1,7 @@
 package com.dettofatto.logos.fragment;
 
+import android.app.Activity;
+import android.app.Application;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.DisplayMetrics;
@@ -11,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 
 import com.dettofatto.logos.R;
+import com.jackandphantom.circularprogressbar.CircleProgressbar;
 
 import java.util.ArrayList;
 
@@ -28,9 +31,11 @@ public class Fragment_dashbaord_studente_dash extends Fragment {
 
         return V;
     }
-
-    /*//questa parte di codece risolve il problema di mostrare la circular progressBar buggata
-    Display display = getWindowManager().getDefaultDisplay();
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+    //questa parte di codece risolve il problema di mostrare la circular progressBar buggata
+        CircleProgressbar c = view.findViewById(R.id.cerchio) ;
+    Display display = getActivity().getWindowManager().getDefaultDisplay();
     DisplayMetrics outMetrics = new DisplayMetrics ();
         display.getMetrics(outMetrics);
     float density  = getResources().getDisplayMetrics().density;
@@ -39,7 +44,7 @@ public class Fragment_dashbaord_studente_dash extends Fragment {
         c.setLayoutParams(new LinearLayout.LayoutParams((int)dpHeight,(int)dpWidth));
 
 
-    LinearLayout lv = findViewById(R.id.list);
+    LinearLayout lv = view.findViewById(R.id.list);
     ArrayList<String> m = new ArrayList<String>();
         m.add("weila");
         m.add("weila");
@@ -55,11 +60,12 @@ public class Fragment_dashbaord_studente_dash extends Fragment {
         m.add("weila");
         m.add("weila");
         m.add("weila");
-    ArrayAdapter<String> aa = new ArrayAdapter<String>(getApplicationContext(), R.layout.row_dash , m);
-        for(int i = 0; i<m.size();i++){
-        lv.addView(aa.getView(i,null,lv));
+    ArrayAdapter<String> aa = new ArrayAdapter<String>(getContext(), R.layout.row_dash , m);
+        for(int i = 0; i<m.size();i++) {
+            lv.addView(aa.getView(i, null, lv));
+        }
 
-    }*/
 
+    }
 
 }

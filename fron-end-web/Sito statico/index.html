@@ -10,13 +10,10 @@
       <title>
         Home - Logos Project
       </title>
-      <!--     Fonts and icons     -->
+      <!--     Styesheet     -->
       <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
       <link rel="stylesheet" href="./assets/css/material-kit.css?v=2.0.2">
-      <!-- Documentation extras -->
-      <!-- CSS Just for demo purpose, don't include it in your project -->
-      <link href="./assets/assets-for-demo/demo.css" rel="stylesheet" />
       <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
    </head>
    <body class="index-page ">
@@ -48,12 +45,12 @@
                      </a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href=":voi)" onclick="scrollToDownload()">
+                     <a class="nav-link" href="dashboard.html" onclick="scrollToDownload()">
                      <i class="material-icons">dashboard</i> Dashboard
                      </a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="" data-toggle="modal" data-target="#myModal">
+                     <a class="nav-link" href="" data-toggle="modal" data-target="#myModal" id="login-button">
                      <i class="material-icons">person</i> Login
                      </a>
                   </li>
@@ -250,15 +247,15 @@
                         <div class="team-player">
                            <div class="card card-plain">
                               <div class="col-md-6 ml-auto mr-auto">
-                                 <img src="assets/img/faces/marc.jpg" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
+                                 <img src="assets/img/faces/mattia-bonzi.jpg" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
                               </div>
                               <h4 class="card-title">Mattia Bonzi
                                  <br>
                                  <small class="card-description text-muted">Developer, Designer</small>
                               </h4>
                               <div class="card-body">
-                                 <p class="card-description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
-                                    <a href="#">links</a> for people to be able to follow them outside the site.
+                                 <p class="card-description">Il mio macBook, buona musica, qualche snack... è tutto quello che mi serve!
+                                     Codcie, grafica, seo, system, nessun problema, direzoine full stack devolper!
                                  </p>
                               </div>
                               <div class="card-footer justify-content-center">
@@ -337,6 +334,7 @@
       </div>
       <!-- Login Modal -->
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+
          <div class="modal-dialog" role="document" id="login-card">
             <div class="card card-login modal-content">
                 <form id="login-form">
@@ -377,6 +375,7 @@
                       <div class="col-sm-2"></div>
                    </div>
                    <div class="footer text-center">
+                       <h6 id="login-fallito">Login fallito, riprovare</h6>
                       <div id="submit-login" class="btn btn-primary btn-login">Login</div>
                       <div class="description senza-account">Non hai ancora un account? <a class="fake-link" id="registrati-on" >Registrati</a></div>
                    </div>
@@ -384,7 +383,7 @@
             </div>
          </div>
           
-              <div class="modal-dialog" role="document" id="register-card" style="display: none">
+        <div class="modal-dialog" role="document" id="register-card" style="display: none">
             <div class="card card-login modal-content">
                 <form id="registrati-form">
                <div class="card-header text-center login-header" data-background-color="purple">
@@ -432,6 +431,7 @@
                         <input type="mail" class="form-control" id="input-mail-registrati" name="mail" placeholder="E-mail">
                         <span class="material-input"></span>
                         <span class="material-input"></span>
+                        <p id="error-registrati-mail" style="color: red"></p>
                      </div>
                   </div>
                   <div class="col-sm-2"></div>
@@ -457,7 +457,7 @@
                   <div class="col-sm-4">
           <div class="mdc-form-field">
             <div class="mdc-radio" data-demo-no-js="">
-              <input class="mdc-radio__native-control" type="radio" id="ex1-default-radio1" checked="" name="ex1-default">
+              <input class="mdc-radio__native-control" type="radio" id="ex1-default-radio1" checked="" name="tipo" value="true">
               <div class="mdc-radio__background">
                 <div class="mdc-radio__outer-circle"></div>
                 <div class="mdc-radio__inner-circle"></div>
@@ -469,7 +469,7 @@
                        <div class="col-sm-4">
           <div class="mdc-form-field">
             <div class="mdc-radio" data-demo-no-js="">
-              <input class="mdc-radio__native-control" type="radio" id="ex1-default-radio2" name="ex1-default">
+              <input class="mdc-radio__native-control" type="radio" id="ex1-default-radio2" name="tipo" value="false">
               <div class="mdc-radio__background">
                 <div class="mdc-radio__outer-circle"></div>
                 <div class="mdc-radio__inner-circle"></div>
@@ -486,10 +486,18 @@
                     <div class="col-sm-1"></div>
                 </div>
                <div class="footer text-center">
-                  <button type="submit" class="btn btn-primary btn-login">Registrati</button>
+                   <h6 id="registrazione-fallita">Registrazione fallita, riprovare</h6>
+                  <div id="submit-registrazione" class="btn btn-primary btn-login">Registrati</div>
                   <div class="description senza-account">Già registrato? <a class="fake-link" id="login-on" >Login</a></div>
                </div>
                 </form>
+            </div>
+         </div>
+          
+        <div class="modal-dialog" role="document" id="gia-loggato" style="display: none">
+            <div class="card card-login modal-content text-center">
+                <h2 class="title">Già loggato</h2>
+                
             </div>
          </div>
          
@@ -501,25 +509,21 @@
             <nav class="pull-left">
                <ul>
                   <li>
-                     <a href="https://www.creative-tim.com">
-                     Creative Tim
+                     <a href="index.html">
+                     Home
                      </a>
                   </li>
                   <li>
-                     <a href="http://presentation.creative-tim.com">
-                     About Us
+                     <a href="chi-saimo.html">
+                     Chi siamo
                      </a>
                   </li>
-                  <li>
-                     <a href="http://blog.creative-tim.com">
-                     Blog
-                     </a>
-                  </li>
-                  <li>
-                     <a href="https://www.creative-tim.com/license">
-                     Licenses
-                     </a>
-                  </li>
+                 <li>
+                        <a href="cose-logos.html">
+                            Cos'è Logos
+                        </a>
+                    </li>
+                   
                </ul>
             </nav>
             <div class="copyright pull-right">
@@ -535,25 +539,14 @@
       <script src="./assets/js/core/jquery.min.js"></script>
       <script src="./assets/js/core/popper.min.js"></script>
       <script src="./assets/js/bootstrap-material-design.js"></script>
-      <!--  Plugin for Date Time Picker and Full Calendar Plugin  -->
-      <script src="./assets/js/plugins/moment.min.js"></script>
-      <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
-      <script src="./assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
-      <!--	Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-      <script src="./assets/js/plugins/nouislider.min.js"></script>
-      <!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
       <script src="./assets/js/material-kit.js?v=2.0.2"></script>
-      <!-- Fixed Sidebar Nav - js With initialisations For Demo Purpose, Don't Include it in your project -->
-      <script src="./assets/assets-for-demo/js/material-kit-demo.js"></script>
        <script src="assets/js/login.js"></script>
       <script>
          $(document).ready(function() {
-         
-             //init DateTimePickers
-             materialKit.initFormExtendedDatetimepickers();
-         
-             // Sliders Init
-             materialKit.initSliders();
+             
+             var u = JSON.parse(localStorage.getItem("utente"));
+            $("#login-button").html("<i class=\"material-icons\">person</i>" + u.nome + " " + u.cognome)
+      
          });
       </script>
    </body>

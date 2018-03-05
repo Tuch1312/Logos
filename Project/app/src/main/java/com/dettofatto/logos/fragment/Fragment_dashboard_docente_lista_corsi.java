@@ -1,35 +1,32 @@
 package com.dettofatto.logos.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.*;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.dettofatto.logos.DashboardDocenteCorsi;
 import com.dettofatto.logos.R;
 import com.dettofatto.logos.RetroInterfaces.RetroLister;
-import com.dettofatto.logos.RetroInterfaces.RetroPersona;
+import com.dettofatto.logos.RetrofitSingleton;
 import com.dettofatto.logos.entities.Corso;
-
-import java.io.IOException;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import com.dettofatto.logos.entities.Docente;
 import java.util.List;
-
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+
+import static android.content.ContentValues.TAG;
 
 
- class CorsiAdapter extends ArrayAdapter<Corso>{
-    public CorsiAdapter(Context context, ArrayList<Corso> listaCorsi) {
+class CorsiAdapter extends ArrayAdapter<Corso>{
+    public CorsiAdapter(Context context, List<Corso> listaCorsi) {
         super(context, 0, listaCorsi);
     }
 
@@ -47,8 +44,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
         TextView contatore = (TextView) convertView.findViewById(R.id.contatore);
         // Populate the data into the template view using the data object
         titoloCorso.setText(corso.getTitolo());
-        dataInizio.setText(corso.getDataInizio().toString());
-        contatore.setText(corso.getContatoreGiorniInterno());
+        dataInizio.setText(""+corso.getDataInizio());
+        contatore.setText(""+corso.getContatoreGiorniInterno());
         // Return the completed view to render on screen
         return convertView;
     }
@@ -72,11 +69,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Fragment_dashboard_docente_lista_corsi extends Fragment {
 
-    final String BASE_URL = "http://18.194.218.75:8080/";
-    Retrofit r =  new Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build();
+
 
 
 
@@ -91,28 +84,39 @@ public class Fragment_dashboard_docente_lista_corsi extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
+        Docente Json = new Docente();
+        Json.setMail("ciaone");
+        String g = "{\"mail\":\"ciaone\"}";
+
+        final Intent toDashCorso = new Intent(getContext(), DashboardDocenteCorsi.class);
         // Setup any handles to view objects here
         // EditText etFoo = (EditText) view.findViewById(R.id.etFoo);
-         final ListView lv = view.findViewById(R.id.listacorsi);
-        RetroLister rv = r.create(RetroLister.class);
-        Call<List<Corso>> c = rv.getCorsiPerDocente();
+        final ListView lv = view.findViewById(R.id.listacorsi);
+        RetroLister rv = RetrofitSingleton.r.create(RetroLister.class);
+        Call<List<Corso>> c = rv.getCorsiPerDocente(g);
         c.enqueue(new Callback<List<Corso>>() {
             @Override
             public void onResponse(Call<List<Corso>> call, Response<List<Corso>> response) {
                 List<Corso> lista = response.body();
-                ArrayList<Corso> al = null;
-                for (int i = 0; i<lista.size();i++){
-                    al.add(lista.get(i));
-                }
-                CorsiAdapter corsiAdapter = new CorsiAdapter(getContext(), al);
+                CorsiAdapter corsiAdapter = new CorsiAdapter(getContext(), lista);
                 lv.setAdapter(corsiAdapter);
             }
 
             @Override
             public void onFailure(Call<List<Corso>> call, Throwable t) {
-
+                Log.e(TAG, t.toString());
             }
         });
+
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                startActivity(toDashCorso);
+            }
+        });
+
+
 
     }
 
