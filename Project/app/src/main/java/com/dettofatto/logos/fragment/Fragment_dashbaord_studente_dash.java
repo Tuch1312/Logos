@@ -2,24 +2,71 @@ package com.dettofatto.logos.fragment;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.telecom.Call;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.dettofatto.logos.R;
+import com.dettofatto.logos.RetroInterfaces.RetroLister;
+import com.dettofatto.logos.RetrofitSingleton;
+import com.dettofatto.logos.entities.Corso;
+import com.dettofatto.logos.entities.Lezione;
 import com.jackandphantom.circularprogressbar.CircleProgressbar;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * Created by Tuch on 08/02/18.
  */
+
+class ArgomentiStudenteAdapter extends ArrayAdapter<Lezione> {
+    public ArgomentiStudenteAdapter(Context context, List<Lezione> listaLezioni) {
+        super(context, 0, listaLezioni);
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        // Get the data item for this position
+        Lezione lezione = getItem(position);
+        // Check if an existing view is being reused, otherwise inflate the view
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.row_argomento, parent, false);
+        }
+        // Lookup view for data population
+        TextView argomento = convertView.findViewById(R.id.argomento);
+        // Populate the data into the template view using the data object
+        argomento.setText(lezione.getArgomenti());
+        // Return the completed view to render on screen
+        return convertView;
+    }
+
+
+}
+
+
+
+
+
+
+
+
 
 public class Fragment_dashbaord_studente_dash extends Fragment {
 
@@ -44,26 +91,24 @@ public class Fragment_dashbaord_studente_dash extends Fragment {
         c.setLayoutParams(new LinearLayout.LayoutParams((int)dpHeight,(int)dpWidth));
 
 
-    LinearLayout lv = view.findViewById(R.id.list);
-    ArrayList<String> m = new ArrayList<String>();
-        m.add("weila");
-        m.add("weila");
-        m.add("weila");
-        m.add("weila");
-        m.add("weila");
-        m.add("weila");
-        m.add("weila");
-        m.add("weila");
-        m.add("weila");
-        m.add("weila");
-        m.add("weila");
-        m.add("weila");
-        m.add("weila");
-        m.add("weila");
-    ArrayAdapter<String> aa = new ArrayAdapter<String>(getContext(), R.layout.row_dash , m);
-        for(int i = 0; i<m.size();i++) {
-            lv.addView(aa.getView(i, null, lv));
-        }
+        String g = "{\"idCorso\":\"1\"}";
+        RetroLister rv = RetrofitSingleton.r.create(RetroLister.class);
+        final ListView lv = view.findViewById(R.id.lista_argomenti);
+        retrofit2.Call<List<Lezione>> call = rv.getLezioniPerCorso(g);
+        call.enqueue(new Callback<List<Lezione>>(){
+            @Override
+            public void onResponse(retrofit2.Call<List<Lezione>> call, Response<List<Lezione>> response) {
+                List<Lezione>lista = response.body();
+                ArgomentiStudenteAdapter argomentiAdapter = new ArgomentiStudenteAdapter(getContext(), lista);
+                lv.setAdapter(argomentiAdapter);
+
+            }
+
+            @Override
+            public void onFailure(retrofit2.Call<List<Lezione>> call, Throwable t) {
+                Log.e(TAG, t.toString());
+            }
+        });
 
 
     }
