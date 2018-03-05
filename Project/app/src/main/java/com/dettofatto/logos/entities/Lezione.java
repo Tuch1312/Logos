@@ -1,5 +1,6 @@
 package com.dettofatto.logos.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -7,7 +8,7 @@ import java.util.List;
  * Created by itsadmin on 09/02/2018.
  */
 
-public class Lezione {
+public class Lezione implements Serializable {
     private static final long serialVersionUID = 1L;
 
 
