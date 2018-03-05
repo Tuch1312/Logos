@@ -1,5 +1,6 @@
 package com.dettofatto.logos;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,6 +12,8 @@ import android.view.View;
 
 import com.dettofatto.logos.adapter.SectionsPagerAdapter;
 
+import com.dettofatto.logos.entities.Corso;
+import com.dettofatto.logos.entities.Studente;
 import com.dettofatto.logos.fragment.Fragment_dashbaord_studente_dash;
 import com.dettofatto.logos.fragment.Fragment_dashboard_studente_lezioni;
 
@@ -32,6 +35,15 @@ public class DashBoardStudente extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash_board_studente);
+
+        Intent i = getIntent();
+        Studente s =(Studente) i.getSerializableExtra("studente");
+        Corso c = (Corso) i.getSerializableExtra("corso");
+        Bundle b = new Bundle();
+        b.putSerializable("studente", s);
+        b.putSerializable("corso", c);
+        fragment1.setArguments(b);
+        fragment2.setArguments(b);
 
         // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         // setSupportActionBar(toolbar);

@@ -1,12 +1,13 @@
 package com.dettofatto.logos.entities;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by itsadmin on 09/02/2018.
  */
 
-public class Studente extends Persona {
+public class Studente extends Persona implements Serializable{
 
     private List<Iscrizione> iscrizioni;
     private List<Presenza> presenza;

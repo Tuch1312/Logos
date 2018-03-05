@@ -2,13 +2,14 @@ package com.dettofatto.logos.entities;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by itsadmin on 09/02/2018.
  */
 
-public class Persona {
+public class Persona implements Serializable{
 
     @SerializedName("mail")
     private String mail;

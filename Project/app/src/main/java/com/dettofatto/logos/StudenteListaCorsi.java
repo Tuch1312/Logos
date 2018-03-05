@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 import com.dettofatto.logos.RetroInterfaces.RetroLister;
 import com.dettofatto.logos.entities.Corso;
+import com.dettofatto.logos.entities.Studente;
+import com.google.gson.Gson;
 
 import java.util.List;
 
@@ -59,23 +61,28 @@ class CorsiStudenteAdapter extends ArrayAdapter<Corso> {
 
 public class StudenteListaCorsi extends Activity {
 
+    List<Corso> lista;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_studente_lista_corsi);
 
-        String g = "{\"mail\":\"a\"}";
+        Intent i = getIntent();
+        final Studente s = (Studente) i.getSerializableExtra("studente");
+        Gson j = new Gson();
+        String g = j.toJson(s);
 
         final Intent toDashStudente = new Intent(this, DashBoardStudente.class);
-        // Setup any handles to view objects here
-        // EditText etFoo = (EditText) view.findViewById(R.id.etFoo);
+
+
         final ListView lv = findViewById(R.id.lcStudente);
         RetroLister rv = RetrofitSingleton.r.create(RetroLister.class);
         Call<List<Corso>> c = rv.getCorsiPerStudente(g);
         c.enqueue(new Callback<List<Corso>>() {
             @Override
             public void onResponse(Call<List<Corso>> call, Response<List<Corso>> response) {
-                List<Corso> lista = response.body();
+                lista = response.body();
                 CorsiStudenteAdapter corsistudenteAdapter = new CorsiStudenteAdapter(getApplicationContext(), lista);
                 lv.setAdapter(corsistudenteAdapter);
             }
@@ -90,6 +97,8 @@ public class StudenteListaCorsi extends Activity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                toDashStudente.putExtra("studente", s);
+                toDashStudente.putExtra("corso",lista.get(position));
                 startActivity(toDashStudente);
             }
         });

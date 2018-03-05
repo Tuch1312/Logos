@@ -17,7 +17,10 @@ import com.dettofatto.logos.R;
 import com.dettofatto.logos.RetroInterfaces.RetroLister;
 import com.dettofatto.logos.RetrofitSingleton;
 import com.dettofatto.logos.adapter.ListLezioniAdapter_studente;
+import com.dettofatto.logos.entities.Corso;
 import com.dettofatto.logos.entities.Lezione;
+import com.dettofatto.logos.entities.Studente;
+import com.google.gson.Gson;
 import com.jackandphantom.circularprogressbar.CircleProgressbar;
 
 import java.text.SimpleDateFormat;
@@ -51,10 +54,14 @@ public class Fragment_dashboard_studente_lezioni extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
 
 
-        String g = "{\"mail\": \"a\" }";
+        Bundle b = getArguments();
+        Corso corso = (Corso) b.getSerializable("corso");
+        Gson j = new Gson();
+        String g = j.toJson(corso);
+
         RetroLister rv = RetrofitSingleton.r.create(RetroLister.class);
-        final ListView lv = view.findViewById(R.id.dashboard_studente_lezioni_listaLezioni);
-        retrofit2.Call<List<Lezione>> call = rv.getLezioniDiOggiStudente(g);
+        final ListView lv = view.findViewById(R.id.dashboard_studente_lezioni_1);
+        retrofit2.Call<List<Lezione>> call = rv.getLezioniPerCorso(g);
         call.enqueue(new Callback<List<Lezione>>(){
             @Override
             public void onResponse(retrofit2.Call<List<Lezione>> call, Response<List<Lezione>> response) {

@@ -22,7 +22,10 @@ import com.dettofatto.logos.R;
 import com.dettofatto.logos.RetroInterfaces.RetroLister;
 import com.dettofatto.logos.RetrofitSingleton;
 import com.dettofatto.logos.entities.Corso;
+import com.dettofatto.logos.entities.Docente;
 import com.dettofatto.logos.entities.Lezione;
+import com.dettofatto.logos.entities.Studente;
+import com.google.gson.Gson;
 import com.jackandphantom.circularprogressbar.CircleProgressbar;
 
 import java.util.ArrayList;
@@ -91,8 +94,31 @@ public class Fragment_dashbaord_studente_dash extends Fragment {
         float dpWidth  = outMetrics.widthPixels / density;
         c.setLayoutParams(new LinearLayout.LayoutParams((int)dpHeight,(int)dpWidth));
 
+        Bundle b = getArguments();
+        Corso corso = (Corso) b.getSerializable("corso");
+        Gson j = new Gson();
+        String g = j.toJson(corso);
 
-        String g = "{\"idCorso\": 1 }";
+        TextView titolo = view.findViewById(R.id.dashboard_title);
+        titolo.setText(""+corso.getTitolo());
+        TextView oreTotali = view.findViewById(R.id.ore_totali);
+        oreTotali.setText("ore totali: "+corso.getOreTotali());
+        TextView oreTrascorse = view.findViewById(R.id.ore_trascorse);
+        oreTrascorse.setText("ore trascorse: "+corso.getOreTrascorse());
+        TextView lezione = view.findViewById(R.id.lezione);
+        lezione.setText("lezione n: "+corso.getLezioneCorrente());
+        TextView docente = view.findViewById(R.id.docente);
+        //non riesco a recuperare il docente del corso
+        //docente.setText(""+d.getNome());
+        TextView oraInizio = view.findViewById(R.id.ora_inizio);
+        oraInizio.setText("ora inizio: "+corso.getOraInizioLezioni());
+        TextView aula = view.findViewById(R.id.aula);
+        aula.setText("aula :"+corso.getSede());
+        TextView ore = view.findViewById(R.id.ore);
+        ore.setText(""+corso.getContatoreGiorniInterno());
+
+
+
         RetroLister rv = RetrofitSingleton.r.create(RetroLister.class);
         final ListView lv = view.findViewById(R.id.lista_argomenti);
         retrofit2.Call<List<Lezione>> call = rv.getLezioniPerCorso(g);

@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="20dp"
-        android:id="@+id/dashboard_studente_lezioni_listaLezioni">
+        android:id="@+id/dashboard_studente_lezioni_1">
 
     </ListView>
 
