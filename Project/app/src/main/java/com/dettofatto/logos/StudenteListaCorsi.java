@@ -15,7 +15,6 @@ import android.widget.TextView;
 
 import com.dettofatto.logos.RetroInterfaces.RetroLister;
 import com.dettofatto.logos.entities.Corso;
-import com.dettofatto.logos.entities.Docente;
 
 import java.util.List;
 

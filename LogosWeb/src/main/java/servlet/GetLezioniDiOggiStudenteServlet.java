@@ -34,7 +34,7 @@ public class GetLezioniDiOggiStudenteServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ObjectMapper om = new ObjectMapper();
 		Studente s = om.readValue(request.getParameter("studente"),Studente.class);
 		Lister lister = new Lister();
