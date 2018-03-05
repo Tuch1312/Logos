@@ -33,7 +33,7 @@ public class Lezione {
     private int numeroLezione;
 
 
-    private long oraInizio;
+    private String oraInizio;
 
     private float percentAssenti;
 
@@ -110,11 +110,11 @@ public class Lezione {
         this.numAssenti = numAssenti;
     }
 
-    public long getOraInizio() {
+    public String getOraInizio() {
         return this.oraInizio;
     }
 
-    public void setOraInizio(long oraInizio) {
+    public void setOraInizio(String oraInizio) {
         this.oraInizio = oraInizio;
     }
 

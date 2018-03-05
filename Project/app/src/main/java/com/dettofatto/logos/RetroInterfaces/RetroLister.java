@@ -22,7 +22,7 @@ import retrofit2.http.Part;
 
 public interface RetroLister {
     @FormUrlEncoded
-    @POST("GetLezioniPerCorsoServlet")
+    @POST("logos/GetLezioniPerCorsoServlet")
     Call<List<Lezione>> getLezioniPerCorso(@Field("corso") String Corso);
 
     @FormUrlEncoded
@@ -34,7 +34,7 @@ public interface RetroLister {
     Call<List<Lezione>> getLezioniDiDomani(@Field("docente") String docente);
 
     @FormUrlEncoded
-    @POST("GetLezioniDiOggiStudenteServlet")
+    @POST("logos/GetLezioniDiOggiStudenteServlet")
     Call<List<Lezione>> getLezioniDiOggiStudente(@Field("studente") String studente);
 
     @GET("GetLezioniDiDomaniStudenteServlet")

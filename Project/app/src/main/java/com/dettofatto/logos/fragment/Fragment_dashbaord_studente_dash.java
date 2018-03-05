@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -82,16 +83,16 @@ public class Fragment_dashbaord_studente_dash extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
     //questa parte di codece risolve il problema di mostrare la circular progressBar buggata
         CircleProgressbar c = view.findViewById(R.id.cerchio) ;
-    Display display = getActivity().getWindowManager().getDefaultDisplay();
-    DisplayMetrics outMetrics = new DisplayMetrics ();
+        Display display = getActivity().getWindowManager().getDefaultDisplay();
+        DisplayMetrics outMetrics = new DisplayMetrics ();
         display.getMetrics(outMetrics);
-    float density  = getResources().getDisplayMetrics().density;
-    float dpHeight = outMetrics.heightPixels / density;
-    float dpWidth  = outMetrics.widthPixels / density;
+        float density  = getResources().getDisplayMetrics().density;
+        final float dpHeight = outMetrics.heightPixels / density;
+        float dpWidth  = outMetrics.widthPixels / density;
         c.setLayoutParams(new LinearLayout.LayoutParams((int)dpHeight,(int)dpWidth));
 
 
-        String g = "{\"idCorso\":\"1\"}";
+        String g = "{\"idCorso\": 1 }";
         RetroLister rv = RetrofitSingleton.r.create(RetroLister.class);
         final ListView lv = view.findViewById(R.id.lista_argomenti);
         retrofit2.Call<List<Lezione>> call = rv.getLezioniPerCorso(g);
@@ -101,6 +102,20 @@ public class Fragment_dashbaord_studente_dash extends Fragment {
                 List<Lezione>lista = response.body();
                 ArgomentiStudenteAdapter argomentiAdapter = new ArgomentiStudenteAdapter(getContext(), lista);
                 lv.setAdapter(argomentiAdapter);
+
+                int totalHeight = 0;
+                for (int i = 0, len = argomentiAdapter.getCount(); i < len; i++) {
+                    View listItem = argomentiAdapter.getView(i, null, lv);
+                    listItem.measure(0, 0);
+                    totalHeight += listItem.getMeasuredHeight();
+                }
+                ViewGroup.LayoutParams params = lv.getLayoutParams();
+                params.height = totalHeight;
+                lv.setLayoutParams(params);
+                lv.setFocusable(false);
+                lv.setFocusableInTouchMode(false);
+
+
 
             }
 

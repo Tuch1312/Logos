@@ -139,20 +139,16 @@
                     android:textSize="25dp" />
             </LinearLayout>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/seconda_riga"
-            android:id="@+id/list"
-            android:orientation="vertical"
-            android:layout_marginTop="15dp">
+
             <ListView
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/lista_argomenti">
+                android:id="@+id/lista_argomenti"
+                >
 
             </ListView>
-        </LinearLayout>
+
     </LinearLayout>
 
 </ScrollView>
