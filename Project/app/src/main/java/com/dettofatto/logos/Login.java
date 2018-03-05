@@ -28,11 +28,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Login extends Activity {
 
 
-    final String BASE_URL = "http://18.194.218.75:8080/";
-    Retrofit r =  new Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build();
+
 
 
 
@@ -42,7 +38,12 @@ public class Login extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        final Intent dashboardStudente = new Intent(this, DashBoardStudente.class );
+
+
+
+
+
+        final Intent StudentListaCorsi= new Intent(this, StudenteListaCorsi.class );
         final Intent dashboardDocente = new Intent(this, DashBoardDocenteListe.class);
         final Intent registrazione = new Intent(this, Registration.class);
 
@@ -53,7 +54,8 @@ public class Login extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RetroPersona rp = r.create(RetroPersona.class);
+                RetrofitSingleton.getInstance();
+                RetroPersona rp = RetrofitSingleton.r.create(RetroPersona.class);
                 Call<ResponseBody> p =  rp.login(editmail.getText().toString(),editpassword.getText().toString());
                 p.enqueue(new Callback<ResponseBody>() {
                     @Override
@@ -70,7 +72,7 @@ public class Login extends Activity {
                         }
 
                         if(o.contains("presenzaOggi")){
-                            startActivity(dashboardStudente);
+                            startActivity(StudentListaCorsi);
                         }
                         Toast.makeText(getApplicationContext(),"I dati inseriti non sono corretti",Toast.LENGTH_LONG).show();
                     }

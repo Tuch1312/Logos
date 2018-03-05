@@ -23,7 +23,7 @@ public class Lezione {
     private String aula;
 
 
-    private Date data;
+    private long data;
 
 
     private int durata;
@@ -33,7 +33,7 @@ public class Lezione {
     private int numeroLezione;
 
 
-    private Date oraInizio;
+    private long oraInizio;
 
     private float percentAssenti;
 
@@ -86,11 +86,11 @@ public class Lezione {
         this.aula = aula;
     }
 
-    public Date getData() {
+    public long getData() {
         return this.data;
     }
 
-    public void setData(Date data) {
+    public void setData(long data) {
         this.data = data;
     }
 
@@ -110,11 +110,11 @@ public class Lezione {
         this.numAssenti = numAssenti;
     }
 
-    public Date getOraInizio() {
+    public long getOraInizio() {
         return this.oraInizio;
     }
 
-    public void setOraInizio(Date oraInizio) {
+    public void setOraInizio(long oraInizio) {
         this.oraInizio = oraInizio;
     }
 

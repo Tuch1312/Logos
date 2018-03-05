@@ -6,12 +6,12 @@ import java.util.Date;
  * Created by itsadmin on 30/01/2018.
  */
 
-public class PresenzaRow {
+public class presenzarow {
     private String nome, cognome;
     private Date ingresso, uscita;
     private boolean presass;
 
-    public PresenzaRow(String n, String c, Date i, Date u) {
+    public presenzarow(String n, String c, Date i, Date u) {
         nome = n;
         cognome = c;
         ingresso = i;

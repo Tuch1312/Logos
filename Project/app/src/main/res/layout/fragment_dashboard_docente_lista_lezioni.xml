@@ -12,10 +12,18 @@
         style="@style/titolo_grande"/>
 
     <ListView
-        android:id="@+id/listaLezioniDocente"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:id="@+id/listaLezioni">
+    </ListView>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:id="@+id/listaLezioniDiDomani">
     </ListView>
 
 </LinearLayout>

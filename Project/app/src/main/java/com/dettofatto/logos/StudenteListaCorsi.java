@@ -1,23 +1,24 @@
-package com.dettofatto.logos.fragment;
+package com.dettofatto.logos;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.util.Log;
-import android.view.*;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.dettofatto.logos.DashboardDocenteCorsi;
-import com.dettofatto.logos.R;
 import com.dettofatto.logos.RetroInterfaces.RetroLister;
-import com.dettofatto.logos.RetrofitSingleton;
 import com.dettofatto.logos.entities.Corso;
 import com.dettofatto.logos.entities.Docente;
+
 import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -25,8 +26,12 @@ import retrofit2.Response;
 import static android.content.ContentValues.TAG;
 
 
-class CorsiAdapter extends ArrayAdapter<Corso>{
-    public CorsiAdapter(Context context, List<Corso> listaCorsi) {
+
+
+
+
+class CorsiStudenteAdapter extends ArrayAdapter<Corso> {
+    public CorsiStudenteAdapter(Context context, List<Corso> listaCorsi) {
         super(context, 0, listaCorsi);
     }
 
@@ -51,55 +56,29 @@ class CorsiAdapter extends ArrayAdapter<Corso>{
     }
 
 
- }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-public class Fragment_dashboard_docente_lista_corsi extends Fragment {
-
-
-
-
+public class StudenteListaCorsi extends Activity {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View V = inflater.inflate(R.layout.fragment_dashboard_docente_lista_corsi, container, false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_studente_lista_corsi);
 
-        return V;
-    }
+        String g = "{\"mail\":\"a\"}";
 
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        Docente Json = new Docente();
-        Json.setMail("ciaone");
-        String g = "{\"mail\":\"ciaone\"}";
-
-        final Intent toDashCorso = new Intent(getContext(), DashboardDocenteCorsi.class);
+        final Intent toDashStudente = new Intent(this, DashBoardStudente.class);
         // Setup any handles to view objects here
         // EditText etFoo = (EditText) view.findViewById(R.id.etFoo);
-        final ListView lv = view.findViewById(R.id.listacorsi);
+        final ListView lv = findViewById(R.id.lcStudente);
         RetroLister rv = RetrofitSingleton.r.create(RetroLister.class);
-        Call<List<Corso>> c = rv.getCorsiPerDocente(g);
+        Call<List<Corso>> c = rv.getCorsiPerStudente(g);
         c.enqueue(new Callback<List<Corso>>() {
             @Override
             public void onResponse(Call<List<Corso>> call, Response<List<Corso>> response) {
                 List<Corso> lista = response.body();
-                CorsiAdapter corsiAdapter = new CorsiAdapter(getContext(), lista);
-                lv.setAdapter(corsiAdapter);
+                CorsiStudenteAdapter corsistudenteAdapter = new CorsiStudenteAdapter(getApplicationContext(), lista);
+                lv.setAdapter(corsistudenteAdapter);
             }
 
             @Override
@@ -112,12 +91,8 @@ public class Fragment_dashboard_docente_lista_corsi extends Fragment {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(toDashCorso);
+                startActivity(toDashStudente);
             }
         });
-
-
-
     }
-
 }

@@ -1,14 +1,23 @@
 package com.dettofatto.logos.RetroInterfaces;
 
 import com.dettofatto.logos.entities.Corso;
+import com.dettofatto.logos.entities.Docente;
 import com.dettofatto.logos.entities.Iscrizione;
+import com.dettofatto.logos.entities.Lezione;
 import com.dettofatto.logos.entities.Studente;
 
 import java.util.List;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
+import retrofit2.http.Body;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
-
+import retrofit2.http.Header;
+import retrofit2.http.Multipart;
+import retrofit2.http.POST;
+import retrofit2.http.Part;
 
 
 public interface RetroLister {
@@ -16,11 +25,13 @@ public interface RetroLister {
     @GET("GetLezioniPerCorsoServlet")
     Call<List<RetroLezione>> getLezioniPerCorso();
 
-    @GET("GetLezioniDiOggiServlet")
-    Call<List<RetroLezione>> getLezioniDiOggi();
+    @FormUrlEncoded
+    @POST("logos/GetLezioniDiOggiServlet")
+    Call<List<Lezione>> getLezioniDiOggi(@Field("docente") String docente);
 
-    @GET("GetLezioniDiDomaniServlet")
-    Call<List<RetroLezione>> getLezioniDiDomani();
+    @FormUrlEncoded
+    @POST("logos/GetLezioniDiDomaniServlet")
+    Call<List<Lezione>> getLezioniDiDomani(@Field("docente") String docente);
 
     @GET("GetLezioniDiOggiStudenteServlet")
     Call<List<RetroLezione>> getLezioniDiOggiStudente();
@@ -28,11 +39,13 @@ public interface RetroLister {
     @GET("GetLezioniDiDomaniStudenteServlet")
     Call<List<RetroLezione>> getLezioniDiDomaniStudente();
 
-    @GET("getCorsiPerDocenteServlet")
-    Call<List<Corso>> getCorsiPerDocente();
+    @FormUrlEncoded
+    @POST("logos/GetCorsiPerDocenteServlet")
+    Call<List<Corso>> getCorsiPerDocente(@Field("docente") String docente);
 
-    @GET("GetgetCorsiPerStudenteServlet")
-    Call<List<RetroCorso>> getCorsiPerStudente();
+    @FormUrlEncoded
+    @POST("logos/GetCorsiPerStudenteServlet")
+    Call<List<Corso>> getCorsiPerStudente(@Field("studente") String studente);
 
     @GET("getStudentiPerCorsoServlet")
     Call<List<Studente>> getStudentiPerCorso();

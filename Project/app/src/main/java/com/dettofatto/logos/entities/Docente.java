@@ -14,9 +14,6 @@ public class Docente extends Persona {
 
     private List<Corso> corsi;
 
-    public Docente() {
-
-    }
 
     public int getOreDaTenere() {
         return this.oreDaTenere;
