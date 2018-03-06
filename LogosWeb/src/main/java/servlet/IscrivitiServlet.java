@@ -43,10 +43,13 @@ public class IscrivitiServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ObjectMapper om = new ObjectMapper();
 		String codiceCorso = request.getParameter("codiceCorso");
-		Studente s = om.readValue(request.getParameter("studente"), Studente.class);
+		String stud =request.getParameter("studente");
+		System.out.println(stud);
+		stud = stud.replaceAll(",\"presenza\":.*,", "").replaceAll("\"presenzaOggi\":\\d", "");
+		System.out.println(stud);
+		Studente s = om.readValue(stud, Studente.class);
 		GestioneCorso gc = new GestioneCorso(); 
-		String i = gc.calcolaCodice(2);
-		Boolean andataBuonFine = gc.iscriviti(s, i);
+		Boolean andataBuonFine = gc.iscriviti(s, codiceCorso);
 		response.getWriter().append(andataBuonFine.toString());
 	}
 

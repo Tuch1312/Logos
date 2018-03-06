@@ -1,3 +1,93 @@
+         
+            
+                //questa sezione viene eseguita solo al refresh della pagina
+                var utente = JSON.parse(localStorage.getItem("utente"))
+            	if (!utente) {
+			    alert("Sessione scaduta, accedere nuovamente")
+                window.location.href = 'index.html';
+			} else {
+			    
+			       if (utente.isDocente == "true") {
+			        $(".card-main").css("display", "none");
+			       $("#tabbed-liste-docente").css("display", "block")
+			           $("#menu-docente").css("display", "block");
+			       } else {
+			          $(".card-main").css("display", "none");
+			       $("#lista-corsi-studente").css("display", "block")
+			             $("#menu-studente").css("display", "block");
+                       getCorsiPerStudente();
+			        
+			       }
+			
+			
+			}
+            
+		
+            
+            
+            //menu studente
+                //i miei corsi
+            $("#menu-studente-corsi").click(function () {
+                 $(".card-main").css("display", "none");
+			     $("#lista-corsi-studente").css("display", "block")
+                 $(".menu-item").removeClass("active");
+                $("#menu-studente-corsi").addClass("active");
+                getCorsiPerStudente();
+                
+            });
+                //dashboard
+              $("#menu-studente-dash").click(function () {
+                 $(".card-main").css("display", "none");
+			     $("#tabbed-dashboard-studente").css("display", "block")
+                   $(".menu-item").removeClass("active");
+                $("#menu-studente-dash").addClass("active");
+                
+            });
+                //iscriviti
+               $("#menu-studente-iscriviti").click(function () {
+                 $(".card-main").css("display", "none");
+			     $("#isciriviti-corso-studente").css("display", "block")
+                $(".menu-item").removeClass("active")
+                $("#menu-studente-iscriviti").addClass("active");
+                
+            });
+            
+            
+            //menu docente
+                //i miei corsi
+            $("#menu-docente-corsi").click(function () {
+                 $(".card-main").css("display", "none");
+			     $("#tabbed-liste-docente").css("display", "block")
+                 $(".menu-item").removeClass("active");
+                $("#menu-docente-corsi").addClass("active");
+                
+            });
+                //dashboard
+              $("#menu-docente-dash").click(function () {
+                 $(".card-main").css("display", "none");
+			     $("#dashboard-corsi-docente").css("display", "block")
+                   $(".menu-item").removeClass("active");
+                $("#menu-docente-dash").addClass("active");
+                
+            });
+                //iscriviti
+               $("#menu-docente-nuovo").click(function () {
+                 $(".card-main").css("display", "none");
+			     $("#docente-crea-corso").css("display", "block")
+                    $(".menu-item").removeClass("active");
+                $("#menu-docente-nuovo").addClass("active");
+                
+            });
+            
+            
+                
+
+
+
+// --------------------------------------------
+
+
+
 function getCorsiPerStudente() {
 var studente = "studente=" + localStorage.getItem("utente");
 
@@ -68,16 +158,21 @@ function () {
     var codicecors = $("#input-iscriviti-studente").val();
     var student = JSON.parse(localStorage.getItem("utente"));
     var dati = {}
-    dati.studente = student;
+    
+    dati.studente = JSON.stringify(student);
     dati.codiceCorso = codicecors;
     console.log(dati)
       $.ajax({
-		url: "http://logoscloud.ddns.net:8080/logos/IscrivitiServlet",
+		url: "http://localhost:8080/LogosWeb/IscrivitiServlet",
 		method: 'post',
-        data: JSON.stringify(dati)
+        data: dati
 	})
 	.done(function(esito){
-          console.log(esito)
+          if (esito == true) {
+              $("#success-iscrizione-studente").css("display","block")
+          } else {
+              $("#error-iscrizione-studente").css("display","block")
+          }
           })
 		
 	.fail(function(err) {

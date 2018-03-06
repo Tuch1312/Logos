@@ -1,6 +1,8 @@
 package entity;
 
 import javax.persistence.*;
+
+import java.io.Serializable;
 import java.util.List;
 
 
@@ -8,7 +10,7 @@ import java.util.List;
 @DiscriminatorValue("S")
 @Table(name="studente")
 @NamedQuery(name="Studente.findAll", query="SELECT s FROM Studente s")
-public class Studente extends Persona {
+public class Studente extends Persona implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	

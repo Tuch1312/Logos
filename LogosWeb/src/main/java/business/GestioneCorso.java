@@ -256,9 +256,17 @@ public class GestioneCorso {
 		String code = sb.toString();
 		int id_generato = Integer.parseInt(code, 16)/11121;
 		Corso c = em.find(Corso.class, id_generato);
+		if (c == null) return false;
 		IscrizionePk ipk = new IscrizionePk();
 		ipk.setIdCorso(c.getIdCorso());
 		ipk.setMailStudente(s.getMail());
+		try {
+			Iscrizione iProva = em.find(Iscrizione.class, ipk);
+		} catch (Exception e) {
+			System.out.println("dentro al cath");
+			return false;	
+		}
+		System.out.println("ho passoto il cath, quindi tapposto");
 		Iscrizione iscrizione = new Iscrizione();
 		iscrizione.setCorso(c);
 		iscrizione.setStudenteIscritto(s);
