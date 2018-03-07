@@ -22,7 +22,7 @@ if(validateEmail($("#input-mail-login").val())) {
 utente.mail = $("#input-mail-login").val();
 utente.password = $("#input-password-login").val()
 $.ajax({
-		url: 'http://logoscloud.ddns.net:8080/logos/LoginServlet',
+		url: 'http://localhost:8080/LogosWeb/LoginServlet',
 		method: 'post',
 		data: utente
 	})
