@@ -2,6 +2,8 @@ package com.dettofatto.logos;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,7 +23,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Registration extends Activity {
+public class Registration extends AppCompatActivity {
 
     final String BASE_URL = "http://18.194.218.75:8080/";
     Retrofit r =  new Retrofit.Builder()
@@ -36,6 +38,10 @@ public class Registration extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
 
         final EditText et = findViewById(R.id.editText);
         final EditText et2 = findViewById(R.id.editText2);

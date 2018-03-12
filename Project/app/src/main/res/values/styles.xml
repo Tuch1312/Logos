@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
@@ -14,7 +14,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginEnd">30dp</item>
         <item name="android:layout_marginStart">30dp</item>
-        <item name="android:background">@color/verde1</item>
+        <item name="android:background">@color/colorAccent</item>
         <item name="android:textColor">@android:color/background_light</item>
         <item name="android:textSize">22sp</item>
     </style>
@@ -40,6 +40,7 @@
         <style name="AppTheme.NoActionBar">
             <item name="windowActionBar">false</item>
             <item name="windowNoTitle">true</item>
+
         </style>
 
         <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
