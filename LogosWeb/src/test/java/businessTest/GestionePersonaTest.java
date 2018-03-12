@@ -7,13 +7,13 @@
 //import business.GestionePersona;
 //
 //public class GestionePersonaTest {
-////	@Test
-////	public void testLogin() {
-////		GestionePersona gp = new GestionePersona();
-////		
-////		boolean esito = gp.login("ciaone", "0000");
-////		assertTrue("non funziona", esito == false);
-////	}
+//	@Test
+//	public void testLogin() {
+//		GestionePersona gp = new GestionePersona();
+//		
+//		System.out.println(gp.login("a", "a"));
+//		
+//	}
 //	
 //	
 //	@Test
@@ -26,4 +26,10 @@
 //
 //
 //
+	
+//	@Test
+//	public void getcodicepersona() {
+//		GestionePersona gp = new GestionePersona();
+//		System.out.println(gp.assegnaCodice("acab@mail.it"));
+//	}
 //}

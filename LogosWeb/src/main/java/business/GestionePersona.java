@@ -8,6 +8,8 @@ import entity.Studente;
 
 public class GestionePersona {
 	
+
+	
 	public Persona login(String mail, String psw) {
 		EntityManager em = JPAUtility.emf.createEntityManager();
 		Persona persona = null;
@@ -17,6 +19,7 @@ public class GestionePersona {
 			e.printStackTrace();
 		}
 		if (persona!=null && checkPassword(psw, persona)) {
+			 String $return = "{\"mail\":\"" + persona.getMail() + "\"," + "\"nome\":\"" + persona.getNome() + "\"," +  "\"cognome\":\"" + persona.getCognome() + "\"}";
 			return persona;
 				}
 		else return null;
@@ -57,6 +60,20 @@ public class GestionePersona {
 		}
 	}
 	
+	//Non ancora usato
+	public String webLogin(String mail, String psw) {
+		EntityManager em = JPAUtility.emf.createEntityManager();
+		Persona persona = null;
+		try {
+		persona = em.find(Persona.class, mail);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		if (persona!=null && checkPassword(psw, persona)) {
+			return assegnaCodice(persona.getMail());
+				}
+		else return null;
+		}
 	
 	public boolean cambiaPassword(String oldPassword,String newPassword, Persona p) {
 		EntityManager em = JPAUtility.emf.createEntityManager();
@@ -71,7 +88,7 @@ public class GestionePersona {
 			return false;
 		}
 	}
-//	//Dato che la mail è mappata come primary key non si puo cambiare all'interno del database e di conseguenza 
+//	//Dato che la mail ï¿½ mappata come primary key non si puo cambiare all'interno del database e di conseguenza 
 //	//sono costretto a cancellare e a ricreare l'oggetto persona
 //	public boolean cambiaMail(String password,String newMail, Persona p) {
 //		EntityManager em = JPAUtility.emf.createEntityManager();
@@ -99,5 +116,22 @@ public class GestionePersona {
 				return false;
 			}
 	}
+		
+		//Non ancora usato
+		public String assegnaCodice(String mail) {
+			  try {
+			        java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
+			        byte[] array = md.digest(mail.getBytes());
+			        StringBuffer sb = new StringBuffer();
+			        for (int i = 0; i < array.length; ++i) {
+			          sb.append(Integer.toHexString((array[i] & 0xFF) | 0x100).substring(1,3));
+			       }
+			        return sb.toString();
+			    } catch (java.security.NoSuchAlgorithmException e) {
+			    }
+			    return null;
+			}
+			
+		
 
 }

@@ -163,7 +163,7 @@ function () {
     dati.codiceCorso = codicecors;
     console.log(dati)
       $.ajax({
-		url: "http://localhost:8080/LogosWeb/IscrivitiServlet",
+		url: "http://logoscloud.ddns.net:8080/LogosWeb/IscrivitiServlet",
 		method: 'post',
         data: dati
 	})
