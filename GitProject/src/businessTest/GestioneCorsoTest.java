@@ -1,12 +1,23 @@
 package businessTest;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.Test;
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+
+import org.junit.*;
+
+
 
 import business.GestioneCorso;
+import business.JPAUtility;
 import entity.Corso;
 import entity.Docente;
+import entity.Studente;
 
 public class GestioneCorsoTest {
 //	@Test
@@ -22,22 +33,22 @@ public class GestioneCorsoTest {
 //		
 //			}
 //	
-	@Test
-	public void eliminaCorsoTest() {
-		GestioneCorso gc = new GestioneCorso();
-		Docente d = new Docente();
-		d.setNome("ciao");
-		d.setCognome("ciao");
-		//ho impostato una mail che non esiste nel database
-		//in questo modo il metodo non effettua modifiche sul db
-		//ma � funzionante
-		d.setMail("docente@mail");
-		d.setPassword("ciao");
-		Corso c = new Corso();
-		c.setIdCorso(1);
-		boolean esito = gc.eliminaCorso(d, c);
-		assertTrue("funziona", esito == true);
-	}
+//	@Test
+//	public void eliminaCorsoTest() {
+//		GestioneCorso gc = new GestioneCorso();
+//		Docente d = new Docente();
+//		d.setNome("ciao");
+//		d.setCognome("ciao");
+//		//ho impostato una mail che non esiste nel database
+//		//in questo modo il metodo non effettua modifiche sul db
+//		//ma � funzionante
+//		d.setMail("cia");
+//		d.setPassword("ciao");
+//		Corso c = new Corso();
+//		c.setIdCorso(3);
+//		boolean esito = gc.eliminaCorso(d, c);
+//		assertTrue("funziona", esito == false);
+//	}
 	
 //	@Test
 //	public void modificaCorsoTest() {

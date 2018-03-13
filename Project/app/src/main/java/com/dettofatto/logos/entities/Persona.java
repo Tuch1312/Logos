@@ -11,17 +11,12 @@ import java.util.List;
 
 public class Persona implements Serializable{
 
-    @SerializedName("mail")
+
     private String mail;
-    @SerializedName("nome")
     private String nome;
-    @SerializedName("cognome")
     private String cognome;
-    @SerializedName("immagine")
     private String immagine;
-    @SerializedName("indirizzo")
     private String indirizzo;
-    @SerializedName("password")
     private String password;
 
 

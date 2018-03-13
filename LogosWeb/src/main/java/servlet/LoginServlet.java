@@ -30,10 +30,8 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String s = request.getParameter("mail");
-		String r = request.getParameter("password");
 		GestionePersona gp = new GestionePersona();
-		Persona t = gp.login(s, r);
+		Persona t = gp.login(request.getParameter("mail"), request.getParameter("password"));
 		if(t!=null) {
 			ObjectMapper om = new ObjectMapper();
 			String json = om.writeValueAsString(t);

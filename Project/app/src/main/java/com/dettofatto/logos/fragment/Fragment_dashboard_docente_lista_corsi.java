@@ -86,7 +86,7 @@ public class Fragment_dashboard_docente_lista_corsi extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         Docente Json = new Docente();
         Json.setMail("ciaone");
-        String g = "{\"mail\":\"ciaone\"}";
+        String g = "{\"mail\":\"docente@mail\"}";
 
         final Intent toDashCorso = new Intent(getContext(), DashboardDocenteCorsi.class);
         // Setup any handles to view objects here

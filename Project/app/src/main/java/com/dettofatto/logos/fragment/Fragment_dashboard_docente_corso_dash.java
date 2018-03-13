@@ -40,14 +40,7 @@ public class Fragment_dashboard_docente_corso_dash extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        CircleProgressbar c = view.findViewById(R.id.cerchio_dash_docente_corso);
-        Display display = getActivity().getWindowManager().getDefaultDisplay();
-        DisplayMetrics outMetrics = new DisplayMetrics();
-        display.getMetrics(outMetrics);
-        float density = getResources().getDisplayMetrics().density;
-        final float dpHeight = outMetrics.heightPixels / density;
-        float dpWidth = outMetrics.widthPixels / density;
-        c.setLayoutParams(new LinearLayout.LayoutParams((int) dpHeight, (int) dpWidth));
+
 
 
     }

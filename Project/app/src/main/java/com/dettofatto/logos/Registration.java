@@ -2,8 +2,13 @@ package com.dettofatto.logos;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +36,8 @@ public class Registration extends AppCompatActivity {
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
+    DrawerLayout dl;
+
 
 
 
@@ -40,8 +47,37 @@ public class Registration extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
 
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        dl = findViewById(R.id.drawer_registration);
+        //this allow to create and set a toolbar because the theme setted as default doesn't have an action bar
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar_reg);
         setSupportActionBar(myToolbar);
+
+        //this let us use the menu icon on the top left of the activity
+        ActionBar actionbar = getSupportActionBar();
+        actionbar.setDisplayHomeAsUpEnabled(true);
+        actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
+
+
+
+
+        //listener of the item inside the drawer layout
+        NavigationView navigationView = findViewById(R.id.nav_view_reg);
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
+                        // set item as selected to persist highlight
+                        menuItem.setChecked(true);
+                        // close drawer when item is tapped
+                        dl.closeDrawers();
+
+                        // Add code here to update the UI based on the item selected
+                        // For example, swap UI fragments here
+
+                        return true;
+                    }
+                });
+
 
         final EditText et = findViewById(R.id.editText);
         final EditText et2 = findViewById(R.id.editText2);
@@ -81,4 +117,14 @@ public class Registration extends AppCompatActivity {
                     }
                 });
             }
+    //Listener of the menu icon that open the drawer menu
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                dl.openDrawer(GravityCompat.START);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

@@ -11,7 +11,7 @@ public class Studente extends Persona implements Serializable{
 
     private List<Iscrizione> iscrizioni;
     private List<Presenza> presenza;
-    private int presenzaOggi;
+    private Presenza presenzaOggi;
 
 //Costruttore
 
@@ -22,13 +22,13 @@ public class Studente extends Persona implements Serializable{
 
 
 
-    public int getPresenzaOggi() {
+    public Presenza getPresenzaOggi() {
         return presenzaOggi;
     }
 
 
 
-    public void setPresenzaOggi(int presenzaOggi) {
+    public void setPresenzaOggi(Presenza presenzaOggi) {
         this.presenzaOggi = presenzaOggi;
     }
 

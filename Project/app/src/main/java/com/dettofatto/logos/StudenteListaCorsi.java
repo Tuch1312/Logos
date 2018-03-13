@@ -4,8 +4,16 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -59,14 +67,50 @@ class CorsiStudenteAdapter extends ArrayAdapter<Corso> {
 
 }
 
-public class StudenteListaCorsi extends Activity {
+public class StudenteListaCorsi extends AppCompatActivity {
 
     List<Corso> lista;
+    DrawerLayout dl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_studente_lista_corsi);
+
+        dl = findViewById(R.id.drawer_studente_lista_corsi);
+
+        //this allow to create and set a toolbar because the theme setted as default doesn't have an action bar
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar_Studente_lista_corsi);
+        setSupportActionBar(myToolbar);
+
+        //this let us use the menu icon on the top left of the activity
+        ActionBar actionbar = getSupportActionBar();
+        actionbar.setDisplayHomeAsUpEnabled(true);
+        actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
+
+
+
+
+        //listener of the item inside the drawer layout
+        NavigationView navigationView = findViewById(R.id.nav_view_studente_lista_corsi);
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
+                        // set item as selected to persist highlight
+                        menuItem.setChecked(true);
+                        // close drawer when item is tapped
+                        dl.closeDrawers();
+
+                        // Add code here to update the UI based on the item selected
+                        // For example, swap UI fragments here
+
+                        return true;
+                    }
+                });
+
+
+
 
         Intent i = getIntent();
         final Studente s = (Studente) i.getSerializableExtra("studente");
@@ -102,5 +146,17 @@ public class StudenteListaCorsi extends Activity {
                 startActivity(toDashStudente);
             }
         });
+    }
+
+
+    //Listener of the menu icon that open the drawer menu
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                dl.openDrawer(GravityCompat.START);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

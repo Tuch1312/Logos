@@ -6,11 +6,10 @@ import java.util.Date;
 import java.util.List;
 
 
-@Entity 
+@Entity
 @NamedQuery(name="Corso.findAll", query="SELECT c FROM Corso c")
 public class Corso implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

@@ -1,10 +1,17 @@
 package businessTest;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.Test;
+import java.util.List;
 
+import org.junit.*;
+
+import business.GestioneCorso;
 import business.GestionePersona;
+import business.Lister;
+import entity.Corso;
+import entity.Studente;
 
 public class GestionePersonaTest {
 //	@Test

@@ -1,5 +1,25 @@
 package businessTest;
 
+import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import org.junit.jupiter.api.Test;
+
+import business.GestioneCorso;
+import business.GestioneLezioni;
+import business.GestionePersona;
+import business.JPAUtility;
+import business.Lister;
+import entity.Corso;
+import entity.Docente;
+import entity.Lezione;
+import entity.Studente;
+
 class GestioneLezioneTest {
 
 	/*@Test
