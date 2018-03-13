@@ -27,6 +27,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     compile 'com.jackandphantom.android:circularprogressbar:1.2.0'
     implementation 'com.android.support:design:26.0.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
 
     compile 'com.squareup.retrofit2:retrofit:2.3.0'

@@ -3,7 +3,9 @@ package com.dettofatto.logos.fragment;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcel;
 import android.support.v4.app.Fragment;
 import android.telecom.Call;
 import android.util.DisplayMetrics;
@@ -13,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -27,7 +30,9 @@ import com.dettofatto.logos.entities.Lezione;
 import com.dettofatto.logos.entities.Studente;
 import com.google.gson.Gson;
 import com.jackandphantom.circularprogressbar.CircleProgressbar;
+import com.squareup.picasso.Picasso;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -90,6 +95,9 @@ public class Fragment_dashbaord_studente_dash extends Fragment {
         Gson j = new Gson();
         String g = j.toJson(corso);
 
+
+        ImageView iv = view.findViewById(R.id.immagine);
+        Picasso.get().load("http://18.194.218.75/assets/img/faces/christian.jpg").fit().centerCrop().into(iv);
 
         TextView titolo = view.findViewById(R.id.dashboard_title);
         titolo.setText(""+corso.getTitolo());
