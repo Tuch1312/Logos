@@ -17,9 +17,11 @@ import android.view.View;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.widget.ListView;
 
 
 import com.dettofatto.logos.adapter.SectionsPagerAdapter;
+
 import com.dettofatto.logos.fragment.Fragment_dashboard_docente_lista_corsi;
 import com.dettofatto.logos.fragment.Fragment_dashboard_docente_lista_lezioni;
 import com.getbase.floatingactionbutton.AddFloatingActionButton;
@@ -145,6 +147,14 @@ public class DashBoardDocenteListe extends AppCompatActivity {
             public void onClick(View view) {
                 if(mViewPager.getCurrentItem()==1)
                     startActivity(toCreaCorso);
+            }
+        });
+        final Intent toEliminaCorso = new Intent(this, EliminaCorso.class);
+        AddFloatingActionButton fab2 = findViewById(R.id.fab2);
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(toEliminaCorso);
             }
         });
 

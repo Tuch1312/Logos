@@ -1,5 +1,7 @@
 package com.dettofatto.logos.RetroInterfaces;
 
+import com.dettofatto.logos.entities.Docente;
+
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -11,8 +13,9 @@ public interface RetroCorso {
     @POST("logos/NuovoCorsoServlet")
     Call<Boolean> nuovoCorso(@Field("json") String docente, @Field("corso") String corso, @Field("automaticFill") String automaticFill);
 
-    @POST("EliminaCorsoServlet")
-    Call<Boolean> eliminaCorso();
+    @FormUrlEncoded
+    @POST("logos/EliminaCorsoServlet")
+    Call<Boolean> eliminaCorso(@Field("docente") String docente, @Field("corso") String corso);
 
     @POST("ModificaCorsoServlet")
     Call<Boolean> modificaCorso();

@@ -26,7 +26,9 @@
         <activity android:name=".DashboardDocenteCorsi" />
         <activity android:name=".DashboardDocenteLezione" />
         <activity android:name=".StudenteListaCorsi" />
-        <activity android:name=".CreaLezione"></activity>
+        <activity android:name=".CreaLezione" />
+        <activity android:name=".EliminaCorso" />
+        <activity android:name=".ModificaCorso"></activity>
     </application>
 
 </manifest>
