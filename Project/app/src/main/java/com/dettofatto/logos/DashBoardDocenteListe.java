@@ -1,5 +1,7 @@
 package com.dettofatto.logos;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -101,10 +103,40 @@ public class DashBoardDocenteListe extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
+        final com.getbase.floatingactionbutton.FloatingActionsMenu menu = findViewById(R.id.menuFab);
+
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
 
-        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        final int ShortAnimationDuration = getResources().getInteger(
+                android.R.integer.config_shortAnimTime);
+
+        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout){
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                if(position == 0){
+                    menu.animate()
+                            .alpha(0f)
+                            .setDuration(ShortAnimationDuration)
+                            .setListener(new AnimatorListenerAdapter() {
+                                @Override
+                                public void onAnimationEnd(Animator animation) {
+                                    menu.setVisibility(View.GONE);
+                                }
+                            });
+                } else {
+                    menu.setAlpha(0f);
+                    menu.setVisibility(View.VISIBLE);
+                    menu.animate()
+                            .alpha(1f)
+                            .setDuration(ShortAnimationDuration)
+                            .setListener(null);
+                }
+            }
+        });
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+
+
 
         AddFloatingActionButton fab = findViewById(R.id.fab);
         final Intent toCreaCorso = new Intent(this, CreaCorso.class);
