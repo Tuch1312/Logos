@@ -1,5 +1,6 @@
 package com.dettofatto.logos;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -19,6 +20,7 @@ import android.support.design.widget.Snackbar;
 import com.dettofatto.logos.adapter.SectionsPagerAdapter;
 import com.dettofatto.logos.fragment.Fragment_dashboard_docente_lista_corsi;
 import com.dettofatto.logos.fragment.Fragment_dashboard_docente_lista_lezioni;
+import com.getbase.floatingactionbutton.AddFloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -104,12 +106,13 @@ public class DashBoardDocenteListe extends AppCompatActivity {
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        AddFloatingActionButton fab = findViewById(R.id.fab);
+        final Intent toCreaCorso = new Intent(this, CreaCorso.class);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                if(mViewPager.getCurrentItem()==1)
+                    startActivity(toCreaCorso);
             }
         });
 

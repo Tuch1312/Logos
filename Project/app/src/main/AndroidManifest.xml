@@ -20,12 +20,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".CreaCorso" />
-        <activity android:name=".DashBoardDocenteListe"></activity>
-        <activity android:name=".PresenzeAssenze"></activity>
-        <activity android:name=".DashBoardStudente"></activity>
-        <activity android:name=".DashboardDocenteCorsi"></activity>
+        <activity android:name=".DashBoardDocenteListe" />
+        <activity android:name=".PresenzeAssenze" />
+        <activity android:name=".DashBoardStudente" />
+        <activity android:name=".DashboardDocenteCorsi" />
         <activity android:name=".DashboardDocenteLezione" />
-        <activity android:name=".StudenteListaCorsi"></activity>
+        <activity android:name=".StudenteListaCorsi" />
+        <activity android:name=".CreaLezione"></activity>
     </application>
 
 </manifest>
