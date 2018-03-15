@@ -24,7 +24,7 @@
 
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/editTitolo"
         android:layout_width="260dp"
         android:layout_marginTop="35dp"
         android:layout_height="wrap_content"
@@ -33,45 +33,10 @@
         android:hint="@string/titolo"
         android:inputType="textPersonName" />
 
-    <LinearLayout
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/editText7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="@string/n_lezioni"
-            android:inputType="number" />
-
-        <EditText
-            android:id="@+id/editText8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="@string/ore_lezione"
-            android:inputType="number"
-            />
-    </LinearLayout>
 
     <EditText
-        android:id="@+id/editText9"
-        android:layout_width="260dp"
-        android:layout_marginTop="20dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:ems="10"
-        android:hint="@string/n_lezioni_x_giorno"
-        android:inputType="number" />
-
-    <EditText
-        android:id="@+id/editText10"
+        android:id="@+id/editDescrizione"
         android:layout_width="260dp"
         android:layout_marginTop="20dp"
         android:layout_height="150dp"
@@ -87,36 +52,96 @@
 
 
         />
+        <EditText
+            android:id="@+id/editNumMaxStudenti"
+            android:layout_width="260dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:hint="@string/numero_max_studenti"
+            android:inputType="text" />
 
-    <EditText
-        android:id="@+id/editText11"
-        android:layout_width="260dp"
-        android:layout_marginTop="20dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:ems="10"
-        android:hint="@string/numero_max_studenti"
-        android:inputType="text" />
+        <EditText
+            android:id="@+id/editSede"
+            android:layout_width="260dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:hint="@string/sede"
+            android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/editText12"
-        android:layout_width="260dp"
-        android:layout_marginTop="20dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:ems="10"
-        android:hint="@string/sede"
-        android:inputType="textPersonName" />
+        <Button
+            android:id="@+id/button2"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="35dp"
+            android:text="optional"
+            style="@style/pulsante_schermo_intero"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/layoutscomparsa"
+            android:visibility="gone">
+        <LinearLayout
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/editText13"
-        android:layout_width="260dp"
-        android:layout_marginTop="20dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:ems="10"
-        android:hint="@string/requisiti_minimi_studenti"
-        android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/editNumeroGiorni"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="numero giorni"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/editDurataLezione"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="durata lezione"
+                android:inputType="number"
+                />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editNumeroLezioniPerGiorno"
+            android:layout_width="260dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:hint="@string/n_lezioni_x_giorno"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/editOraInizioLezioni"
+            android:layout_width="260dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:hint="ora inizio lezioni"
+            android:inputType="number" />
+        <EditText
+            android:id="@+id/editPatternLezioni"
+            android:layout_width="260dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:hint="pattern lezioni"
+            android:inputType="number" />
+        </LinearLayout>
+
+
 
         <Button
             android:id="@+id/button"
