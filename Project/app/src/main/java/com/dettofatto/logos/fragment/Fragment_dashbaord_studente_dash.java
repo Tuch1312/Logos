@@ -3,7 +3,9 @@ package com.dettofatto.logos.fragment;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcel;
 import android.support.v4.app.Fragment;
 import android.telecom.Call;
 import android.util.DisplayMetrics;
@@ -13,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -27,7 +30,9 @@ import com.dettofatto.logos.entities.Lezione;
 import com.dettofatto.logos.entities.Studente;
 import com.google.gson.Gson;
 import com.jackandphantom.circularprogressbar.CircleProgressbar;
+import com.squareup.picasso.Picasso;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -84,36 +89,31 @@ public class Fragment_dashbaord_studente_dash extends Fragment {
     }
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-    //questa parte di codece risolve il problema di mostrare la circular progressBar buggata
-        CircleProgressbar c = view.findViewById(R.id.cerchio) ;
-        Display display = getActivity().getWindowManager().getDefaultDisplay();
-        DisplayMetrics outMetrics = new DisplayMetrics ();
-        display.getMetrics(outMetrics);
-        float density  = getResources().getDisplayMetrics().density;
-        final float dpHeight = outMetrics.heightPixels / density;
-        float dpWidth  = outMetrics.widthPixels / density;
-        c.setLayoutParams(new LinearLayout.LayoutParams((int)dpHeight,(int)dpWidth));
 
         Bundle b = getArguments();
         Corso corso = (Corso) b.getSerializable("corso");
         Gson j = new Gson();
         String g = j.toJson(corso);
 
+
+        ImageView iv = view.findViewById(R.id.immagine);
+        Picasso.get().load("http://18.194.218.75/assets/img/faces/christian.jpg").fit().centerCrop().into(iv);
+
         TextView titolo = view.findViewById(R.id.dashboard_title);
         titolo.setText(""+corso.getTitolo());
         TextView oreTotali = view.findViewById(R.id.ore_totali);
-        oreTotali.setText("ore totali: "+corso.getOreTotali());
+        oreTotali.setText("Ore totali: "+corso.getOreTotali());
         TextView oreTrascorse = view.findViewById(R.id.ore_trascorse);
-        oreTrascorse.setText("ore trascorse: "+corso.getOreTrascorse());
+        oreTrascorse.setText("Ore trascorse: "+corso.getOreTrascorse());
         TextView lezione = view.findViewById(R.id.lezione);
-        lezione.setText("lezione n: "+corso.getLezioneCorrente());
+        lezione.setText("Lezione n: "+corso.getLezioneCorrente());
         TextView docente = view.findViewById(R.id.docente);
         //non riesco a recuperare il docente del corso
         //docente.setText(""+d.getNome());
         TextView oraInizio = view.findViewById(R.id.ora_inizio);
-        oraInizio.setText("ora inizio: "+corso.getOraInizioLezioni());
+        oraInizio.setText("Ora inizio: "+corso.getOraInizioLezioni());
         TextView aula = view.findViewById(R.id.aula);
-        aula.setText("aula :"+corso.getSede());
+        aula.setText("Aula :"+corso.getSede());
         TextView ore = view.findViewById(R.id.ore);
         ore.setText(""+corso.getContatoreGiorniInterno());
 

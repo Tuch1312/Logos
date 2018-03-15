@@ -1,16 +1,16 @@
 package businessTest;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 import javax.persistence.EntityManager;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
+import business.GestionePersona;
 import business.GestionePresenze;
 import business.JPAUtility;
-import entity.Corso;
-import entity.Docente;
-import entity.Studente;
+import entity.*;
 
 class GestionePresenzaTest {
 

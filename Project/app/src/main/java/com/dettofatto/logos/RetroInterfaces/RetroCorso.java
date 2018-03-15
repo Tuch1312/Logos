@@ -1,12 +1,15 @@
 package com.dettofatto.logos.RetroInterfaces;
 
 import retrofit2.Call;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 
 
 public interface RetroCorso {
-    @POST("NuovoCorsoServlet")
-    Call<Boolean> nuovoCorso();
+    @FormUrlEncoded
+    @POST("logos/NuovoCorsoServlet")
+    Call<Boolean> nuovoCorso(@Field("json") String docente, @Field("corso") String corso, @Field("automaticFill") String automaticFill);
 
     @POST("EliminaCorsoServlet")
     Call<Boolean> eliminaCorso();

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import business.GestioneCorso;
+import entity.Corso;
 import entity.Docente;
 
 /**
@@ -48,11 +49,12 @@ public class NuovoCorsoServlet extends HttpServlet {
 		GestioneCorso gc = new GestioneCorso();
 		
 		Docente d = om.readValue(request.getParameter("json"), Docente.class);
-		String titolo = request.getParameter("titolo");
-		String descrizione = request.getParameter("descrizione");
-		int numMaxStudenti = Integer.parseInt(request.getParameter("numMaxStudenti"));
-		String sede = request.getParameter("sede");
-		String immagine = request.getParameter("immagine");
+		Corso c = om.readValue(request.getParameter("corso"), Corso.class);
+		String titolo = c.getTitolo();
+		String descrizione = c.getDescrizione();
+		int numMaxStudenti = c.getNumMaxStudenti();
+		String sede = c.getSede();
+		String immagine = c.getImmagine();
 		
 		
 		Boolean andataBuonFine;

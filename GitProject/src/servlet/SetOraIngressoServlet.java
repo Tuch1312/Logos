@@ -42,11 +42,14 @@ public class SetOraIngressoServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ObjectMapper om = new ObjectMapper();
+		
 		Docente d = om.readValue("docente", Docente.class);
 		Studente s = om.readValue("studente", Studente.class);
 		Corso c = om.readValue("corso", Corso.class);
+		
 		GestionePresenze gp = new GestionePresenze();
 		Boolean andataBuonFine = gp.setOraIngresso(d, s, c);
+		
 		response.getWriter().append(andataBuonFine.toString());
 	}
 

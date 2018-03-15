@@ -1,12 +1,13 @@
 package businessTest;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Date;
 
 import javax.persistence.EntityManager;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import business.GestioneLezioni;
 import business.JPAUtility;
