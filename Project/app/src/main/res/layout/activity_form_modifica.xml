@@ -1,9 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dettofatto.logos.FormModifica">
+    tools:context="com.dettofatto.logos.FormModifica"
+    android:padding="4dp">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editTextTitolo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Inserisci il Titolo" />
+
+        <EditText
+            android:id="@+id/editTextDescrizione"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Inserisci la Descrizione"/>
+
+        <EditText
+            android:id="@+id/editTextNumStud"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Inserisci il Numero Max di Studenti"/>
+
+        <EditText
+            android:id="@+id/editTextNumGiorni"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Inserisci il Numero di Giorni"/>
+
+        <EditText
+            android:id="@+id/editTextDurataLez"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Inserisci la Durata delle Lezioni" />
+
+        <EditText
+            android:id="@+id/editTextSede"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Inserisci la Sede"/>
+
+        <Button
+            android:id="@+id/BtnModifica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="MODIFICA"
+            style="@style/pulsante_schermo_intero"/>
+
+    </LinearLayout>
+
+</ScrollView>
