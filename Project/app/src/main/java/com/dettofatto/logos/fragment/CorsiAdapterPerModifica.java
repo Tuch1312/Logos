@@ -26,7 +26,7 @@ import retrofit2.Response;
 import static android.content.ContentValues.TAG;
 
 public class CorsiAdapterPerModifica extends ArrayAdapter<Corso> {
-    public CorsiAdapterPerEliminazione(Context context, List<Corso> listaCorsi) {
+    public CorsiAdapterPerModifica(Context context, List<Corso> listaCorsi) {
         super(context, 0, listaCorsi);
     }
 
