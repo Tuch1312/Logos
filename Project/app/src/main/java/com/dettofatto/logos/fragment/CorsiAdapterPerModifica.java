@@ -1,6 +1,7 @@
 package com.dettofatto.logos.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dettofatto.logos.FormModifica;
 import com.dettofatto.logos.R;
 import com.dettofatto.logos.RetroInterfaces.RetroCorso;
 import com.dettofatto.logos.RetroInterfaces.RetroLister;
@@ -42,32 +44,20 @@ public class CorsiAdapterPerModifica extends ArrayAdapter<Corso> {
         TextView titoloCorso = (TextView) convertView.findViewById(R.id.titoloCorso);
         TextView dataInizio = (TextView) convertView.findViewById(R.id.dataInizio);
         TextView contatore = (TextView) convertView.findViewById(R.id.contatore);
-        Button b = convertView.findViewById(R.id.bottone_elimina);
+        Button b = convertView.findViewById(R.id.bottone_modifica);
         b.setVisibility(View.VISIBLE);
         // Populate the data into the template view using the data object
         titoloCorso.setText(corso.getTitolo());
         dataInizio.setVisibility(View.GONE);
         contatore.setVisibility(View.GONE);
 
+        final Intent toModifica = new Intent(getContext(), FormModifica.class);
+
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                String g = "{\"mail\":\"docente@mail\"}";
-                final Gson gson = new Gson();
-                RetroCorso rc = RetrofitSingleton.r.create(RetroCorso.class);
-                Call<Boolean> c = rc.eliminaCorso(g, gson.toJson(corso));
-                c.enqueue(new Callback<Boolean>() {
-                    @Override
-                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-                        Toast.makeText(getContext(), "Fatto", Toast.LENGTH_LONG).show();
-                    }
-
-                    @Override
-                    public void onFailure(Call<Boolean> call, Throwable t) {
-                        Log.e(TAG, t.toString());
-                    }
-                });
+                toModifica.putExtra("corso", corso);
+                getContext().startActivity(toModifica);
             }
         });
         // Return the completed view to render on screen

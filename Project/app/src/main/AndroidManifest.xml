@@ -28,7 +28,8 @@
         <activity android:name=".StudenteListaCorsi" />
         <activity android:name=".CreaLezione" />
         <activity android:name=".EliminaCorso" />
-        <activity android:name=".ModificaCorso"></activity>
+        <activity android:name=".ModificaCorso" />
+        <activity android:name=".FormModifica"></activity>
     </application>
 
 </manifest>
