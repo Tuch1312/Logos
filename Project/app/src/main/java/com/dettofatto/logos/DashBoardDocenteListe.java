@@ -149,6 +149,14 @@ public class DashBoardDocenteListe extends AppCompatActivity {
                     startActivity(toCreaCorso);
             }
         });
+        final Intent toModificaCorso = new Intent(this, ModificaCorso.class);
+        AddFloatingActionButton fab1 = findViewById(R.id.fab1);
+        fab1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(toModificaCorso);
+            }
+        });
         final Intent toEliminaCorso = new Intent(this, EliminaCorso.class);
         AddFloatingActionButton fab2 = findViewById(R.id.fab2);
         fab2.setOnClickListener(new View.OnClickListener() {
