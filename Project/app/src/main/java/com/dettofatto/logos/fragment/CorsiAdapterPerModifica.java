@@ -28,8 +28,11 @@ import retrofit2.Response;
 import static android.content.ContentValues.TAG;
 
 public class CorsiAdapterPerModifica extends ArrayAdapter<Corso> {
+
+    Context ctx = null;
     public CorsiAdapterPerModifica(Context context, List<Corso> listaCorsi) {
         super(context, 0, listaCorsi);
+        ctx = context;
     }
 
     @Override
@@ -51,13 +54,13 @@ public class CorsiAdapterPerModifica extends ArrayAdapter<Corso> {
         dataInizio.setVisibility(View.GONE);
         contatore.setVisibility(View.GONE);
 
-        final Intent toModifica = new Intent(getContext(), FormModifica.class);
 
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent toModifica = new Intent(ctx, FormModifica.class);
                 toModifica.putExtra("corso", corso);
-                getContext().startActivity(toModifica);
+                ctx.startActivity(toModifica);
             }
         });
         // Return the completed view to render on screen
