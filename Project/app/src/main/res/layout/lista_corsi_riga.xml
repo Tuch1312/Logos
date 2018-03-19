@@ -31,6 +31,18 @@
         android:gravity="center"
         android:text="6/20"
         android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/bottone_elimina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background= "@drawable/rounded_button"
+        android:elevation="7dp"
+        android:text="ELIMINA"
+        android:textColor="#FFFFFF"
+        android:visibility="gone"
+        />
     </LinearLayout>
 
 

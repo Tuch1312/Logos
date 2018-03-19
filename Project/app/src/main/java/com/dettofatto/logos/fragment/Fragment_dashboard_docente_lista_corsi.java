@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.*;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -23,48 +24,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import static android.content.ContentValues.TAG;
-
-
-class CorsiAdapter extends ArrayAdapter<Corso>{
-    public CorsiAdapter(Context context, List<Corso> listaCorsi) {
-        super(context, 0, listaCorsi);
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        // Get the data item for this position
-        Corso corso = getItem(position);
-        // Check if an existing view is being reused, otherwise inflate the view
-        if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.lista_corsi_riga, parent, false);
-        }
-        // Lookup view for data population
-        TextView titoloCorso = (TextView) convertView.findViewById(R.id.titoloCorso);
-        TextView dataInizio = (TextView) convertView.findViewById(R.id.dataInizio);
-        TextView contatore = (TextView) convertView.findViewById(R.id.contatore);
-        // Populate the data into the template view using the data object
-        titoloCorso.setText(corso.getTitolo());
-        dataInizio.setText(""+corso.getDataInizio());
-        contatore.setText(""+corso.getContatoreGiorniInterno());
-        // Return the completed view to render on screen
-        return convertView;
-    }
-
-
- }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 public class Fragment_dashboard_docente_lista_corsi extends Fragment {
