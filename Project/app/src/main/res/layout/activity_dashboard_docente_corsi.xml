@@ -59,13 +59,123 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        <com.getbase.floatingactionbutton.FloatingActionsMenu
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|bottom"
+            android:id="@+id/menuFabcorso"
+            android:visibility="visible"
+            >
+
+
+            <com.getbase.floatingactionbutton.AddFloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fabcorso"
+                app:fab_stroke_visible="true"
+                app:fab_size="mini"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nuovo"
+                android:background= "@drawable/rounded_corner"
+                android:elevation="7dp"
+                android:textColor="@color/colorAccent"
+
+                />
+
+
+
+            <com.getbase.floatingactionbutton.AddFloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fabcorso1"
+                app:fab_stroke_visible="true"
+                app:fab_size="mini"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Modifica"
+                android:background= "@drawable/rounded_corner"
+                android:elevation="7dp"
+                android:textColor="@color/colorAccent"/>
+
+            <com.getbase.floatingactionbutton.AddFloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fabcorso2"
+                app:fab_stroke_visible="true"
+                app:fab_size="mini"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Elimina"
+                android:background= "@drawable/rounded_corner"
+                android:elevation="7dp"
+                android:textColor="@color/colorAccent"/>
+
+        </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+        <com.getbase.floatingactionbutton.FloatingActionsMenu
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:id="@+id/menuFab"
+            android:visibility="visible"
+            >
+
+
+            <com.getbase.floatingactionbutton.AddFloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fab"
+                app:fab_stroke_visible="true"
+                app:fab_size="mini"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nuovo"
+                android:background= "@drawable/rounded_corner"
+                android:elevation="7dp"
+                android:textColor="@color/colorAccent"
+
+                />
+
+
+
+            <com.getbase.floatingactionbutton.AddFloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fab1"
+                app:fab_stroke_visible="true"
+                app:fab_size="mini"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Modifica"
+                android:background= "@drawable/rounded_corner"
+                android:elevation="7dp"
+                android:textColor="@color/colorAccent"/>
+
+            <com.getbase.floatingactionbutton.AddFloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fab2"
+                app:fab_stroke_visible="true"
+                app:fab_size="mini"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Elimina"
+                android:background= "@drawable/rounded_corner"
+                android:elevation="7dp"
+                android:textColor="@color/colorAccent"/>
+
+        </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
     </android.support.design.widget.CoordinatorLayout>
 
