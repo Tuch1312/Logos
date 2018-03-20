@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <EditText
+        android:id="@+id/editTextModArgomenti"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Inserisci gli Argomenti"/>
+
+    <EditText
+        android:id="@+id/editTextModAula"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Inserisci l'Aula"/>
+
+    <EditText
+        android:id="@+id/editTextModData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Inserisci la Data"/>
+
+    <EditText
+        android:id="@+id/editTextModDurata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Inserisci la Durata"/>
+
+    <EditText
+        android:id="@+id/editTextModOraInizio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Inserisci l'Ora d'Inizio"/>
+
+    <Button
+        android:id="@+id/btnModificaLezione"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Modifica Lezione"
+        style="@style/pulsante_schermo_intero"/>
+
+</LinearLayout>
