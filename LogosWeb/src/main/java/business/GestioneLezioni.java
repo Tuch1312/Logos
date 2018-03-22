@@ -188,6 +188,7 @@ public class GestioneLezioni {
 			e.printStackTrace();
 		}
 		if (corso!=null && lezione!=null) {
+			l.setCorso(corso);
 			em.getTransaction().begin();
 			em.merge(l);
 			em.getTransaction().commit();

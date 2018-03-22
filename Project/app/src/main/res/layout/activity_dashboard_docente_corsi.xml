@@ -68,23 +68,6 @@
             >
 
 
-            <com.getbase.floatingactionbutton.AddFloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/fabcorso"
-                app:fab_stroke_visible="true"
-                app:fab_size="mini"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nuovo"
-                android:background= "@drawable/rounded_corner"
-                android:elevation="7dp"
-                android:textColor="@color/colorAccent"
-
-                />
-
-
 
             <com.getbase.floatingactionbutton.AddFloatingActionButton
                 android:layout_width="wrap_content"
@@ -96,7 +79,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Modifica"
+                android:text="Iscrivi Studente"
                 android:background= "@drawable/rounded_corner"
                 android:elevation="7dp"
                 android:textColor="@color/colorAccent"/>
@@ -111,7 +94,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Elimina"
+                android:text="Elimina Studente"
                 android:background= "@drawable/rounded_corner"
                 android:elevation="7dp"
                 android:textColor="@color/colorAccent"/>
@@ -122,21 +105,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right|bottom"
-            android:id="@+id/menuFab"
-            android:visibility="visible"
+            android:id="@+id/menuFabLezioni"
+            android:visibility="gone"
             >
 
 
             <com.getbase.floatingactionbutton.AddFloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/fab"
+                android:id="@+id/fabCreaLezione"
                 app:fab_stroke_visible="true"
                 app:fab_size="mini"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nuovo"
+                android:text="Nuova Lezione"
                 android:background= "@drawable/rounded_corner"
                 android:elevation="7dp"
                 android:textColor="@color/colorAccent"
@@ -148,14 +131,14 @@
             <com.getbase.floatingactionbutton.AddFloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/fab1"
+                android:id="@+id/fabModificaLezione"
                 app:fab_stroke_visible="true"
                 app:fab_size="mini"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Modifica"
+                android:text="Modifica Lezione"
                 android:background= "@drawable/rounded_corner"
                 android:elevation="7dp"
                 android:textColor="@color/colorAccent"/>
@@ -163,14 +146,14 @@
             <com.getbase.floatingactionbutton.AddFloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/fab2"
+                android:id="@+id/fabEliminaLezione"
                 app:fab_stroke_visible="true"
                 app:fab_size="mini"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Elimina"
+                android:text="Elimina Lezione"
                 android:background= "@drawable/rounded_corner"
                 android:elevation="7dp"
                 android:textColor="@color/colorAccent"/>

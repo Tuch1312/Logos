@@ -104,10 +104,10 @@ public class DashBoardDocenteListe extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
 
         final com.getbase.floatingactionbutton.FloatingActionsMenu menu = findViewById(R.id.menuFab);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
 
         final int ShortAnimationDuration = getResources().getInteger(
                 android.R.integer.config_shortAnimTime);

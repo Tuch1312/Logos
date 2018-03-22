@@ -29,10 +29,10 @@
         <activity android:name=".CreaLezione" />
         <activity android:name=".EliminaCorso" />
         <activity android:name=".ModificaCorso" />
-        <activity android:name=".FormModifica"/>
-        <activity android:name=".EliminaLezione"/>
-        <activity android:name=".ModificaLezione">
-        </activity>
+        <activity android:name=".FormModifica" />
+        <activity android:name=".EliminaLezione" />
+        <activity android:name=".ModificaLezione"></activity>
+        <activity android:name=".ListaModificaLezione"></activity>
     </application>
 
 </manifest>

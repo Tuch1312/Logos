@@ -26,26 +26,5 @@ public class ModificaLezione extends Activity {
         final EditText e3 = findViewById(R.id.editTextModData);
         final EditText e4 = findViewById(R.id.editTextModDurata);
         final EditText e5 = findViewById(R.id.editTextModOraInizio);
-
-        Intent i = getIntent();
-        final Lezione lezione = (Lezione) i.getSerializableExtra("lezione");
-        e1.setText(""+lezione.getArgomenti());
-        e2.setText(""+lezione.getAula());
-        e3.setText(""+lezione.getData());
-        e4.setText(""+lezione.getDurata());
-        e5.setText(""+lezione.getOraInizio());
-
-        Button b = findViewById(R.id.btnModificaLezione);
-
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                lezione.setArgomenti(e1.getText().toString());
-                lezione.setAula(e2.getText().toString());
-                lezione.setData(Long.parseLong(e3.getText().toString()));
-                lezione.setDurata(Integer.parseInt(e4.getText().toString()));
-                lezione.setOraInizio(e5.getText().toString());
-            }
-        });
     }
 }

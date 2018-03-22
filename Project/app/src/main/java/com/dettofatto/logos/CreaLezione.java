@@ -5,8 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
+import com.dettofatto.logos.RetroInterfaces.RetroLezione;
 import com.dettofatto.logos.entities.Lezione;
+import retrofit2.Call;
 
 public class CreaLezione extends Activity {
 
@@ -14,6 +15,8 @@ public class CreaLezione extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crea_lezione);
+
+
 
         Button b = findViewById(R.id.btnCreaLezione);
 
@@ -33,8 +36,12 @@ public class CreaLezione extends Activity {
                 lezione.setData(Long.parseLong(editData.getText().toString()));
                 lezione.setDurata(Integer.parseInt(editDurata.getText().toString()));
                 lezione.setOraInizio(editOraInizio.getText().toString());
+                RetroLezione rl = RetrofitSingleton.r.create(RetroLezione.class);
+                Call<Boolean> c = rl.aggiungilezione(lezione);
             }
         });
+
+
 
     }
 }
