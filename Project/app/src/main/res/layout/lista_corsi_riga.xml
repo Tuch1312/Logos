@@ -43,6 +43,17 @@
         android:textColor="#FFFFFF"
         android:visibility="gone"
         />
+    <Button
+        android:id="@+id/bottone_modifica"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background= "@drawable/rounded_button"
+        android:elevation="7dp"
+        android:text="MODIFICA"
+        android:textColor="#FFFFFF"
+        android:visibility="gone"
+        />
     </LinearLayout>
 
 

@@ -8,6 +8,7 @@
     tools:context="com.dettofatto.logos.DashBoardStudente"
     android:padding="10dp"
     android:fillViewport="true">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,80 +22,86 @@
             android:textStyle="bold"
             android:id="@+id/dashboard_title"
             android:layout_margin="25dp"
-            android:textSize="35dp"/>
+            android:textSize="35dp" />
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="200dp"
+            android:id="@+id/immagine" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Lezione: "
+                android:textSize="25dp"
+                android:id="@+id/lezione"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Lezione: "
-            android:textSize="25dp"
-            android:id="@+id/lezione"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Docente: "
+                android:textSize="25dp"
+                android:id="@+id/docente"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Docente: "
-            android:textSize="25dp"
-            android:id="@+id/docente"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Test:"
+                android:textSize="25dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ore totali:"
+                android:textSize="25dp"
+                android:id="@+id/ore_totali"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Test:"
-            android:textSize="25dp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Ore totali:"
-            android:textSize="25dp"
-            android:id="@+id/ore_totali"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ore trascorse:"
+                android:textSize="25dp"
+                android:id="@+id/ore_trascorse"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Ore trascorse:"
-            android:textSize="25dp"
-            android:id="@+id/ore_trascorse"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ore assenza"
+                android:textSize="25dp"
+                android:id="@+id/ore_assenza"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ora inizio:"
+                android:textSize="25dp"
+                android:id="@+id/ora_inizio"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Ore assenza"
-            android:textSize="25dp"
-            android:id="@+id/ore_assenza"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Ora inizio:"
-            android:textSize="25dp"
-            android:id="@+id/ora_inizio"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Aula:"
+                android:textSize="25dp"
+                android:id="@+id/aula" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Aula:"
-            android:textSize="25dp"
-            android:id="@+id/aula" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Ore: "
-            android:textSize="25dp"
-            android:id="@+id/ore"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ore: "
+                android:textSize="25dp"
+                android:id="@+id/ore"/>
+        </LinearLayout>
 
 
 

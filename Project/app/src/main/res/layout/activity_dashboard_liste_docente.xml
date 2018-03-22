@@ -79,7 +79,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nuovo"
+            android:text="Nuovo Corso"
             android:background= "@drawable/rounded_corner"
             android:elevation="7dp"
             android:textColor="@color/colorAccent"
@@ -98,7 +98,7 @@
             <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Modifica"
+            android:text="Modifica Corso"
             android:background= "@drawable/rounded_corner"
             android:elevation="7dp"
             android:textColor="@color/colorAccent"/>
@@ -113,7 +113,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Elimina"
+            android:text="Elimina Corso"
             android:background= "@drawable/rounded_corner"
             android:elevation="7dp"
             android:textColor="@color/colorAccent"/>
