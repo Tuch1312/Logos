@@ -29,6 +29,4 @@ public interface RetroCorso {
 
     @POST("CancellaStudenteServlet")
     Call<Boolean> cancellaStudente();
-
-
 }

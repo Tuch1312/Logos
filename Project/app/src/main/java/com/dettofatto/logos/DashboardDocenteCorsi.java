@@ -4,9 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
@@ -148,9 +146,11 @@ public class DashboardDocenteCorsi extends AppCompatActivity {
         com.getbase.floatingactionbutton.AddFloatingActionButton fabCreaLezione = findViewById(R.id.fabCreaLezione);
         com.getbase.floatingactionbutton.AddFloatingActionButton fabModificaLezione = findViewById(R.id.fabModificaLezione);
         com.getbase.floatingactionbutton.AddFloatingActionButton fabEliminaLezione = findViewById(R.id.fabEliminaLezione);
+        com.getbase.floatingactionbutton.AddFloatingActionButton fabEliminaStudente = findViewById(R.id.fabEliminaStudente);
         final Intent toCreaLezione = new Intent(this, CreaLezione.class);
         final Intent toModificaLezione = new Intent(this, ListaModificaLezione.class);
         final Intent toEliminaLezione = new Intent(this, EliminaLezione.class);
+        final Intent eliminaStud = new Intent (this, EliminaStudente.class);
         fabCreaLezione.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -169,6 +169,13 @@ public class DashboardDocenteCorsi extends AppCompatActivity {
                 startActivity(toEliminaLezione);
             }
         });
+        fabEliminaStudente.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(eliminaStud);
+            }
+        });
+
 
     }
 
