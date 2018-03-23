@@ -29,7 +29,7 @@ public class ModificaLezione extends Activity {
         setContentView(R.layout.activity_modifica_lezione);
 
         Intent i = getIntent();
-        Lezione l = (Lezione) i.getSerializableExtra("lezione");
+        final Lezione l = (Lezione) i.getSerializableExtra("lezione");
         final EditText e1 = findViewById(R.id.editTextModArgomenti);
         final EditText e2 = findViewById(R.id.editTextModAula);
         final EditText e3 = findViewById(R.id.editTextModData);
@@ -44,13 +44,19 @@ public class ModificaLezione extends Activity {
         final Gson gson = new Gson();
         final String t = "{\"idCorso\":\"1\"}";
 
-        RetroLezione rl = RetrofitSingleton.r.create(RetroLezione.class);
-        final Call<Boolean> call = rl.modificalezione(gson.toJson(l), t);
+        final RetroLezione rl = RetrofitSingleton.r.create(RetroLezione.class);
 
         Button b = findViewById(R.id.btnModificaLezione);
         b.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+                l.setArgomenti(e1.getText().toString());
+                l.setAula(e2.getText().toString());
+                l.setData(Long.parseLong(e3.getText().toString()));
+                l.setDurata(Integer.parseInt(e4.getText().toString()));
+                l.setOraInizio(e5.getText().toString());
+                Call<Boolean> call = rl.modificalezione(gson.toJson(l), t);
                 call.enqueue(new Callback<Boolean>() {
                     @Override
                     public void onResponse(Call<Boolean> call, Response<Boolean> response) {
