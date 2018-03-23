@@ -15,7 +15,7 @@ public interface RetroLezione {
     Call<Boolean> eliminalezione();
 
     @FormUrlEncoded
-    @POST("AggiungiLezioneServlet")
+    @POST("logos/AggiungiLezioneServlet")
     Call<Boolean> aggiungilezione(@Field("lezione") String lezione, @Field("corso") String corso);
 
     @POST("ModificaLezioneServlet")

@@ -165,6 +165,7 @@ public class GestioneLezioni {
 			e.printStackTrace();
 		}
 		if (corso!=null && lezione==null) {
+			l.setCorso(corso);
 			em.getTransaction().begin();
 			em.persist(l);
 			em.getTransaction().commit();
