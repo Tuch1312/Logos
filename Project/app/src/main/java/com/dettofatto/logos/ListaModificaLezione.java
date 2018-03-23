@@ -19,6 +19,7 @@ import retrofit2.Response;
 
 public class ListaModificaLezione extends AppCompatActivity {
     List<Lezione> lista;
+    LezioniAdapter la;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +34,7 @@ public class ListaModificaLezione extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Lezione>> call, Response<List<Lezione>> response) {
                 lista = response.body();
-                LezioniAdapter la = new LezioniAdapter(getApplicationContext(),lista);
+                la = new LezioniAdapter(getApplicationContext(),lista);
                 lv.setAdapter(la);
             }
 
@@ -50,7 +51,9 @@ public class ListaModificaLezione extends AppCompatActivity {
                 Lezione l = (Lezione) lv.getItemAtPosition(position);
                 toModificaLez.putExtra("lezione", l);
                 startActivity(toModificaLez);
+
             }
         });
     }
+    
 }
