@@ -11,8 +11,9 @@ import retrofit2.http.POST;
 
 public interface RetroLezione {
 
-    @POST("EliminaLezioneServlet")
-    Call<Boolean> eliminalezione();
+    @FormUrlEncoded
+    @POST("logos/EliminaLezione")
+    Call<Boolean> eliminalezione(@Field("lezione") String lezione, @Field("corso") String corso);
 
     @FormUrlEncoded
     @POST("logos/AggiungiLezioneServlet")
