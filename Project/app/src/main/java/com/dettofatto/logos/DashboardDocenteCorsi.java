@@ -146,10 +146,12 @@ public class DashboardDocenteCorsi extends AppCompatActivity {
         com.getbase.floatingactionbutton.AddFloatingActionButton fabCreaLezione = findViewById(R.id.fabCreaLezione);
         com.getbase.floatingactionbutton.AddFloatingActionButton fabModificaLezione = findViewById(R.id.fabModificaLezione);
         com.getbase.floatingactionbutton.AddFloatingActionButton fabEliminaLezione = findViewById(R.id.fabEliminaLezione);
+        com.getbase.floatingactionbutton.AddFloatingActionButton fabIscriviStudente = findViewById(R.id.fabIscriviStudente);
         com.getbase.floatingactionbutton.AddFloatingActionButton fabEliminaStudente = findViewById(R.id.fabEliminaStudente);
         final Intent toCreaLezione = new Intent(this, CreaLezione.class);
         final Intent toModificaLezione = new Intent(this, ListaModificaLezione.class);
         final Intent toEliminaLezione = new Intent(this, EliminaLezione.class);
+        final Intent iscriviStudente = new Intent(this, IsciviStudente.class);
         final Intent eliminaStud = new Intent (this, EliminaStudente.class);
         fabCreaLezione.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -167,6 +169,12 @@ public class DashboardDocenteCorsi extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(toEliminaLezione);
+            }
+        });
+        fabIscriviStudente.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(iscriviStudente);
             }
         });
         fabEliminaStudente.setOnClickListener(new View.OnClickListener(){
