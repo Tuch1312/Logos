@@ -34,7 +34,6 @@ public class EliminaCorso extends AppCompatActivity {
         Docente Json = new Docente();
         String g = "{\"mail\":\"docente@mail\"}";
 
-        final Intent toDashCorso = new Intent(this, DashboardDocenteCorsi.class);
         // Setup any handles to view objects here
         // EditText etFoo = (EditText) view.findViewById(R.id.etFoo);
         final ListView lv = findViewById(R.id.lista_elimina_corsi);

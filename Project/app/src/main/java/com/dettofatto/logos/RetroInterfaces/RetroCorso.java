@@ -20,8 +20,9 @@ public interface RetroCorso {
     @POST("logos/EliminaCorsoServlet")
     Call<Boolean> eliminaCorso(@Field("docente") String docente, @Field("corso") String corso);
 
-    @POST("ModificaCorsoServlet")
-    Call<Boolean> modificaCorso();
+    @FormUrlEncoded
+    @POST("logos/ModificaCorsoServlet")
+    Call<Boolean> modificaCorso(@Field("docente") String docente, @Field("corso") String corso);
 
     @POST("IscriviStudenteServlet")
     Call<Boolean> iscriviStudente();
@@ -32,6 +33,4 @@ public interface RetroCorso {
 
     @POST("CancellaStudenteServlet")
     Call<Boolean> cancellaStudente();
-
-
 }

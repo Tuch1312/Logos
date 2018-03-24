@@ -104,10 +104,10 @@ public class DashBoardDocenteListe extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
 
         final com.getbase.floatingactionbutton.FloatingActionsMenu menu = findViewById(R.id.menuFab);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
 
         final int ShortAnimationDuration = getResources().getInteger(
                 android.R.integer.config_shortAnimTime);
@@ -147,6 +147,14 @@ public class DashBoardDocenteListe extends AppCompatActivity {
             public void onClick(View view) {
                 if(mViewPager.getCurrentItem()==1)
                     startActivity(toCreaCorso);
+            }
+        });
+        final Intent toModificaCorso = new Intent(this, ModificaCorso.class);
+        AddFloatingActionButton fab1 = findViewById(R.id.fab1);
+        fab1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(toModificaCorso);
             }
         });
         final Intent toEliminaCorso = new Intent(this, EliminaCorso.class);

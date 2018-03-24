@@ -22,15 +22,16 @@ if(validateEmail($("#input-mail-login").val())) {
 utente.mail = $("#input-mail-login").val();
 utente.password = $("#input-password-login").val()
 $.ajax({
-		url: 'http://localhost:8080/LogosWeb/LoginServlet',
+		url: 'http://logoscloud.ddns.net:8080/LogosWeb/LoginServlet',
 		method: 'post',
 		data: utente
 	})
 	.done(function(esito){
 		console.log(esito);
-    if (esito == "sei un prila") {
+    if (esito == "123456789") {
          $("#login-fallito").css("display", "block")
-        eliminaerrore()
+        eliminaerrore();
+        
     } else {
         localStorage.setItem('utente', esito);
         $('#myModal').modal('toggle');
@@ -81,6 +82,7 @@ function eliminaGiaLoggato() {
 
 $("#submit-registrazione").click( function() {
     
+//Costrusco l'oggetto utente
 if(validateEmail($("#input-mail-registrati").val())){
 var utente = {}
 utente.nome = $("#input-nome-registrati").val();
@@ -89,19 +91,39 @@ utente.mail = $("#input-mail-registrati").val();
 utente.password = $("#input-password-registrati").val();
 utente.isDocente = $('input[name="tipo"]:checked').val();
     
+    //chiamo la servlket di registrazione, restituosce true o false
     $.ajax({
-		url: 'http://logoscloud.ddns.net:8080/logos/RegistrazioneServlet',
+		url: 'http://logoscloud.ddns.net:8080/LogosWeb/RegistrazioneServlet',
 		method: 'post',
 		data: utente
 	})
+    //se va a buon fine
 	.done(function(esito){
 		console.log(esito);
+    //ma restitusce false
     if (esito == false) {
          $("#registrazione-fallita").css("display", "block")
         eliminaerrore()
     } else {
-        localStorage.setItem('utente', JSON.stringify(utente));
+        var uLogin = {}
+        uLogin.mail = utente.mail;
+        uLogin.password = utente.password;
+    //altriemnti se la registrazione è andata a buon fine eseguo il login chre mi restituisce il codice della persona
+        $.ajax({
+            url: 'http://logoscloud.ddns.net:8080/LogosWeb/LoginServlet',
+            method: 'post',
+		  data: uLogin
+        })
+        .done (function (esito) {
+        //salvo il codice della persona nell browser
+        localStorage.setItem('utente', esito);
+        //chiudo il modal
         $('#myModal').modal('toggle');
+        //cambio la scritta login con il nome e il cognom edell'utente
+
+        $("#login-button").html("<i class=\"material-icons\">person</i>" + utente.nome + " " + utente.cognome)
+             
+        })
     }
 		
 	})
@@ -126,7 +148,8 @@ $("#input-mail-registrati").click(function () {
 
 //Se sei già registrato e clicchi su Login
 $("#login-button").click( function () {
-    if (localStorage.getItem("utente").includes("mail")) {
+    if (localStorage.getItem("utente") != null) {
+    if (localStorage.getItem("utente").length == 32) {
                   $("#login-card").css("display", "none")
                   $("#register-card").css("display", "none")
                 $("#gia-loggato").css("display", "block")
@@ -138,6 +161,7 @@ $("#login-button").click( function () {
                   $("#register-card").css("display", "none")
                 $("#gia-loggato").css("display", "none")
               }
+    }
 }
 );
 

@@ -25,41 +25,6 @@ import retrofit2.Response;
 import static android.content.ContentValues.TAG;
 
 
-class LezioniAdapter extends ArrayAdapter<Lezione>{
-    public LezioniAdapter(Context context, List<Lezione> listaLezioni) {
-        super(context, 0, listaLezioni);
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        // Get the data item for this position
-        Lezione lezione = getItem(position);
-        // Check if an existing view is being reused, otherwise inflate the view
-        if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.lista_lezioni_riga, parent, false);
-        }
-        // Lookup view for data population
-        TextView data = (TextView) convertView.findViewById(R.id.lista_lezioni_riga_data);
-        TextView aula = (TextView) convertView.findViewById(R.id.lista_lezioni_riga_aula);
-        TextView ora = (TextView) convertView.findViewById(R.id.lista_lezioni_riga_ora);
-        TextView numeroLezione =(TextView) convertView.findViewById(R.id.lista_lezioni_riga_numero);
-        // Populate the data into the template view using the data object
-        data.setText(""+lezione.getData());
-        aula.setText(""+lezione.getAula());
-        ora.setText(""+lezione.getOraInizio());
-        numeroLezione.setText(""+lezione.getNumeroLezione());
-        // Return the completed view to render on screen
-        return convertView;
-    }
-
-
-}
-
-
-
-
-
-
 public class Fragment_dashboard_docente_lista_lezioni extends Fragment {
 
 

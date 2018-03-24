@@ -158,6 +158,7 @@ public class GestioneCorso {
 		}
 		if (docente != null) {
 			if (docente.getMail().equals((em.find(Corso.class, c.getIdCorso()).getDocente().getMail()))) {
+				c.setDocente(docente);
 				em.getTransaction().begin();
 				em.merge(c);
 				em.getTransaction().commit();

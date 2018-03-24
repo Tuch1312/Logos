@@ -1,9 +1,10 @@
 package com.dettofatto.logos;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
@@ -91,17 +92,98 @@ public class DashboardDocenteCorsi extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
 
+        final com.getbase.floatingactionbutton.FloatingActionsMenu menuCorso = findViewById(R.id.menuFabcorso);
+        final com.getbase.floatingactionbutton.FloatingActionsMenu menuLezioni = findViewById(R.id.menuFabLezioni);
+
+        final int ShortAnimationDuration = getResources().getInteger(
+                android.R.integer.config_shortAnimTime);
+
+        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout){
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                if(position == 0){
+                    menuLezioni.animate()
+                            .alpha(0f)
+                            .setDuration(ShortAnimationDuration)
+                            .setListener(new AnimatorListenerAdapter() {
+                                @Override
+                                public void onAnimationEnd(Animator animation) {
+                                    menuLezioni.setVisibility(View.GONE);
+                                }
+                            });
+                    menuCorso.setAlpha(0f);
+                    menuCorso.setVisibility(View.VISIBLE);
+                    menuCorso.animate()
+                            .alpha(1f)
+                            .setDuration(ShortAnimationDuration)
+                            .setListener(null);
+
+                } else {
+                    menuLezioni.setAlpha(0f);
+                    menuLezioni.setVisibility(View.VISIBLE);
+                    menuLezioni.animate()
+                            .alpha(1f)
+                            .setDuration(ShortAnimationDuration)
+                            .setListener(null);
+                    menuCorso.animate()
+                            .alpha(0f)
+                            .setDuration(ShortAnimationDuration)
+                            .setListener(new AnimatorListenerAdapter() {
+                                @Override
+                                public void onAnimationEnd(Animator animation) {
+                                    menuCorso.setVisibility(View.GONE);
+                                }
+                            });
+
+                }
+            }
+        });
+
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        com.getbase.floatingactionbutton.AddFloatingActionButton fabCreaLezione = findViewById(R.id.fabCreaLezione);
+        com.getbase.floatingactionbutton.AddFloatingActionButton fabModificaLezione = findViewById(R.id.fabModificaLezione);
+        com.getbase.floatingactionbutton.AddFloatingActionButton fabEliminaLezione = findViewById(R.id.fabEliminaLezione);
+        com.getbase.floatingactionbutton.AddFloatingActionButton fabIscriviStudente = findViewById(R.id.fabIscriviStudente);
+        com.getbase.floatingactionbutton.AddFloatingActionButton fabEliminaStudente = findViewById(R.id.fabEliminaStudente);
+        final Intent toCreaLezione = new Intent(this, CreaLezione.class);
+        final Intent toModificaLezione = new Intent(this, ListaModificaLezione.class);
+        final Intent toEliminaLezione = new Intent(this, EliminaLezione.class);
+        final Intent iscriviStudente = new Intent(this, IsciviStudente.class);
+        final Intent eliminaStud = new Intent (this, EliminaStudente.class);
+        fabCreaLezione.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+                startActivity(toCreaLezione);
             }
         });
+        fabModificaLezione.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(toModificaLezione);
+            }
+        });
+        fabEliminaLezione.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(toEliminaLezione);
+            }
+        });
+        fabIscriviStudente.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(iscriviStudente);
+            }
+        });
+        fabEliminaStudente.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(eliminaStud);
+            }
+        });
+
 
     }
 

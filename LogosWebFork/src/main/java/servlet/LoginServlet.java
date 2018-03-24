@@ -33,8 +33,14 @@ public class LoginServlet extends HttpServlet {
 		String s = request.getParameter("mail");
 		String r = request.getParameter("password");
 		GestionePersona gp = new GestionePersona();
-		String t = gp.login(s, r);
-		if(t!=null || t.equals("")) {
+		String t = null;
+		try  {
+			t = gp.login(s, r);
+		} catch (Exception e) {
+			
+		}
+		
+		if(t!=null) {
 			response.getWriter().append(t);
 		} else {
 			response.getWriter().append("123456789");

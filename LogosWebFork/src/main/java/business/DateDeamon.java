@@ -28,7 +28,7 @@ public class DateDeamon {
 		System.out.println("Sono quasi aprtito");
 	s = new Scheduler();
 	em = JPAUtility.emf.createEntityManager();
-	s.schedule("* * * * *", new Runnable() {
+	s.schedule(pattern, new Runnable() {
 		public void run() {
 			System.out.println("Sono partito");
 			Date now = new Date();
@@ -44,9 +44,9 @@ public class DateDeamon {
 						l = ll;
 					}
 				}
-				SimpleDateFormat sdf1 = new SimpleDateFormat("d M");
+				SimpleDateFormat sdf1 = new SimpleDateFormat("d M yyyy");
 				SimpleDateFormat sdf2 = new SimpleDateFormat("HH:mm:ss");
-				SimpleDateFormat sdf3 = new SimpleDateFormat("d M HH:mm:ss");
+				SimpleDateFormat sdf3 = new SimpleDateFormat("d M yyyy HH:mm:ss");
 				String data = sdf1.format(l.getData());
 				String ora = sdf2.format(l.getOraInizio());
 				String d3 = data.trim() + " " + ora.trim() ;
@@ -62,6 +62,7 @@ public class DateDeamon {
 				cal.setTime(date);
 				cal.add(Calendar.HOUR, c.getDurataLezione());
 				Date fine = cal.getTime();
+				System.out.println(fine);
 				if (fine.before(now)) {
 					c.setLezioneCorrente(c.getLezioneCorrente() + 1);
 					em.getTransaction().begin();
@@ -78,15 +79,8 @@ public class DateDeamon {
 	
 	//Parto il demone
 	s.start();
-	
-	
-	
-	
-	}
-	
-	
-	
 
+	}
 	
 
 }

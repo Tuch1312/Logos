@@ -1,13 +1,21 @@
          
             
                 //questa sezione viene eseguita solo al refresh della pagina
-                var utente = JSON.parse(localStorage.getItem("utente"))
-            	if (!utente) {
+                var codice = localStorage.getItem("utente");
+            	if (!codice || codice.length != 32) {
 			    alert("Sessione scaduta, accedere nuovamente")
                 window.location.href = 'index.html';
 			} else {
-			    
-			       if (utente.isDocente == "true") {
+                var s = {};
+                s.codicePersona=codice;
+			         $.ajax({
+                         url: "http://logoscloud.ddns.net:8080/LogosWeb/GetPersonaServlet",
+                         method: 'post',
+                         data: s
+                     })
+                .done(function (esito) {
+                       var utente = JSON.parse(esito)
+                       	       if (utente.ruolo == "D" || utente.ruolo == "d") {
 			        $(".card-main").css("display", "none");
 			       $("#tabbed-liste-docente").css("display", "block")
 			           $("#menu-docente").css("display", "block");
@@ -18,6 +26,8 @@
                        getCorsiPerStudente();
 			        
 			       }
+                     })
+		
 			
 			
 			}
@@ -87,13 +97,13 @@
 // --------------------------------------------
 
 
-
+//Gestisce "i mie corsi" di studente
 function getCorsiPerStudente() {
-var studente = "studente=" + localStorage.getItem("utente");
+var studente = "codicePersona=" + localStorage.getItem("utente");
 
 
   $.ajax({
-		url: "http://logoscloud.ddns.net:8080/logos/GetCorsiPerStudenteServlet",
+		url: "http://logoscloud.ddns.net:8080/LogosWeb/GetCorsiPerStudenteServlet",
 		method: 'post',
         data: studente
 	})
@@ -147,7 +157,10 @@ function initDashboardStudente(idcorso) {
     })
       $("#tabella-argomenti-passati-dashboard-studente").html(allHtmlPst + "</tbody>");
       $("#tabella-argomenti-prossimi-dashboard-studente").html(allHtmlFtr + "</tbody>");
-    $("#lista-lezioni-dashboard-studente").html(allHtmlLez + "</tbody>")
+    $("#lista-lezioni-dashboard-studente").html(allHtmlLez + "</tbody>");
+    
+     $("#ore-totali-dashboard-studenti").html((corso.numeroGiorni * corso.lezionePerGiorno)* corso.durataLezione)
+    $("#ore-trascorse-dashboard-studente").html((corso.lezioneCorrente -1) * corso.durataLezione)
 
     
 }
@@ -155,20 +168,23 @@ function initDashboardStudente(idcorso) {
 //gestione iscrizione per studenye
 $("#button-iscriviti-studente").click(
 function () {
+        $("#success-iscrizione-studente").css("display","none")
+     $("#error-iscrizione-studente").css("display","none")
     var codicecors = $("#input-iscriviti-studente").val();
-    var student = JSON.parse(localStorage.getItem("utente"));
+    var student = localStorage.getItem("utente");
     var dati = {}
     
-    dati.studente = JSON.stringify(student);
+    dati.codicePersona = student;
     dati.codiceCorso = codicecors;
     console.log(dati)
-      $.ajax({
+    $.ajax({
 		url: "http://logoscloud.ddns.net:8080/LogosWeb/IscrivitiServlet",
 		method: 'post',
         data: dati
 	})
 	.done(function(esito){
-          if (esito == true) {
+        		console.log(esito)
+          if (esito.includes("true")) {
               $("#success-iscrizione-studente").css("display","block")
           } else {
               $("#error-iscrizione-studente").css("display","block")

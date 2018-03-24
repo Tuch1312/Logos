@@ -58,6 +58,8 @@ public class GestioneCorso {
 			corso.setOraInizioLezioni(oraInizioLezioni);
 			corso.setPatternLezioni(patternLezioni);
 			corso.setDurataLezione(durataLezione);
+			corso.setNumeroLezioni(numeroGiorni * numLezioniXgiorno);
+			corso.setOreTotali((numeroGiorni * numLezioniXgiorno) * durataLezione);
 			em.getTransaction().begin();
 			em.persist(corso);
 			em.getTransaction().commit();
@@ -293,9 +295,13 @@ public class GestioneCorso {
 		iscrizione.setCorso(c);
 		iscrizione.setStudenteIscritto(s);
 		iscrizione.setIscrizionePk(ipk);
+		try {
 		em.getTransaction().begin();
 		em.persist(iscrizione);
 		em.getTransaction().commit();
+		} catch (Exception e) {
+			return false;
+		}
 	
 		return true;
 	}
