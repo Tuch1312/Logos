@@ -1,4 +1,4 @@
-         
+var dashboardStudente = false;
             
                 //questa sezione viene eseguita solo al refresh della pagina
                 var codice = localStorage.getItem("utente");
@@ -47,11 +47,18 @@
             });
                 //dashboard
               $("#menu-studente-dash").click(function () {
+                  if (dashboardStudente == false) {
+        alert("Seleziona un corso prima");
+               
+         
+        
+    } else {
                  $(".card-main").css("display", "none");
 			     $("#tabbed-dashboard-studente").css("display", "block")
                    $(".menu-item").removeClass("active");
                 $("#menu-studente-dash").addClass("active");
-                
+                    
+    }
             });
                 //iscriviti
                $("#menu-studente-iscriviti").click(function () {
@@ -126,8 +133,32 @@ var studente = "codicePersona=" + localStorage.getItem("utente");
 
 //gestione della dashbaord studente
 function initDashboardStudente(idcorso) {
+  dashboardStudente = true;
+    
+    
+            $(".menu-item").removeClass("active");
+                $("#menu-studente-dash").addClass("active");
     var corso = JSON.parse(sessionStorage.getItem("c" + idcorso))
-    //&per ogni lezoine in ezione crea tre tabelle: argomenti passati, argomenti futuri, tutte le lezioni
+    
+         $("#ore-totali-dashboard-studenti").html((corso.numeroGiorni * corso.lezionePerGiorno)* corso.durataLezione)
+    
+    $("#ore-trascorse-dashboard-studente").html((corso.lezioneCorrente -1) * corso.durataLezione)
+    var dati = {};
+    dati.idCorso = corso.idCorso;
+    dati.codicePersona = localStorage.getItem("utente");
+    $.ajax({
+        url: "http://logoscloud.ddns.net:8080/LogosWeb/GetAssenzeServlet",
+        method : "post",
+        data : dati 
+    })
+    .done(function(esito) {
+        
+        var assenze= JSON.parse(esito);
+        $("#ore-assenze-dashboard-studente").html(assenze.oreAssenza);
+        
+        $("#percent-assenze-dashboard-studenti").html(assenze.percentuale);
+            });
+    //per ogni lezoine in ezione crea tre tabelle: argomenti passati, argomenti futuri, tutte le lezioni
     var oggi = Date.now();
     var pstCount = 0;
     var ftrCount = 0;
@@ -150,18 +181,18 @@ function initDashboardStudente(idcorso) {
         }
       
         
-        
-        //e per ogni lezione crea anche la tabella tutte le lezioniù
-        html = "<tr><td>" + element.numeroLezione + "</td><td>" + element.argomenti + "</td><td>" + element.data + "</td><td>" + element.oraInizio + "</td><td>" + element.aula + "</td></tr>";
+        var data = new Date(element.data);
+       
+        //e per ogni lezione crea anche la tabella con tutte le lezioniù
+        html = "<tr><td>" + element.numeroLezione + "</td><td>" + element.argomenti + "</td><td>" + data.getDate() + "/" + data.getMonth() + "/" + data.getYear() + "</td><td>" + element.oraInizio + "</td><td>" + element.aula + "</td></tr>";
         allHtmlLez = allHtmlLez + html;
     })
       $("#tabella-argomenti-passati-dashboard-studente").html(allHtmlPst + "</tbody>");
       $("#tabella-argomenti-prossimi-dashboard-studente").html(allHtmlFtr + "</tbody>");
     $("#lista-lezioni-dashboard-studente").html(allHtmlLez + "</tbody>");
     
-     $("#ore-totali-dashboard-studenti").html((corso.numeroGiorni * corso.lezionePerGiorno)* corso.durataLezione)
-    $("#ore-trascorse-dashboard-studente").html((corso.lezioneCorrente -1) * corso.durataLezione)
 
+   
     
 }
 
