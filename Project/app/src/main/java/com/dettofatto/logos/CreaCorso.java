@@ -1,6 +1,7 @@
 package com.dettofatto.logos;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 
 import com.dettofatto.logos.RetroInterfaces.RetroCorso;
 import com.dettofatto.logos.entities.Corso;
+import com.dettofatto.logos.entities.Docente;
 import com.google.gson.Gson;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -24,8 +26,10 @@ public class CreaCorso extends Activity {
 
         Button b = findViewById(R.id.button);
         Button b2 = findViewById(R.id.button2);
+        Intent i = getIntent();
+        final Docente d = (Docente) i.getSerializableExtra("Docente");
         final Gson gson = new Gson();
-        final String g = "{\"mail\":\"docente@mail\"}";
+        final String g = gson.toJson(d);
 
         final LinearLayout ll = findViewById(R.id.layoutscomparsa);
         final EditText editTitolo = findViewById(R.id.editTitolo);;

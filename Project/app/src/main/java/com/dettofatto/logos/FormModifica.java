@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.dettofatto.logos.RetroInterfaces.RetroCorso;
 import com.dettofatto.logos.RetroInterfaces.RetroLister;
 import com.dettofatto.logos.entities.Corso;
+import com.dettofatto.logos.entities.Docente;
 import com.dettofatto.logos.fragment.CorsiAdapterPerEliminazione;
 import com.google.gson.Gson;
 
@@ -30,7 +31,6 @@ public class FormModifica extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_modifica);
 
-        final String g = "{\"mail\":\"docente@mail\"}";
         final Gson gson = new Gson();
 
         final EditText e1 = findViewById(R.id.editTextTitolo);
@@ -42,6 +42,7 @@ public class FormModifica extends AppCompatActivity {
 
         Intent i = getIntent();
         final Corso corso = (Corso) i.getSerializableExtra("corso");
+        final Docente d = corso.getDocente();
         e1.setText(""+corso.getTitolo());
         e2.setText(""+corso.getDescrizione());
         e3.setText(""+corso.getNumMaxStudenti());
@@ -63,7 +64,7 @@ public class FormModifica extends AppCompatActivity {
 
 
                 RetroCorso rc = RetrofitSingleton.r.create(RetroCorso.class);
-                Call<Boolean> c = rc.modificaCorso(g, gson.toJson(corso));
+                Call<Boolean> c = rc.modificaCorso(gson.toJson(d), gson.toJson(corso));
                 c.enqueue(new Callback<Boolean>() {
                     @Override
                     public void onResponse(Call<Boolean> call, Response<Boolean> response) {

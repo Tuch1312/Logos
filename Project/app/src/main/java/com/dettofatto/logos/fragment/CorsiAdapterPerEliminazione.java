@@ -15,6 +15,7 @@ import com.dettofatto.logos.RetroInterfaces.RetroCorso;
 import com.dettofatto.logos.RetroInterfaces.RetroLister;
 import com.dettofatto.logos.RetrofitSingleton;
 import com.dettofatto.logos.entities.Corso;
+import com.dettofatto.logos.entities.Docente;
 import com.google.gson.Gson;
 
 import java.util.List;
@@ -34,6 +35,7 @@ public class CorsiAdapterPerEliminazione extends ArrayAdapter<Corso> {
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get the data item for this position
         final Corso corso = getItem(position);
+        final Docente d = corso.getDocente();
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.lista_corsi_riga, parent, false);
@@ -53,10 +55,10 @@ public class CorsiAdapterPerEliminazione extends ArrayAdapter<Corso> {
             @Override
             public void onClick(View v) {
 
-                String g = "{\"mail\":\"docente@mail\"}";
+
                 final Gson gson = new Gson();
                 RetroCorso rc = RetrofitSingleton.r.create(RetroCorso.class);
-                Call<Boolean> c = rc.eliminaCorso(g, gson.toJson(corso));
+                Call<Boolean> c = rc.eliminaCorso(gson.toJson(d), gson.toJson(corso));
                 c.enqueue(new Callback<Boolean>() {
                     @Override
                     public void onResponse(Call<Boolean> call, Response<Boolean> response) {

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.dettofatto.logos.entities.Docente;
 import com.dettofatto.logos.entities.Lezione;
 
 public class DashboardDocenteLezione extends Activity {
@@ -15,6 +16,7 @@ public class DashboardDocenteLezione extends Activity {
         setContentView(R.layout.activity_dashboard_docente_lezione);
 
         Intent i = getIntent();
+        Docente d = (Docente) i.getSerializableExtra("Docente");
         Lezione l = (Lezione) i.getSerializableExtra("Lezione");
 
 

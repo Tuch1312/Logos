@@ -30,6 +30,7 @@ public class ModificaLezione extends Activity {
 
         Intent i = getIntent();
         final Lezione l = (Lezione) i.getSerializableExtra("lezione");
+        final Corso corso = (Corso) i.getSerializableExtra("Corso");
         final EditText e1 = findViewById(R.id.editTextModArgomenti);
         final EditText e2 = findViewById(R.id.editTextModAula);
         final EditText e3 = findViewById(R.id.editTextModData);
@@ -42,7 +43,7 @@ public class ModificaLezione extends Activity {
         e5.setText(""+l.getOraInizio());
 
         final Gson gson = new Gson();
-        final String t = "{\"idCorso\":\"1\"}";
+        final String t = gson.toJson(corso);
 
         final RetroLezione rl = RetrofitSingleton.r.create(RetroLezione.class);
 

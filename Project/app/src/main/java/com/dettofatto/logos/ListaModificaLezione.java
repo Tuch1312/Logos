@@ -8,8 +8,10 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.dettofatto.logos.RetroInterfaces.RetroLister;
+import com.dettofatto.logos.entities.Corso;
 import com.dettofatto.logos.entities.Lezione;
 import com.dettofatto.logos.fragment.LezioniAdapter;
+import com.google.gson.Gson;
 
 import java.util.List;
 
@@ -25,7 +27,11 @@ public class ListaModificaLezione extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_modifica_lezione);
         final ListView lv = findViewById(R.id.listaModificaLezioni);
-        final String t = "{\"idCorso\":\"1\"}";
+
+        Intent i = getIntent();
+        Gson gson = new Gson();
+        final Corso corso = (Corso)i.getSerializableExtra("Corso");
+        final String t = gson.toJson(corso);
 
         RetroLister rv = RetrofitSingleton.r.create(RetroLister.class);
         final Call<List<Lezione>> c = rv.getLezioniPerCorso(t);
@@ -49,6 +55,7 @@ public class ListaModificaLezione extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Lezione l = (Lezione) lv.getItemAtPosition(position);
+                toModificaLez.putExtra("Corso", corso);
                 toModificaLez.putExtra("lezione", l);
                 startActivity(toModificaLez);
 

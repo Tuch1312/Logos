@@ -1,5 +1,6 @@
 package com.dettofatto.logos;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -27,11 +28,10 @@ public class IsciviStudente extends AppCompatActivity {
         super.onCreate(savedIstanceState);
         setContentView(R.layout.activity_iscrivi_studente);
 
+        Intent i = getIntent();
         final Gson gson = new Gson();
-        final Docente d = new Docente();
-        d.setMail("docente@mail");
-        final Corso c = new Corso();
-        c.setIdCorso(1);
+        final Corso c = (Corso)i.getSerializableExtra("Corso");
+        final Docente d = (Docente)i.getSerializableExtra("Docente");
 
         final EditText editText = findViewById(R.id.mail_studente_iscrivere);
         Button iscriviStudente = findViewById(R.id.btn_iscivi_studente);
