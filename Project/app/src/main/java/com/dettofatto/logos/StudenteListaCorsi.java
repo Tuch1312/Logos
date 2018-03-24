@@ -24,6 +24,7 @@ import android.widget.TextView;
 import com.dettofatto.logos.RetroInterfaces.RetroLister;
 import com.dettofatto.logos.entities.Corso;
 import com.dettofatto.logos.entities.Studente;
+import com.getbase.floatingactionbutton.AddFloatingActionButton;
 import com.google.gson.Gson;
 
 import java.util.List;
@@ -144,6 +145,14 @@ public class StudenteListaCorsi extends AppCompatActivity {
                 toDashStudente.putExtra("studente", s);
                 toDashStudente.putExtra("corso",lista.get(position));
                 startActivity(toDashStudente);
+            }
+        });
+        com.getbase.floatingactionbutton.AddFloatingActionButton fabAggiungiCorsi = findViewById(R.id.fab_aggiungi_corsi);
+        final Intent toAggiungiCorso = new Intent(this, IscrizioneCorsoStudente.class);
+        fabAggiungiCorsi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(toAggiungiCorso);
             }
         });
     }

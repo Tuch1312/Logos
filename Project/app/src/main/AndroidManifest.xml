@@ -32,7 +32,8 @@
         <activity android:name=".FormModifica" />
         <activity android:name=".EliminaLezione" />
         <activity android:name=".EliminaStudente"/>
-        <activity android:name=".IscriviStudente"/>
+        <activity android:name=".IsciviStudente"/>
+        <activity android:name=".IscrizioneCorsoStudente"/>
         <activity android:name=".ModificaLezione"></activity>
         <activity android:name=".ListaModificaLezione"></activity>
     </application>

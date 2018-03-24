@@ -1,12 +1,7 @@
 package com.dettofatto.logos.RetroInterfaces;
 
-import com.dettofatto.logos.entities.Docente;
-
 import retrofit2.Call;
-<<<<<<< Updated upstream
 import retrofit2.http.Field;
-=======
->>>>>>> Stashed changes
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 
@@ -24,13 +19,15 @@ public interface RetroCorso {
     @POST("logos/ModificaCorsoServlet")
     Call<Boolean> modificaCorso(@Field("docente") String docente, @Field("corso") String corso);
 
-    @POST("IscriviStudenteServlet")
-    Call<Boolean> iscriviStudente();
+    @FormUrlEncoded
+    @POST("logos/IscriviStudenteServlet")
+    Call<Boolean> iscriviStudente(@Field("corso") String corso,@Field("docente") String docente,@Field("mail") String mailStudente);
 
     @FormUrlEncoded
-    @POST("IscrivitiServlet")
-    Call<Boolean> iscriviti();
+    @POST("logos/IscrivitiServlet")
+    Call<Boolean> iscriviti(@Field("studente") String studente, @Field("codiceCorso") int idCorso);
 
-    @POST("CancellaStudenteServlet")
-    Call<Boolean> cancellaStudente();
+    @FormUrlEncoded
+    @POST("logos/CancellaStudenteServlet")
+    Call<Boolean> cancellaStudente(@Field("studente") String studente, @Field("corso") String corso, @Field("docente")String docente);
 }
