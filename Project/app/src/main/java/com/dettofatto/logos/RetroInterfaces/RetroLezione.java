@@ -11,13 +11,15 @@ import retrofit2.http.POST;
 
 public interface RetroLezione {
 
-    @POST("EliminaLezioneServlet")
-    Call<Boolean> eliminalezione();
+    @FormUrlEncoded
+    @POST("logos/EliminaLezione")
+    Call<Boolean> eliminalezione(@Field("lezione") String lezione, @Field("corso") String corso);
 
     @FormUrlEncoded
-    @POST("AggiungiLezioneServlet")
+    @POST("logos/AggiungiLezioneServlet")
     Call<Boolean> aggiungilezione(@Field("lezione") String lezione, @Field("corso") String corso);
 
-    @POST("ModificaLezioneServlet")
-    Call<Boolean> modificalezione();
+    @FormUrlEncoded
+    @POST("logos/ModificaLezioneServlet")
+    Call<Boolean> modificalezione(@Field("lezione") String lezione, @Field("corso") String corso);
 }

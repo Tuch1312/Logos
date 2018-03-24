@@ -68,14 +68,12 @@
             >
 
 
-
             <com.getbase.floatingactionbutton.AddFloatingActionButton
+                android:id="@+id/fabIscriviStudente"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/fabcorso1"
-                app:fab_stroke_visible="true"
                 app:fab_size="mini"
-                />
+                app:fab_stroke_visible="true" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -85,12 +83,11 @@
                 android:textColor="@color/colorAccent"/>
 
             <com.getbase.floatingactionbutton.AddFloatingActionButton
+                android:id="@+id/fabEliminaStudente"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/fabcorso2"
-                app:fab_stroke_visible="true"
                 app:fab_size="mini"
-                />
+                app:fab_stroke_visible="true" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

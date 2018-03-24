@@ -18,6 +18,7 @@ public class GestioneLezioni {
 	 * chiama il metodo datlezioni() per assegnare una data 
 	 */
 	public boolean creaLezioni(Corso c) {
+		
 		EntityManager em = JPAUtility.emf.createEntityManager();
 		for(int i = 0;i<calcNumLezioni(c);i++) {
 			Lezione lez = new Lezione();
@@ -165,6 +166,7 @@ public class GestioneLezioni {
 			e.printStackTrace();
 		}
 		if (corso!=null && lezione==null) {
+			l.setCorso(corso);
 			em.getTransaction().begin();
 			em.persist(l);
 			em.getTransaction().commit();
