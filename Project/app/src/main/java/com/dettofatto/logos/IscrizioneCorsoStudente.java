@@ -1,6 +1,7 @@
 package com.dettofatto.logos;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,20 +23,19 @@ public class IscrizioneCorsoStudente extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iscrizione_corso_studente);
-        final Studente s = new Studente();
-        s.setMail("yolo");
-        final Corso c = new Corso();
-        c.setIdCorso(1);
+        Intent i = getIntent();
+        final Studente s = (Studente) i.getSerializableExtra("Studente");
+
         final Gson gson = new Gson();
 
-        EditText inserisciCodice = findViewById(R.id.editText6);
+        final EditText inserisciCodice = findViewById(R.id.editText6);
         Button iscriviti = findViewById(R.id.button2);
         final RetroCorso rc = RetrofitSingleton.r.create(RetroCorso.class);
 
         iscriviti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Call<Boolean> call = rc.iscriviti(gson.toJson(s), c.getIdCorso());
+                Call<Boolean> call = rc.iscriviti(gson.toJson(s), inserisciCodice.getText().toString());
                 call.enqueue(new Callback<Boolean>() {
                     @Override
                     public void onResponse(Call<Boolean> call, Response<Boolean> response) {

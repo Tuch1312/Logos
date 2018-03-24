@@ -17,6 +17,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.dettofatto.logos.adapter.SectionsPagerAdapter;
+import com.dettofatto.logos.entities.Corso;
+import com.dettofatto.logos.entities.Docente;
 import com.dettofatto.logos.fragment.Fragment_dashboard_docente_corso_dash;
 import com.dettofatto.logos.fragment.Fragment_dashboard_docente_corso_lezioni;
 
@@ -79,7 +81,14 @@ public class DashboardDocenteCorsi extends AppCompatActivity {
 
 
 
-
+        Intent i = getIntent();
+        final Docente d = (Docente) i.getSerializableExtra("Docente");
+        final Corso c =  (Corso) i.getSerializableExtra("Corso");
+        Bundle b = new Bundle();
+        b.putSerializable("Docente", d);
+        b.putSerializable("Corso", c);
+        fragment1.setArguments(b);
+        fragment2.setArguments(b);
         //Aggiungo i fragment alla lista
         fragmentList.add(fragment1);
         fragmentList.add(fragment2);
@@ -149,10 +158,18 @@ public class DashboardDocenteCorsi extends AppCompatActivity {
         com.getbase.floatingactionbutton.AddFloatingActionButton fabIscriviStudente = findViewById(R.id.fabIscriviStudente);
         com.getbase.floatingactionbutton.AddFloatingActionButton fabEliminaStudente = findViewById(R.id.fabEliminaStudente);
         final Intent toCreaLezione = new Intent(this, CreaLezione.class);
+        toCreaLezione.putExtra("Corso", c);
         final Intent toModificaLezione = new Intent(this, ListaModificaLezione.class);
+        toModificaLezione.putExtra("Corso", c);
         final Intent toEliminaLezione = new Intent(this, EliminaLezione.class);
+        toEliminaLezione.putExtra("Corso", c);
         final Intent iscriviStudente = new Intent(this, IsciviStudente.class);
+        iscriviStudente.putExtra("Corso", c);
+        iscriviStudente.putExtra("Docente", d);
         final Intent eliminaStud = new Intent (this, EliminaStudente.class);
+        eliminaStud.putExtra("Corso", c);
+        eliminaStud.putExtra("Docente", d);
+
         fabCreaLezione.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

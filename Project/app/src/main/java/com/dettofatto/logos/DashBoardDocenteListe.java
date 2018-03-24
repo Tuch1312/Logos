@@ -22,6 +22,8 @@ import android.widget.ListView;
 
 import com.dettofatto.logos.adapter.SectionsPagerAdapter;
 
+import com.dettofatto.logos.entities.Docente;
+import com.dettofatto.logos.entities.Studente;
 import com.dettofatto.logos.fragment.Fragment_dashboard_docente_lista_corsi;
 import com.dettofatto.logos.fragment.Fragment_dashboard_docente_lista_lezioni;
 import com.getbase.floatingactionbutton.AddFloatingActionButton;
@@ -89,6 +91,12 @@ public class DashBoardDocenteListe extends AppCompatActivity {
 
 
 
+        Intent i = getIntent();
+        final Docente d = (Docente) i.getSerializableExtra("docente");
+        Bundle b = new Bundle();
+        b.putSerializable("docente", d);
+        fragment1.setArguments(b);
+        fragment2.setArguments(b);
 
         //Aggiungo i fragment alla lista
         fragmentList.add(fragment2);
@@ -142,6 +150,7 @@ public class DashBoardDocenteListe extends AppCompatActivity {
 
         AddFloatingActionButton fab = findViewById(R.id.fab);
         final Intent toCreaCorso = new Intent(this, CreaCorso.class);
+        toCreaCorso.putExtra("Docente", d);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -150,6 +159,7 @@ public class DashBoardDocenteListe extends AppCompatActivity {
             }
         });
         final Intent toModificaCorso = new Intent(this, ModificaCorso.class);
+        toModificaCorso.putExtra("Docente", d);
         AddFloatingActionButton fab1 = findViewById(R.id.fab1);
         fab1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -158,6 +168,7 @@ public class DashBoardDocenteListe extends AppCompatActivity {
             }
         });
         final Intent toEliminaCorso = new Intent(this, EliminaCorso.class);
+        toEliminaCorso.putExtra("Docente", d);
         AddFloatingActionButton fab2 = findViewById(R.id.fab2);
         fab2.setOnClickListener(new View.OnClickListener() {
             @Override

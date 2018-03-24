@@ -1,5 +1,6 @@
 package com.dettofatto.logos;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -34,11 +35,10 @@ public class EliminaStudente extends AppCompatActivity {
         super.onCreate(savedIstanceState);
         setContentView(R.layout.activity_elimina_studente);
 
+        Intent i = getIntent();
         final Gson gson = new Gson();
-        final Corso c = new Corso();
-        c.setIdCorso(1);
-        final Docente d = new Docente();
-        d.setMail("docente@mail");
+        final Corso c = (Corso)i.getSerializableExtra("Corso");
+        final Docente d = (Docente)i.getSerializableExtra("Docente");
 
         final ListView lv = findViewById(R.id.lista_studenti);
 

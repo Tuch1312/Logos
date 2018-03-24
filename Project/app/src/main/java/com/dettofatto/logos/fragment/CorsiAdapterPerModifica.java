@@ -17,6 +17,7 @@ import com.dettofatto.logos.RetroInterfaces.RetroCorso;
 import com.dettofatto.logos.RetroInterfaces.RetroLister;
 import com.dettofatto.logos.RetrofitSingleton;
 import com.dettofatto.logos.entities.Corso;
+import com.dettofatto.logos.entities.Docente;
 import com.google.gson.Gson;
 
 import java.util.List;

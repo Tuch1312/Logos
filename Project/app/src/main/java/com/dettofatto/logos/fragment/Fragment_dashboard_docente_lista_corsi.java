@@ -18,6 +18,8 @@ import com.dettofatto.logos.RetroInterfaces.RetroLister;
 import com.dettofatto.logos.RetrofitSingleton;
 import com.dettofatto.logos.entities.Corso;
 import com.dettofatto.logos.entities.Docente;
+import com.google.gson.Gson;
+
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -28,7 +30,7 @@ import static android.content.ContentValues.TAG;
 
 public class Fragment_dashboard_docente_lista_corsi extends Fragment {
 
-
+    List<Corso> lista;
 
 
 
@@ -43,9 +45,10 @@ public class Fragment_dashboard_docente_lista_corsi extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        Docente Json = new Docente();
-        Json.setMail("ciaone");
-        String g = "{\"mail\":\"docente@mail\"}";
+        Bundle b = getArguments();
+        final Docente d = (Docente) b.getSerializable("docente");
+        Gson gson = new Gson();
+        String g = gson.toJson(d);
 
         final Intent toDashCorso = new Intent(getContext(), DashboardDocenteCorsi.class);
         // Setup any handles to view objects here
@@ -56,7 +59,7 @@ public class Fragment_dashboard_docente_lista_corsi extends Fragment {
         c.enqueue(new Callback<List<Corso>>() {
             @Override
             public void onResponse(Call<List<Corso>> call, Response<List<Corso>> response) {
-                List<Corso> lista = response.body();
+                lista = response.body();
                 CorsiAdapter corsiAdapter = new CorsiAdapter(getContext(), lista);
                 lv.setAdapter(corsiAdapter);
             }
@@ -71,6 +74,9 @@ public class Fragment_dashboard_docente_lista_corsi extends Fragment {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Corso corso = lista.get(position);
+                toDashCorso.putExtra("Corso", corso);
+                toDashCorso.putExtra("Docente", d);
                 startActivity(toDashCorso);
             }
         });

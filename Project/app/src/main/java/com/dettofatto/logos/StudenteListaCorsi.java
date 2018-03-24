@@ -149,6 +149,7 @@ public class StudenteListaCorsi extends AppCompatActivity {
         });
         com.getbase.floatingactionbutton.AddFloatingActionButton fabAggiungiCorsi = findViewById(R.id.fab_aggiungi_corsi);
         final Intent toAggiungiCorso = new Intent(this, IscrizioneCorsoStudente.class);
+        toAggiungiCorso.putExtra("Studente", s);
         fabAggiungiCorsi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

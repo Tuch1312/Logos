@@ -25,7 +25,7 @@ public interface RetroCorso {
 
     @FormUrlEncoded
     @POST("logos/IscrivitiServlet")
-    Call<Boolean> iscriviti(@Field("studente") String studente, @Field("codiceCorso") int idCorso);
+    Call<Boolean> iscriviti(@Field("studente") String studente, @Field("codiceCorso") String codiceCorso);
 
     @FormUrlEncoded
     @POST("logos/CancellaStudenteServlet")
