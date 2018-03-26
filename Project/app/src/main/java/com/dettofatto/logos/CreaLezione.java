@@ -1,6 +1,7 @@
 package com.dettofatto.logos;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,9 +24,9 @@ public class CreaLezione extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crea_lezione);
 
+        Intent i = getIntent();
         final Gson gson = new Gson();
-        final Corso corso = new Corso();
-         corso.setIdCorso(1);
+        final Corso corso = (Corso) i.getSerializableExtra("Corso");
         Button b = findViewById(R.id.btnCreaLezione);
 
         final EditText editArgomenti = findViewById(R.id.editTextArgomenti);

@@ -13,7 +13,10 @@ import com.dettofatto.logos.DashboardDocenteLezione;
 import com.dettofatto.logos.R;
 import com.dettofatto.logos.RetroInterfaces.RetroLister;
 import com.dettofatto.logos.RetrofitSingleton;
+import com.dettofatto.logos.entities.Corso;
+import com.dettofatto.logos.entities.Docente;
 import com.dettofatto.logos.entities.Lezione;
+import com.google.gson.Gson;
 
 import java.util.List;
 
@@ -40,7 +43,11 @@ public class Fragment_dashboard_docente_corso_lezioni extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        String g = "{\"idCorso\": 1 }";
+        Bundle b = getArguments();
+        final Docente d = (Docente) b.getSerializable("Docente");
+        final Corso corso = (Corso) b.getSerializable("Corso");
+        Gson gson = new Gson();
+        String g = gson.toJson(corso);
 
 
         // Setup any handles to view objects here

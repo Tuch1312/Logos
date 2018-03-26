@@ -48,8 +48,9 @@ public interface RetroLister {
     @POST("logos/GetCorsiPerStudenteServlet")
     Call<List<Corso>> getCorsiPerStudente(@Field("studente") String studente);
 
-    @GET("getStudentiPerCorsoServlet")
-    Call<List<Studente>> getStudentiPerCorso();
+    @FormUrlEncoded
+    @POST("logos/GetStudentiPerCorsoServlet")
+    Call<List<Studente>> getStudentiPerCorso(@Field("corso") String corso);
 
     @GET("getIscrizioniperCorsoServlet")
     Call<List<Iscrizione>> getIscrizioniperCorso();

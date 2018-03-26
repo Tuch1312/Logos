@@ -11,6 +11,7 @@ import com.dettofatto.logos.entities.Corso;
 import com.dettofatto.logos.entities.Docente;
 import com.dettofatto.logos.fragment.CorsiAdapterPerEliminazione;
 import com.dettofatto.logos.fragment.CorsiAdapterPerModifica;
+import com.google.gson.Gson;
 
 import java.util.List;
 
@@ -27,8 +28,10 @@ public class ModificaCorso extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modifica_corso);
 
-        Docente Json = new Docente();
-        String g = "{\"mail\":\"docente@mail\"}";
+        Intent i = getIntent();
+        final Docente d = (Docente) i.getSerializableExtra("Docente");
+        final Gson gson = new Gson();
+        final String g = gson.toJson(d);
 
         // Setup any handles to view objects here
         // EditText etFoo = (EditText) view.findViewById(R.id.etFoo);

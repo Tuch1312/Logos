@@ -1,5 +1,6 @@
 package com.dettofatto.logos;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -32,8 +33,10 @@ public class EliminaLezione extends AppCompatActivity {
         super.onCreate(savedIstanceState);
         setContentView(R.layout.activity_elimina_lezione);
 
+        Intent i = getIntent();
         final Gson gson = new Gson();
-        final String t = "{\"idCorso\":\"1\"}";
+        final Corso corso = (Corso)i.getSerializableExtra("Corso");
+        final String t = gson.toJson(corso);
 
         final ListView lv = findViewById(R.id.listaEliminaLezioni);
         RetroLister rv = RetrofitSingleton.r.create(RetroLister.class);
